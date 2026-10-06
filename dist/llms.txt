@@ -1,0 +1,70 @@
+# Kurucu Bilişim
+
+> İstanbul (Şişli) merkezli bilişim firması. E-imza, mali mühür, KEP ve e-bordro, e-fatura/e-arşiv/e-belge, e-defter ve e-defter saklama gibi e-dönüşüm hizmetleri ile web tasarım, e-ticaret, kurumsal tasarım, ERP, CRM ve sosyal medya yönetimi hizmetleri sunar. 10+ yıllık tecrübe, 1.500+ müşteri.
+
+İletişim: 0 (553) 559 92 31 · info@kurucubilisim.com · Fulya Mah. Büyükdere Cad. Quasar İstanbul No:76 Kat:13 D.No:188, 34394 Şişli/İstanbul
+
+## E-Dönüşüm Hizmetleri
+- [E-Fatura](https://kurucubilisim.com/e-donusum-hizmetleri/e-fatura/): GİB standartlarına tam uyumlu e-fatura geçişinizi hızlıca tamamlayın. Muhasebe ve ERP entegrasyonu, bulut arşiv ve 7/24 destek Kurucu Bilişim’de.
+- [E-Arşiv Fatura](https://kurucubilisim.com/e-donusum-hizmetleri/e-arsiv-fatura/): E-fatura mükellefi olmayan kurumlara ve nihai tüketicilere e-posta veya SMS ile anında e-arşiv fatura düzenleyin. Hızlı, yasal ve güvenli.
+- [E-İrsaliye](https://kurucubilisim.com/e-donusum-hizmetleri/e-irsaliye/): Mal sevkiyatlarınızı dijitalleştirin. Kağıt irsaliye basmadan, karekodlu ve zaman damgalı e-irsaliye düzenleyin. GİB uyumlu kolay geçiş.
+- [E-Defter ve E-Defter Saklama](https://kurucubilisim.com/e-donusum-hizmetleri/e-defter/): E-defter oluşturma, beratlama, GİB’e gönderim ve 10 yıl güvenli e-defter saklama hizmeti. Muhasebe yazılımınızla tam entegre.
+- [E-SMM (Elektronik Serbest Meslek Makbuzu)](https://kurucubilisim.com/e-donusum-hizmetleri/e-smm/): Avukat, doktor, mali müşavir, mühendis ve mimarlar için pratik e-SMM. Makbuzlarınızı dijitalde kesin, stopaj ve KDV’yi otomatik hesaplayın.
+- [E-Müstahsil Makbuzu](https://kurucubilisim.com/e-donusum-hizmetleri/e-mustahsil-makbuzu/): Çiftçi ve üreticilerden alınan tarımsal ürünler için e-müstahsil makbuzunuzu dijitalde düzenleyin. GİB uyumlu, hızlı ve güvenli tarımsal alım belgesi.
+- [E-Gider Pusulası](https://kurucubilisim.com/e-donusum-hizmetleri/e-gider-pusulasi/): Vergi mükellefi olmayan kişilerden alınan mal ve hizmetler için gider pusulalarınızı elektronik ortamda düzenleyin. GİB onaylı, hızlı ve mevzuata tam uyumlu.
+- [E-Dekont](https://kurucubilisim.com/e-donusum-hizmetleri/e-dekont/): Bankalar, ödeme kuruluşları ve finansal kurumlar için GİB standartlarında e-dekont altyapısı. Yüksek hacimli finansal işlemler için güvenli entegrasyon.
+- [E-Adisyon](https://kurucubilisim.com/e-donusum-hizmetleri/e-adisyon/): Restoran, kafe ve eğlence mekanları için GİB uyumlu e-adisyon. Masadan sipariş anında elektronik adisyon düzenleyin, POS ve e-fatura ile entegre edin.
+- [E-Bilet](https://kurucubilisim.com/e-donusum-hizmetleri/e-bilet/): Kara, hava, deniz taşımacılığı, sinema, tiyatro ve etkinlikler için GİB onaylı e-bilet altyapısı. Karekodlu bilet düzenleme, SMS ve e-posta ile anında teslim.
+- [E-İmza](https://kurucubilisim.com/e-donusum-hizmetleri/e-imza/): Yasal geçerliliği olan nitelikli e-imzanızı hızlıca alın. Başvuru, kimlik doğrulama, teslimat ve kurulum desteği Kurucu Bilişim’de.
+- [Mali Mühür](https://kurucubilisim.com/e-donusum-hizmetleri/mali-muhur/): E-fatura, e-arşiv ve e-defter için gerekli mali mühür sertifikanızı hızlıca alın. Başvuru, teslimat, kurulum ve yenileme desteği.
+- [KEP (Kayıtlı Elektronik Posta) ve E-Bordro](https://kurucubilisim.com/e-donusum-hizmetleri/kep-ik/): Kayıtlı Elektronik Posta (KEP) adresi edinin, bordrolarınızı KEP İK ile yasal geçerlilikle dijital olarak gönderin ve arşivleyin.
+- [E-Dönüşüm Entegrasyonu](https://kurucubilisim.com/e-donusum-hizmetleri/e-donusum-entegrasyonu/): ERP, ön muhasebe, CRM ve e-ticaret sitelerinizi e-fatura, e-arşiv ve e-irsaliye sistemleriyle köprülüyoruz. Kesintisiz API entegrasyonu ve teknik destek.
+- [E-Dönüşüm Başvuru ve Geçiş Danışmanlığı](https://kurucubilisim.com/e-donusum-hizmetleri/e-donusum-danismanligi/): GİB başvuruları, mali mühür temini, entegratör seçimi ve geçiş süreçlerinizi uçtan uca yönetiyoruz. Ceza riskini sıfırlayan uzman danışmanlık.
+
+## Dijital Hizmetler
+- [Web Tasarım](https://kurucubilisim.com/dijital-hizmetler/web-tasarim/): Hızlı, mobil uyumlu ve SEO odaklı kurumsal web siteleri. Anahtar teslim web tasarım, kolay yönetim paneli ve 7/24 destek.
+- [Kurumsal Tasarım](https://kurucubilisim.com/dijital-hizmetler/kurumsal-tasarim/): Logo, kartvizit, kurumsal kimlik, marka kılavuzu ve ambalaj tasarımıyla markanızı profesyonel ve akılda kalıcı hale getirin.
+- [CRM Yazılımları](https://kurucubilisim.com/dijital-hizmetler/crm-yazilimlari/): Müşteri ilişkilerinizi tek panelden yönetin. Satış, pazarlama ve destek süreçlerinizi otomatikleştiren CRM yazılımı kurulumu ve entegrasyonu.
+- [ERP Yazılımları](https://kurucubilisim.com/dijital-hizmetler/erp-yazilimlari/): Finans, stok, üretim ve insan kaynakları süreçlerinizi tek sistemde birleştirin. İşletmenize uygun ERP yazılımı seçimi, kurulumu ve desteği.
+- [E-Ticaret Çözümleri](https://kurucubilisim.com/dijital-hizmetler/eticaret-cozumleri/): IKAS, Ticimax, IdeaSoft ve PlatinMarket altyapılarıyla e-ticaret sitenizi kurun. Ödeme, kargo, pazaryeri ve e-fatura entegrasyonu dahil.
+- [Sosyal Medya Yönetimi](https://kurucubilisim.com/dijital-hizmetler/sosyal-medya-yonetimi/): Strateji, içerik üretimi, reklam yönetimi ve performans raporlamasıyla markanızı sosyal medyada büyütün. Profesyonel sosyal medya ajansı hizmeti.
+
+## Kurumsal
+- [Hakkımızda](https://kurucubilisim.com/hakkimizda/)
+- [Referanslarımız](https://kurucubilisim.com/referanslarimiz/)
+- [Sıkça Sorulan Sorular](https://kurucubilisim.com/sikca-sorulan-sorular/)
+- [İletişim](https://kurucubilisim.com/iletisim/)
+- [Başvuru ve Teklif Formu](https://kurucubilisim.com/basvuru-formu/)
+
+## Rehberler
+- [2026 E-Fatura ve E-Arşiv Geçiş Zorunluluğu: Kimler Kapsamda, Başvuru Nasıl Yapılır?](https://kurucubilisim.com/2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu/)
+- [KEP ve Elektronik Fatura Gönderimi: Dijital Faturalama Çözümleri](https://kurucubilisim.com/kep-ve-elektronik-fatura-gonderimi-dijital-faturalama-cozumleri/)
+- [KEP ve İletişimde Zaman Damgası: Dijital Gönderilerin Takibi](https://kurucubilisim.com/kep-ve-iletisimde-zaman-damgasi-dijital-gonderilerin-takibi/)
+- [KEP ve Kamu Sektörü: Devletle Dijital Yazışmalar](https://kurucubilisim.com/kep-ve-kamu-sektoru-devletle-dijital-yazismalar/)
+- [KEP’in Sağladığı Güvenlik: Kayıtlı Elektronik Posta Sisteminin Özellikleri](https://kurucubilisim.com/kepin-sagladigi-guvenlik-kayitli-elektronik-posta-sisteminin-ozellikleri/)
+- [KEP Nedir? Kayıtlı Elektronik Posta Sistemi ve Hukuki Geçerliliği](https://kurucubilisim.com/kep-nedir-kayitli-elektronik-posta-sistemi-ve-hukuki-gecerliligi/)
+- [E-Bordro’da KVKK Uyum Süreci ve Veri Güvenliği](https://kurucubilisim.com/e-bordroda-kvkk-uyum-sureci-ve-veri-guvenligi/)
+- [E-Bordro ile İK ve Muhasebe Süreçlerinde Verimlilik Artışı](https://kurucubilisim.com/e-bordro-ile-ik-ve-muhasebe-sureclerinde-verimlilik-artisi/)
+- [E-Bordro’da Sık Yapılan Hatalar ve Doğruları](https://kurucubilisim.com/e-bordroda-sik-yapilan-hatalar-ve-dogrulari/)
+- [E-Bordro Nasıl Oluşturulur? Adım Adım Uygulama Rehberi](https://kurucubilisim.com/e-bordro-nasil-olusturulur-adim-adim-uygulama-rehberi/)
+- [E-Bordro’nun Yasal Zorunluluğu ve Avantajları (2025 Güncel Bilgilerle)](https://kurucubilisim.com/e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle/)
+- [E-Bordro Nedir? Firmalar ve Çalışanlar İçin Temel Rehber](https://kurucubilisim.com/e-bordro-nedir-firmalar-ve-calisanlar-icin-temel-rehber/)
+- [Mali Mühür ve Vergi İadeleri: Dijital İmzalar ile İade Süreçlerinin Hızlandırılması](https://kurucubilisim.com/mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi/)
+- [Mali Mühür ve Dijital Hukuki Belgeler: Dijital İmzaların Yasal Geçerliliği](https://kurucubilisim.com/mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi/)
+- [Mali Mühür ve İşlemlerin Denetimi: Dijital Sistemlerde İzleme ve Kontrol](https://kurucubilisim.com/mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol/)
+- [Mali Mühür ve Kredi Başvuruları: Dijital Onay Süreçlerinin Güvenliği](https://kurucubilisim.com/mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi/)
+- [Mali Mühür ve Dijital Ticaretin Geleceği: Yasal Süreçlerin Dijitalleşmesi](https://kurucubilisim.com/mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi/)
+- [Mali Mühür ve İhale Süreçleri: Dijital İhale Başvurularında Yasal Geçerlilik](https://kurucubilisim.com/mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik/)
+- [Mali Mühür ve Kamu İhale Süreçlerinde Dijital Güvenlik](https://kurucubilisim.com/mali-muhur-ve-kamu-ihale-sureclerinde-dijital-guvenlik/)
+- [Mali Mühür Zorunluluğu: Dijital Güvenlik ve Yasal Yükümlülükler](https://kurucubilisim.com/mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar/)
+- [Kurucu Bilişim ile E-Defter: Dijital Muhasebeye Geçişin Akıllı Yolu](https://kurucubilisim.com/kurucu-bilisim-ile-e-defter-dijital-muhasebeye-gecisin-akilli-yolu/)
+- [E-Fatura Nedir?](https://kurucubilisim.com/e-fatura-nedir/)
+- [Kurucu Bilişim ile E-Defter Saklama: Dijital Arşiviniz Artık Güvende](https://kurucubilisim.com/kurucu-bilisim-ile-e-defter-saklama-dijital-arsiviniz-artik-guvende/)
+- [KEP (Kayıtlı Elektronik Posta) Nedir?](https://kurucubilisim.com/kep-kayitli-elektronik-posta-nedir/)
+- [Kayıtlı Elektronik Posta (KEP): Dijital Çağda Hayatı Kolaylaştıran Sessiz Kahraman](https://kurucubilisim.com/kayitli-elektronik-posta-kep-dijital-cagda-hayati-kolaylastiran-sessiz-kahraman/)
+- [E-İmza Nedir?](https://kurucubilisim.com/e-imza-nedir/)
+- [MERSİS’te E-İmza Zorunluluğu](https://kurucubilisim.com/mersiste-e-imza-zorunlulugu/)
+- [Sosyal Medya Yöneticisi ile Çalışmanın Avantajları Nelerdir?](https://kurucubilisim.com/sosyal-medya-yoneticisi-ile-calismanin-avantajlari-nelerdir/)
+- [E-Belge Nedir? Dijitalleşen Dünyada E-Belge Kullanımının Önemi](https://kurucubilisim.com/e-belge-nedir-dijitallesen-dunyada-e-belge-kullaniminin-onemi/)
+- [Mali Mühür Nedir? Dijital Güvenlikte Yeni Bir Adım](https://kurucubilisim.com/mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim/)
+- [ERP Nedir? ERP Yazılımı Seçerken Dikkat Edilmesi Gerekenler](https://kurucubilisim.com/erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler/)

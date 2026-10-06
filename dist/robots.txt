@@ -1,0 +1,6 @@
+# Kurucu Bilişim
+User-agent: *
+Allow: /
+Disallow: /form.php
+
+Sitemap: https://kurucubilisim.com/sitemap.xml
