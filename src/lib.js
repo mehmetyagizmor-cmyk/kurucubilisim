@@ -155,6 +155,7 @@ function footer() {
           <li>${icon('phone')}<a href="tel:${site.phone}">${site.phoneDisplay}</a></li>
           <li>${icon('at')}<a href="mailto:${site.email}">${site.email}</a></li>
           <li>${icon('pin')}<a href="${site.mapsUrl}" target="_blank" rel="noopener">${esc(a.street)}, ${a.postalCode} ${a.district}/${a.city}</a></li>
+          <li>${icon('clock')}<span>${site.hours.map((h) => `${h.label}: ${h.text}`).join('<br>')}</span></li>
         </ul>
         <h2 style="margin-top:28px">Kurumsal</h2>
         <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li><li><a href="/blog/">Blog</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
@@ -193,6 +194,7 @@ function orgSchema() {
     address: { '@type': 'PostalAddress', streetAddress: a.street, addressLocality: a.district, addressRegion: a.city, postalCode: a.postalCode, addressCountry: a.country },
     geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
     hasMap: site.mapsUrl,
+    openingHoursSpecification: site.hours.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.days, opens: h.opens, closes: h.closes })),
     areaServed: { '@type': 'Country', name: 'Türkiye' },
     priceRange: '₺₺',
     sameAs: Object.values(site.social),

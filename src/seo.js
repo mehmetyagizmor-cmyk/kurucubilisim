@@ -35,6 +35,7 @@ Sitemap: ${site.url}/sitemap.xml
 > İstanbul (Şişli) merkezli bilişim firması. E-imza, mali mühür, KEP ve e-bordro, e-fatura/e-arşiv/e-belge, e-defter ve e-defter saklama gibi e-dönüşüm hizmetleri ile web tasarım, e-ticaret, kurumsal tasarım, ERP, CRM ve sosyal medya yönetimi hizmetleri sunar. 10+ yıllık tecrübe, 1.500+ müşteri.
 
 İletişim: ${site.phoneDisplay} · ${site.email} · ${site.address.street}, ${site.address.postalCode} ${site.address.district}/${site.address.city}
+Çalışma saatleri: ${site.hours.map((h) => `${h.label} ${h.text}`).join(', ')}, Pazar kapalı
 
 ## ${groups['e-donusum-hizmetleri'].name}
 ${services.filter((s) => s.group === 'e-donusum-hizmetleri').map((s) => `- [${s.name}](${site.url}/${s.group}/${s.slug}/): ${s.desc}`).join('\n')}

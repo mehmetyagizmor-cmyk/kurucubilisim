@@ -24,6 +24,14 @@ const SEO_TITLE = {
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali Mühür ve İşlemlerin Denetimi: İzleme ve Kontrol',
   'mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi': 'Mali Mühür ile Vergi İadesi Süreçlerini Hızlandırın',
   '2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu': '2026 E-Fatura ve E-Arşiv Geçiş Zorunluluğu Rehberi',
+  'e-belge-nedir-dijitallesen-dunyada-e-belge-kullaniminin-onemi': 'E-Belge Nedir? E-Belge Kullanımının Önemi',
+  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro’nun Yasal Zorunluluğu ve Avantajları',
+  'kep-nedir-kayitli-elektronik-posta-sistemi-ve-hukuki-gecerliligi': 'KEP Nedir? Kayıtlı Elektronik Posta ve Hukuki Geçerliliği',
+  'kep-ve-elektronik-fatura-gonderimi-dijital-faturalama-cozumleri': 'KEP ile Elektronik Fatura Gönderimi',
+  'kurucu-bilisim-ile-e-defter-dijital-muhasebeye-gecisin-akilli-yolu': 'E-Defter: Dijital Muhasebeye Geçişin Akıllı Yolu',
+  'kurucu-bilisim-ile-e-defter-saklama-dijital-arsiviniz-artik-guvende': 'E-Defter Saklama: Dijital Arşiviniz Artık Güvende',
+  'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'Mali Mühür Zorunluluğu ve Yasal Yükümlülükler',
+  'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': 'Mali Mühür ve Kredi Başvurularında Dijital Onay',
 };
 
 const decode = (s) => s

@@ -101,7 +101,7 @@ ${ctaBand(`${svc.short} sürecinizi bize bırakın`, 'Başvurudan kuruluma kadar
 
     ctx.add(p.path, layout({
       path: p.path, crumbs, body,
-      title: p.seoTitle.length > 52 ? p.seoTitle : `${p.seoTitle} | Kurucu Bilişim`,
+      title: p.seoTitle.length > 43 ? p.seoTitle : `${p.seoTitle} | Kurucu Bilişim`,
       desc: p.desc, ogType: 'article', ogImage: p.img,
       extraHead: `<meta property="article:published_time" content="${p.date}+03:00">\n<meta property="article:modified_time" content="${p.modified}+03:00">\n<meta property="article:section" content="${esc(p.cats[0])}">\n`,
       schema: [{

@@ -97,7 +97,7 @@ ${ctaBand()}`;
 
   ctx.add('/', layout({
     path: '/',
-    title: 'Kurucu Bilişim | E-İmza, Mali Mühür, KEP, E-Fatura ve Web Tasarım',
+    title: 'Kurucu Bilişim | E-İmza, Mali Mühür, KEP ve E-Fatura',
     desc: 'İstanbul merkezli Kurucu Bilişim; e-imza, mali mühür, KEP, e-fatura, e-defter, web tasarım, e-ticaret, ERP ve CRM çözümleri sunar. Ücretsiz teklif alın.',
     body,
     schema: [

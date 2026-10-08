@@ -26,6 +26,7 @@ const contactInfo = () => `<div class="info-list">
   <a class="info" href="https://wa.me/${site.whatsapp}" target="_blank" rel="noopener"><span class="ic" style="color:#25d366;background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.35)">${SOCIAL.whatsapp}</span><span><small>WhatsApp</small><strong>Hemen yazın</strong></span></a>
   <a class="info" href="mailto:${site.email}">${icBox('at')}<span><small>E-posta</small><strong>${site.email}</strong></span></a>
   <a class="info" href="${site.mapsUrl}" target="_blank" rel="noopener">${icBox('pin')}<span><small>Adres</small><strong>${esc(fullAddress)}</strong></span></a>
+  <div class="info">${icBox('clock')}<span><small>Çalışma saatleri</small><strong>${site.hours.map((h) => `${h.label} ${h.text}`).join(' · ')}</strong></span></div>
 </div>`;
 
 const mapBox = () => `<div class="map-box" data-map="${esc(site.mapsEmbed)}">
@@ -189,7 +190,7 @@ ${ctaBand('Hemen konuşmak ister misiniz?', 'Telefonla arayın veya WhatsApp’t
   {
     const p = '/is-ortagi-basvurusu/', crumbs = [['Ana Sayfa', '/'], ['İş Ortaklığı Başvurusu', p]];
     page(p, {
-      title: 'İş Ortaklığı Başvurusu | Kurucu Bilişim Bayilik ve İş Birliği', crumbs,
+      title: 'İş Ortaklığı ve Bayilik Başvurusu | Kurucu Bilişim', crumbs,
       desc: 'E-dönüşüm, web tasarım ve e-ticaret alanlarında Kurucu Bilişim ile iş ortaklığı yapın. Birlikte büyümek için başvuru formunu doldurun.',
       body: `${pageHero({ eyebrow: 'İş Ortaklığı', h1: 'Birlikte <span class="grad">büyüyelim.</span>', lead: 'Mali müşavirler, yazılım firmaları, ajanslar ve bayiler için kazan-kazan esasına dayalı iş ortaklığı modeli.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container form-layout">

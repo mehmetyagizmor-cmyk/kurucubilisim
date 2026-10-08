@@ -17,6 +17,11 @@ const site = {
     postalCode: '34394',
     country: 'TR',
   },
+  // Çalışma saatleri: sitede gösterilen metin + schema (Google) için gün/saat aralıkları.
+  hours: [
+    { label: 'Hafta içi', text: '09.00 – 18.00', days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '18:00' },
+    { label: 'Cumartesi', text: '09.00 – 15.00', days: ['Saturday'], opens: '09:00', closes: '15:00' },
+  ],
   geo: { lat: 41.0661785, lng: 29.0005368 },
   mapsUrl: 'https://maps.app.goo.gl/1dNckFFdphMoCdWL7',
   mapsEmbed: 'https://www.google.com/maps?q=Kurucu+Bili%C5%9Fim,+Quasar+%C4%B0stanbul,+%C5%9Ei%C5%9Fli&ll=41.0661785,29.0005368&z=16&output=embed',
@@ -43,7 +48,7 @@ const site = {
 const groups = {
   'e-donusum-hizmetleri': {
     name: 'E-Dönüşüm Hizmetleri',
-    title: 'E-Dönüşüm Hizmetleri | E-Fatura, E-İmza, Mali Mühür, KEP, E-Defter',
+    title: 'E-Dönüşüm Hizmetleri: E-Fatura, E-İmza, Mali Mühür, KEP',
     desc: 'E-fatura, e-arşiv, e-irsaliye, e-defter, e-SMM, e-imza, mali mühür, KEP ve e-dönüşüm entegrasyonu hizmetlerini tek noktadan, mevzuata tam uyumlu alın.',
     h1: 'E-Dönüşüm Hizmetleri',
     lead: 'Gelir İdaresi Başkanlığı ve ilgili mevzuatla uyumlu e-dönüşüm süreçlerinizi başvurudan kuruluma, saklamadan desteğe kadar uçtan uca yönetiyoruz.',
@@ -255,7 +260,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-adisyon', icon: 'coffee',
     name: 'E-Adisyon', short: 'E-Adisyon',
-    title: 'E-Adisyon Çözümü | Restoran ve Kafe Sistemleri | Kurucu Bilişim',
+    title: 'E-Adisyon Çözümü: Restoran ve Kafeler | Kurucu Bilişim',
     desc: 'Restoran, kafe ve eğlence mekanları için GİB uyumlu e-adisyon. Masadan sipariş anında elektronik adisyon düzenleyin, POS ve e-fatura ile entegre edin.',
     h1: 'Restoran ve Kafeler İçin Elektronik Adisyon (E-Adisyon)',
     lead: 'Hizmet işletmelerinde masalara sunulan hizmetlerin sipariş anında elektronik ortamda belgelenmesi. POS ve kasa sistemleriyle tam entegre çalışır.',
@@ -279,7 +284,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-bilet', icon: 'ticket',
     name: 'E-Bilet', short: 'E-Bilet',
-    title: 'E-Bilet Hizmeti | Ulaşım ve Etkinlik Çözümleri | Kurucu Bilişim',
+    title: 'E-Bilet: Ulaşım ve Etkinlik Çözümleri | Kurucu Bilişim',
     desc: 'Kara, hava, deniz taşımacılığı, sinema, tiyatro ve etkinlikler için GİB onaylı e-bilet altyapısı. Karekodlu bilet düzenleme, SMS ve e-posta ile anında teslim.',
     h1: 'Ulaşım ve Etkinlikler İçin Elektronik Bilet (E-Bilet)',
     lead: 'Yolcu taşımacılığı, kültür-sanat etkinlikleri ve spor organizasyonlarında biletlerinizi elektronik ortamda üretin, karekodla doğrulatın ve iletin.',
@@ -377,7 +382,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-donusum-entegrasyonu', icon: 'sync',
     name: 'E-Dönüşüm Entegrasyonu', short: 'E-Dönüşüm Entegrasyonu',
-    title: 'E-Dönüşüm Entegrasyonu | ERP, Muhasebe ve E-Ticaret | Kurucu Bilişim',
+    title: 'E-Dönüşüm Entegrasyonu: ERP ve Muhasebe | Kurucu Bilişim',
     desc: 'ERP, ön muhasebe, CRM ve e-ticaret sitelerinizi e-fatura, e-arşiv ve e-irsaliye sistemleriyle köprülüyoruz. Kesintisiz API entegrasyonu ve teknik destek.',
     h1: 'E-Dönüşüm Yazılım ve API Entegrasyonu',
     lead: 'Kullandığınız ticari yazılımlar, ERP sistemleri veya e-ticaret altyapılarınız ile e-dönüşüm servisleri arasında çift yönlü, otomatik ve güvenli veri akışı kuruyoruz.',
@@ -518,7 +523,7 @@ const services = [
   {
     group: 'dijital-hizmetler', slug: 'eticaret-cozumleri', icon: 'cart',
     name: 'E-Ticaret Çözümleri', short: 'E-Ticaret',
-    title: 'E-Ticaret Sitesi Kurulumu | IKAS, Ticimax, IdeaSoft | Kurucu Bilişim',
+    title: 'E-Ticaret Sitesi Kurulumu: IKAS, Ticimax | Kurucu Bilişim',
     desc: 'IKAS, Ticimax, IdeaSoft ve PlatinMarket altyapılarıyla e-ticaret sitenizi kurun. Ödeme, kargo, pazaryeri ve e-fatura entegrasyonu dahil.',
     h1: 'E-Ticaret Sitesi Kurulumu ve Yönetimi',
     lead: 'Güvenli, hızlı ve kullanıcı dostu e-ticaret altyapılarıyla online satışlarınızı başlatın, pazaryerleri ve e-fatura entegrasyonuyla büyütün.',
