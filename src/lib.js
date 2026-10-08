@@ -1,5 +1,5 @@
 // Ortak yardımcılar, ikonlar ve sayfa iskeleti (layout).
-const { site, groups, services } = require('./data');
+const { site, groups, services, applyForms } = require('./data');
 
 const fs = require('fs');
 const path = require('path');
@@ -67,6 +67,11 @@ const logo = (sub = true) => `<span class="logo"><span class="logo__word">KURU<s
 const btn = (href, text, cls = 'btn--primary', arrow = true, extra = '') => `<a class="btn ${cls}" href="${href}"${extra}>${text}${arrow ? icon('arrow') : ''}</a>`;
 
 const byGroup = (g) => services.filter((s) => s.group === g);
+// Hizmetin gömülü başvuru formu varsa hizmet sayfasındaki forma, yoksa genel teklif formuna gider
+const applyHref = (slug) => {
+  const s = applyForms[slug] && services.find((x) => x.slug === slug);
+  return s ? `${svcPath(s)}#basvuru` : '/basvuru-formu/' + (slug ? '?hizmet=' + slug : '');
+};
 
 function header(path) {
   const cur = (p) => (path === p ? ' aria-current="page"' : '');
@@ -280,4 +285,4 @@ function faqBlock(list, light = false) {
 }
 const faqSchema = (list) => ({ '@type': 'FAQPage', mainEntity: list.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
-module.exports = { esc, abs, svcPath, initials, icon, icBox, SOCIAL, logo, btn, byGroup, layout, aurora, pageHero, ctaBand, faqBlock, faqSchema, crumbsHtml, orgId };
+module.exports = { applyHref, esc, abs, svcPath, initials, icon, icBox, SOCIAL, logo, btn, byGroup, layout, aurora, pageHero, ctaBand, faqBlock, faqSchema, crumbsHtml, orgId };

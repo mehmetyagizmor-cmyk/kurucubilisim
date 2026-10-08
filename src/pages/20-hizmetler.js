@@ -1,15 +1,81 @@
 // Faz 3: Hizmet ana sayfaları (2) + hizmet detay sayfaları (11). URL'ler canlı siteyle aynıdır.
-const { site, groups, services, testimonials, reasons, faqs } = require('../data');
-const { layout, icon, icBox, btn, byGroup, svcPath, pageHero, ctaBand, faqBlock, faqSchema, esc, abs, orgId } = require('../lib');
+const { site, groups, services, testimonials, reasons, faqs, applyForms } = require('../data');
+const { layout, icon, icBox, btn, byGroup, svcPath, pageHero, ctaBand, faqBlock, faqSchema, esc, abs, orgId, applyHref } = require('../lib');
 const { serviceCard, stepsBlock, quoteCard, postCard, statsBlock } = require('../components');
 const { posts } = require('../posts');
 
 // Hizmete özel müşteri yorumu (varsa)
 const quoteFor = { 'e-fatura': 0, 'e-imza': 0, 'kep-ik': 1, 'web-tasarim': 2, 'kurumsal-tasarim': 2 };
 
-const actionsFor = (slug) => btn('/basvuru-formu/' + (slug ? '?hizmet=' + slug : ''), 'Ücretsiz Teklif Al', 'btn--primary btn--lg') +
+const actionsFor = (slug) => btn(applyForms[slug] ? '#basvuru' : applyHref(slug), applyForms[slug] ? 'Hemen Başvur' : 'Ücretsiz Teklif Al', 'btn--primary btn--lg') +
   btn(`https://wa.me/${site.whatsapp}`, 'WhatsApp’tan Yazın', 'btn--ghost btn--lg', false, ' target="_blank" rel="noopener"');
 const heroActions = actionsFor('');
+
+// Başvuru formu: sorular Google Form'dan (src/content/apply-forms.json), tasarım sitenin.
+// Yanıtlar main.js tarafından doğrudan Google Form'a gönderilir.
+const applyData = require('../content/apply-forms.json');
+const cleanLabel = (t) => t.replace(/\s*\*+\s*$/, '').replace(/\s+/g, ' ').trim();
+const cleanOpt = (t) => t.replace(/[-\s]+$/, '').trim();
+function applyField(it, i) {
+  const id = `af-${it.entry}`, name = `entry.${it.entry}`, req = it.required ? ' required' : '';
+  const label = cleanLabel(it.label);
+  const star = it.required ? ' <span class="req" aria-hidden="true">*</span>' : ' <span class="opt">(isteğe bağlı)</span>';
+  const help = it.help ? `<small class="field__help">${esc(it.help)}</small>` : '';
+  if (it.type === 'radio' || it.type === 'checkbox') {
+    const t = it.type;
+    return `<fieldset class="field field--full"${t === 'checkbox' && it.required ? ' data-need-one' : ''}><legend>${esc(label)}${star}</legend>${help}<div class="checks">${it.options.map((o, k) => `<label><input type="${t}" name="${name}" value="${esc(o)}"${t === 'radio' && k === 0 ? req : ''}>${esc(cleanOpt(o))}</label>`).join('')}</div></fieldset>`;
+  }
+  let control;
+  if (it.type === 'select') {
+    control = `<select id="${id}" name="${name}"${req}><option value="">Seçin</option>${it.options.map((o) => `<option>${esc(o)}</option>`).join('')}</select>`;
+  } else if (it.type === 'date') {
+    control = `<input id="${id}" type="date" data-date="${name}" max="${new Date().toISOString().slice(0, 10)}"${req}>`;
+  } else if (/adres/i.test(label)) {
+    control = `<textarea id="${id}" name="${name}" rows="3"${req} autocomplete="street-address"></textarea>`;
+  } else {
+    let attrs = ' type="text"';
+    if (/e-?posta|mail/i.test(label)) attrs = ' type="email" autocomplete="email"';
+    else if (/VKN|Vergi Numarası/i.test(label)) attrs = ' type="text" inputmode="numeric" pattern="[0-9]{10,11}" maxlength="11" data-tax';
+    else if (/TCKN|Kimlik No/i.test(label)) attrs = ' type="text" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" data-tckn';
+    else if (/telefon|cep|iletişim numarası/i.test(label)) attrs = ' type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9 +()\\-]{10,20}" placeholder="05xx xxx xx xx"';
+    else if (/kontör|adet/i.test(label)) attrs = ' type="number" inputmode="numeric" min="1"';
+    control = `<input id="${id}" name="${name}"${attrs}${req}>`;
+  }
+  const full = (it.type === 'paragraph' && /adres/i.test(label)) || label.length > 44; // uzun etiket satır hizasını bozmasın
+  return `<div class="field${full ? ' field--full' : ''}"><label for="${id}">${esc(label)}${star}</label>${help}${control}</div>`;
+}
+const applySection = (s, f) => {
+  const form = applyData[s.slug];
+  if (!form) throw new Error('apply-forms.json içinde yok: ' + s.slug + ' (node forms-sync.js çalıştırın)');
+  const groups = [{ title: f.first, desc: '', fields: [] }];
+  for (const it of form.items) {
+    if (it.type === 'section') {
+      const [t, ...rest] = it.title.split('\n');
+      groups.push({ title: t.trim(), desc: [rest.join(' ').trim(), it.desc].filter(Boolean).join(' '), fields: [] });
+    } else groups[groups.length - 1].fields.push(it);
+  }
+  const gurl = `https://docs.google.com/forms/d/e/${f.id}`;
+  return `<section class="section apply" id="basvuru"><div class="container">
+  <div class="section-head center"><span class="eyebrow">Online başvuru</span><h2>${esc(s.short)} başvurusu</h2><p class="lead">Formu doldurun, uzmanlarımız başvurunuzu aynı gün işleme alıp sizinle iletişime geçsin.</p></div>
+  <div class="apply__card" data-reveal>
+    <form class="form apply__form" action="${gurl}/formResponse" method="post" data-gform="${esc(s.short)}" novalidate>
+      ${groups.filter((g) => g.fields.length).map((g, gi) => `<div class="apply__group"><div class="apply__head"><span class="apply__num">${gi + 1}</span><div><h3>${esc(g.title)}</h3>${g.desc ? `<p>${esc(g.desc)}</p>` : ''}</div></div>
+      <div class="apply__grid">${g.fields.map(applyField).join('')}</div></div>`).join('')}
+      <div class="hp" aria-hidden="true"><label>Web sitesi adresi<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label></div>
+      <div class="apply__foot">
+        <label class="consent"><input type="checkbox" required data-local><span><a href="/kvkk-politikamiz/" target="_blank">KVKK Aydınlatma Metni</a>’ni okudum; kişisel verilerimin başvurumun işleme alınması amacıyla işlenmesini kabul ediyorum.</span></label>
+        <div class="apply__submit"><button class="btn btn--primary btn--lg" type="submit">Başvuruyu Gönder${icon('arrow')}</button><p class="form__msg" role="status" aria-live="polite"></p></div>
+      </div>
+    </form>
+    <div class="apply__done" hidden tabindex="-1">
+      <span class="ic">${icon('check')}</span>
+      <h3>Başvurunuz alındı!</h3>
+      <p>Uzmanlarımız bilgilerinizi kontrol edip aynı gün içinde sizinle iletişime geçecek. Acil durumlar için <a href="tel:${site.phone}">${site.phoneDisplay}</a>.</p>
+    </div>
+  </div>
+  <p class="apply__note">${icon('shield')}Bilgileriniz şifreli bağlantıyla doğrudan başvuru sistemimize iletilir.</p>
+</div></section>`;
+};
 
 module.exports = (ctx) => {
   // Hub sayfaları
@@ -87,13 +153,14 @@ ${ctaBand()}`;
     <span class="eyebrow">${esc(s.short)} hizmeti</span>
     <h2>${esc(s.name)} ile neler kazanırsınız?</h2>
     ${s.intro.map((t) => `<p class="lead" style="max-width:none">${esc(t)}</p>`).join('')}
-    <div class="hero__actions" style="margin:28px 0 0">${btn('/basvuru-formu/?hizmet=' + s.slug, 'Başvuru / Teklif', 'btn--primary')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div>
+    <div class="hero__actions" style="margin:28px 0 0">${btn(applyForms[s.slug] ? '#basvuru' : applyHref(s.slug), applyForms[s.slug] ? 'Hemen Başvur' : 'Başvuru / Teklif', 'btn--primary')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div>
   </div>
   <div class="card" data-reveal style="padding:clamp(24px,3vw,40px)">
     <h3 style="margin-top:0">Hizmete dahil olanlar</h3>
     <ul class="list-check" style="margin-top:18px">${s.features.map((f) => `<li>${icon('check')}<span>${esc(f)}</span></li>`).join('')}</ul>
   </div>
 </div></section>
+${applyForms[s.slug] ? applySection(s, applyForms[s.slug]) : ''}
 <section class="section section--alt"><div class="container">
   <div class="section-head center"><span class="eyebrow">Süreç</span><h2>${esc(s.short)} sürecimiz</h2><p class="lead">Başvurudan teslime kadar her adımı sizin yerinize takip ediyoruz.</p></div>${stepsBlock()}
 </div></section>

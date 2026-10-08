@@ -615,4 +615,12 @@ const blogCats = [
   ['Dijital', /erp|sosyal|web|crm/],
 ];
 
-module.exports = { site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };
+// Hizmet sayfalarındaki başvuru formları: yanıtlar bu Google Form'lara gönderilir.
+// Soru yapısı src/content/apply-forms.json içindedir; form değişirse: node forms-sync.js
+const applyForms = {
+  'mali-muhur': { id: '1FAIpQLSd43WD8kFMwGI40Uda5PKBHcofKN26ZFNp4_Nt-opkm_jimxA', first: 'Firma ve yetkili bilgileri' },
+  'e-fatura': { id: '1FAIpQLSf-lLhORnPQygsYGYCeMnK2QP-nhfZ-FDi-O1szgzvmCgga3g', first: 'Firma bilgileri' },
+  'e-imza': { id: '1FAIpQLSfD2aRO1Py7QNgohgAPWot3e5mOB9U8DDceMaXAyQOo08ClGQ', first: 'Kişisel bilgiler' },
+};
+
+module.exports = { applyForms, site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };

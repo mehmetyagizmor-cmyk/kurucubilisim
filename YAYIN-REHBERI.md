@@ -95,3 +95,11 @@ Komut satırından hızlı test: `curl -I https://kurucubilisim.com/privacy-poli
 | Blog yazıları | `src/content/posts.json` (WordPress'ten alınan biçim) |
 
 Her değişiklikten sonra `npm run build` çalıştırın ve `dist/` içeriğini yeniden yükleyin. Yeni blog yazısı eklemeyi kolaylaştırmak için Markdown tabanlı bir akış ileride eklenebilir.
+
+## Hizmet başvuru formları (Google Forms)
+
+Mali mühür, e-fatura ve e-imza sayfalarındaki başvuru formları sitenin kendi tasarımıyla gösterilir; yanıtlar doğrudan ilgili Google Form'a (ve bağlı tabloya) düşer.
+
+- Form kimlikleri: `src/data.js` → `applyForms`
+- Soru yapısı: `src/content/apply-forms.json` (elle düzenlemeyin)
+- Google Form'da soru eklenir, silinir veya seçenek değişirse: `npm run forms` ardından `npm run build`. Bu yapılmazsa yeni zorunlu sorular sitede görünmez ve Google başvuruyu sessizce reddeder.

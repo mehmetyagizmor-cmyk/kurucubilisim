@@ -1,0 +1,351 @@
+{
+  "mali-muhur": {
+    "id": "1FAIpQLSd43WD8kFMwGI40Uda5PKBHcofKN26ZFNp4_Nt-opkm_jimxA",
+    "title": "Kurucu Bilişim ve Danışmanlık Hizmetleri Mali Mühür Sertifika Başvurusu",
+    "desc": "",
+    "items": [
+      {
+        "type": "radio",
+        "entry": 2053651916,
+        "label": "Şahıs Şirketi mi Tüzel Kişilik mi?",
+        "help": "",
+        "required": true,
+        "options": [
+          "Şahıs firması",
+          "Tüzel"
+        ]
+      },
+      {
+        "type": "text",
+        "entry": 1187849044,
+        "label": "Şirket Firma Unvanı ( Şahıs firmaları için ad soyad yazılmalıdır )",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 2005620554,
+        "label": "Vergi Numarası",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1045781291,
+        "label": "Vergi Dairesi",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "paragraph",
+        "entry": 1065046570,
+        "label": "Firma Yetkilisi Adı",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1166974658,
+        "label": "Firma Yetkilisi Soyadı",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 839337160,
+        "label": "Firma Yetkilisi Kimlik No",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "date",
+        "entry": 1217390142,
+        "label": "Firma Yetkilisi Doğum Tarihi",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 968103809,
+        "label": "Nufusta kayıtlı resmi doğum yeri",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 120339753,
+        "label": "E-Posta",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 364331044,
+        "label": "Cep Telefonu",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 77131714,
+        "label": "İl",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 2022050301,
+        "label": "İlçe",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "paragraph",
+        "entry": 1339560340,
+        "label": "Açık Adres",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "section",
+        "title": "Mali Müşavir Bilgileri",
+        "desc": "Destek ihtiyaçları noktasında ulaşım önceliği mali müşavirde olması durumundan talep edilmektedir. Zorunlu alan değildir"
+      },
+      {
+        "type": "text",
+        "entry": 902204547,
+        "label": "Adı - Soyadı",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 2112716060,
+        "label": "Telefon numarası",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 262136262,
+        "label": "E-Posta",
+        "help": "",
+        "required": true
+      }
+    ]
+  },
+  "e-fatura": {
+    "id": "1FAIpQLSf-lLhORnPQygsYGYCeMnK2QP-nhfZ-FDi-O1szgzvmCgga3g",
+    "title": "Kurucu Bilişim ve Danışmanlık Hizmetleri E-Fatura Başvuru Formu",
+    "desc": "",
+    "items": [
+      {
+        "type": "text",
+        "entry": 1204989597,
+        "label": "Firma VKN / Şahıs firması ise TCKN",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 811971612,
+        "label": "Vergi Dairesi",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1966180831,
+        "label": "Müşteri Unvanı",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 647875160,
+        "label": "İl/İlçe",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1392959284,
+        "label": "Adres",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 501041824,
+        "label": "E-Posta",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 578372063,
+        "label": "İletişim Numarası",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 816217300,
+        "label": "Firma Yetkilisi İsim/Soy İsim",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1532679842,
+        "label": "Kontör Adeti",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "section",
+        "title": "Mali Müşavir Bilgileri\nDestek ihtiyaçları noktasında ulaşım önceliği mali müşavirde olması durumundan talep edilmektedir.",
+        "desc": ""
+      },
+      {
+        "type": "text",
+        "entry": 1580060880,
+        "label": "Adı - Soyadı",
+        "help": "",
+        "required": false
+      },
+      {
+        "type": "text",
+        "entry": 1341198494,
+        "label": "Telefon numarası",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1020115001,
+        "label": "E-Posta",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "checkbox",
+        "entry": 1987757230,
+        "label": "Talep edilen E-Belge Servisleri (E-Fatura,E-Arşiv, E-İrsaliye vb)",
+        "help": "",
+        "required": true,
+        "options": [
+          "E-Fatura-",
+          "E-Arşiv",
+          "E-İrsaliye-",
+          "E-Müstahsil Makbuzu",
+          "E-SMMM",
+          "E-Adisyon",
+          "E-Gider Pusulası",
+          "E-Defter",
+          "E-Defter Saklama"
+        ]
+      }
+    ]
+  },
+  "e-imza": {
+    "id": "1FAIpQLSfD2aRO1Py7QNgohgAPWot3e5mOB9U8DDceMaXAyQOo08ClGQ",
+    "title": "Kurucu Bilişim ve Danışmanlık Hizmetleri Nitelikli Elektronik Sertifika (E-İmza) için Gerekli Bilgiler",
+    "desc": "Kişisel Bilgiler",
+    "items": [
+      {
+        "type": "text",
+        "entry": 2005620554,
+        "label": "Adınız*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 17747433,
+        "label": "Soyadınız*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "date",
+        "entry": 580626212,
+        "label": "Doğum Tarihi*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "select",
+        "entry": 862677762,
+        "label": "Uyruk*",
+        "help": "",
+        "required": true,
+        "options": [
+          "Türkiye Cumhuriyeti",
+          "Yabancı Uyruk / Diğer"
+        ]
+      },
+      {
+        "type": "text",
+        "entry": 2036627131,
+        "label": "TCKN*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1045781291,
+        "label": "E-posta adresi*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 326363783,
+        "label": "Telefon numarası",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 16596982,
+        "label": "Doğum Yeri*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1432363712,
+        "label": "Nüfus Cüzdanı SeriNo*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 1765903323,
+        "label": "Güvenlik Sözcüğü*",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "section",
+        "title": "İletişim, Teslimat & Kurulum Adres Bilgileri",
+        "desc": ""
+      },
+      {
+        "type": "text",
+        "entry": 1065046570,
+        "label": "İl/İlçe",
+        "help": "",
+        "required": true
+      },
+      {
+        "type": "text",
+        "entry": 492079454,
+        "label": "Açık Adres",
+        "help": "",
+        "required": true
+      }
+    ]
+  }
+}

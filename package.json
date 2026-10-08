@@ -5,7 +5,8 @@
   "description": "kurucubilisim.com statik site üreticisi",
   "scripts": {
     "build": "node build.js",
-    "serve": "node serve.js"
+    "serve": "node serve.js",
+    "forms": "node forms-sync.js"
   },
   "devDependencies": {
     "sharp": "^0.35.5"

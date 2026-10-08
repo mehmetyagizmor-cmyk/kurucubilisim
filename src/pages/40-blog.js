@@ -2,7 +2,7 @@
 const path = require('path');
 const sharp = require('sharp');
 const { site, services, blogCats } = require('../data');
-const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, SOCIAL, orgId } = require('../lib');
+const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, SOCIAL, orgId, applyHref } = require('../lib');
 const { postCard } = require('../components');
 const { posts, fmtDate } = require('../posts');
 
@@ -79,11 +79,11 @@ ${ctaBand()}`;
   ${p.img ? `<figure class="post-cover" style="margin:0 0 clamp(32px,5vw,56px)"><img src="${p.img}" alt="${esc(p.title)}" width="${w}" height="${h}" fetchpriority="high" decoding="async"></figure>` : ''}
   <div class="article-layout">
     <article class="prose" data-article>${p.html}
-      <div class="card svc-cta" style="margin-top:48px">${icBox(svc.icon)}<h3>${esc(svc.short)} hizmetimizle tanışın</h3><p>${esc(svc.lead)}</p><div class="hero__actions" style="margin:18px 0 0">${btn(svcPath(svc), 'Hizmeti incele', 'btn--primary btn--sm')}${btn('/basvuru-formu/?hizmet=' + svc.slug, 'Teklif al', 'btn--ghost btn--sm', false)}</div></div>
+      <div class="card svc-cta" style="margin-top:48px">${icBox(svc.icon)}<h3>${esc(svc.short)} hizmetimizle tanışın</h3><p>${esc(svc.lead)}</p><div class="hero__actions" style="margin:18px 0 0">${btn(svcPath(svc), 'Hizmeti incele', 'btn--primary btn--sm')}${btn(applyHref(svc.slug), 'Başvur / Teklif al', 'btn--ghost btn--sm', false)}</div></div>
     </article>
     <aside class="sidebar" aria-label="Yazı araçları">
       ${p.toc.length >= 2 ? `<nav class="card" aria-label="İçindekiler"><h2>İçindekiler</h2><ol class="toc">${p.toc.map(([id, t]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join('')}</ol></nav>` : ''}
-      <div class="card svc-cta">${icBox(svc.icon)}<h3>${esc(svc.short)} için destek mi lazım?</h3><p>Uzmanlarımız aynı gün içinde size dönüş yapsın.</p>${btn('/basvuru-formu/?hizmet=' + svc.slug, 'Ücretsiz Teklif Al', 'btn--primary btn--sm')}</div>
+      <div class="card svc-cta">${icBox(svc.icon)}<h3>${esc(svc.short)} için destek mi lazım?</h3><p>Uzmanlarımız aynı gün içinde size dönüş yapsın.</p>${btn(applyHref(svc.slug), 'Ücretsiz Teklif Al', 'btn--primary btn--sm')}</div>
       <div class="card"><h2>Paylaş</h2><div class="share">
         <a href="https://wa.me/?text=${shareT}%20${share}" target="_blank" rel="noopener" aria-label="WhatsApp'ta paylaş">${SOCIAL.whatsapp}</a>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=${share}" target="_blank" rel="noopener" aria-label="LinkedIn'de paylaş">${SOCIAL.linkedin}</a>

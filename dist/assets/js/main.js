@@ -316,6 +316,75 @@
     });
   });
 
+  // Hizmet başvuru formları: doğrulama + yanıtı doğrudan Google Form'a gönderme
+  var tcknOk = function (v) {
+    if (!/^[1-9][0-9]{10}$/.test(v)) return false;
+    var d = v.split('').map(Number);
+    var d10 = ((d[0] + d[2] + d[4] + d[6] + d[8]) * 7 - (d[1] + d[3] + d[5] + d[7])) % 10;
+    var d11 = d.slice(0, 10).reduce(function (a, b) { return a + b; }, 0) % 10;
+    return (d10 + 10) % 10 === d[9] && d11 === d[10];
+  };
+  $$('form[data-gform]').forEach(function (form) {
+    var msg = $('.form__msg', form), done = form.parentNode.querySelector('.apply__done');
+    function check() {
+      $$('[data-tckn]', form).forEach(function (el) {
+        el.setCustomValidity(el.value && !tcknOk(el.value.trim()) ? 'Geçerli bir T.C. kimlik numarası girin (11 hane).' : '');
+      });
+      $$('[data-tax]', form).forEach(function (el) {
+        var v = el.value.trim();
+        el.setCustomValidity(v && !(/^[0-9]{10}$/.test(v) || tcknOk(v)) ? 'Vergi numarası 10 hane, şahıs firmalarında T.C. kimlik no 11 hane olmalıdır.' : '');
+      });
+      var okAll = true;
+      $$('[data-need-one]', form).forEach(function (fs) {
+        var ok = !!fs.querySelector('input:checked');
+        fs.classList.toggle('is-bad', !ok);
+        var first = fs.querySelector('input');
+        if (first) first.setCustomValidity(ok ? '' : 'En az bir seçenek işaretleyin.');
+        okAll = okAll && ok;
+      });
+      return okAll;
+    }
+    form.addEventListener('input', function () { if (form.classList.contains('was-validated')) check(); });
+    form.addEventListener('change', function () { if (form.classList.contains('was-validated')) check(); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.classList.add('was-validated');
+      check();
+      if (!form.checkValidity()) {
+        var bad = form.querySelector('input:invalid, select:invalid, textarea:invalid');
+        msg.className = 'form__msg is-err'; msg.textContent = 'Lütfen işaretli alanları kontrol edin.';
+        if (bad) { bad.focus({ preventScroll: true }); bad.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); if (bad.reportValidity) bad.reportValidity(); }
+        return;
+      }
+      msg.textContent = '';
+      var body = new URLSearchParams();
+      $$('[name^="entry."]', form).forEach(function (el) {
+        if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) return;
+        if (el.value !== '') body.append(el.name, el.value.trim());
+      });
+      $$('[data-date]', form).forEach(function (el) {
+        var p = el.value.split('-'); if (p.length !== 3) return;
+        var n = el.getAttribute('data-date');
+        body.append(n + '_year', p[0]); body.append(n + '_month', +p[1]); body.append(n + '_day', +p[2]);
+      });
+      var finish = function () {
+        form.hidden = true; done.hidden = false; done.focus({ preventScroll: true });
+        done.closest('section').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        if (window.dataLayer) window.dataLayer.push({ event: 'form_submit', form_name: 'basvuru-' + form.getAttribute('data-gform') });
+      };
+      if (form.querySelector('[name="website_url"]').value) { finish(); return; } // bot
+      var btn = $('button[type="submit"]', form), label = btn.innerHTML;
+      btn.disabled = true; btn.textContent = 'Gönderiliyor…';
+      // Google yanıtı okunamaz (no-cors); ağ hatası yoksa iletilmiştir
+      fetch(form.action, { method: 'POST', mode: 'no-cors', body: body })
+        .then(finish)
+        .catch(function () {
+          btn.disabled = false; btn.innerHTML = label;
+          msg.className = 'form__msg is-err'; msg.textContent = 'Bağlantı hatası oluştu. Lütfen tekrar deneyin veya bizi arayın.';
+        });
+    });
+  });
+
   // Yıl
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
