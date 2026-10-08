@@ -228,7 +228,7 @@ function layout(o) {
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${og}">
 ${o.ogImage ? '' : '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'}<meta name="twitter:card" content="summary_large_image">
-${o.extraHead || ''}<meta name="theme-color" content="#07080f">
+${o.extraHead || ''}<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/assets/img/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
@@ -254,7 +254,7 @@ ${footer()}
 }
 
 // Ortak bölümler
-const aurora = '<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><div class="grid-bg" aria-hidden="true"></div>';
+const aurora = ''; // sade tasarım: dekoratif arka plan yok
 
 function pageHero({ eyebrow, h1, lead, crumbs, actions = '' }) {
   return `<section class="hero hero--page">${aurora}

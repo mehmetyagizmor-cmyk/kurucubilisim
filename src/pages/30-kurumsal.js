@@ -221,7 +221,7 @@ ${ctaBand('Hemen konuşmak ister misiniz?', 'Telefonla arayın veya WhatsApp’t
       body: `${pageHero({ eyebrow: 'Ödeme', h1: 'Banka Hesap <span class="grad">Bilgilerimiz</span>', lead: 'Havale/EFT ödemelerinizde açıklama kısmına firma unvanınızı ve fatura numaranızı yazmayı unutmayın.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
   ${has ? `<div class="grid grid--2">${site.banks.map((b) => `<div class="card bank">${icBox('coin')}<h3>${esc(b.bank)}</h3><p>${esc(b.holder)}${b.branch ? ' · ' + esc(b.branch) : ''}</p><code>${esc(b.iban)}</code></div>`).join('')}</div>`
-    : `<div class="card" style="max-width:760px">${icBox('coin')}<h3>Güncel IBAN bilgilerimiz için bize ulaşın</h3><p>Güvenliğiniz için banka hesap bilgilerimizi talep üzerine paylaşıyoruz. Telefon, WhatsApp veya e-posta ile ulaştığınızda dakikalar içinde iletiyoruz.</p><div class="hero__actions" style="margin:22px 0 0">${btn(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, banka hesap bilgilerinizi öğrenebilir miyim?')}`, 'WhatsApp ile iste', 'btn--primary', false, ' target="_blank" rel="noopener"')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div></div>`}
+    : `<div class="card" style="max-width:760px;margin-inline:auto">${icBox('coin')}<h3>Güncel IBAN bilgilerimiz için bize ulaşın</h3><p>Güvenliğiniz için banka hesap bilgilerimizi talep üzerine paylaşıyoruz. Telefon, WhatsApp veya e-posta ile ulaştığınızda dakikalar içinde iletiyoruz.</p><div class="hero__actions" style="margin:22px 0 0">${btn(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, banka hesap bilgilerinizi öğrenebilir miyim?')}`, 'WhatsApp ile iste', 'btn--primary', false, ' target="_blank" rel="noopener"')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div></div>`}
 </div></section>`,
     }, { sitemap: has, priority: '0.3' });
   }
@@ -274,7 +274,7 @@ ${ctaBand('Hemen konuşmak ister misiniz?', 'Telefonla arayın veya WhatsApp’t
     page(p, {
       title: h.replace('!', '') + ' | Kurucu Bilişim', desc: t, noindex: true,
       body: `<section class="hero thanks">${aurora}<div class="container" style="max-width:720px">
-  <span class="ic">${icon('check')}</span><h1>${h}</h1><p class="lead" style="margin:0 auto 32px">${t} Acil durumlar için <a href="tel:${site.phone}" style="color:#fff;font-weight:700">${site.phoneDisplay}</a> numarasından bize ulaşabilirsiniz.</p>
+  <span class="ic">${icon('check')}</span><h1>${h}</h1><p class="lead" style="margin:0 auto 32px">${t} Acil durumlar için <a href="tel:${site.phone}" style="color:var(--link);font-weight:700">${site.phoneDisplay}</a> numarasından bize ulaşabilirsiniz.</p>
   <div class="hero__actions" style="justify-content:center">${btn('/', 'Ana sayfaya dön', 'btn--primary')}${btn('/blog/', 'Blog yazılarımız', 'btn--ghost', false)}</div>
 </div></section>`,
     }, { sitemap: false });
