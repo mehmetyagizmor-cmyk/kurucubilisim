@@ -1,7 +1,7 @@
 // Faz 3: Ana sayfa
 const { site, services, faqs, reasons } = require('../data');
 const { layout, aurora, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, SOCIAL } = require('../lib');
-const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard } = require('../components');
+const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard } = require('../components');
 const { posts } = require('../posts');
 
 module.exports = (ctx) => {
@@ -70,6 +70,10 @@ module.exports = (ctx) => {
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
 <section class="section--tight"><div class="container">${statsBlock()}</div></section>
+${activeCampaigns().length ? `<section class="section section--light promos"><div class="container">
+  <div class="section-head section-head--split"><div><span class="eyebrow">Kampanyalar</span><h2>Şimdi başlamak için<br>tam zamanı.</h2></div>${btn('/kampanyalar/', 'Tüm kampanyalar', 'btn--ghost')}</div>
+  ${rail(activeCampaigns().map((c, i) => campaignCard(c, i)).join(''), 'Güncel kampanyalar')}
+</div></section>` : ''}
 <section class="section statement"><div class="container"><p class="statement__text" data-words>E-fatura, e-imza, KEP ya da yepyeni bir web sitesi. Ne gerekiyorsa tek bir ekip baştan sona yönetir. <span class="grad">Siz sadece işinize odaklanın.</span></p></div></section>
 ${tabs}
 ${why}

@@ -1,6 +1,6 @@
 // Birden çok sayfada kullanılan içerik bileşenleri.
-const { site, testimonials, process, partners, references } = require('./data');
-const { esc, icon, icBox, svcPath, initials } = require('./lib');
+const { site, testimonials, process, partners, references, campaigns, services } = require('./data');
+const { esc, icon, icBox, svcPath, initials, applyHref } = require('./lib');
 const { fmtDate } = require('./posts');
 
 const postCard = (p, i = 0) => `<a class="card post-card" href="${p.path}" data-reveal style="--d:${i * 0.07}s" data-cats="${esc(p.cats.join('|'))}">
@@ -28,4 +28,25 @@ const partnersMarquee = () => {
 
 const logoWall = (n = references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
 
-module.exports = { postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, logoWall };
+// Kampanyalar: süresi geçenler gösterilmez
+const activeCampaigns = () => {
+  const today = new Date().toISOString().slice(0, 10);
+  return campaigns.filter((c) => c.bitis >= today);
+};
+const trDate = (d) => new Date(d + 'T12:00:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+const campaignCard = (c, i = 0, detail = false) => {
+  const svc = services.find((s) => s.slug === c.hizmet);
+  return `<article class="promo promo--${c.tema}${detail ? ' promo--detail' : ''}" id="${c.slug}" data-reveal style="--d:${(i % 3) * 0.07}s">
+  <span class="promo__badge">${esc(c.rozet)}</span>
+  <h3>${esc(c.baslik)}</h3>
+  <p>${esc(c.ozet)}</p>
+  ${detail ? `<ul class="list-check">${c.detay.map((d) => `<li>${icon('check')}<span>${esc(d)}</span></li>`).join('')}</ul>` : ''}
+  <div class="promo__foot">
+    <small>${icon('clock')}Son gün: <time datetime="${c.bitis}">${trDate(c.bitis)}</time></small>
+    <a class="link-arrow" href="${detail ? applyHref(c.hizmet) : '/kampanyalar/#' + c.slug}">${detail ? 'Hemen yararlanın' : 'Detaylar'} ${icon('arrow')}</a>
+  </div>
+  ${detail && svc ? `<a class="promo__svc" href="${svcPath(svc)}">${esc(svc.short)} hizmetini inceleyin</a>` : ''}
+</article>`;
+};
+
+module.exports = { activeCampaigns, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, logoWall };

@@ -628,4 +628,15 @@ const applyForms = {
   'e-imza': { id: '1FAIpQLSfD2aRO1Py7QNgohgAPWot3e5mOB9U8DDceMaXAyQOo08ClGQ', first: 'Kişisel bilgiler' },
 };
 
-module.exports = { applyForms, site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };
+// Kampanyalar — bitiş tarihi (bitis) geçenler derlemede otomatik gizlenir.
+// ornek: true olan kampanyalar YER TUTUCUDUR: gerçek kampanyalarla değiştirilmeden yayına almayın.
+// tema: kartın renk tonu (kirmizi | turuncu | mor | yesil | mavi)
+const campaigns = [
+  { ornek: true, slug: 'e-imza-mali-muhur-paketi', rozet: '%15 indirim', baslik: 'E-İmza + Mali Mühür Paketi', ozet: 'İkisini birlikte alın, paket fiyatına %15 indirim kazanın. Kurulum ve aktivasyon bizden.', detay: ['E-imza ve mali mühür aynı başvuruda', 'Uzaktan kurulum ve aktivasyon dahil', 'Yenileme hatırlatması ücretsiz'], hizmet: 'e-imza', bitis: '2026-12-31', tema: 'kirmizi' },
+  { ornek: true, slug: 'e-fatura-ucretsiz-kurulum', rozet: 'Kurulum ücretsiz', baslik: 'E-Fatura’ya Geçişte Ücretsiz Kurulum', ozet: '2026 geçiş zorunluluğu kapsamındaki işletmelere e-fatura ve e-arşiv kurulumu ücretsiz.', detay: ['GİB başvuru süreci bizden', 'Muhasebe programı entegrasyonu', 'İlk ay ücretsiz destek'], hizmet: 'e-fatura', bitis: '2026-12-31', tema: 'turuncu' },
+  { ornek: true, slug: 'kep-ilk-yil', rozet: 'İlk yıl %20', baslik: 'KEP Adresinde İlk Yıl Avantajı', ozet: 'Yeni KEP adresi açtıran işletmelere ilk yıl %20 indirim ve ücretsiz ileti paketi.', detay: ['Aynı gün KEP adresi', '100 ileti hediye', 'E-Bordro ile birlikte kullanım'], hizmet: 'kep-ik', bitis: '2026-11-30', tema: 'mor' },
+  { ornek: true, slug: 'web-sitesi-hosting-hediye', rozet: '1 yıl hosting hediye', baslik: 'Kurumsal Web Sitesine 1 Yıl Hosting', ozet: 'Kurumsal web sitesi yaptıranlara 1 yıllık hosting ve SSL sertifikası hediye.', detay: ['Mobil uyumlu, SEO hazır tasarım', 'Alan adı ve SSL kurulumu', '1 yıl hosting dahil'], hizmet: 'web-tasarim', bitis: '2026-12-31', tema: 'mavi' },
+  { ornek: true, slug: 'mali-musavir-toplu-basvuru', rozet: 'Mali müşavirlere özel', baslik: 'Toplu E-İmza Başvurusunda Ek İndirim', ozet: 'Müşterileri için 5 ve üzeri e-imza başvurusu yapan mali müşavirlere ek indirim.', detay: ['Tek noktadan toplu başvuru', 'Başvuru takibi sizin yerinize', 'İş ortaklığı avantajları'], hizmet: 'e-imza', bitis: '2027-01-31', tema: 'yesil' },
+];
+
+module.exports = { campaigns, applyForms, site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };

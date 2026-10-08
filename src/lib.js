@@ -106,6 +106,7 @@ function header(path) {
         <div class="dropdown dropdown--mega">${svcLinks('dijital-hizmetler')}<a class="dropdown__all" href="/dijital-hizmetler/">Tüm Dijital Hizmetler</a></div></div>
       <div class="nav__item"><a class="nav__link" href="/hakkimizda/"${cur('/hakkimizda/')}>Kurumsal ${icon('chev')}</a>
         <div class="dropdown">${corp.map(([h, t], i) => `<a href="${h}">${icBox(corpIcons[i])}<span><strong>${t}</strong></span></a>`).join('')}</div></div>
+      <div class="nav__item"><a class="nav__link" href="/kampanyalar/"${cur('/kampanyalar/')}>Kampanyalar</a></div>
       <div class="nav__item"><a class="nav__link" href="/blog/"${cur('/blog/')}>Blog</a></div>
       <div class="nav__item"><a class="nav__link" href="/iletisim/"${cur('/iletisim/')}>İletişim</a></div>
     </nav>
@@ -126,6 +127,7 @@ function header(path) {
   </div></details>
   <details><summary>Dijital Hizmetler ${icon('chev')}</summary><div>${byGroup('dijital-hizmetler').map((s) => `<a href="${svcPath(s)}">${esc(s.short)}</a>`).join('')}<a href="/dijital-hizmetler/">Tümü →</a></div></details>
   <details><summary>Kurumsal ${icon('chev')}</summary><div>${corp.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</div></details>
+  <a href="/kampanyalar/">Kampanyalar</a>
   <a href="/blog/">Blog</a>
   <a href="/iletisim/">İletişim</a>
   <div class="drawer__cta">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div>
@@ -158,7 +160,7 @@ function footer() {
           <li>${icon('clock')}<span>${site.hours.map((h) => `${h.label}: ${h.text}`).join('<br>')}</span></li>
         </ul>
         <h2 style="margin-top:28px">Kurumsal</h2>
-        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li><li><a href="/blog/">Blog</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
+        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li><li><a href="/kampanyalar/">Kampanyalar</a></li><li><a href="/blog/">Blog</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
       </div>
     </div>
     <div class="footer__bottom">
