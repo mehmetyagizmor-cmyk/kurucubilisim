@@ -131,7 +131,7 @@ ${ctaBand()}`;
     ['/e-donusum-hizmetleri/e-defter-e-defter-saklama/', '/e-donusum-hizmetleri/e-defter/', 'E-Defter Sayfasına Yönlendiriliyorsunuz', 'E-defter ve saklama hizmetlerimiz için yeni sayfamıza yönlendiriliyorsunuz.'],
   ];
   for (const [from, to, title, desc] of legacyRedirects) {
-    ctx.add(from, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${title} | Kurucu Bilişim</title><meta name="description" content="${desc}"><link rel="canonical" href="${abs(to)}"><meta http-equiv="refresh" content="0;url=${to}"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"${title}"}</script></head><body><h1>${title}</h1><script>location.href='${to}';</script><p><a href="${to}">Buraya tıklayarak devam edin</a>.</p></body></html>`);
+    ctx.add(from, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${title} | Kurucu Bilişim</title><meta name="description" content="${desc}"><link rel="canonical" href="${abs(to)}"><meta http-equiv="refresh" content="0;url=${to}"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"${title}"}</script></head><body><h1>${title}</h1><script>location.href='${to}';</script><p><a href="${to}">Buraya tıklayarak devam edin</a>.</p></body></html>`, { sitemap: false }); // yönlendirme: site haritasına girmez
   }
 
   // Hizmet detay sayfaları
