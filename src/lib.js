@@ -1,5 +1,5 @@
 // Ortak yardımcılar, ikonlar ve sayfa iskeleti (layout).
-const { site, groups, services, applyForms } = require('./data');
+const { site, groups, services, applyForms, campaigns } = require('./data');
 
 const fs = require('fs');
 const path = require('path');
@@ -10,6 +10,11 @@ const CSS = fs.readFileSync(path.join(__dirname, '../assets/css/style.css'), 'ut
 
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const abs = (p) => site.url + p;
+// Kampanyalar: süresi geçenler ve örnek (ornek: true) olanlar yayında gösterilmez
+const activeCampaigns = () => {
+  const today = new Date().toISOString().slice(0, 10);
+  return campaigns.filter((c) => !c.ornek && c.bitis >= today);
+};
 const svcPath = (s) => `/${s.group}/${s.slug}/`;
 const initials = (n) => n.split(' ').map((w) => w[0]).slice(0, 2).join('');
 
@@ -62,7 +67,7 @@ const SOCIAL = {
   whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.1-3.4-8.4z"/></svg>',
 };
 
-const logo = (sub = true) => `<span class="logo"><span class="logo__word">KURU<span class="logo__cu">CU</span></span>${sub ? '<span class="logo__sub">Bilişim<br>Dijital Dönüşüm</span>' : ''}</span>`;
+const logo = (sub = true) => `<span class="logo"><span class="logo__word">KURU<span class="logo__cu">CU</span></span>${sub ? '<span class="logo__sub">Bilişim<br>Dijital Dönüşüm<br>Çözümleri</span>' : ''}</span>`;
 
 const btn = (href, text, cls = 'btn--primary', arrow = true, extra = '') => `<a class="btn ${cls}" href="${href}"${extra}>${text}${arrow ? icon('arrow') : ''}</a>`;
 
@@ -106,7 +111,7 @@ function header(path) {
         <div class="dropdown dropdown--mega">${svcLinks('dijital-hizmetler')}<a class="dropdown__all" href="/dijital-hizmetler/">Tüm Dijital Hizmetler</a></div></div>
       <div class="nav__item"><a class="nav__link" href="/hakkimizda/"${cur('/hakkimizda/')}>Kurumsal ${icon('chev')}</a>
         <div class="dropdown">${corp.map(([h, t], i) => `<a href="${h}">${icBox(corpIcons[i])}<span><strong>${t}</strong></span></a>`).join('')}</div></div>
-      <div class="nav__item"><a class="nav__link" href="/kampanyalar/"${cur('/kampanyalar/')}>Kampanyalar</a></div>
+      ${activeCampaigns().length ? `<div class="nav__item"><a class="nav__link" href="/kampanyalar/"${cur('/kampanyalar/')}>Kampanyalar</a></div>` : ''}
       <div class="nav__item"><a class="nav__link" href="/blog/"${cur('/blog/')}>Blog</a></div>
       <div class="nav__item"><a class="nav__link" href="/iletisim/"${cur('/iletisim/')}>İletişim</a></div>
     </nav>
@@ -127,7 +132,7 @@ function header(path) {
   </div></details>
   <details><summary>Dijital Hizmetler ${icon('chev')}</summary><div>${byGroup('dijital-hizmetler').map((s) => `<a href="${svcPath(s)}">${esc(s.short)}</a>`).join('')}<a href="/dijital-hizmetler/">Tümü →</a></div></details>
   <details><summary>Kurumsal ${icon('chev')}</summary><div>${corp.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</div></details>
-  <a href="/kampanyalar/">Kampanyalar</a>
+  ${activeCampaigns().length ? '<a href="/kampanyalar/">Kampanyalar</a>' : ''}
   <a href="/blog/">Blog</a>
   <a href="/iletisim/">İletişim</a>
   <div class="drawer__cta">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div>
@@ -160,7 +165,7 @@ function footer() {
           <li>${icon('clock')}<span>${site.hours.map((h) => `${h.label}: ${h.text}`).join('<br>')}</span></li>
         </ul>
         <h2 style="margin-top:28px">Kurumsal</h2>
-        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li><li><a href="/kampanyalar/">Kampanyalar</a></li><li><a href="/blog/">Blog</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
+        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li>${activeCampaigns().length ? '<li><a href="/kampanyalar/">Kampanyalar</a></li>' : ''}<li><a href="/blog/">Blog</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
       </div>
     </div>
     <div class="footer__bottom">
@@ -289,4 +294,4 @@ function faqBlock(list, light = false) {
 }
 const faqSchema = (list) => ({ '@type': 'FAQPage', mainEntity: list.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
-module.exports = { applyHref, esc, abs, svcPath, initials, icon, icBox, SOCIAL, logo, btn, byGroup, layout, aurora, pageHero, ctaBand, faqBlock, faqSchema, crumbsHtml, orgId };
+module.exports = { activeCampaigns, applyHref, esc, abs, svcPath, initials, icon, icBox, SOCIAL, logo, btn, byGroup, layout, aurora, pageHero, ctaBand, faqBlock, faqSchema, crumbsHtml, orgId };

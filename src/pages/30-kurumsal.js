@@ -96,8 +96,8 @@ ${ctaBand()}`,
     const p = '/referanslarimiz/', crumbs = [['Ana Sayfa', '/'], ['Referanslarımız', p]];
     page(p, {
       title: 'Referanslarımız | Kurucu Bilişim ile Çalışan Markalar', crumbs,
-      desc: 'E-dönüşüm, web tasarım ve dijital çözümlerde Kurucu Bilişim’i tercih eden 1.500’den fazla işletmeden bazıları. Referanslarımızı inceleyin.',
-      body: `${pageHero({ eyebrow: 'Referanslarımız', h1: '1.500’den fazla işletme <span class="grad">bize güveniyor.</span>', lead: 'Farklı sektörlerden markaların e-dönüşüm ve dijital süreçlerinde yanlarındayız.', crumbs })}
+      desc: 'E-dönüşüm, web tasarım ve dijital çözümlerde Kurucu Bilişim’i tercih eden işletmelerden bazıları. Referanslarımızı inceleyin.',
+      body: `${pageHero({ eyebrow: 'Referanslarımız', h1: 'Birçok işletme <span class="grad">bize güveniyor.</span>', lead: 'Farklı sektörlerden markaların e-dönüşüm ve dijital süreçlerinde yanlarındayız.', crumbs })}
 <section class="section--tight" style="padding-top:0"><div class="container">${statsBlock()}</div></section>
 <section class="section section--light"><div class="container">
   <div class="section-head center"><span class="eyebrow">Müşterilerimiz</span><h2>Bize güvenen markalar</h2></div>

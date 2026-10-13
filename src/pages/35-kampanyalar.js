@@ -6,8 +6,9 @@ const { activeCampaigns, campaignCard } = require('../components');
 module.exports = (ctx) => {
   const p = '/kampanyalar/', crumbs = [['Ana Sayfa', '/'], ['Kampanyalar', p]];
   const list = activeCampaigns();
-  const placeholder = campaigns.some((c) => c.ornek);
-  if (placeholder) console.warn('⚠ Kampanyalar örnek (yer tutucu) içerik içeriyor: src/data.js → campaigns. Yayından önce gerçek kampanyalarla değiştirin.');
+  if (campaigns.some((c) => c.ornek)) console.warn('⚠ Örnek (yer tutucu) kampanyalar yayına alınmadı: src/data.js → campaigns. Gerçek kampanyaları ornek: true olmadan ekleyin.');
+  // Aktif kampanya yoksa sayfa üretilmez; menü bağlantıları da gizlenir (lib.js)
+  if (!list.length) return;
 
   const body = `${pageHero({ eyebrow: 'Kampanyalar', h1: 'Güncel <span class="grad">kampanyalar</span>', lead: 'E-dönüşümden web tasarıma, işletmenize özel avantajlı paketler. Kampanyalar belirtilen tarihe kadar geçerlidir.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
@@ -27,9 +28,7 @@ ${ctaBand('Size en uygun paketi birlikte seçelim', 'Hangi kampanyanın işletme
 
   ctx.add(p, layout({
     path: p, crumbs, body,
-    // Örnek içerik varken arama motorlarına kapalı
-    noindex: placeholder,
     title: 'Kampanyalar | Kurucu Bilişim E-Dönüşüm ve Web Fırsatları',
     desc: 'E-imza, mali mühür, KEP, e-fatura ve kurumsal web sitesi hizmetlerinde güncel Kurucu Bilişim kampanyaları ve avantajlı paketler.',
-  }), placeholder ? { sitemap: false } : { priority: '0.7' });
+  }), { priority: '0.7' });
 };

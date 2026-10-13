@@ -15,8 +15,8 @@ module.exports = (ctx) => {
 
   const hero = `<section class="hero hero--home">
   <div class="container hero__center">
-    <span class="badge hero-in"><b>10+ YIL</b> 1.500+ işletmenin dijital dönüşüm ortağı</span>
-    <h1 class="hero-in" style="--d:.05s">Dijital dönüşüm.<br><span class="grad">Tek çatı altında.</span></h1>
+    <span class="badge hero-in"><b>10+ YIL</b> İşletmelerin dijital dönüşüm ortağı</span>
+    <h1 class="hero-in" style="--d:.05s">Dijital Dönüşüm<br><span class="grad">Çözümleri</span></h1>
     <p class="lead hero-in" style="--d:.12s">E-imza, mali mühür, KEP, e-fatura ve e-defterden web tasarım, e-ticaret ve ERP'ye kadar; tüm dijital süreçlerinizi hızlı, güvenli ve mevzuata uygun şekilde kuruyoruz.</p>
     <div class="hero__actions hero-in" style="--d:.18s">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg', false)}<a class="link-arrow" href="#hizmetler">Hizmetleri keşfedin ${icon('arrow')}</a></div>
     <ul class="ticks hero-in" style="--d:.24s"><li>${icon('check')}Aynı gün dönüş</li><li>${icon('check')}Yerinde & uzaktan kurulum</li><li>${icon('check')}7/24 destek</li></ul>
@@ -101,7 +101,7 @@ ${ctaBand()}`;
 
   ctx.add('/', layout({
     path: '/',
-    title: 'Kurucu Bilişim | E-İmza, Mali Mühür, KEP ve E-Fatura',
+    title: 'Kurucu Bilişim | Dijital Dönüşüm Çözümleri',
     desc: 'İstanbul merkezli Kurucu Bilişim; e-imza, mali mühür, KEP, e-fatura, e-defter, web tasarım, e-ticaret, ERP ve CRM çözümleri sunar. Ücretsiz teklif alın.',
     body,
     schema: [

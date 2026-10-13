@@ -30,6 +30,7 @@ npm run serve      # http://localhost:8080 adresinde son kontrol
 ## 4. Yükleme
 
 1. `public_html` içindeki WordPress dosyalarını silmek yerine bir klasöre taşıyın (ör. `_wp-eski`). İşler yolunda gittikten 2–4 hafta sonra silinebilir.
+   - ⚠️ **Alt alan adı klasörlerine dokunmayın.** Hostinger'da `crm.kurucubilisim.com` gibi alt alan adlarının dosyaları `public_html` içinde kendi klasöründe durur (ör. `public_html/crm`). Bu klasör taşınır veya silinirse alt alan adının tamamı 404 verir. Taşımadan önce hPanel → Alan Adları → Alt Alan Adları ekranından her alt alan adının klasörünü not edin ve o klasörleri yerinde bırakın.
    - **`wp-content/uploads/` klasörünü yerinde bırakın.** Google Görseller'de ve dış sitelerde eski görsel linkleri bulunuyor; bunlar çalışmaya devam eder.
 2. `dist/` klasörünün **içindeki her şeyi** `public_html` klasörüne yükleyin. Gizli `.htaccess` dosyası da dahil; FTP programında "gizli dosyaları göster" açık olmalı.
 3. Hosting panelinde **LiteSpeed Cache / CDN önbelleğini temizleyin** (sunucu başlığı: `hcdn`).

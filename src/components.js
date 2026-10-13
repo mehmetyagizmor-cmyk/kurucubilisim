@@ -1,6 +1,6 @@
 // Birden çok sayfada kullanılan içerik bileşenleri.
-const { site, testimonials, process, partners, references, campaigns, services } = require('./data');
-const { esc, icon, icBox, svcPath, initials, applyHref } = require('./lib');
+const { site, testimonials, process, partners, references, services } = require('./data');
+const { esc, icon, icBox, svcPath, initials, applyHref, activeCampaigns } = require('./lib');
 const { fmtDate } = require('./posts');
 
 const postCard = (p, i = 0) => `<a class="card post-card" href="${p.path}" data-reveal style="--d:${i * 0.07}s" data-cats="${esc(p.cats.join('|'))}">
@@ -28,11 +28,6 @@ const partnersMarquee = () => {
 
 const logoWall = (n = references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
 
-// Kampanyalar: süresi geçenler gösterilmez
-const activeCampaigns = () => {
-  const today = new Date().toISOString().slice(0, 10);
-  return campaigns.filter((c) => c.bitis >= today);
-};
 const trDate = (d) => new Date(d + 'T12:00:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 const campaignCard = (c, i = 0, detail = false) => {
   const svc = services.find((s) => s.slug === c.hizmet);

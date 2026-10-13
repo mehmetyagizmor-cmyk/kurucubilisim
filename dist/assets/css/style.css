@@ -278,7 +278,7 @@ a.card .link-arrow { margin-top: auto; padding-top: 22px; }
 @keyframes panelIn { from { opacity: 0; transform: translateY(14px); } }
 
 /* İstatistik */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: var(--radius-lg); background: var(--card); overflow: hidden; }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); border-radius: var(--radius-lg); background: var(--card); overflow: hidden; }
 .stat { padding: clamp(28px, 3.6vw, 48px) 20px; text-align: center; position: relative; }
 .stat + .stat::before { content: ''; position: absolute; left: 0; top: 28%; bottom: 28%; width: 1px; background: var(--line); }
 .stat strong { display: block; font-size: clamp(2.4rem, 4.8vw, 3.8rem); font-weight: 700; letter-spacing: -.05em; line-height: 1; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
@@ -462,9 +462,6 @@ a.card .link-arrow { margin-top: auto; padding-top: 22px; }
 @media (max-width: 860px) {
   .grid--3, .quotes { grid-template-columns: 1fr 1fr; }
   .grid--4 { grid-template-columns: 1fr 1fr; }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stat:nth-child(3)::before { display: none; }
-  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
   .steps::before { display: none; }
   .cta { grid-template-columns: 1fr; }
