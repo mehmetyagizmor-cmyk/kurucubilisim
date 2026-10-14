@@ -1,0 +1,132 @@
+/* Kurucu Tema — kurucubilisim.com tasarım sistemi, Perfex CRM 3.x için
+   Renkler, yazı tipi ve bileşen ölçüleri sitenin assets/css/style.css dosyasıyla aynıdır. */
+
+/* Plus Jakarta Sans (SIL OFL) — siteyle aynı dosyalar */
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 300 800; font-display: swap; src: url(fonts/jakarta-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 300 800; font-display: swap; src: url(fonts/jakarta-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  --kb-bg: #fff;
+  --kb-bg-2: #f5f5f7;
+  --kb-text: #1d1d1f;
+  --kb-muted: #6e6e73;
+  --kb-line: rgba(0, 0, 0, .08);
+  --kb-line-2: rgba(0, 0, 0, .14);
+  --kb-input-line: #d2d2d7;
+  --kb-brand: #e3262b;
+  --kb-brand-hover: #c81e23;
+  --kb-link: #c8161b;
+  --kb-ring: 0 0 0 4px rgba(227, 38, 43, .14);
+  --kb-radius: 22px;
+  --kb-radius-sm: 14px;
+  --kb-radius-lg: 32px;
+  --kb-shadow: 0 30px 60px -30px rgba(0, 0, 0, .22);
+  --kb-ease: cubic-bezier(.16, 1, .3, 1);
+  --kb-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ---------- Temel ---------- */
+body,
+body .tw-font-sans,
+.popover, .tooltip, .dropdown-menu,
+input, button, select, textarea {
+  font-family: var(--kb-font) !important;
+}
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: -.005em; }
+::selection { background: rgba(227, 38, 43, .18); }
+a { color: var(--kb-link); }
+a:hover, a:focus { color: var(--kb-brand-hover); }
+:focus-visible { outline: 2px solid var(--kb-brand); outline-offset: 2px; }
+
+/* ---------- Butonlar (sitedeki .btn: hap biçimi) ---------- */
+.btn {
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  transition: transform .5s var(--kb-ease), background-color .3s, color .3s, border-color .3s, box-shadow .5s var(--kb-ease);
+}
+.btn:active { transform: scale(.97); }
+.btn-primary,
+.btn-primary:focus,
+.btn-primary.focus {
+  background-color: var(--kb-brand);
+  border-color: var(--kb-brand);
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: var(--kb-brand-hover);
+  border-color: var(--kb-brand-hover);
+  color: #fff;
+  box-shadow: 0 14px 30px -12px rgba(227, 38, 43, .55);
+}
+.btn-primary.disabled, .btn-primary[disabled] { background-color: var(--kb-brand); border-color: var(--kb-brand); opacity: .55; }
+.btn-default {
+  background: #fff;
+  border-color: var(--kb-line-2);
+  color: var(--kb-text);
+}
+.btn-default:hover, .btn-default:focus { background: var(--kb-bg-2); border-color: var(--kb-text); color: var(--kb-text); }
+
+/* ---------- Form alanları (sitedeki .field) ---------- */
+.form-control {
+  border-radius: 12px;
+  border-color: var(--kb-input-line);
+  color: var(--kb-text);
+  box-shadow: none;
+  transition: border-color .25s, box-shadow .25s;
+}
+.form-control:focus {
+  border-color: var(--kb-brand);
+  box-shadow: var(--kb-ring);
+  outline: none;
+}
+.form-control::placeholder { color: #86868b; }
+.control-label, label { color: var(--kb-text); font-weight: 600; }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--kb-brand); }
+.checkbox input[type="checkbox"]:checked + label::before,
+.checkbox-primary input[type="checkbox"]:checked + label::before,
+.radio-primary input[type="radio"]:checked + label::before {
+  background-color: var(--kb-brand);
+  border-color: var(--kb-brand);
+}
+
+/* ---------- Giriş, şifremi unuttum, şifre sıfırlama ---------- */
+body.login_admin,
+body.forgot_password,
+body.reset_password,
+body.authentication {
+  background: var(--kb-bg-2) !important;
+  color: var(--kb-text);
+  min-height: 100vh;
+}
+.authentication-form-wrapper { padding-top: clamp(40px, 10vh, 96px) !important; padding-bottom: 48px; max-width: 460px !important; }
+.authentication-form-wrapper .company-logo { padding: 0 10px 28px; }
+.authentication-form-wrapper .company-logo img { max-height: 64px; width: auto; border-radius: var(--kb-radius-sm); }
+.authentication-form-wrapper h1 {
+  color: var(--kb-text) !important;
+  font-size: clamp(2rem, 5vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+  margin-bottom: 8px !important;
+}
+.authentication-form-wrapper h1 + p { color: var(--kb-muted) !important; font-size: 1rem; }
+/* Form kartı (sitedeki .card) */
+.authentication-form-wrapper .tw-bg-white {
+  border: 0 !important;
+  border-radius: var(--kb-radius-lg) !important;
+  box-shadow: var(--kb-shadow) !important;
+  padding: clamp(28px, 4vw, 40px) !important;
+}
+.authentication-form-wrapper .form-control { height: 50px; padding: 12px 16px; font-size: 1rem; }
+.authentication-form-wrapper .control-label { font-size: .86rem; }
+.authentication-form-wrapper a.text-muted { color: var(--kb-link) !important; font-size: .86rem; font-weight: 500; }
+.authentication-form-wrapper a.text-muted:hover { color: var(--kb-brand-hover) !important; text-decoration: underline; }
+.authentication-form-wrapper .checkbox label { color: var(--kb-muted); font-weight: 500; }
+.authentication-form-wrapper .btn-primary { padding: 14px 24px !important; font-size: 1.02rem; }
+.authentication-form-wrapper .alert { border-radius: var(--kb-radius-sm); border: 0; }
