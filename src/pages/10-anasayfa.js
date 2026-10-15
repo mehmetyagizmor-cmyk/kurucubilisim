@@ -8,28 +8,28 @@ module.exports = (ctx) => {
   // Çözüm bulucu: ziyaretçi durumunu seçer, ona uygun hizmetlere gider (gerçek bağlantılar, SEO için metin)
   const svc = (slug, why) => { const x = services.find((v) => v.slug === slug); return [svcPath(x), x.icon, x.short, why]; };
   const finder = [
-    ['Şirketim var', [
+    ['Şirketler', [
       svc('e-fatura', 'Mükellefler arası faturalarınızı GİB mevzuatına uygun düzenleyin.'),
       svc('e-arsiv-fatura', 'E-faturaya kayıtlı olmayan alıcılara ve tüketicilere fatura.'),
       svc('e-defter', 'Yasal defterlerinizi elektronik ortamda tutun ve saklayın.'),
-      svc('mali-muhur', 'Şirketinizin e-belgelerdeki elektronik mührü.'),
+      svc('mali-muhur', 'Aynı gün, dakikalar içinde teslim; şirketinizin e-belge mührü.'),
       svc('kep-ik', 'Resmi yazışmalarınız için yasal delil niteliğinde e-posta.'),
-      svc('e-imza', 'Yetkililer için MERSİS, e-Devlet ve SGK işlemleri.'),
+      svc('e-imza', 'İstanbul içi aynı gün kurye; MERSİS, e-Devlet ve SGK işlemleri.'),
     ]],
     ['Serbest meslek', [
       svc('e-smm', 'Serbest meslek makbuzlarınızı elektronik ortamda düzenleyin.'),
-      svc('e-imza', 'E-Devlet ve kurum işlemleriniz için nitelikli e-imza.'),
+      svc('e-imza', 'İstanbul içi aynı gün, 81 ile kurye ile teslim nitelikli e-imza.'),
       svc('kep-ik', 'Kurumlarla resmi yazışmalarınız için KEP adresi.'),
       svc('e-donusum-danismanligi', 'Hangi e-belgeye ne zaman geçmeniz gerektiğini birlikte belirleyelim.'),
     ]],
     ['Avukat, doktor, mühendis', meslekler.map((m) => [meslekPath(m), m.icon, m.short, m.ozet])],
-    ['Kamu ihalesi', [
+    ['Kamu ihaleleri', [
       [meslekPath(meslekler.find((m) => m.slug === 'muteahhitler-icin-e-imza')), 'crane', 'EKAP İçin E-İmza', 'İhalelerde e-teklifinizi yetkili e-imzasıyla verin.'],
-      svc('mali-muhur', 'Şirketiniz adına düzenlenen e-belgeler için mali mühür.'),
+      svc('mali-muhur', 'Aynı gün, dakikalar içinde teslim edilen mali mühür.'),
       svc('kep-ik', 'İdareyle resmi yazışmalarınız için KEP.'),
       ['/ekap-islemlerinde-e-imza-kamu-ihalelerine-dijital-katilim-rehberi/', 'book', 'EKAP Rehberi', 'Kamu ihalelerine e-imzayla katılımı adım adım anlattık.'],
     ]],
-    ['Web sitesi', [
+    ['Web ve dijital', [
       svc('web-tasarim', 'Hızlı, mobil uyumlu ve SEO odaklı kurumsal web sitesi.'),
       svc('eticaret-cozumleri', 'Online satışa başlayın; e-fatura ve pazaryeri entegrasyonuyla.'),
       svc('kurumsal-tasarim', 'Logo ve kurumsal kimlikle markanızı güçlendirin.'),
@@ -54,10 +54,10 @@ module.exports = (ctx) => {
   </div>
   <div class="container hero__finder hero-in" style="--d:.3s">
     <div class="finder">
-      <div class="finder__head"><h2>Size hangi çözüm lazım?</h2><p>Durumunuzu seçin, işinize uygun hizmetleri gösterelim.</p></div>
-      <div class="tabs finder__tabs" role="tablist" aria-label="Durumunuzu seçin">${finder.map(([t], i) => `<button type="button" role="tab" id="ft${i}" aria-controls="fp${i}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t)}</button>`).join('')}</div>
+      <div class="finder__head"><h2>Faaliyet alanınıza uygun çözümler</h2><p>Faaliyet alanınızı seçin, ilgili hizmetlerimizi listeleyelim.</p></div>
+      <div class="tabs finder__tabs" role="tablist" aria-label="Faaliyet alanınızı seçin">${finder.map(([t], i) => `<button type="button" role="tab" id="ft${i}" aria-controls="fp${i}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t)}</button>`).join('')}</div>
       ${finder.map(([t, items], i) => `<div class="finder__panel" role="tabpanel" id="fp${i}" aria-labelledby="ft${i}"${i ? ' hidden' : ''}>${items.map(([href, ic, name, why]) => `<a class="finder__item" href="${href}">${icBox(ic)}<span class="finder__txt"><strong>${esc(name)}</strong><small>${esc(why)}</small></span>${icon('arrow')}</a>`).join('')}</div>`).join('')}
-      <p class="finder__foot">Hangisi olduğundan emin değil misiniz? <a href="/iletisim/">Ücretsiz danışın ${icon('arrow')}</a></p>
+      <p class="finder__foot">İhtiyacınız olan çözümü birlikte belirleyelim. <a href="/iletisim/">Ücretsiz danışmanlık alın ${icon('arrow')}</a></p>
     </div>
     <ul class="trust">${trust.map(([ic, t, d]) => `<li>${icBox(ic)}<span><strong>${t}</strong><small>${d}</small></span></li>`).join('')}</ul>
   </div>

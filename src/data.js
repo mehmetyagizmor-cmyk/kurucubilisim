@@ -308,23 +308,24 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-imza', icon: 'pen',
     name: 'E-İmza', short: 'E-İmza',
-    title: 'E-İmza Başvurusu ve Kurulumu | Hızlı Teslim | Kurucu Bilişim',
-    desc: 'Yasal geçerliliği olan nitelikli e-imzanızı hızlıca alın. Başvuru, kimlik doğrulama, teslimat ve kurulum desteği Kurucu Bilişim’de.',
+    title: 'E-İmza Başvurusu | İstanbul İçi Aynı Gün Kurye',
+    desc: 'Nitelikli e-imzanızı hızlıca alın: İstanbul içi aynı gün kurye, 81 ile kurye ile teslim. Başvuru, kimlik doğrulama ve uzaktan kurulum desteği.',
     h1: 'E-İmza Başvurusu, Teslimatı ve Kurulumu',
     lead: '5070 sayılı Elektronik İmza Kanunu kapsamında ıslak imza ile aynı hukuki geçerliliğe sahip nitelikli e-imzanızı hızlı, kolay ve uygun fiyatla edinin.',
     intro: [
       'E-imza; MERSİS, e-Devlet, UYAP, EKAP, SGK ve ticaret sicili gibi birçok resmi platformda işlem yapmanızı, belgelerinizi dijital ortamda güvenle imzalamanızı sağlar. Kağıt israfını ortadan kaldırarak zaman ve maliyetten tasarruf ettirir.',
-      'Başvuru formunun doldurulmasından kimlik doğrulamaya, kargo ile teslimattan bilgisayarınıza sürücü ve Java kurulumuna kadar her adımda yanınızdayız. Farklı süre seçenekleriyle bütçenize uygun paketler sunuyoruz.',
+      'Başvuru formunun doldurulmasından kimlik doğrulamaya, İstanbul içinde aynı gün, 81 ilde kurye ile teslimattan bilgisayarınıza sürücü ve Java kurulumuna kadar her adımda yanınızdayız. Farklı süre seçenekleriyle bütçenize uygun paketler sunuyoruz.',
     ],
     highlights: [
-      ['Hızlı ve Kolay Başvuru', 'Başvurunuzu kısa sürede tamamlıyor, e-imzanızı hızla teslim ediyoruz.'],
+      ['Aynı Gün Kurye', 'İstanbul içinde aynı gün, 81 ilin tamamına kurye ile teslim.'],
       ['Uygun Fiyatlı Paketler', '1, 2 ve 3 yıllık esnek süre seçenekleri.'],
       ['Kurulum Desteği', 'Uzaktan bağlantıyla sürücü ve uygulama kurulumunu biz yapıyoruz.'],
     ],
-    features: ['Yasal geçerlilik ve güvence', 'Hızlı ve kolay başvuru', 'Şifrelenmiş güvenli teknoloji', 'MERSİS, UYAP, EKAP kullanımı', 'Uygun fiyatlı paketler', 'Uzaktan kurulum desteği', 'Kolay yenileme', 'Kağıtsız, çevre dostu işlemler', 'Kurumsal ve bireysel çözümler'],
+    features: ['Yasal geçerlilik ve güvence', 'İstanbul içi aynı gün kurye', 'Şifrelenmiş güvenli teknoloji', 'MERSİS, UYAP, EKAP kullanımı', 'Uygun fiyatlı paketler', 'Uzaktan kurulum desteği', 'Kolay yenileme', '81 ile kurye ile teslim', 'Kurumsal ve bireysel çözümler'],
     faqs: [
       ['E-imza ıslak imza ile aynı geçerliliğe sahip mi?', 'Evet. 5070 sayılı Elektronik İmza Kanunu’na göre güvenli elektronik imza, elle atılan imza ile aynı hukuki sonucu doğurur.'],
       ['E-imza başvurusu için hangi belgeler gerekir?', 'Bireysel başvurularda kimlik kartı yeterlidir; kurumsal kullanımda kurum bilgileri de istenebilir. Süreci sizin için adım adım yönetiyoruz.'],
+      ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanızı aynı gün kurye ile teslim ediyoruz. Türkiye’nin 81 iline de kurye ile gönderim yapıyoruz; teslim süresi kimlik doğrulamanın tamamlanmasına ve bulunduğunuz ile göre değişir.'],
       ['MERSİS işlemleri için e-imza zorunlu mu?', 'MERSİS üzerinden yapılan birçok başvuru ve onay işlemi için şirket yetkililerinin e-imzası gerekmektedir. Detaylar için blog yazımıza göz atabilirsiniz.'],
     ],
     blog: /e-imza|mersis/,
@@ -332,23 +333,24 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'mali-muhur', icon: 'seal',
     name: 'Mali Mühür', short: 'Mali Mühür',
-    title: 'Mali Mühür Başvurusu ve Kurulumu | Kurucu Bilişim',
-    desc: 'E-fatura, e-arşiv ve e-defter için gerekli mali mühür sertifikanızı hızlıca alın. Başvuru, teslimat, kurulum ve yenileme desteği.',
+    title: 'Mali Mühür Başvurusu | Aynı Gün Teslimat | Kurucu Bilişim',
+    desc: 'E-fatura, e-arşiv ve e-defter için mali mühür: aynı gün, dakikalar içinde teslimat. Başvuru, kurulum ve yenileme desteği Kurucu Bilişim’de.',
     h1: 'Mali Mühür Başvurusu ve Kurulumu',
-    lead: 'Tüzel kişiliğinizin dijital kimliği olan mali mühür ile e-fatura, e-arşiv ve e-defter işlemlerinizi yasal geçerlilikle, güvenle gerçekleştirin.',
+    lead: 'Tüzel kişiliğinizin dijital kimliği olan mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz; e-fatura, e-arşiv ve e-defter işlemlerinize hemen başlayın.',
     intro: [
       'Mali mühür, kurumların e-dönüşüm uygulamalarında kullandığı ve TÜBİTAK Kamu Sertifikasyon Merkezi tarafından üretilen elektronik sertifikadır. E-fatura, e-arşiv ve e-defter gibi uygulamalarda belgelerin kurumunuz tarafından oluşturulduğunu ve değiştirilmediğini garanti eder.',
-      'Başvuru dosyanızın hazırlanmasından onay sürecinin takibine, teslimattan kurulum ve yenilemeye kadar tüm süreci hızlı ve hatasız şekilde yönetiyoruz.',
+      'Başvuru dosyanızın hazırlanmasından onay sürecinin takibine kadar her adımı yönetiyor; mali mührünüzü aynı gün, dakikalar içinde teslim ediyor, kurulumunu ve yenilemesini hatasız şekilde yapıyoruz.',
     ],
     highlights: [
       ['Hızlı Başvuru Süreci', 'Başvurunuzu hızlıca tamamlıyor, onay sürecini sizin yerinize takip ediyoruz.'],
       ['Ekonomik Paketler', 'Uzun süreli kullanım avantajı sunan uygun fiyatlı seçenekler.'],
-      ['Hızlı Teslimat', 'Mali mührünüzü en kısa sürede elinize ulaştırıyoruz.'],
+      ['Aynı Gün Teslimat', 'Mali mührünüz aynı gün, dakikalar içinde teslim edilir.'],
     ],
-    features: ['Yasal geçerlilik', 'Hızlı başvuru süreci', 'Şifrelenmiş veri koruma', 'E-fatura ve e-defter uyumu', 'Kurumsal çözümler', 'Teknik destek ve danışmanlık', 'Hızlı yenileme', 'Kolay kurulum', 'Uygun fiyat'],
+    features: ['Yasal geçerlilik', 'Aynı gün, dakikalar içinde teslimat', 'Şifrelenmiş veri koruma', 'E-fatura ve e-defter uyumu', 'Kurumsal çözümler', 'Teknik destek ve danışmanlık', 'Hızlı yenileme', 'Kolay kurulum', 'Uygun fiyat'],
     faqs: [
       ['Mali mühür ile e-imza arasındaki fark nedir?', 'E-imza gerçek kişiye, mali mühür ise tüzel kişiliğe (şirkete) aittir. Mali mühür e-fatura, e-arşiv ve e-defter gibi uygulamalarda şirket adına kullanılır.'],
       ['Mali mühür almak için ne gerekir?', 'Elektronik başvurunun yapılması, şirket bilgilerinin ve yetkili kişi bilgilerinin doğrulanması gerekir. Gerekli belgeleri ve adımları sizin için hazırlıyoruz.'],
+      ['Mali mührüm ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz. Kurulumunu da uzaktan bağlantıyla hemen yapıyoruz.'],
       ['Mali mühür ne kadar süre geçerlidir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
     ],
     blog: /mali-muhur/,
@@ -643,13 +645,13 @@ const meslekler = [
   {
     slug: 'avukatlar-icin-e-imza', ozet: 'UYAP Avukat Portal, .udf dilekçe imzalama, dava açma ve icra takibi.', icon: 'scales', name: 'Avukatlar', short: 'Avukatlar İçin E-İmza',
     title: 'Avukatlar İçin E-İmza | UYAP E-İmza Başvurusu',
-    desc: 'Avukatlar için UYAP uyumlu e-imza: Avukat Portal girişi, dilekçe ve UDF imzalama, icra takibi. Hızlı başvuru, kargo ile teslim ve uzaktan kurulum.',
+    desc: 'Avukatlar için UYAP uyumlu e-imza: Avukat Portal girişi, dilekçe ve UDF imzalama, icra takibi. İstanbul içi aynı gün kurye ve uzaktan kurulum.',
     h1: 'Avukatlar İçin E-İmza',
     lead: 'UYAP Avukat Portal’a girin, dilekçenizi imzalayıp gönderin, dosyanızı adliyeye gitmeden takip edin. Başvurudan kuruluma kadar her adımda yanınızdayız.',
     intro: [
       'Avukatlık mesleğinde e-imza artık bir tercih değil, günlük işin parçası. UYAP Avukat Portal’a giriş, dava açma, dilekçe ve beyan gönderme, icra takibi başlatma ve dosya inceleme gibi işlemlerin büyük bölümü nitelikli elektronik sertifikayla, yani e-imzayla yapılır.',
       '5070 sayılı Elektronik İmza Kanunu’na göre güvenli elektronik imza, elle atılan imzayla aynı hukuki sonucu doğurur. UYAP Doküman Editörü’nde hazırladığınız .udf belgeleri e-imzanızla imzalayıp saniyeler içinde mahkemeye ulaştırabilirsiniz.',
-      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, kimlik doğrulamasını tamamlıyor, e-imzanızı kargo ile ulaştırıyor ve bilgisayarınıza sürücü, Java ve imzalama aracı kurulumunu uzaktan yapıyoruz. UYAP’a ilk girişinizi birlikte yapana kadar destek veriyoruz.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, kimlik doğrulamasını tamamlıyor, e-imzanızı İstanbul içinde aynı gün, 81 ilde kurye ile ulaştırıyor ve bilgisayarınıza sürücü, Java ve imzalama aracı kurulumunu uzaktan yapıyoruz. UYAP’a ilk girişinizi birlikte yapana kadar destek veriyoruz.',
     ],
     systems: [
       ['UYAP Avukat Portal', 'Portala güvenli giriş, dava dosyalarını görüntüleme, evrak ve dilekçe gönderme.', 'monitor'],
@@ -659,7 +661,7 @@ const meslekler = [
       ['e-Devlet ve resmi kurumlar', 'Nitelikli sertifikayla e-Devlet’e giriş ve kamu kurumlarına imzalı başvuru.', 'shield'],
       ['Sözleşme ve vekâlet yazışmaları', 'Müvekkil sözleşmeleri ve yazışmaları dijital ortamda güvenle imzalama.', 'pen'],
     ],
-    features: ['UYAP Avukat Portal ile tam uyum', '.udf belgelerini imzalama desteği', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'İlk UYAP girişine kadar destek', 'Mobil imza hakkında danışmanlık', 'Süre bitmeden yenileme hatırlatması', 'Büro ve ortaklıklara toplu başvuru'],
+    features: ['UYAP Avukat Portal ile tam uyum', '.udf belgelerini imzalama desteği', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi aynı gün, 81 ile kurye', 'Uzaktan sürücü ve Java kurulumu', 'İlk UYAP girişine kadar destek', 'Mobil imza hakkında danışmanlık', 'Süre bitmeden yenileme hatırlatması', 'Büro ve ortaklıklara toplu başvuru'],
     related: ['e-smm', 'kep-ik'],
     mock: { app: 'UYAP Avukat Portal', file: 'Dava dilekçesi.udf', sub: 'Asliye Hukuk Mahkemesine sunulacak', signer: 'Av. Ayşe Yılmaz' },
     faqs: [
@@ -667,7 +669,7 @@ const meslekler = [
       ['UYAP’ta e-imza ile neler yapabilirim?', 'Avukat Portal’a giriş yapabilir, dava açabilir, dilekçe ve beyan gönderebilir, harç ve masraf ödeyebilir, icra takibi başlatabilir ve dosyalarınızı adliyeye gitmeden inceleyebilirsiniz.'],
       ['UYAP Doküman Editörü’nde .udf dosyasını nasıl imzalarım?', 'E-imzanız ve sürücüleri kurulu olduğunda, editörde hazırladığınız belgeyi imzala seçeneğiyle e-imzanızın PIN’ini girerek imzalarsınız. Kurulumu uzaktan bağlantıyla biz yapıyor, ilk imzanızı birlikte atıyoruz.'],
       ['Stajyer avukatlar e-imza alabilir mi?', 'E-imza kişiye özel nitelikli bir sertifikadır ve T.C. kimlik numarası olan herkes başvurabilir. UYAP’ta hangi işlemleri yapabileceğiniz ise baro kaydınıza ve yetkinize bağlıdır.'],
-      ['E-imzam ne kadar sürede elime ulaşır?', 'Başvurunuz ve kimlik doğrulamanız tamamlandıktan sonra e-imzanız kargoya verilir; teslim süresi bulunduğunuz ile göre değişir. Acil durumlarınız için bizi arayın, en hızlı seçeneği birlikte planlayalım.'],
+      ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanızı aynı gün kurye ile teslim ediyoruz; Türkiye’nin 81 iline de kurye ile gönderim yapıyoruz. Teslim süresi kimlik doğrulamanın tamamlanmasına ve bulunduğunuz ile göre değişir.'],
     ],
     blog: /avukat|uyap/,
   },
@@ -680,7 +682,7 @@ const meslekler = [
     intro: [
       'Hekimler için e-imza, günlük pratiğin vazgeçilmez bir parçası. SGK Medula sistemi üzerinden yazılan e-reçeteler ve düzenlenen e-raporlar, hekimin nitelikli elektronik sertifikasıyla, yani e-imzasıyla imzalanır.',
       'Muayenehanede MBYS (muayenehane bilgi yönetim sistemi), hastanede HBYS kullanıyor olun; e-Nabız ile entegre çalışan bu yazılımlarda e-reçete ve rapor imzalamak için e-imzanızın bilgisayarınızda doğru tanınması gerekir. Kurulum hatası yüzünden reçete yazamamak, hasta başında en son istenecek şeydir.',
-      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı adresinize ulaştırıyor ve sürücü, Java ve imzalama araçlarının kurulumunu uzaktan yapıyoruz. E-imzanızın MBYS veya HBYS yazılımınızda çalıştığını birlikte test ediyoruz.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı İstanbul içinde aynı gün, 81 ilde kurye ile adresinize ulaştırıyor ve sürücü, Java ve imzalama araçlarının kurulumunu uzaktan yapıyoruz. E-imzanızın MBYS veya HBYS yazılımınızda çalıştığını birlikte test ediyoruz.',
     ],
     systems: [
       ['E-Reçete', 'Medula üzerinden yazılan reçeteleri e-imzanızla imzalayıp anında sisteme iletme.', 'receipt'],
@@ -690,7 +692,7 @@ const meslekler = [
       ['MBYS ve HBYS', 'Muayenehane ve hastane bilgi yönetim sistemlerinde e-imza tanıtımı ve kullanımı.', 'grid'],
       ['e-Devlet ve resmi başvurular', 'Nitelikli sertifikayla e-Devlet’e giriş ve kurumlara imzalı başvuru.', 'shield'],
     ],
-    features: ['E-reçete ve e-rapor imzalama', 'Medula ile uyumlu kullanım', 'MBYS ve HBYS yazılımlarında test', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'Muayenehane ve klinik için toplu başvuru', 'Süre bitmeden yenileme hatırlatması', 'Serbest meslek için e-SMM desteği'],
+    features: ['E-reçete ve e-rapor imzalama', 'Medula ile uyumlu kullanım', 'MBYS ve HBYS yazılımlarında test', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi aynı gün, 81 ile kurye', 'Uzaktan sürücü ve Java kurulumu', 'Muayenehane ve klinik için toplu başvuru', 'Süre bitmeden yenileme hatırlatması', 'Serbest meslek için e-SMM desteği'],
     related: ['e-smm', 'e-arsiv-fatura'],
     mock: { app: 'Medula · E-Reçete', file: 'E-Reçete', sub: 'Reçete türü: Normal · 3 kalem', signer: 'Dr. Mehmet Kaya' },
     faqs: [
@@ -710,7 +712,7 @@ const meslekler = [
     intro: [
       'Mühendislik işlerinde imza gerektiren belgelerin sayısı her geçen yıl artıyor ve bu belgeler giderek dijital ortama taşınıyor. Yapı denetim süreçleri, elektronik proje başvuruları ve kamu ihaleleri, nitelikli elektronik sertifikayla, yani e-imzayla yürütülen işlerin başında geliyor.',
       'Yapı denetim kuruluşlarında görev yapan mühendisler, Yapı Denetim Sistemi (YDS) üzerindeki tutanak ve raporları e-imzayla imzalar. Proje müellifleri ise birçok belediyenin elektronik proje onay süreçlerinde e-imza kullanır.',
-      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı adresinize ulaştırıyor ve kullandığınız sistemlerde çalışacak şekilde uzaktan kuruyoruz. Serbest çalışan mühendisler için e-SMM, şirketler için KEP ve mali mühür süreçlerini de tek noktadan yönetiyoruz.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı İstanbul içinde aynı gün, 81 ilde kurye ile adresinize ulaştırıyor ve kullandığınız sistemlerde çalışacak şekilde uzaktan kuruyoruz. Serbest çalışan mühendisler için e-SMM, şirketler için KEP ve mali mühür süreçlerini de tek noktadan yönetiyoruz.',
     ],
     systems: [
       ['Yapı Denetim Sistemi (YDS)', 'Denetim tutanakları, seviye tespitleri ve raporların e-imzayla imzalanması.', 'layers'],
@@ -720,7 +722,7 @@ const meslekler = [
       ['Sözleşme ve raporlar', 'Müşteri sözleşmeleri, teknik rapor ve hakedişleri dijital ortamda imzalama.', 'pen'],
       ['MERSİS', 'Şirket ortağı veya yetkilisi olduğunuz firmaların MERSİS işlemleri.', 'monitor'],
     ],
-    features: ['YDS işlemleriyle uyumlu kullanım', 'Elektronik proje başvurularında destek', 'EKAP e-teklif hazırlığında destek', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'Büro ve firmalara toplu başvuru', 'Serbest meslek için e-SMM desteği', 'Süre bitmeden yenileme hatırlatması'],
+    features: ['YDS işlemleriyle uyumlu kullanım', 'Elektronik proje başvurularında destek', 'EKAP e-teklif hazırlığında destek', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi aynı gün, 81 ile kurye', 'Uzaktan sürücü ve Java kurulumu', 'Büro ve firmalara toplu başvuru', 'Serbest meslek için e-SMM desteği', 'Süre bitmeden yenileme hatırlatması'],
     related: ['e-smm', 'kep-ik'],
     mock: { app: 'Yapı Denetim Sistemi', file: 'Seviye tespit tutanağı', sub: 'Ada 1234 · Parsel 5', signer: 'İnş. Müh. Elif Demir' },
     faqs: [
@@ -749,7 +751,7 @@ const meslekler = [
       ['KEP ile resmi yazışma', 'İdare ve kurumlarla yazışmalarınızı hukuken geçerli şekilde iletme.', 'mail'],
       ['E-fatura ve hakediş', 'Hakediş faturalarını e-fatura ve mali mühürle düzenleme.', 'receipt'],
     ],
-    features: ['EKAP e-teklif hazırlığında destek', 'Firma yetkilileri için toplu başvuru', 'İhale öncesi kurulum kontrolü', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'KEP, e-fatura ve mali mühür tek noktadan', 'MERSİS işlemleri için destek', 'Süre bitmeden yenileme hatırlatması'],
+    features: ['EKAP e-teklif hazırlığında destek', 'Firma yetkilileri için toplu başvuru', 'İhale öncesi kurulum kontrolü', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi aynı gün, 81 ile kurye', 'Uzaktan sürücü ve Java kurulumu', 'KEP, e-fatura ve mali mühür tek noktadan', 'MERSİS işlemleri için destek', 'Süre bitmeden yenileme hatırlatması'],
     related: ['kep-ik', 'mali-muhur', 'e-fatura'],
     mock: { app: 'EKAP · E-Teklif', file: 'Teklif mektubu', sub: 'İhale kayıt no: 2026/123456', signer: 'Yılmaz Yapı İnş. Ltd. Şti.' },
     faqs: [
