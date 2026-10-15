@@ -1,16 +1,47 @@
 // Faz 3: Ana sayfa
-const { site, services, faqs, reasons } = require('../data');
-const { layout, aurora, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, SOCIAL } = require('../lib');
-const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard, meslekGrid } = require('../components');
+const { site, services, faqs, reasons, meslekler } = require('../data');
+const { layout, aurora, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, SOCIAL, svcPath, esc } = require('../lib');
+const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard, meslekGrid, meslekPath } = require('../components');
 const { posts } = require('../posts');
 
 module.exports = (ctx) => {
-  const feed = [
-    ['doc', 'E-Fatura gönderildi', 'GİB onaylı'],
-    ['seal', 'Mali mühür aktif edildi', 'Hazır'],
-    ['mail', 'KEP iletisi teslim edildi', 'Zaman damgalı'],
-    ['book', 'E-Defter beratı alındı', 'Saklandı'],
-    ['pen', 'E-İmza kurulumu tamam', 'Teslim'],
+  // Çözüm bulucu: ziyaretçi durumunu seçer, ona uygun hizmetlere gider (gerçek bağlantılar, SEO için metin)
+  const svc = (slug, why) => { const x = services.find((v) => v.slug === slug); return [svcPath(x), x.icon, x.short, why]; };
+  const finder = [
+    ['Şirketim var', [
+      svc('e-fatura', 'Mükellefler arası faturalarınızı GİB mevzuatına uygun düzenleyin.'),
+      svc('e-arsiv-fatura', 'E-faturaya kayıtlı olmayan alıcılara ve tüketicilere fatura.'),
+      svc('e-defter', 'Yasal defterlerinizi elektronik ortamda tutun ve saklayın.'),
+      svc('mali-muhur', 'Şirketinizin e-belgelerdeki elektronik mührü.'),
+      svc('kep-ik', 'Resmi yazışmalarınız için yasal delil niteliğinde e-posta.'),
+      svc('e-imza', 'Yetkililer için MERSİS, e-Devlet ve SGK işlemleri.'),
+    ]],
+    ['Serbest meslek', [
+      svc('e-smm', 'Serbest meslek makbuzlarınızı elektronik ortamda düzenleyin.'),
+      svc('e-imza', 'E-Devlet ve kurum işlemleriniz için nitelikli e-imza.'),
+      svc('kep-ik', 'Kurumlarla resmi yazışmalarınız için KEP adresi.'),
+      svc('e-donusum-danismanligi', 'Hangi e-belgeye ne zaman geçmeniz gerektiğini birlikte belirleyelim.'),
+    ]],
+    ['Avukat, doktor, mühendis', meslekler.map((m) => [meslekPath(m), m.icon, m.short, m.ozet])],
+    ['Kamu ihalesi', [
+      [meslekPath(meslekler.find((m) => m.slug === 'muteahhitler-icin-e-imza')), 'crane', 'EKAP İçin E-İmza', 'İhalelerde e-teklifinizi yetkili e-imzasıyla verin.'],
+      svc('mali-muhur', 'Şirketiniz adına düzenlenen e-belgeler için mali mühür.'),
+      svc('kep-ik', 'İdareyle resmi yazışmalarınız için KEP.'),
+      ['/ekap-islemlerinde-e-imza-kamu-ihalelerine-dijital-katilim-rehberi/', 'book', 'EKAP Rehberi', 'Kamu ihalelerine e-imzayla katılımı adım adım anlattık.'],
+    ]],
+    ['Web sitesi', [
+      svc('web-tasarim', 'Hızlı, mobil uyumlu ve SEO odaklı kurumsal web sitesi.'),
+      svc('eticaret-cozumleri', 'Online satışa başlayın; e-fatura ve pazaryeri entegrasyonuyla.'),
+      svc('kurumsal-tasarim', 'Logo ve kurumsal kimlikle markanızı güçlendirin.'),
+      svc('sosyal-medya-yonetimi', 'Markanızı sosyal medyada düzenli ve ölçülebilir şekilde büyütün.'),
+    ]],
+  ];
+  // Güven bandı: yalnızca doğrulanabilir bilgiler
+  const trust = [
+    ['shield', '5070 sayılı Kanun', 'Nitelikli e-imza, ıslak imzayla aynı hukuki geçerliliktedir.'],
+    ['doc', 'GİB mevzuatına uygun', 'E-fatura, e-arşiv ve e-defter kurulumlarında güncel mevzuat.'],
+    ['check', 'KVKK ile korunur', 'Başvuru bilgileriniz KVKK aydınlatma metni kapsamında işlenir.'],
+    ['pin', 'Şişli, İstanbul', 'Ofisimizde yüz yüze, Türkiye geneline uzaktan destek.'],
   ];
 
   const hero = `<section class="hero hero--home">
@@ -21,17 +52,14 @@ module.exports = (ctx) => {
     <div class="hero__actions hero-in" style="--d:.18s">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg', false)}<a class="link-arrow" href="#hizmetler">Hizmetleri keşfedin ${icon('arrow')}</a></div>
     <ul class="ticks hero-in" style="--d:.24s"><li>${icon('check')}Aynı gün dönüş</li><li>${icon('check')}Yerinde & uzaktan kurulum</li><li>${icon('check')}7/24 destek</li></ul>
   </div>
-  <div class="container hero__stage hero-in" data-hero-stage data-scroll data-scroll-start=".95" data-scroll-len=".55" aria-hidden="true" style="--d:.3s">
-    <div class="panel-stack">
-      <div class="panel panel--a"><div class="mini">${icBox('pen')}<div><strong>E-İmza teslimatı</strong><small>Kurulum sürüyor…</small></div></div><div class="progress"><i></i></div></div>
-      <div class="panel panel--main">
-        <div class="panel__head"><div class="dots"><i></i><i></i><i></i></div><span>E-Dönüşüm Paneli</span></div>
-        <div class="kpis"><div class="kpi"><small>Belge</small><strong>12.480</strong></div><div class="kpi"><small>Uyum</small><strong>%100</strong></div><div class="kpi"><small>Destek</small><strong>7/24</strong></div></div>
-        <div class="bars">${[38, 55, 46, 70, 60, 84, 72, 95].map((h, i) => `<i style="--h:${h}%;--i:${i}"></i>`).join('')}</div>
-        <div class="feed" data-feed>${feed.map(([ic, t, s]) => `<div class="feed__row">${icBox(ic)}<span>${t}</span><em>${s}</em></div>`).join('')}</div>
-      </div>
-      <div class="panel panel--b"><div class="mini">${icBox('monitor')}<div><strong>Web siteniz yayında</strong><small>Mobil uyumlu · SEO hazır</small></div></div></div>
+  <div class="container hero__finder hero-in" style="--d:.3s">
+    <div class="finder">
+      <div class="finder__head"><h2>Size hangi çözüm lazım?</h2><p>Durumunuzu seçin, işinize uygun hizmetleri gösterelim.</p></div>
+      <div class="tabs finder__tabs" role="tablist" aria-label="Durumunuzu seçin">${finder.map(([t], i) => `<button type="button" role="tab" id="ft${i}" aria-controls="fp${i}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t)}</button>`).join('')}</div>
+      ${finder.map(([t, items], i) => `<div class="finder__panel" role="tabpanel" id="fp${i}" aria-labelledby="ft${i}"${i ? ' hidden' : ''}>${items.map(([href, ic, name, why]) => `<a class="finder__item" href="${href}">${icBox(ic)}<span class="finder__txt"><strong>${esc(name)}</strong><small>${esc(why)}</small></span>${icon('arrow')}</a>`).join('')}</div>`).join('')}
+      <p class="finder__foot">Hangisi olduğundan emin değil misiniz? <a href="/iletisim/">Ücretsiz danışın ${icon('arrow')}</a></p>
     </div>
+    <ul class="trust">${trust.map(([ic, t, d]) => `<li>${icBox(ic)}<span><strong>${t}</strong><small>${d}</small></span></li>`).join('')}</ul>
   </div>
 </section>`;
 

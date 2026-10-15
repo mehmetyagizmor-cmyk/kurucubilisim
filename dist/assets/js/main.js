@@ -168,6 +168,8 @@
     }
     function select(tab) {
       moveTo(tab);
+      // Yana kaydırılan sekme şeridinde seçili sekme görünür alana gelsin
+      if (list.scrollWidth > list.clientWidth) list.scrollTo({ left: tab.offsetLeft - (list.clientWidth - tab.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
       tabs.forEach(function (t) {
         var on = t === tab;
         t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
@@ -198,19 +200,6 @@
       setTimeout(function () { cur.classList.remove('is-out'); }, 600);
     }, 2400);
   });
-
-  // Hero canlı akış: satırları sırayla döndürür
-  var feed = $('[data-feed]');
-  if (feed && !reduce) {
-    setInterval(function () {
-      var first = feed.firstElementChild;
-      first.style.opacity = '0'; first.style.transform = 'translateY(-8px)';
-      setTimeout(function () {
-        feed.appendChild(first);
-        first.style.opacity = ''; first.style.transform = '';
-      }, 400);
-    }, 2800);
-  }
 
   // Blog filtreleri
   var filters = $('[data-filters]');
