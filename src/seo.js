@@ -1,7 +1,7 @@
 // Faz 6: Teknik SEO dosyaları — sitemap.xml, robots.txt, llms.txt, feed.xml, .htaccess
 const fs = require('fs');
 const path = require('path');
-const { site, services, groups } = require('./data');
+const { site, services, groups, meslekler } = require('./data');
 const { posts, EXCLUDE } = require('./posts');
 
 const xmlEsc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -39,6 +39,9 @@ Sitemap: ${site.url}/sitemap.xml
 
 ## ${groups['e-donusum-hizmetleri'].name}
 ${services.filter((s) => s.group === 'e-donusum-hizmetleri').map((s) => `- [${s.name}](${site.url}/${s.group}/${s.slug}/): ${s.desc}`).join('\n')}
+
+## Mesleğe özel e-imza
+${meslekler.map((m) => `- [${m.short}](${site.url}/e-donusum-hizmetleri/e-imza/${m.slug}/): ${m.desc}`).join('\n')}
 
 ## ${groups['dijital-hizmetler'].name}
 ${services.filter((s) => s.group === 'dijital-hizmetler').map((s) => `- [${s.name}](${site.url}/${s.group}/${s.slug}/): ${s.desc}`).join('\n')}

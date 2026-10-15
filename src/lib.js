@@ -56,6 +56,10 @@ const P = {
   coffee: '<path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>',
   ticket: '<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M9 9h6M9 15h6"/>',
   sync: '<path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>',
+  scales: '<path d="M12 3v17M8 21h8M4 7h16M12 3 10.5 7h3z"/><path d="M6 7 3 13.5a3 3 0 0 0 6 0zM18 7l-3 6.5a3 3 0 0 0 6 0z"/>',
+  stethoscope: '<path d="M5 3H4v6a5 5 0 0 0 10 0V3h-1"/><path d="M9 14v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="20" cy="11" r="2"/>',
+  helmet: '<path d="M2 18h20M4 18v-2a8 8 0 0 1 16 0v2"/><path d="M10 8.5V5h4v3.5M7.5 12V9.5M16.5 12V9.5"/>',
+  crane: '<path d="M5 21V4M2 21h9M5 4h15l-3 3M5 8l4-4M17 4v6"/><rect x="15" y="10" width="4" height="3.5" rx=".5"/>',
   compass: '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
 };
 const icon = (k, cls = '') => `<svg${cls ? ` class="${cls}"` : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[k] || P.spark}</svg>`;

@@ -1,5 +1,5 @@
 // Birden çok sayfada kullanılan içerik bileşenleri.
-const { site, testimonials, process, partners, references, services } = require('./data');
+const { site, testimonials, process, partners, references, services, meslekler } = require('./data');
 const { esc, icon, icBox, svcPath, initials, applyHref, activeCampaigns } = require('./lib');
 const { fmtDate } = require('./posts');
 
@@ -44,4 +44,23 @@ const campaignCard = (c, i = 0, detail = false) => {
 </article>`;
 };
 
-module.exports = { activeCampaigns, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, logoWall };
+// Mesleğe özel e-imza
+const meslekPath = (m) => `/e-donusum-hizmetleri/e-imza/${m.slug}/`;
+const meslekCard = (m, i = 0) => `<a class="card" href="${meslekPath(m)}" data-reveal style="--d:${(i % 4) * 0.07}s">${icBox(m.icon)}<h3>${esc(m.name)}</h3><p>${esc(m.ozet)}</p><span class="link-arrow">İncele ${icon('arrow')}</span></a>`;
+const meslekGrid = () => `<div class="grid grid--4">${meslekler.map(meslekCard).join('')}</div>`;
+// Temsilî "e-imzayla imzalanmış belge" görseli (gerçek ekran görüntüsü değildir)
+const esigMock = (m) => `<figure class="esig" data-reveal>
+  <div class="esig__win">
+    <div class="esig__bar"><i></i><i></i><i></i><span>${esc(m.mock.app)}</span></div>
+    <div class="esig__doc">
+      <div class="esig__file">${icon('doc')}<div><strong>${esc(m.mock.file)}</strong><small>${esc(m.mock.sub)}</small></div></div>
+      <div class="esig__lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="esig__sign"><svg viewBox="0 0 120 40" aria-hidden="true"><path d="M4 30c8-14 14-22 18-18s-6 18 0 16 10-20 16-18-2 16 4 16 8-12 14-12 2 10 8 10 10-8 18-8 14 4 34-2"/></svg><div><strong>${esc(m.mock.signer)}</strong><small>Nitelikli elektronik sertifika</small></div></div>
+      <div class="esig__ok">${icon('shield')}<span>Güvenli elektronik imza ile imzalandı</span></div>
+    </div>
+  </div>
+  <div class="esig__token" aria-hidden="true"><span class="esig__chip"></span><b>e-İmza</b></div>
+  <figcaption>Temsilî görsel</figcaption>
+</figure>`;
+
+module.exports = { meslekPath, meslekCard, meslekGrid, esigMock, activeCampaigns, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, logoWall };

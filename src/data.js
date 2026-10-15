@@ -637,4 +637,129 @@ const campaigns = [
   { slug: 'mali-musavir-toplu-basvuru', rozet: 'Mali müşavirlere özel', baslik: 'Toplu E-İmza Başvurusunda Ek İndirim', ozet: 'Müşterileri için 5 ve üzeri e-imza başvurusu yapan mali müşavirlere ek indirim.', detay: ['Tek noktadan toplu başvuru', 'Başvuru takibi sizin yerinize', 'İş ortaklığı avantajları'], hizmet: 'e-imza', bitis: '2027-01-31', tema: 'yesil' },
 ];
 
-module.exports = { campaigns, applyForms, site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };
+// Mesleğe özel e-imza sayfaları: /e-donusum-hizmetleri/e-imza/<slug>/
+// systems: e-imzanın kullanıldığı sistemler (arama terimleri burada geçer), mock: sayfadaki temsilî görsel
+const meslekler = [
+  {
+    slug: 'avukatlar-icin-e-imza', ozet: 'UYAP Avukat Portal, .udf dilekçe imzalama, dava açma ve icra takibi.', icon: 'scales', name: 'Avukatlar', short: 'Avukatlar İçin E-İmza',
+    title: 'Avukatlar İçin E-İmza | UYAP E-İmza Başvurusu',
+    desc: 'Avukatlar için UYAP uyumlu e-imza: Avukat Portal girişi, dilekçe ve UDF imzalama, icra takibi. Hızlı başvuru, kargo ile teslim ve uzaktan kurulum.',
+    h1: 'Avukatlar İçin E-İmza',
+    lead: 'UYAP Avukat Portal’a girin, dilekçenizi imzalayıp gönderin, dosyanızı adliyeye gitmeden takip edin. Başvurudan kuruluma kadar her adımda yanınızdayız.',
+    intro: [
+      'Avukatlık mesleğinde e-imza artık bir tercih değil, günlük işin parçası. UYAP Avukat Portal’a giriş, dava açma, dilekçe ve beyan gönderme, icra takibi başlatma ve dosya inceleme gibi işlemlerin büyük bölümü nitelikli elektronik sertifikayla, yani e-imzayla yapılır.',
+      '5070 sayılı Elektronik İmza Kanunu’na göre güvenli elektronik imza, elle atılan imzayla aynı hukuki sonucu doğurur. UYAP Doküman Editörü’nde hazırladığınız .udf belgeleri e-imzanızla imzalayıp saniyeler içinde mahkemeye ulaştırabilirsiniz.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, kimlik doğrulamasını tamamlıyor, e-imzanızı kargo ile ulaştırıyor ve bilgisayarınıza sürücü, Java ve imzalama aracı kurulumunu uzaktan yapıyoruz. UYAP’a ilk girişinizi birlikte yapana kadar destek veriyoruz.',
+    ],
+    systems: [
+      ['UYAP Avukat Portal', 'Portala güvenli giriş, dava dosyalarını görüntüleme, evrak ve dilekçe gönderme.', 'monitor'],
+      ['UYAP Doküman Editörü (.udf)', 'Dilekçe, cevap ve beyanlarınızı .udf formatında hazırlayıp e-imzayla imzalama.', 'doc'],
+      ['Dava açma ve harç ödeme', 'Adliyeye gitmeden dava açma, harç ve masrafları çevrim içi ödeme.', 'banknote'],
+      ['İcra takipleri', 'Elektronik ortamda icra takibi başlatma, talep ve yazışmaları imzalama.', 'layers'],
+      ['e-Devlet ve resmi kurumlar', 'Nitelikli sertifikayla e-Devlet’e giriş ve kamu kurumlarına imzalı başvuru.', 'shield'],
+      ['Sözleşme ve vekâlet yazışmaları', 'Müvekkil sözleşmeleri ve yazışmaları dijital ortamda güvenle imzalama.', 'pen'],
+    ],
+    features: ['UYAP Avukat Portal ile tam uyum', '.udf belgelerini imzalama desteği', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'İlk UYAP girişine kadar destek', 'Mobil imza hakkında danışmanlık', 'Süre bitmeden yenileme hatırlatması', 'Büro ve ortaklıklara toplu başvuru'],
+    related: ['e-smm', 'kep-ik'],
+    mock: { app: 'UYAP Avukat Portal', file: 'Dava dilekçesi.udf', sub: 'Asliye Hukuk Mahkemesine sunulacak', signer: 'Av. Ayşe Yılmaz' },
+    faqs: [
+      ['Avukatlar UYAP için e-imza mı, mobil imza mı kullanmalı?', 'İkisi de UYAP Avukat Portal’da kullanılabilir. E-imza, bilgisayara takılan bir kart okuyucu veya USB ile çalışır ve operatörden bağımsızdır; mobil imza ise SIM karta tanımlanır. Büroda yoğun evrak imzalıyorsanız e-imza genellikle daha pratiktir; ihtiyacınıza göre birlikte karar verebiliriz.'],
+      ['UYAP’ta e-imza ile neler yapabilirim?', 'Avukat Portal’a giriş yapabilir, dava açabilir, dilekçe ve beyan gönderebilir, harç ve masraf ödeyebilir, icra takibi başlatabilir ve dosyalarınızı adliyeye gitmeden inceleyebilirsiniz.'],
+      ['UYAP Doküman Editörü’nde .udf dosyasını nasıl imzalarım?', 'E-imzanız ve sürücüleri kurulu olduğunda, editörde hazırladığınız belgeyi imzala seçeneğiyle e-imzanızın PIN’ini girerek imzalarsınız. Kurulumu uzaktan bağlantıyla biz yapıyor, ilk imzanızı birlikte atıyoruz.'],
+      ['Stajyer avukatlar e-imza alabilir mi?', 'E-imza kişiye özel nitelikli bir sertifikadır ve T.C. kimlik numarası olan herkes başvurabilir. UYAP’ta hangi işlemleri yapabileceğiniz ise baro kaydınıza ve yetkinize bağlıdır.'],
+      ['E-imzam ne kadar sürede elime ulaşır?', 'Başvurunuz ve kimlik doğrulamanız tamamlandıktan sonra e-imzanız kargoya verilir; teslim süresi bulunduğunuz ile göre değişir. Acil durumlarınız için bizi arayın, en hızlı seçeneği birlikte planlayalım.'],
+    ],
+    blog: /avukat|uyap/,
+  },
+  {
+    slug: 'doktorlar-icin-e-imza', ozet: 'E-reçete, e-rapor, Medula, e-Nabız ve MBYS ile uyumlu e-imza.', icon: 'stethoscope', name: 'Doktorlar', short: 'Doktorlar İçin E-İmza',
+    title: 'Doktorlar İçin E-İmza | E-Reçete, E-Rapor, Medula',
+    desc: 'Hekimler için e-imza: e-reçete ve e-rapor imzalama, Medula, e-Nabız, MBYS ve HBYS uyumu. Hızlı başvuru, teslimat ve muayenehanede kurulum desteği.',
+    h1: 'Doktorlar İçin E-İmza: E-Reçete, E-Rapor ve Medula',
+    lead: 'E-reçete ve e-raporlarınızı güvenle imzalayın; Medula, e-Nabız ve muayenehane yazılımınızla (MBYS) sorunsuz çalışan e-imzanızı hızlıca edinin.',
+    intro: [
+      'Hekimler için e-imza, günlük pratiğin vazgeçilmez bir parçası. SGK Medula sistemi üzerinden yazılan e-reçeteler ve düzenlenen e-raporlar, hekimin nitelikli elektronik sertifikasıyla, yani e-imzasıyla imzalanır.',
+      'Muayenehanede MBYS (muayenehane bilgi yönetim sistemi), hastanede HBYS kullanıyor olun; e-Nabız ile entegre çalışan bu yazılımlarda e-reçete ve rapor imzalamak için e-imzanızın bilgisayarınızda doğru tanınması gerekir. Kurulum hatası yüzünden reçete yazamamak, hasta başında en son istenecek şeydir.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı adresinize ulaştırıyor ve sürücü, Java ve imzalama araçlarının kurulumunu uzaktan yapıyoruz. E-imzanızın MBYS veya HBYS yazılımınızda çalıştığını birlikte test ediyoruz.',
+    ],
+    systems: [
+      ['E-Reçete', 'Medula üzerinden yazılan reçeteleri e-imzanızla imzalayıp anında sisteme iletme.', 'receipt'],
+      ['E-Rapor', 'İlaç ve sağlık raporlarını elektronik ortamda düzenleyip e-imzayla onaylama.', 'doc'],
+      ['Medula', 'SGK Medula sistemindeki reçete ve rapor işlemlerinde hekim imzası.', 'layers'],
+      ['e-Nabız', 'e-Nabız ile entegre yazılımlar üzerinden kayıt ve imza süreçleri.', 'monitor'],
+      ['MBYS ve HBYS', 'Muayenehane ve hastane bilgi yönetim sistemlerinde e-imza tanıtımı ve kullanımı.', 'grid'],
+      ['e-Devlet ve resmi başvurular', 'Nitelikli sertifikayla e-Devlet’e giriş ve kurumlara imzalı başvuru.', 'shield'],
+    ],
+    features: ['E-reçete ve e-rapor imzalama', 'Medula ile uyumlu kullanım', 'MBYS ve HBYS yazılımlarında test', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'Muayenehane ve klinik için toplu başvuru', 'Süre bitmeden yenileme hatırlatması', 'Serbest meslek için e-SMM desteği'],
+    related: ['e-smm', 'e-arsiv-fatura'],
+    mock: { app: 'Medula · E-Reçete', file: 'E-Reçete', sub: 'Reçete türü: Normal · 3 kalem', signer: 'Dr. Mehmet Kaya' },
+    faqs: [
+      ['E-reçete yazmak için e-imza zorunlu mu?', 'E-reçeteler Medula sistemi üzerinden hekimin nitelikli elektronik sertifikasıyla imzalanır. Bu nedenle e-reçete yazan hekimlerin e-imza (veya kurumun desteklediği mobil imza) sahibi olması gerekir.'],
+      ['E-imzam MBYS / HBYS yazılımımda çalışmıyor, ne yapmalıyım?', 'Sorun çoğunlukla sürücü, Java sürümü veya imzalama aracı ayarından kaynaklanır. Uzaktan bağlanıp kurulumu kontrol ediyor, e-imzanızın yazılımınızda tanındığını birlikte test ediyoruz.'],
+      ['E-rapor düzenlerken e-imza kullanılır mı?', 'Evet. Elektronik ortamda düzenlenen ilaç ve sağlık raporları hekimin e-imzasıyla onaylanır.'],
+      ['Muayenehanemdeki birden fazla hekim için başvuru yapabilir misiniz?', 'Evet. E-imza kişiye özel olduğu için her hekim için ayrı başvuru yapılır; klinik ve muayenehaneler için başvuruları toplu olarak yönetiyoruz.'],
+    ],
+    blog: /e-imza-kullanim|e-imza-nasil|e-imza-basvurusu/,
+  },
+  {
+    slug: 'muhendisler-icin-e-imza', ozet: 'Yapı Denetim Sistemi (YDS), elektronik proje onayı ve EKAP.', icon: 'helmet', name: 'Mühendisler', short: 'Mühendisler İçin E-İmza',
+    title: 'Mühendisler İçin E-İmza | YDS ve EKAP E-İmza',
+    desc: 'Mühendisler için e-imza: Yapı Denetim Sistemi (YDS), elektronik proje onayı, EKAP ve e-Devlet işlemleri. Hızlı başvuru, teslimat ve uzaktan kurulum.',
+    h1: 'Mühendisler İçin E-İmza',
+    lead: 'Yapı Denetim Sistemi’ndeki tutanaklardan elektronik proje onayına ve kamu ihalelerine kadar, imza gereken her işi masanızdan güvenle tamamlayın.',
+    intro: [
+      'Mühendislik işlerinde imza gerektiren belgelerin sayısı her geçen yıl artıyor ve bu belgeler giderek dijital ortama taşınıyor. Yapı denetim süreçleri, elektronik proje başvuruları ve kamu ihaleleri, nitelikli elektronik sertifikayla, yani e-imzayla yürütülen işlerin başında geliyor.',
+      'Yapı denetim kuruluşlarında görev yapan mühendisler, Yapı Denetim Sistemi (YDS) üzerindeki tutanak ve raporları e-imzayla imzalar. Proje müellifleri ise birçok belediyenin elektronik proje onay süreçlerinde e-imza kullanır.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, e-imzanızı adresinize ulaştırıyor ve kullandığınız sistemlerde çalışacak şekilde uzaktan kuruyoruz. Serbest çalışan mühendisler için e-SMM, şirketler için KEP ve mali mühür süreçlerini de tek noktadan yönetiyoruz.',
+    ],
+    systems: [
+      ['Yapı Denetim Sistemi (YDS)', 'Denetim tutanakları, seviye tespitleri ve raporların e-imzayla imzalanması.', 'layers'],
+      ['Elektronik proje onayı', 'Belediyelerin elektronik proje ve ruhsat başvurularında imzalı belge gönderimi.', 'doc'],
+      ['EKAP', 'Mühendislik ve müşavirlik ihalelerinde elektronik teklif ve belgeler.', 'briefcase'],
+      ['e-Devlet ve kamu kurumları', 'Nitelikli sertifikayla e-Devlet’e giriş ve kurumlara imzalı başvuru.', 'shield'],
+      ['Sözleşme ve raporlar', 'Müşteri sözleşmeleri, teknik rapor ve hakedişleri dijital ortamda imzalama.', 'pen'],
+      ['MERSİS', 'Şirket ortağı veya yetkilisi olduğunuz firmaların MERSİS işlemleri.', 'monitor'],
+    ],
+    features: ['YDS işlemleriyle uyumlu kullanım', 'Elektronik proje başvurularında destek', 'EKAP e-teklif hazırlığında destek', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'Büro ve firmalara toplu başvuru', 'Serbest meslek için e-SMM desteği', 'Süre bitmeden yenileme hatırlatması'],
+    related: ['e-smm', 'kep-ik'],
+    mock: { app: 'Yapı Denetim Sistemi', file: 'Seviye tespit tutanağı', sub: 'Ada 1234 · Parsel 5', signer: 'İnş. Müh. Elif Demir' },
+    faqs: [
+      ['Yapı Denetim Sistemi (YDS) için e-imza gerekli mi?', 'Yapı denetim kuruluşlarında görev yapan mühendisler, YDS üzerindeki tutanak ve raporları e-imzayla imzalar. Bu nedenle YDS’de işlem yapan mühendislerin e-imza sahibi olması gerekir.'],
+      ['Belediyeye elektronik proje başvurusu yaparken e-imza kullanılır mı?', 'Birçok belediye proje ve ruhsat başvurularını elektronik ortamda alıyor ve belgelerin e-imzayla imzalanmasını istiyor. Başvuracağınız belediyenin güncel şartlarını birlikte kontrol edebiliriz.'],
+      ['Şirketim adına EKAP’ta teklif verebilir miyim?', 'EKAP’ta elektronik teklif, isteklinin yetkilisinin e-imzasıyla verilir. Firmanız adına teklif verecek kişinin e-imzasının hazır ve kurulu olması gerekir.'],
+    ],
+    blog: /ekap|e-imza-kullanim|kurumsal-dijitallesmede/,
+  },
+  {
+    slug: 'muteahhitler-icin-e-imza', ozet: 'EKAP e-teklif, YDS, YAMBİS ve MERSİS işlemleri.', icon: 'crane', name: 'Müteahhitler', short: 'Müteahhitler İçin E-İmza',
+    title: 'Müteahhitler İçin E-İmza | EKAP E-Teklif ve YDS',
+    desc: 'Müteahhitler için e-imza: EKAP e-teklif, Yapı Denetim Sistemi, YAMBİS ve MERSİS işlemleri. E-fatura, KEP ve mali mühürle birlikte tek noktadan hizmet.',
+    h1: 'Müteahhitler İçin E-İmza',
+    lead: 'Kamu ihalelerinde e-teklif verin, şantiye ve hakediş süreçlerini hızlandırın. E-imza, KEP, e-fatura ve mali mühürü tek noktadan alın.',
+    intro: [
+      'İnşaat sektöründe kamu ihalelerinden yapı denetimine kadar birçok süreç artık elektronik ortamda yürüyor. EKAP üzerinden verilen e-teklifler, firmanın yetkilisinin nitelikli elektronik sertifikasıyla, yani e-imzasıyla imzalanır.',
+      'Yapı Denetim Sistemi (YDS), müteahhitlik yetki belgesi süreçlerinin yürütüldüğü YAMBİS ve şirket işlemleri için MERSİS, müteahhitlerin düzenli kullandığı sistemlerin başında geliyor. Resmi yazışmalar için KEP, faturalandırma için e-fatura ve mali mühür de aynı sürecin parçası.',
+      'Kurucu Bilişim olarak firma yetkilileriniz için e-imza başvurularını yönetiyor, kurulumları uzaktan yapıyor ve ihale öncesinde e-imzanızın EKAP’ta sorunsuz çalıştığını birlikte kontrol ediyoruz.',
+    ],
+    systems: [
+      ['EKAP e-teklif', 'Kamu ihalelerinde elektronik teklif ve belgelerin e-imzayla imzalanması.', 'briefcase'],
+      ['Yapı Denetim Sistemi (YDS)', 'Yapı denetim süreçlerinde müteahhit işlemleri ve belgeler.', 'layers'],
+      ['YAMBİS', 'Müteahhitlik yetki belgesi ve iş deneyim süreçlerinin dijital ortamda yürütülmesi.', 'doc'],
+      ['MERSİS', 'Şirket kuruluşu, değişiklik ve onay işlemlerinde yetkili imzası.', 'monitor'],
+      ['KEP ile resmi yazışma', 'İdare ve kurumlarla yazışmalarınızı hukuken geçerli şekilde iletme.', 'mail'],
+      ['E-fatura ve hakediş', 'Hakediş faturalarını e-fatura ve mali mühürle düzenleme.', 'receipt'],
+    ],
+    features: ['EKAP e-teklif hazırlığında destek', 'Firma yetkilileri için toplu başvuru', 'İhale öncesi kurulum kontrolü', '1, 2 ve 3 yıllık sertifika seçenekleri', 'Kargo ile adrese teslim', 'Uzaktan sürücü ve Java kurulumu', 'KEP, e-fatura ve mali mühür tek noktadan', 'MERSİS işlemleri için destek', 'Süre bitmeden yenileme hatırlatması'],
+    related: ['kep-ik', 'mali-muhur', 'e-fatura'],
+    mock: { app: 'EKAP · E-Teklif', file: 'Teklif mektubu', sub: 'İhale kayıt no: 2026/123456', signer: 'Yılmaz Yapı İnş. Ltd. Şti.' },
+    faqs: [
+      ['EKAP’ta e-teklif vermek için e-imza gerekli mi?', 'Evet. EKAP üzerinden verilen elektronik teklifler, isteklinin yetkilisinin e-imzasıyla imzalanır. İhale tarihinden önce e-imzanızın hazır ve kurulu olduğundan emin olun.'],
+      ['İhale günü e-imzam çalışmazsa ne olur?', 'Teklifinizi zamanında imzalayamazsanız ihaleye katılamayabilirsiniz. Bu yüzden ihaleden önce e-imzanızı EKAP’ta birlikte test etmenizi öneriyoruz; uzaktan bağlantıyla kontrol ediyoruz.'],
+      ['Firmamızın birden fazla yetkilisi için e-imza alabilir miyiz?', 'Evet. E-imza kişiye özel olduğu için her yetkili için ayrı başvuru yapılır; firmanız için başvuruları toplu olarak yönetiyoruz.'],
+      ['Mali mühür ile e-imza arasındaki fark nedir?', 'E-imza kişiye, mali mühür ise şirkete aittir. E-imza yetkilinin kişisel imzası yerine geçerken, mali mühür e-fatura ve e-defter gibi belgelerde şirketin elektronik mührü olarak kullanılır.'],
+    ],
+    blog: /ekap|mali-muhur-ve-ihale|mali-muhur-ve-kamu-ihale/,
+  },
+];
+
+module.exports = { meslekler, campaigns, applyForms, site, groups, services, testimonials, faqs, process, reasons, partners, references, webProjects, blogCats };

@@ -1,7 +1,7 @@
 // Faz 3: Hizmet ana sayfaları (2) + hizmet detay sayfaları (11). URL'ler canlı siteyle aynıdır.
 const { site, groups, services, testimonials, reasons, faqs, applyForms } = require('../data');
 const { layout, icon, icBox, btn, byGroup, svcPath, pageHero, ctaBand, faqBlock, faqSchema, esc, abs, orgId, applyHref } = require('../lib');
-const { serviceCard, stepsBlock, quoteCard, postCard, statsBlock } = require('../components');
+const { serviceCard, stepsBlock, quoteCard, postCard, statsBlock, meslekGrid } = require('../components');
 const { posts } = require('../posts');
 
 // Hizmete özel müşteri yorumu (varsa)
@@ -160,6 +160,10 @@ ${ctaBand()}`;
     <ul class="list-check" style="margin-top:18px">${s.features.map((f) => `<li>${icon('check')}<span>${esc(f)}</span></li>`).join('')}</ul>
   </div>
 </div></section>
+${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler"><div class="container">
+  <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Avukat, doktor, mühendis ve müteahhitler için e-imza</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
+  ${meslekGrid()}
+</div></section>` : ''}
 ${applyForms[s.slug] ? applySection(s, applyForms[s.slug]) : ''}
 <section class="section section--alt"><div class="container">
   <div class="section-head center"><span class="eyebrow">Süreç</span><h2>${esc(s.short)} sürecimiz</h2><p class="lead">Başvurudan teslime kadar her adımı sizin yerinize takip ediyoruz.</p></div>${stepsBlock()}

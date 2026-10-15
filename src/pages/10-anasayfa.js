@@ -1,7 +1,7 @@
 // Faz 3: Ana sayfa
 const { site, services, faqs, reasons } = require('../data');
 const { layout, aurora, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, SOCIAL } = require('../lib');
-const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard } = require('../components');
+const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard, meslekGrid } = require('../components');
 const { posts } = require('../posts');
 
 module.exports = (ctx) => {
@@ -76,6 +76,11 @@ ${activeCampaigns().length ? `<section class="section section--light promos"><di
 </div></section>` : ''}
 <section class="section statement"><div class="container"><p class="statement__text" data-words>E-fatura, e-imza, KEP ya da yepyeni bir web sitesi. Ne gerekiyorsa tek bir ekip baştan sona yönetir. <span class="grad">Siz sadece işinize odaklanın.</span></p></div></section>
 ${tabs}
+<section class="section section--light" style="padding-top:clamp(56px,7vw,96px)"><div class="container">
+  <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis<br>ve müteahhitler için.</h2></div>
+    <p class="lead" style="margin:0">UYAP’tan e-reçeteye, Yapı Denetim Sistemi’nden EKAP’a; mesleğinizin sistemlerinde sorunsuz çalışan e-imzayı kuruyoruz.</p></div>
+  ${meslekGrid()}
+</div></section>
 ${why}
 <section class="section section--alt"><div class="container">
   <div class="section-head center"><span class="eyebrow">Nasıl çalışıyoruz?</span><h2>4 adımda sorunsuz geçiş</h2><p class="lead">Net bir plan, şeffaf fiyat ve her adımda ulaşabileceğiniz bir ekip.</p></div>
