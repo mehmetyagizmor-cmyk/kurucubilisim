@@ -103,6 +103,18 @@
   }
   if (topBtn) topBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
 
+  // Logo / "Ana Sayfa": zaten ana sayfadaysak sayfayı yeniden yüklemek yerine en üste kay
+  // (yeniden yüklemede tarayıcı kaydırma konumunu koruduğu için logo "çalışmıyor" gibi görünüyordu)
+  $$('a[href="/"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (window.location.pathname !== '/' || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      if (document.body.classList.contains('menu-open')) { document.body.classList.remove('menu-open'); if (burger) burger.setAttribute('aria-expanded', 'false'); }
+      if (window.location.hash) history.replaceState(null, '', '/');
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
+
   // Mobil menü
   var burger = $('.burger');
   if (burger) {
@@ -227,6 +239,27 @@
     box.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load(); } });
   });
 
+  // E-posta kontrolü: tarayıcının "a@b" gibi eksik adresleri kabul etmesini önler, yaygın yazım hatalarını yakalar.
+  // Asıl kontrol sunucuda (form.php: alan adının e-posta alabildiği DNS ile doğrulanır).
+  var MAIL_TYPOS = {
+    'gmial.com': 'gmail.com', 'gmai.com': 'gmail.com', 'gamil.com': 'gmail.com', 'gmaill.com': 'gmail.com', 'gnail.com': 'gmail.com',
+    'gmail.co': 'gmail.com', 'gmail.con': 'gmail.com', 'gmail.cm': 'gmail.com', 'gmail.om': 'gmail.com', 'gmail.com.tr': 'gmail.com',
+    'hotmial.com': 'hotmail.com', 'hotmal.com': 'hotmail.com', 'hotmai.com': 'hotmail.com', 'hotmail.co': 'hotmail.com', 'hotmail.con': 'hotmail.com',
+    'outlok.com': 'outlook.com', 'outlook.co': 'outlook.com', 'outlook.con': 'outlook.com',
+    'yaho.com': 'yahoo.com', 'yahoo.co': 'yahoo.com', 'yahoo.con': 'yahoo.com', 'icloud.co': 'icloud.com', 'iclod.com': 'icloud.com',
+  };
+  var emailIssue = function (v) {
+    v = v.trim();
+    if (!v) return '';
+    if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v)) return 'Geçerli bir e-posta adresi yazın (ör. ad@firma.com).';
+    var at = v.lastIndexOf('@'), domain = v.slice(at + 1).toLowerCase();
+    if (MAIL_TYPOS[domain]) return 'E-posta adresinizi kontrol edin. Bunu mu demek istediniz: ' + v.slice(0, at + 1) + MAIL_TYPOS[domain] + '?';
+    return '';
+  };
+  var checkEmails = function (form) {
+    $$('input[type="email"]', form).forEach(function (el) { el.setCustomValidity(emailIssue(el.value)); });
+  };
+
   // Formlar: fetch ile gönder, başarılıysa teşekkür sayfasına yönlendir
   var qs = new URLSearchParams(window.location.search);
   $$('form[data-form]').forEach(function (form) {
@@ -239,8 +272,10 @@
     if (pre) $$('[data-key="' + pre.replace(/[^a-z0-9-]/g, '') + '"]', form).forEach(function (el) {
       if (el.tagName === 'OPTION') el.selected = true; else el.checked = true;
     });
+    form.addEventListener('input', function (e) { if (e.target.type === 'email') e.target.setCustomValidity(''); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      checkEmails(form);
       if (!form.reportValidity()) return;
       var btn = $('button[type="submit"]', form), label = btn.innerHTML;
       btn.disabled = true; btn.textContent = 'Gönderiliyor…';
@@ -315,7 +350,14 @@
   };
   $$('form[data-gform]').forEach(function (form) {
     var msg = $('.form__msg', form), done = form.parentNode.querySelector('.apply__done');
+    var loadedAt = Math.floor(Date.now() / 1000);
+    // Alan etiketi: "Ad Soyad *" → "Ad Soyad"
+    var labelOf = function (el) {
+      var box = el.closest('fieldset'), lab = box ? box.querySelector('legend') : form.querySelector('label[for="' + el.id + '"]');
+      return lab ? lab.textContent.replace(/\(isteğe bağlı\)|\*/g, '').replace(/\s+/g, ' ').trim() : el.name;
+    };
     function check() {
+      checkEmails(form);
       $$('[data-tckn]', form).forEach(function (el) {
         el.setCustomValidity(el.value && !tcknOk(el.value.trim()) ? 'Geçerli bir T.C. kimlik numarası girin (11 hane).' : '');
       });
@@ -364,13 +406,54 @@
       if (form.querySelector('[name="website_url"]').value) { finish(); return; } // bot
       var btn = $('button[type="submit"]', form), label = btn.innerHTML;
       btn.disabled = true; btn.textContent = 'Gönderiliyor…';
-      // Google yanıtı okunamaz (no-cors); ağ hatası yoksa iletilmiştir
-      fetch(form.action, { method: 'POST', mode: 'no-cors', body: body })
-        .then(finish)
-        .catch(function () {
-          btn.disabled = false; btn.innerHTML = label;
-          msg.className = 'form__msg is-err'; msg.textContent = 'Bağlantı hatası oluştu. Lütfen tekrar deneyin veya bizi arayın.';
-        });
+      var fail = function (text) {
+        btn.disabled = false; btn.innerHTML = label;
+        msg.className = 'form__msg is-err'; msg.textContent = text;
+      };
+
+      // 1) Ekibe e-posta bildirimi (form.php). Sunucu e-postayı DNS ile de doğrular; hatalıysa başvuru durur.
+      var rows = [], seen = {};
+      $$('[name^="entry."], [data-date]', form).forEach(function (el) {
+        var v;
+        if (el.type === 'checkbox' || el.type === 'radio') {
+          if (seen[el.name]) return; seen[el.name] = 1;
+          v = $$('[name="' + el.name + '"]:checked', form).map(function (x) { return x.value; }).join(', ');
+        } else v = el.value.trim();
+        if (v) rows.push([labelOf(el), v]);
+      });
+      var rowVal = function (re) { var r = rows.filter(function (x) { return re.test(x[0]); })[0]; return r ? r[1] : ''; };
+      var fullName = rowVal(/^ad[ıi]?\s*[-–]?\s*soyad[ıi]?$/i) ||
+        [rowVal(/^(firma yetkilisi\s+)?ad(ı|ınız)?$/i), rowVal(/^(firma yetkilisi\s+)?soyad(ı|ınız)?$/i)].join(' ').trim();
+      var mailEl = form.querySelector('input[type="email"]');
+      var notify = new FormData();
+      notify.append('form', 'hizmet-basvuru');
+      notify.append('hizmet_adi', form.getAttribute('data-gform'));
+      notify.append('ad', fullName);
+      notify.append('eposta', mailEl ? mailEl.value.trim() : '');
+      notify.append('kvkk', 'evet');
+      notify.append('ts', loadedAt);
+      notify.append('sayfa', window.location.pathname);
+      notify.append('website_url', '');
+      notify.append('alanlar', JSON.stringify(rows));
+
+      var toGoogle = function () {
+        // Google yanıtı okunamaz (no-cors); ağ hatası yoksa iletilmiştir
+        return fetch(form.action, { method: 'POST', mode: 'no-cors', body: body })
+          .then(finish)
+          .catch(function () { fail('Bağlantı hatası oluştu. Lütfen tekrar deneyin veya bizi arayın.'); });
+      };
+      fetch(form.getAttribute('data-notify'), { method: 'POST', body: notify, headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json().catch(function () { return { ok: r.ok, status: r.status }; }); })
+        .then(function (res) {
+          if (res.ok) return toGoogle();
+          if (res.error) { // doğrulama hatası (ör. geçersiz e-posta): başvuruyu durdur
+            fail(res.error + '.');
+            if (mailEl && /posta/i.test(res.error)) { mailEl.focus(); mailEl.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
+            return;
+          }
+          return toGoogle(); // sunucu hatası: başvuru yine de Google Form'a kaydedilsin
+        })
+        .catch(toGoogle); // ağ hatası: başvuru yine de Google Form'a kaydedilsin
     });
   });
 

@@ -26,22 +26,24 @@ function applyField(it, i) {
     return `<fieldset class="field field--full"${t === 'checkbox' && it.required ? ' data-need-one' : ''}><legend>${esc(label)}${star}</legend>${help}<div class="checks">${it.options.map((o, k) => `<label><input type="${t}" name="${name}" value="${esc(o)}"${t === 'radio' && k === 0 ? req : ''}>${esc(cleanOpt(o))}</label>`).join('')}</div></fieldset>`;
   }
   let control;
+  // "E-posta adresi" etiketinde "adres" de geçer: e-posta kontrolü adres kutusundan önce yapılmalı
+  const isEmail = /e-?posta|mail/i.test(label);
   if (it.type === 'select') {
     control = `<select id="${id}" name="${name}"${req}><option value="">Seçin</option>${it.options.map((o) => `<option>${esc(o)}</option>`).join('')}</select>`;
   } else if (it.type === 'date') {
     control = `<input id="${id}" type="date" data-date="${name}" max="${new Date().toISOString().slice(0, 10)}"${req}>`;
-  } else if (/adres/i.test(label)) {
+  } else if (!isEmail && /adres/i.test(label)) {
     control = `<textarea id="${id}" name="${name}" rows="3"${req} autocomplete="street-address"></textarea>`;
   } else {
     let attrs = ' type="text"';
-    if (/e-?posta|mail/i.test(label)) attrs = ' type="email" autocomplete="email"';
+    if (isEmail) attrs = ' type="email" autocomplete="email" data-email';
     else if (/VKN|Vergi Numarası/i.test(label)) attrs = ' type="text" inputmode="numeric" pattern="[0-9]{10,11}" maxlength="11" data-tax';
     else if (/TCKN|Kimlik No/i.test(label)) attrs = ' type="text" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" data-tckn';
     else if (/telefon|cep|iletişim numarası/i.test(label)) attrs = ' type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9 +()\\-]{10,20}" placeholder="05xx xxx xx xx"';
     else if (/kontör|adet/i.test(label)) attrs = ' type="number" inputmode="numeric" min="1"';
     control = `<input id="${id}" name="${name}"${attrs}${req}>`;
   }
-  const full = (it.type === 'paragraph' && /adres/i.test(label)) || label.length > 44; // uzun etiket satır hizasını bozmasın
+  const full = (it.type === 'paragraph' && !isEmail && /adres/i.test(label)) || label.length > 44; // uzun etiket satır hizasını bozmasın
   return `<div class="field${full ? ' field--full' : ''}"><label for="${id}">${esc(label)}${star}</label>${help}${control}</div>`;
 }
 const applySection = (s, f) => {
@@ -58,7 +60,7 @@ const applySection = (s, f) => {
   return `<section class="section apply" id="basvuru"><div class="container">
   <div class="section-head center"><span class="eyebrow">Online başvuru</span><h2>${esc(s.short)} başvurusu</h2><p class="lead">Formu doldurun, uzmanlarımız başvurunuzu aynı gün işleme alıp sizinle iletişime geçsin.</p></div>
   <div class="apply__card" data-reveal>
-    <form class="form apply__form" action="${gurl}/formResponse" method="post" data-gform="${esc(s.short)}" novalidate>
+    <form class="form apply__form" action="${gurl}/formResponse" method="post" data-gform="${esc(s.short)}" data-notify="${site.formEndpoint}" novalidate>
       ${groups.filter((g) => g.fields.length).map((g, gi) => `<div class="apply__group"><div class="apply__head"><span class="apply__num">${gi + 1}</span><div><h3>${esc(g.title)}</h3>${g.desc ? `<p>${esc(g.desc)}</p>` : ''}</div></div>
       <div class="apply__grid">${g.fields.map(applyField).join('')}</div></div>`).join('')}
       <div class="hp" aria-hidden="true"><label>Web sitesi adresi<input type="text" name="website_url" tabindex="-1" autocomplete="off"></label></div>
