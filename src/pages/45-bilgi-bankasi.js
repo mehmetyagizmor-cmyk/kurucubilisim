@@ -2,7 +2,7 @@
 const { site, services } = require('../data');
 const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, faqBlock, faqSchema, orgId, applyHref } = require('../lib');
 const { slugify } = require('../posts');
-const { cats, articles, catPath, SHOW_DRAFTS } = require('../kb');
+const { cats, articles, catPath, SHOW_DRAFTS, KEP_IK_SLUG } = require('../kb');
 
 const ROOT = '/bilgi-bankasi/';
 const fmt = (d) => new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -79,7 +79,7 @@ ${ctaBand('Aradığınızı bulamadınız mı?', 'Sorunuzu iletin, uzmanlarımı
 ${ctaBand()}`;
     ctx.add(p, layout({
       path: p, crumbs, body, extraHead: noindex,
-      title: `${c.name} Rehberleri | Kurucu Bilişim Bilgi Bankası`,
+      title: `${c.name} Rehberleri | ${c.name.length > 22 ? 'Bilgi Bankası' : 'Kurucu Bilişim Bilgi Bankası'}`,
       desc: `${c.name} hakkında adım adım rehberler: ${c.desc}`.slice(0, 160),
       schema: [{ '@type': 'CollectionPage', url: abs(p), name: `${c.name} Rehberleri`, inLanguage: 'tr-TR', isPartOf: { '@id': abs(ROOT) + '#kb' } }],
     }), { priority: '0.6' });
@@ -101,6 +101,7 @@ ${ctaBand()}`;
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="container" style="max-width:1240px">
+  ${a.img ? `<figure class="post-cover" style="margin:0 0 clamp(32px,5vw,56px)"><img src="${a.img}" alt="${esc(a.title)}" width="1600" height="1000" fetchpriority="high" decoding="async"></figure>` : ''}
   <div class="article-layout">
     <article class="prose" data-article>${html}
       ${a.faqs ? `<h2 id="sik-sorulan-sorular">Sık Sorulan Sorular</h2>${faqBlock(a.faqs)}` : ''}
@@ -126,7 +127,13 @@ ${ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : undefined, 'Başv
     ctx.add(a.path, layout({
       path: a.path, crumbs, body, extraHead: noindex,
       title: a.title.length > 52 ? a.title : `${a.title} | Kurucu Bilişim`,
-      desc: a.lead.slice(0, 160), ogType: 'article', schema,
+      desc: a.lead.slice(0, 160), ogType: 'article', ogImage: a.img, schema,
     }), { priority: '0.6', lastmod: a.updated });
+  }
+
+  // Blogdan taşınan yazının eski adresi → yeni adres (.htaccess 301'ine ek, statik yedek)
+  const moved = articles.find((x) => x.slug === KEP_IK_SLUG);
+  if (moved) {
+    ctx.add(`/${KEP_IK_SLUG}/`, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${esc(moved.title)} | Kurucu Bilişim</title><link rel="canonical" href="${abs(moved.path)}"><meta http-equiv="refresh" content="0;url=${moved.path}"><meta name="robots" content="noindex"><meta name="description" content="Bu yazı Kurucu Bilişim Bilgi Bankası’na taşındı."></head><body><h1>${esc(moved.title)}</h1><script>location.replace('${moved.path}');</script><p><a href="${moved.path}">Yazı Bilgi Bankası’na taşındı, devam etmek için tıklayın</a>.</p></body></html>`, { sitemap: false });
   }
 };

@@ -7,7 +7,11 @@ const RAW = JSON.parse(fs.readFileSync(path.join(__dirname, 'content/posts.json'
 const IMG_DIR = path.join(__dirname, '../assets/img/blog');
 
 // Kopya içerik: 301 ile asıl yazıya yönlenir (seo.js)
-const EXCLUDE = { 'kep-kayitli-elektronik-posta-nedir-cloned': 'mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim' };
+const EXCLUDE = {
+  'kep-kayitli-elektronik-posta-nedir-cloned': 'mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim',
+  // Bilgi Bankası'na taşındı
+  'kep-ik-ve-e-bordro-hukuki-delil-saglayan-dijital-bordro-cozumu': 'bilgi-bankasi/kep/kep-ik-ve-e-bordro-hukuki-delil-saglayan-dijital-bordro-cozumu',
+};
 
 const TITLE_FIX = {
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? ERP Yazılımı Seçerken Dikkat Edilmesi Gerekenler',

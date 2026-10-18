@@ -4,13 +4,27 @@ const { esc } = require('./lib');
 
 const SHOW_DRAFTS = process.env.KB_TASLAK === '1';
 
+// Blogdan taşınan KEP İK haberi (içerik posts.json'da durur, blogda gösterilmez → posts.js EXCLUDE)
+const KEP_IK_SLUG = 'kep-ik-ve-e-bordro-hukuki-delil-saglayan-dijital-bordro-cozumu';
+const kepPost = require('./content/posts.json').find((x) => x.slug === KEP_IK_SLUG);
+const extLinks = (h) => h.replace(/<a ([^>]*?)href="(https?:[^"]+)"(?![^>]*target=)/g, '<a $1href="$2" target="_blank" rel="noopener"');
+
 const cats = [
-  { slug: 'e-imza', name: 'E-İmza', icon: 'pen', svc: 'e-imza', desc: 'Kurulum, şifre (PIN), e-Devlet ve UYAP kullanımı, yenileme ve sık görülen hatalar.' },
-  { slug: 'mali-muhur', name: 'Mali Mühür', icon: 'seal', svc: 'mali-muhur', desc: 'PIN oluşturma, kilit çözme, aktivasyon, kurulum ve yenileme adımları.' },
-  { slug: 'kep', name: 'KEP', icon: 'mail', svc: 'kep-ik', desc: 'KEP adresi alma, ileti gönderme ve KEP adresi sorgulama.' },
-  { slug: 'e-fatura', name: 'E-Fatura ve E-Arşiv', icon: 'doc', svc: 'e-fatura', desc: 'E-fatura iptali, mükellef sorgulama ve e-arşiv fatura düzenleme.' },
-  { slug: 'e-defter', name: 'E-Defter, E-İrsaliye ve Diğerleri', icon: 'book', svc: 'e-defter', desc: 'Gönderim ve berat süreleri, zorunluluklar ve diğer e-belgeler.' },
-  { slug: 'entegrasyon', name: 'Entegrasyon', icon: 'sync', svc: 'e-donusum-entegrasyonu', desc: 'Muhasebe, ERP, e-ticaret ve pazaryeri entegrasyonları.' },
+  { slug: 'e-fatura', name: 'E-Fatura', icon: 'doc', svc: 'e-fatura', desc: 'E-fatura nedir, kimler geçmek zorunda, başvuru, iptal ve sık sorulanlar.' },
+  { slug: 'e-arsiv-fatura', name: 'E-Arşiv Fatura', icon: 'archive', svc: 'e-arsiv-fatura', desc: 'E-arşiv fatura nedir, kimlere düzenlenir ve nasıl geçilir.' },
+  { slug: 'e-irsaliye', name: 'E-İrsaliye', icon: 'truck', svc: 'e-irsaliye', desc: 'E-irsaliye nedir, kimler için zorunlu ve nasıl geçilir.' },
+  { slug: 'e-defter', name: 'E-Defter', icon: 'book', svc: 'e-defter', desc: 'E-defter, berat süreleri ve e-defter saklama.' },
+  { slug: 'e-smm', name: 'E-SMM', icon: 'briefcase', svc: 'e-smm', desc: 'Elektronik serbest meslek makbuzu: kimler kullanır, nasıl geçilir.' },
+  { slug: 'e-mustahsil', name: 'E-Müstahsil Makbuzu', icon: 'leaf', svc: 'e-mustahsil-makbuzu', desc: 'Tarımsal alımlarda e-müstahsil makbuzu.' },
+  { slug: 'e-gider-pusulasi', name: 'E-Gider Pusulası', icon: 'receipt', svc: 'e-gider-pusulasi', desc: 'E-gider pusulası ne zaman ve nasıl düzenlenir.' },
+  { slug: 'e-dekont', name: 'E-Dekont', icon: 'banknote', svc: 'e-dekont', desc: 'Finans kuruluşları için e-dekont.' },
+  { slug: 'e-adisyon', name: 'E-Adisyon', icon: 'coffee', svc: 'e-adisyon', desc: 'Restoran ve kafeler için elektronik adisyon.' },
+  { slug: 'e-bilet', name: 'E-Bilet', icon: 'ticket', svc: 'e-bilet', desc: 'Ulaşım ve etkinliklerde elektronik bilet.' },
+  { slug: 'e-imza', name: 'E-İmza', icon: 'pen', svc: 'e-imza', desc: 'E-imza nedir, nasıl alınır, kurulum, şifre (PIN) ve e-Devlet girişi.' },
+  { slug: 'mali-muhur', name: 'Mali Mühür', icon: 'seal', svc: 'mali-muhur', desc: 'Mali mühür nedir, nasıl alınır, PIN oluşturma ve kurulum.' },
+  { slug: 'kep', name: 'KEP ve E-Bordro', icon: 'mail', svc: 'kep-ik', desc: 'KEP adresi alma, KEP İK ile e-bordro ve hukuki geçerlilik.' },
+  { slug: 'entegrasyon', name: 'E-Dönüşüm Entegrasyonu', icon: 'sync', svc: 'e-donusum-entegrasyonu', desc: 'Muhasebe, ERP, e-ticaret ve pazaryeri entegrasyonları.' },
+  { slug: 'danismanlik', name: 'Başvuru ve Geçiş Danışmanlığı', icon: 'compass', svc: 'e-donusum-danismanligi', desc: 'Hangi e-dönüşüm uygulamasına ne zaman geçmeli.' },
 ];
 
 // --- Yardımcılar: patron metinlerindeki kalıplar (# başlık, *...* kalın alt başlık)
@@ -286,7 +300,14 @@ const articles = [
   },
 ];
 
-const visible = articles.filter((a) => SHOW_DRAFTS || !a.taslak).map((a) => ({ ...a, path: `/bilgi-bankasi/${a.cat}/${a.slug}/` }));
+const all = [
+  { cat: 'kep', slug: KEP_IK_SLUG, svc: 'kep-ik', updated: '2026-10-18', img: '/assets/img/blog/' + KEP_IK_SLUG + '.webp',
+    title: kepPost.title.rendered, lead: kepPost.yoast_head_json.description, html: extLinks(kepPost.content.rendered) },
+  ...articles.slice(0, 2),
+  ...require('./kb-hizmetler'),
+  ...articles.slice(2),
+];
+const visible = all.filter((a) => SHOW_DRAFTS || !a.taslak).map((a) => ({ ...a, path: `/bilgi-bankasi/${a.cat}/${a.slug}/` }));
 const catPath = (c) => `/bilgi-bankasi/${c.slug}/`;
 
-module.exports = { cats, articles: visible, catPath, SHOW_DRAFTS };
+module.exports = { cats, articles: visible, catPath, SHOW_DRAFTS, KEP_IK_SLUG };
