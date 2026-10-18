@@ -482,9 +482,76 @@ const services = [
     features: ['Popüler ERP ve muhasebe yazılımlarıyla entegrasyon', 'E-ticaret platformları bağlantısı', 'REST / SOAP API entegrasyon köprüleri', 'Otomatik fatura ve irsaliye aktarımı', 'Hata uyarı ve loglama mekanizması', 'Özel yazılımlara özel API geliştirme', 'Test ve canlı geçiş ortamı yönetimi', 'Veri güvenliği ve şifreli aktarım', 'Uzman yazılım ve entegrasyon desteği'],
     faqs: [
       ['Hangi muhasebe ve ERP programlarıyla entegrasyon yapabiliyorsunuz?', '600’den fazla muhasebe ve ERP programıyla entegrasyon desteği sunuyoruz. Bunlar arasında Logo, Mikro, Netsis, SAP, Microsoft Dynamics 365, Nebim, CANIAS ERP, DİA, Uyumsoft, ETA, Odoo, LUCA ve Zirve bulunur. Programınız listede yoksa teknik altyapısını birlikte değerlendiriyoruz.'],
-      ['E-ticaret sitemdeki siparişler otomatik faturalandırılabilir mi?', 'Evet. Sipariş tamamlandığında müşteriye otomatik e-arşiv fatura düzenlenip e-posta ile gönderilebilir ve kargo takip fişine eklenebilir.'],
+      ['E-ticaret siparişlerine otomatik fatura kesmek mümkün mü?', 'Evet. Uyumlu bir e-fatura yazılımı ve sipariş entegrasyonu kullanarak siparişlerinize ilişkin faturaların otomatik oluşturulmasını sağlayabilirsiniz. İşletmenizin belge düzenleme yükümlülükleri ayrıca dikkate alınmalıdır.'],
+      ['Trendyol siparişleri otomatik faturalandırılabilir mi?', 'Evet. Trendyol ile uyumlu bir fatura entegrasyonu kullanıldığında sipariş bilgileri sisteme aktarılabilir ve belirlenen kurallara göre faturalar oluşturulabilir.'],
+      ['Amazon, Etsy ve Shopify siparişleri için otomatik fatura kesilebilir mi?', 'Evet, uygun entegrasyonlar aracılığıyla bu platformlardan gelen siparişler faturalandırma sürecine dahil edilebilir. Ancak her platformun, satış yapılan ülkenin ve kullanılan uygulamanın desteklediği özellikler farklı olabilir.'],
+      ['Shopier siparişlerine otomatik e-Arşiv Fatura kesilebilir mi?', 'Kullanılan çözüm Shopier entegrasyonunu ve e-Arşiv Fatura oluşturmayı destekliyorsa bu süreç otomatikleştirilebilir. Entegrasyonun sipariş aktarımı, belge gönderimi ve hata yönetimi özelliklerini kontrol etmek gerekir.'],
+      ['Otomatik fatura kesmek için e-Fatura mükellefi olmak gerekir mi?', 'İşletmenin tabi olduğu elektronik belge yükümlülüklerine göre değişir. e-Fatura ve e-Arşiv Fatura uygulamalarına ilişkin güncel şartlar Gelir İdaresi Başkanlığı’nın düzenlemeleri doğrultusunda değerlendirilmelidir.'],
+      ['Otomatik faturalandırma ücretsiz midir?', 'Kullanılan e-fatura yazılımına, pazaryeri entegrasyonuna, işlem hacmine ve abonelik paketine göre değişir. Bazı uygulamalar ücretsiz deneme sunarken bazıları aylık veya işlem başına ücretlendirme yapabilir.'],
       ['Entegrasyon süreci ne kadar sürer?', 'Hazır paket entegrasyonlarımız genellikle 1-2 iş günü içinde devreye alınır. Özel yazılım gerektiren projelerde süre analiz sonrası netleşir.'],
     ],
+    // Patron metni (2): e-ticaret otomatik faturalandırma. # → h2, ## → h3, ### → h4, *...* → kalın alt başlık
+    extra2: {
+      id: 'e-ticaret-otomatik-fatura', eyebrow: 'E-ticaret ve pazaryeri',
+      h2: 'E-Ticaret Sitemdeki Siparişler Otomatik Faturalandırılabilir mi?',
+      paras: [
+        'Evet, e-ticaret sitenizdeki siparişleri otomatik olarak faturalandırabilirsiniz. Doğru bir e-fatura entegrasyonu sayesinde siparişleriniz sisteme otomatik aktarılabilir, gerekli bilgiler kontrol edilebilir ve siparişleriniz için uygun elektronik fatura oluşturularak müşterilerinize iletilebilir.',
+        'Özellikle Trendyol, Hepsiburada, n11 ve Amazon gibi pazaryerlerinde ya da Shopify ve Shopier gibi e-ticaret platformlarında satış yapıyorsanız, otomatik faturalandırma iş süreçlerinizi kolaylaştırır. Böylece her siparişin bilgilerini manuel olarak fatura programına girmek yerine, siparişten faturaya uzanan süreci tek bir sistem üzerinden yönetebilirsiniz.',
+      ],
+      blocks: [
+        { h3: 'Otomatik Faturalandırma Nedir?', paras: [
+          'Otomatik faturalandırma, e-ticaret siparişlerinin bir entegrasyon aracılığıyla fatura sistemine aktarılması ve belirlenen kurallara göre elektronik faturaların oluşturulmasıdır.',
+          'Bir müşteri sipariş verdiğinde sistem; sipariş numarası, ürün bilgileri, tutar, vergi oranları ve alıcı bilgileri gibi gerekli verileri alır. Tanımlanan iş akışına göre fatura oluşturulur, ilgili elektronik belge sistemine gönderilir ve müşteriye iletilir.',
+          'Kullanılan yazılıma bağlı olarak otomatik fatura kesme işlemi sipariş oluşturulduğunda, ödeme alındığında veya ürün kargoya verildiğinde başlatılabilir. Ancak otomasyonun doğru çalışması için sipariş durumlarının, vergi bilgilerinin ve fatura kurallarının önceden yapılandırılması gerekir.',
+        ] },
+        { h3: 'Hangi Pazaryerlerinde Otomatik Fatura Kesilebilir?', paras: [
+          'E-ticaret fatura entegrasyonları, birden fazla satış kanalını tek sistemde birleştirmeyi mümkün kılabilir. Entegrasyonun kapsamı kullanılan yazılıma, platformun API özelliklerine ve hesabınızın yapılandırmasına göre değişir.',
+        ], groups: [
+          ['Türkiye’deki Pazaryerleri', [
+            ['Trendyol', 'Trendyol siparişlerini fatura sisteminize aktarabilir, uygun entegrasyonla e-Fatura veya e-Arşiv Fatura oluşturma sürecini otomatikleştirebilirsiniz.'],
+            ['Hepsiburada', 'Sipariş bilgilerinin faturalandırma sistemine aktarılması, fatura oluşturulması ve ilgili belgelerin yönetilmesi entegrasyonla kolaylaştırılabilir.'],
+            ['n11', 'n11 mağazanızdan gelen siparişleri diğer satış kanallarınızla birlikte takip edebilir ve desteklenen bir entegrasyon aracılığıyla faturalandırabilirsiniz.'],
+            ['ÇiçekSepeti', 'ÇiçekSepeti satışlarınızı destekleyen bir pazaryeri entegrasyonu üzerinden sipariş ve fatura süreçlerinizi merkezileştirebilirsiniz.'],
+            ['Pazarama', 'Pazarama siparişlerinizi, desteklenen bağlantı seçenekleriyle diğer e-ticaret kanallarınızla aynı faturalandırma sisteminde yönetebilirsiniz.'],
+            ['PTTAVM', 'PTTAVM mağazanızdaki siparişlerin fatura sistemine aktarılması için kullandığınız yazılımın ilgili entegrasyonu desteklemesi gerekir.'],
+          ]],
+          ['Global Pazaryerleri ve E-Ticaret Platformları', [
+            ['Amazon', 'Amazon Türkiye veya diğer Amazon mağazalarından gelen siparişleri, ilgili pazarın ve kullanılan entegrasyonun desteklediği ölçüde faturalandırma sisteminize aktarabilirsiniz. Yurt dışı satışlarda ülke bazındaki vergi ve fatura kurallarını ayrıca değerlendirmek gerekir.'],
+            ['Etsy', 'Etsy üzerinden ürün satan işletmeler, uygun bir entegrasyon aracılığıyla sipariş bilgilerini faturalandırma süreçlerine aktarabilir. Uluslararası satışlarda alıcının ülkesi, satışın niteliği ve uygulanacak vergi kuralları önemlidir.'],
+            ['Shopier', 'Shopier üzerinden alınan siparişler, platformla uyumlu bir uygulama veya entegrasyon aracılığıyla faturalandırma sistemine aktarılabilir. Kullanılacak çözümün sipariş aktarımı ve otomatik fatura oluşturma özellikleri kontrol edilmelidir.'],
+            ['Shopify', 'Shopify, kendi e-ticaret mağazanızı kurup yönetebileceğiniz bir platformdur. Shopify mağazanızı uyumlu bir fatura uygulamasına veya entegrasyon yazılımına bağlayarak siparişlerin otomatik aktarılmasını ve faturaların oluşturulmasını sağlayabilirsiniz.'],
+            ['WooCommerce', 'WordPress altyapılı WooCommerce mağazaları da uyumlu e-fatura eklentileri, API bağlantıları veya aracı yazılımlar üzerinden otomatik faturalandırma sistemlerine bağlanabilir.'],
+          ]],
+        ], note: 'Birden fazla pazaryerinde satış yapıyorsanız her kanal için ayrı ayrı işlem yapmak yerine, desteklenen tüm mağazaları tek bir panelde toplayan bir çözüm tercih edebilirsiniz.' },
+        { h3: 'Otomatik E-Fatura ve E-Arşiv Fatura Nasıl Çalışır?', paras: [
+          'Türkiye’de e-ticaret satışlarında kullanılacak elektronik belgenin türü, alıcının durumuna ve yürürlükteki mevzuata göre belirlenmelidir.',
+        ], list: [
+          ['e-Fatura', 'Hem satıcı hem de alıcı e-Fatura sistemine kayıtlıysa ilgili satış için e-Fatura düzenlenmesi gerekir.'],
+          ['e-Arşiv Fatura', 'Alıcının e-Fatura sistemine kayıtlı olmadığı durumlarda, ilgili mevzuat kapsamında e-Arşiv Fatura düzenlenebilir.'],
+        ], note: 'Uygun bir otomatik faturalandırma sistemi, alıcı bilgilerini kontrol ederek doğru belge türünün seçilmesine yardımcı olabilir. Bununla birlikte mükellefiyet durumları, istisnalar ve güncel mevzuat gereklilikleri dikkate alınmalıdır.' },
+        { h3: 'E-Ticaret Siparişlerini Otomatik Faturalandırmanın Avantajları', numbered: [
+          ['Zamandan Tasarruf', 'Sipariş bilgilerini her defasında manuel olarak girmek zorunda kalmazsınız. Çok sayıda sipariş alan mağazalarda bu özellik operasyonel iş yükünü azaltabilir.'],
+          ['Manuel Hataların Azaltılması', 'Sipariş ve müşteri bilgilerinin sistemler arasında aktarılması, elle veri girişinden kaynaklanan hataların azaltılmasına yardımcı olur. Yine de vergi oranları, ürün bilgileri ve müşteri verileri kontrol edilmelidir.'],
+          ['Birden Fazla Satış Kanalını Tek Panelde Yönetme', 'Trendyol, Hepsiburada, n11, Amazon, Etsy, Shopier ve Shopify gibi kanalları destekleyen bir çözümle siparişlerinizi merkezi bir sistem üzerinden takip edebilirsiniz.'],
+          ['Daha Hızlı Fatura Gönderimi', 'Faturaların belirlenen sipariş durumunda otomatik oluşturulması ve elektronik ortamda iletilmesi, müşterilerin belgelerine daha hızlı ulaşmasını sağlayabilir.'],
+          ['İade ve İptal Süreçlerini Kolaylaştırma', 'Uygun bir entegrasyon, iptal ve iade işlemlerinin takibini kolaylaştırabilir. Ancak düzenlenmiş bir faturanın iptali veya düzeltilmesi, ilgili mevzuata uygun şekilde yürütülmelidir; yalnızca siparişin iptal edilmesi her durumda faturayı kendiliğinden ortadan kaldırmaz.'],
+        ] },
+        { h3: 'Otomatik Faturalandırma Sistemi Nasıl Kurulur?', paras: ['E-ticaret siparişlerinizi otomatik faturalandırmak için şu adımları izleyebilirsiniz:'], steps: [
+          ['E-fatura çözümünüzü belirleyin', 'İşletmenizin ihtiyaçlarına uygun bir e-Fatura veya e-Arşiv Fatura çözümü seçin.'],
+          ['Satış kanallarınızı bağlayın', 'Kullandığınız pazaryerlerini ve e-ticaret altyapılarını desteklenen API, uygulama veya entegrasyon aracılığıyla sisteme bağlayın.'],
+          ['Ürün ve vergi bilgilerini eşleştirin', 'Ürün kodları, fiyatlar, KDV oranları, kargo bedelleri ve müşteri bilgileri doğru yapılandırılmalıdır.'],
+          ['Otomasyon kurallarını tanımlayın', 'Faturanın hangi sipariş durumunda oluşturulacağını ve müşteriye nasıl iletileceğini belirleyin.'],
+          ['Test siparişleri oluşturun', 'Mükerrer fatura oluşmasını önleyen kontrolleri, iptal ve iade senaryolarını test edin.'],
+          ['Süreci takip edin', 'Başarısız aktarımları, eksik bilgileri ve gönderim hatalarını düzenli olarak kontrol edin.'],
+        ], note: 'Otomatik faturalandırmanın sorunsuz çalışması için kullandığınız sistemin Gelir İdaresi Başkanlığı’nın ilgili elektronik belge kurallarıyla uyumlu olması ve gerekli yetkilendirmelerin tamamlanması önemlidir.' },
+      ],
+      closingTitle: 'Sonuç: E-Ticaret Siparişlerinizi Otomatik Faturalandırın',
+      closing: [
+        'E-ticaret sitenizde veya farklı pazaryerlerinde oluşan siparişleri otomatik faturalandırmak, iş süreçlerinizi daha düzenli ve verimli yönetmenize yardımcı olabilir. Trendyol, Hepsiburada, n11, ÇiçekSepeti, Pazarama, PTTAVM, Amazon, Etsy, Shopier ve Shopify gibi kanallardan gelen siparişleri desteklenen entegrasyonlarla bir araya getirerek manuel işlem yükünü azaltabilirsiniz.',
+        'İşletmenize uygun çözümü seçerken yalnızca otomatik fatura oluşturma özelliğine değil; sipariş aktarımı, e-Fatura ve e-Arşiv Fatura desteği, iade yönetimi, mükerrer fatura kontrolü ve müşteri bildirimleri gibi özelliklere de dikkat edin.',
+      ],
+      closingSub: 'Sık sipariş alan e-ticaret işletmeleri için doğru bir otomatik faturalandırma sistemi, siparişten faturaya uzanan sürecin daha hızlı ve kontrollü yönetilmesini sağlayabilir.',
+    },
     blog: /e-fatura|e-belge|erp/,
   },
   {

@@ -34,6 +34,29 @@ const extraSection = (s, x) => `<section class="section" id="programlar"><div cl
   </div>
 </div></section>`;
 
+// Makale tipi ek bölüm (ör. e-ticaret otomatik faturalandırma): başlık, paragraf, kart grupları, numaralı avantajlar, kurulum adımları.
+const flexCards = (items, numbered) => `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,1.8vw,22px)">${items.map(([t, d], i) => `<div class="card" data-reveal style="--d:${(i % 3) * 0.06}s;flex:1 1 320px;max-width:400px">${numbered ? `<span class="eyebrow" style="margin-bottom:6px">${i + 1}.</span>` : ''}<strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(t)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>`;
+const textCol = (paras) => paras.map((t) => `<p class="lead" style="max-width:none">${esc(t)}</p>`).join('');
+const noteP = (t) => (t ? `<p style="text-align:center;color:var(--muted);margin:24px auto 0;max-width:820px">${esc(t)}</p>` : '');
+const articleSection = (s, x) => `<section class="section section--light" id="${x.id}"><div class="container">
+  <div class="section-head center"><span class="eyebrow">${esc(x.eyebrow)}</span><h2>${esc(x.h2)}</h2></div>
+  <div style="max-width:820px;margin:0 auto">${textCol(x.paras)}</div>
+  ${x.blocks.map((b) => `<div style="margin-top:64px">
+    <div style="max-width:820px;margin:0 auto"><h3 style="font-size:clamp(1.4rem,2.2vw,1.9rem)">${esc(b.h3)}</h3>${textCol(b.paras || [])}</div>
+    ${(b.groups || []).map(([h4, items]) => `<h4 style="text-align:center;margin:36px 0 18px;font-size:1.3rem">${esc(h4)}</h4>${flexCards(items)}`).join('')}
+    ${b.list ? `<div class="grid grid--2" style="max-width:980px;margin:24px auto 0">${b.list.map(([t, d]) => `<div class="card"><strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(t)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>` : ''}
+    ${b.numbered ? `<div style="margin-top:24px">${flexCards(b.numbered, true)}</div>` : ''}
+    ${b.steps ? `<div style="margin-top:24px">${flexCards(b.steps, true)}</div>` : ''}
+    ${noteP(b.note)}
+  </div>`).join('')}
+  <div class="card" style="max-width:980px;margin:72px auto 0;padding:clamp(24px,3.5vw,48px)">
+    <h3 style="margin-top:0">${esc(x.closingTitle)}</h3>
+    ${x.closing.map((t) => `<p>${esc(t)}</p>`).join('')}
+    <p style="font-weight:650;color:var(--text);margin-top:18px">${esc(x.closingSub)}</p>
+    <div class="hero__actions" style="margin:24px 0 0">${actionsFor(s.slug)}</div>
+  </div>
+</div></section>`;
+
 // Başvuru formu: sorular Google Form'dan (src/content/apply-forms.json), tasarım sitenin.
 // Yanıtlar main.js tarafından doğrudan Google Form'a gönderilir.
 const applyData = require('../content/apply-forms.json');
@@ -186,6 +209,7 @@ ${ctaBand()}`;
   </div>
 </div></section>
 ${s.extra ? extraSection(s, s.extra) : ''}
+${s.extra2 ? articleSection(s, s.extra2) : ''}
 ${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler"><div class="container">
   <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Avukat, doktor, mühendis ve müteahhitler için e-imza</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
   ${meslekGrid()}
