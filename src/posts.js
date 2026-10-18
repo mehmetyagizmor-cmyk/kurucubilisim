@@ -60,7 +60,9 @@ function cleanHtml(html, title) {
       const href = (attrs.match(/href\s*=\s*"([^"]*)"/i) || [])[1] || '#';
       const local = href.replace(/^https?:\/\/(www\.)?kurucubilisim\.com/i, '') || '/';
       const ext = /^https?:/i.test(local);
-      return `<a href="${local}"${ext ? ' target="_blank" rel="noopener"' : ''}>`;
+      // Yazı içi buton: yalnız site buton sınıflarına izin ver
+      const cls = (attrs.match(/class\s*=\s*"(btn btn--(?:primary|ghost))"/i) || [])[1];
+      return `<a href="${local}"${cls ? ` class="${cls}"` : ''}${ext ? ' target="_blank" rel="noopener"' : ''}>`;
     }
     return `<${tag}>`;
   });
