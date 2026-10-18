@@ -14,11 +14,11 @@ module.exports = (ctx) => {
       svc('e-defter', 'Yasal defterlerinizi elektronik ortamda tutun ve saklayın.'),
       svc('mali-muhur', 'Aynı gün, dakikalar içinde teslim; şirketinizin e-belge mührü.'),
       svc('kep-ik', 'Resmi yazışmalarınız için yasal delil niteliğinde e-posta.'),
-      svc('e-imza', 'İstanbul içi aynı gün kurye; MERSİS, e-Devlet ve SGK işlemleri.'),
+      svc('e-imza', 'İstanbul içi hızlı kurye; MERSİS, e-Devlet ve SGK işlemleri.'),
     ]],
     ['Serbest meslek', [
       svc('e-smm', 'Serbest meslek makbuzlarınızı elektronik ortamda düzenleyin.'),
-      svc('e-imza', 'İstanbul içi aynı gün, 81 ile kurye ile teslim nitelikli e-imza.'),
+      svc('e-imza', 'İstanbul içi hızlı kurye, 81 ile aynı gün kargo ile nitelikli e-imza.'),
       svc('kep-ik', 'Kurumlarla resmi yazışmalarınız için KEP adresi.'),
       svc('e-donusum-danismanligi', 'Hangi e-belgeye ne zaman geçmeniz gerektiğini birlikte belirleyelim.'),
     ]],
