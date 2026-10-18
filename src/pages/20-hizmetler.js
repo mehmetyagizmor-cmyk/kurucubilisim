@@ -11,6 +11,29 @@ const actionsFor = (slug) => btn(applyForms[slug] ? '#basvuru' : applyHref(slug)
   btn(`https://wa.me/${site.whatsapp}`, 'WhatsApp’tan Yazın', 'btn--ghost btn--lg', false, ' target="_blank" rel="noopener"');
 const heroActions = actionsFor('');
 
+// Hizmete özel ek içerik bölümü (ör. entegrasyon programları). Alt başlıklar = patron metnindeki *...* satırları.
+const subHead = (t) => `<p class="lead" style="max-width:none;font-weight:650;color:var(--text)">${esc(t)}</p>`;
+const extraSection = (s, x) => `<section class="section" id="programlar"><div class="container">
+  <div class="section-head center"><span class="eyebrow">${esc(x.eyebrow)}</span><h2>${esc(x.h2)}</h2>${subHead(x.sub)}</div>
+  <div style="max-width:820px;margin:0 auto">${x.paras.map((t) => `<p class="lead" style="max-width:none">${esc(t)}</p>`).join('')}</div>
+  <h3 style="text-align:center;margin:56px 0 10px">${esc(x.programsTitle)}</h3>
+  <p style="text-align:center;color:var(--muted);margin:0 auto 28px;max-width:720px">${esc(x.programsIntro)}</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,1.8vw,22px)">${x.programs.map(([n, d], i) => `<div class="card" data-reveal style="--d:${(i % 3) * 0.06}s;flex:1 1 280px;max-width:380px"><strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(n)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>
+  <p style="text-align:center;color:var(--muted);margin:28px auto 0;max-width:820px">${esc(x.programsNote)}</p>
+  <div class="split" style="margin-top:64px;align-items:stretch">
+    <div class="card" style="padding:clamp(24px,3vw,40px)">
+      <h3 style="margin-top:0">${esc(x.benefitsTitle)}</h3>
+      <ul class="list-check" style="margin-top:18px">${x.benefits.map(([t, d]) => `<li>${icon('check')}<span><strong>${esc(t)}:</strong> ${esc(d)}</span></li>`).join('')}</ul>
+    </div>
+    <div class="card" style="padding:clamp(24px,3vw,40px)">
+      <h3 style="margin-top:0">${esc(x.missingTitle)}</h3>
+      <p>${esc(x.missing)}</p>
+      <div style="margin-top:20px;display:grid;gap:10px">${x.closing.map((t) => `<p style="margin:0;font-weight:650;color:var(--text)">${esc(t)}</p>`).join('')}</div>
+      <div class="hero__actions" style="margin:24px 0 0">${actionsFor(s.slug)}</div>
+    </div>
+  </div>
+</div></section>`;
+
 // Başvuru formu: sorular Google Form'dan (src/content/apply-forms.json), tasarım sitenin.
 // Yanıtlar main.js tarafından doğrudan Google Form'a gönderilir.
 const applyData = require('../content/apply-forms.json');
@@ -162,6 +185,7 @@ ${ctaBand()}`;
     <ul class="list-check" style="margin-top:18px">${s.features.map((f) => `<li>${icon('check')}<span>${esc(f)}</span></li>`).join('')}</ul>
   </div>
 </div></section>
+${s.extra ? extraSection(s, s.extra) : ''}
 ${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler"><div class="container">
   <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Avukat, doktor, mühendis ve müteahhitler için e-imza</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
   ${meslekGrid()}
