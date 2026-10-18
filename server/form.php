@@ -145,7 +145,65 @@ $headers = implode("\r\n", [
     'Content-Transfer-Encoding: 8bit',
 ]);
 
-$sent = @mail(MAIL_TO, $subject, $body, $headers, '-f' . MAIL_FROM);
+// SMTP ile gönderim (Hostinger e-posta sunucusu, DKIM imzalı → spam'e düşmez).
+// Ayar dosyası web klasörünün DIŞINDA durur: public_html'in bir üstündeki form-smtp.php
+//   <?php return ['host' => 'smtp.hostinger.com', 'port' => 465, 'user' => 'info@kurucubilisim.com', 'pass' => '...'];
+// Dosya yoksa veya SMTP başarısız olursa eski mail() yöntemine düşülür (başvuru kaybolmasın).
+function smtpConfig(): ?array {
+    foreach ([dirname(__DIR__) . '/form-smtp.php', __DIR__ . '/.form-smtp.php'] as $f) {
+        if (is_file($f)) { $c = include $f; if (is_array($c) && !empty($c['pass']) && $c['pass'] !== 'SIFREYI_BURAYA_YAZIN') return $c; }
+    }
+    return null;
+}
+
+function smtpSend(array $c, string $to, string $subject, string $body, string $replyTo): bool {
+    $host = $c['host'] ?? 'smtp.hostinger.com';
+    $port = (int) ($c['port'] ?? 465);
+    $user = (string) $c['user'];
+    $fp = @stream_socket_client(($port === 465 ? 'ssl://' : 'tcp://') . "$host:$port", $errno, $errstr, 15);
+    if (!$fp) return false;
+    stream_set_timeout($fp, 15);
+    $read = function () use ($fp): string {
+        $out = '';
+        while (($line = fgets($fp, 1024)) !== false) { $out .= $line; if (isset($line[3]) && $line[3] === ' ') break; }
+        return $out;
+    };
+    $cmd = function (string $line, array $ok) use ($fp, $read): bool {
+        if ($line !== '') fwrite($fp, $line . "\r\n");
+        return in_array((int) substr($read(), 0, 3), $ok, true);
+    };
+    $domain = substr(strrchr($user, '@') ?: '@localhost', 1);
+    $msg = implode("\r\n", [
+        'Date: ' . date('r'),
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . $domain . '>',
+        'From: =?UTF-8?B?' . base64_encode('Kurucu Bilişim Web') . '?= <' . $user . '>',
+        'To: <' . $to . '>',
+        'Reply-To: ' . str_replace(["\r", "\n"], '', $replyTo),
+        'Subject: ' . $subject,
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: base64',
+        '',
+        rtrim(chunk_split(base64_encode($body), 76, "\r\n")),
+    ]);
+    $ok = $cmd('', [220])
+        && $cmd('EHLO ' . $domain, [250])
+        && ($port === 465 || ($cmd('STARTTLS', [220]) && stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT) && $cmd('EHLO ' . $domain, [250])))
+        && $cmd('AUTH LOGIN', [334])
+        && $cmd(base64_encode($user), [334])
+        && $cmd(base64_encode((string) $c['pass']), [235])
+        && $cmd('MAIL FROM:<' . $user . '>', [250])
+        && $cmd('RCPT TO:<' . $to . '>', [250, 251])
+        && $cmd('DATA', [354])
+        && $cmd($msg . "\r\n.", [250]);
+    @fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok;
+}
+
+$smtp = smtpConfig();
+$sent = $smtp && smtpSend($smtp, MAIL_TO, $subject, $body, $email);
+if (!$sent) $sent = @mail(MAIL_TO, $subject, $body, $headers, '-f' . MAIL_FROM);
 if (!$sent) respond(false, 'Mesajınız şu anda gönderilemedi');
 
 respond(true, '', $forms[$type]['thanks']);
