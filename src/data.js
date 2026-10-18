@@ -87,6 +87,12 @@ const services = [
       ['E-faturaya geçiş süreci ne kadar sürer?', 'Mali mührünüz veya e-imzanız hazır olduğunda başvurunuz ve sistem kurulumunuz genellikle 1-2 iş günü içinde tamamlanır.'],
       ['Mevcut muhasebe programımla uyumlu mu?', 'Evet. Zirve, Logo, Mikro, Netsis, Paraşüt, Luca ve tüm popüler muhasebe yazılımlarıyla tam entegre çalışır.'],
     ],
+    steps: ['E-fatura başvurusu nasıl yapılır?', [
+      ['Mali mühür veya e-imza', 'E-fatura için gerekli mali mühür veya e-imzanızı temin ediyoruz.'],
+      ['GİB başvurusu', 'GİB’e e-fatura başvurunuzu sizin adınıza yapıyoruz.'],
+      ['Program entegrasyonu', 'Kullandığınız muhasebe veya ERP programıyla entegrasyonu kuruyoruz.'],
+      ['Eğitim ve destek', 'Ekibinize fatura kesmeyi gösteriyor, sonrasında da her an yanınızda oluyoruz.'],
+    ]],
     blog: /e-fatura|e-belge/,
   },
   {
@@ -135,6 +141,12 @@ const services = [
       ['E-irsaliyeye kimler geçmek zorundadır?', 'Belirli ciro limitini aşan mükellefler, demir-çelik, gübre, madeni yağ, ÖTV kapsamındaki ürünleri üreten ve satan firmalar için zorunludur.'],
       ['Alıcı e-irsaliye mükellefi değilse ne yapılır?', 'Alıcı e-irsaliye mükellefi olmasa dahi GİB sanal alıcısı üzerinden e-irsaliye düzenlenebilir ve kağıt çıktısıyla sevkiyat gerçekleştirilir.'],
     ],
+    steps: ['E-irsaliyeye nasıl geçilir?', [
+      ['Ön kontrol', 'Mali mühür veya e-imzanızı ve e-fatura durumunuzu kontrol ediyoruz.'],
+      ['GİB başvurusu', 'E-irsaliye başvurunuzu GİB’e sizin adınıza yapıyoruz.'],
+      ['Program entegrasyonu', 'Depo, lojistik ve muhasebe programlarınızla bağlantıyı kuruyoruz.'],
+      ['Eğitim ve destek', 'Ekibinize e-irsaliye düzenlemeyi gösteriyor, sonrasında da her an yanınızda oluyoruz.'],
+    ]],
     blog: /e-belge|e-fatura/,
   },
   {
@@ -333,6 +345,12 @@ const services = [
       ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanızı aynı gün kurye ile teslim ediyoruz. Türkiye’nin 81 iline de kurye ile gönderim yapıyoruz; teslim süresi kimlik doğrulamanın tamamlanmasına ve bulunduğunuz ile göre değişir.'],
       ['MERSİS işlemleri için e-imza zorunlu mu?', 'MERSİS üzerinden yapılan birçok başvuru ve onay işlemi için şirket yetkililerinin e-imzası gerekmektedir. Detaylar için blog yazımıza göz atabilirsiniz.'],
     ],
+    steps: ['E-imza nasıl alınır? 4 adımda', [
+      ['Başvuru formu', 'Formu doldurun veya WhatsApp’tan yazın; size uygun kullanım süresini (1, 2 veya 3 yıl) birlikte seçelim.'],
+      ['Kimlik doğrulama', 'Kimlik doğrulamanızı yapıyor, başvurunuzu onaya gönderiyoruz.'],
+      ['Aynı gün kurye', 'E-imzanız İstanbul içinde aynı gün, diğer illere kurye ile elinize ulaşır.'],
+      ['Uzaktan kurulum', 'Kart okuyucu sürücüsünü ve imza uygulamasını uzaktan bağlantıyla kuruyor, kullanıma hazır hale getiriyoruz.'],
+    ]],
     blog: /e-imza|mersis/,
   },
   {
@@ -361,6 +379,12 @@ const services = [
       ['Mali mührüm ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz. Kurulumunu da uzaktan bağlantıyla hemen yapıyoruz.'],
       ['Mali mühür ne kadar geçerlidir, nasıl yenilenir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
     ],
+    steps: ['Mali mühür başvurusu nasıl yapılır?', [
+      ['Başvuru', 'Formu doldurun; şirket ve yetkili bilgilerinizle başvuru dosyanızı birlikte hazırlayalım.'],
+      ['Onay takibi', 'Başvurunuzu iletiyor, onay sürecini sizin yerinize takip ediyoruz.'],
+      ['Aynı gün teslimat', 'Mali mührünüz aynı gün, dakikalar içinde teslim edilir.'],
+      ['Kurulum ve şifre', 'Kurulumu ve şifre (PIN) oluşturma adımlarını uzaktan bağlantıyla birlikte tamamlıyoruz.'],
+    ]],
     blog: /mali-muhur/,
   },
   {
@@ -388,6 +412,12 @@ const services = [
       ['E-bordro yasal olarak geçerli mi?', 'Evet. KEP üzerinden ve elektronik imza ile gönderilen bordrolar yasal geçerliliğe sahiptir ve kağıt bordronun yerini alabilir.'],
       ['KEP hesabı ne kadar sürede açılır?', 'Gerekli bilgiler tamamlandıktan sonra KEP hesabınız çoğunlukla aynı gün içinde, uzaktan işlemlerle aktif edilir.'],
     ],
+    steps: ['KEP adresi nasıl alınır?', [
+      ['Başvuru', 'Formu doldurun; bireysel veya şirket için size uygun KEP paketini birlikte belirleyelim.'],
+      ['Evrak ve kimlik doğrulama', 'Gerekli evrak listesini iletiyor, kimlik doğrulamanızı yapıyoruz.'],
+      ['Aynı gün aktivasyon', 'KEP hesabınız çoğunlukla aynı gün, uzaktan işlemlerle aktif edilir.'],
+      ['E-bordro kurulumu', 'İsterseniz bordrolarınızı KEP İK ile çalışanlarınıza göndermeniz için sistemi kuruyoruz.'],
+    ]],
     blog: /kep|e-bordro/,
   },
   {

@@ -168,7 +168,7 @@ ${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler">
 </div></section>` : ''}
 ${applyForms[s.slug] ? applySection(s, applyForms[s.slug]) : ''}
 <section class="section section--alt"><div class="container">
-  <div class="section-head center"><span class="eyebrow">Süreç</span><h2>${esc(s.short)} sürecimiz</h2><p class="lead">Başvurudan teslime kadar her adımı sizin yerinize takip ediyoruz.</p></div>${stepsBlock()}
+  <div class="section-head center"><span class="eyebrow">Süreç</span><h2>${esc(s.steps ? s.steps[0] : `${s.short} sürecimiz`)}</h2><p class="lead">Başvurudan teslime kadar her adımı sizin yerinize takip ediyoruz.</p></div>${stepsBlock(s.steps ? s.steps[1] : undefined)}
 </div></section>
 ${q !== undefined ? `<section class="section section--tight"><div class="container" style="max-width:820px">${quoteCard(testimonials[q])}</div></section>` : ''}
 <section class="section"><div class="container">
