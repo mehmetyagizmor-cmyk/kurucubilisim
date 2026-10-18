@@ -3,6 +3,7 @@ const { site, groups, services, testimonials, reasons, faqs, applyForms } = requ
 const { layout, icon, icBox, btn, byGroup, svcPath, pageHero, ctaBand, faqBlock, faqSchema, esc, abs, orgId, applyHref } = require('../lib');
 const { serviceCard, stepsBlock, quoteCard, postCard, statsBlock, meslekGrid } = require('../components');
 const { posts } = require('../posts');
+const kb = require('../kb');
 
 // Hizmete özel müşteri yorumu (varsa)
 const quoteFor = { 'e-fatura': 0, 'e-imza': 0, 'kep-ik': 1, 'web-tasarim': 2, 'kurumsal-tasarim': 2 };
@@ -11,51 +12,9 @@ const actionsFor = (slug) => btn(applyForms[slug] ? '#basvuru' : applyHref(slug)
   btn(`https://wa.me/${site.whatsapp}`, 'WhatsApp’tan Yazın', 'btn--ghost btn--lg', false, ' target="_blank" rel="noopener"');
 const heroActions = actionsFor('');
 
-// Hizmete özel ek içerik bölümü (ör. entegrasyon programları). Alt başlıklar = patron metnindeki *...* satırları.
-const subHead = (t) => `<p class="lead" style="max-width:none;font-weight:650;color:var(--text)">${esc(t)}</p>`;
-const extraSection = (s, x) => `<section class="section" id="programlar"><div class="container">
-  <div class="section-head center"><span class="eyebrow">${esc(x.eyebrow)}</span><h2>${esc(x.h2)}</h2>${subHead(x.sub)}</div>
-  <div style="max-width:820px;margin:0 auto">${x.paras.map((t) => `<p class="lead" style="max-width:none">${esc(t)}</p>`).join('')}</div>
-  <h3 style="text-align:center;margin:56px 0 10px">${esc(x.programsTitle)}</h3>
-  <p style="text-align:center;color:var(--muted);margin:0 auto 28px;max-width:720px">${esc(x.programsIntro)}</p>
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,1.8vw,22px)">${x.programs.map(([n, d], i) => `<div class="card" data-reveal style="--d:${(i % 3) * 0.06}s;flex:1 1 280px;max-width:380px"><strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(n)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>
-  <p style="text-align:center;color:var(--muted);margin:28px auto 0;max-width:820px">${esc(x.programsNote)}</p>
-  <div class="split" style="margin-top:64px;align-items:stretch">
-    <div class="card" style="padding:clamp(24px,3vw,40px)">
-      <h3 style="margin-top:0">${esc(x.benefitsTitle)}</h3>
-      <ul class="list-check" style="margin-top:18px">${x.benefits.map(([t, d]) => `<li>${icon('check')}<span><strong>${esc(t)}:</strong> ${esc(d)}</span></li>`).join('')}</ul>
-    </div>
-    <div class="card" style="padding:clamp(24px,3vw,40px)">
-      <h3 style="margin-top:0">${esc(x.missingTitle)}</h3>
-      <p>${esc(x.missing)}</p>
-      <div style="margin-top:20px;display:grid;gap:10px">${x.closing.map((t) => `<p style="margin:0;font-weight:650;color:var(--text)">${esc(t)}</p>`).join('')}</div>
-      <div class="hero__actions" style="margin:24px 0 0">${actionsFor(s.slug)}</div>
-    </div>
-  </div>
-</div></section>`;
-
-// Makale tipi ek bölüm (ör. e-ticaret otomatik faturalandırma): başlık, paragraf, kart grupları, numaralı avantajlar, kurulum adımları.
-const flexCards = (items, numbered) => `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,1.8vw,22px)">${items.map(([t, d], i) => `<div class="card" data-reveal style="--d:${(i % 3) * 0.06}s;flex:1 1 320px;max-width:400px">${numbered ? `<span class="eyebrow" style="margin-bottom:6px">${i + 1}.</span>` : ''}<strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(t)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>`;
-const textCol = (paras) => paras.map((t) => `<p class="lead" style="max-width:none">${esc(t)}</p>`).join('');
-const noteP = (t) => (t ? `<p style="text-align:center;color:var(--muted);margin:24px auto 0;max-width:820px">${esc(t)}</p>` : '');
-const articleSection = (s, x) => `<section class="section section--light" id="${x.id}"><div class="container">
-  <div class="section-head center"><span class="eyebrow">${esc(x.eyebrow)}</span><h2>${esc(x.h2)}</h2></div>
-  <div style="max-width:820px;margin:0 auto">${textCol(x.paras)}</div>
-  ${x.blocks.map((b) => `<div style="margin-top:64px">
-    <div style="max-width:820px;margin:0 auto"><h3 style="font-size:clamp(1.4rem,2.2vw,1.9rem)">${esc(b.h3)}</h3>${textCol(b.paras || [])}</div>
-    ${(b.groups || []).map(([h4, items]) => `<h4 style="text-align:center;margin:36px 0 18px;font-size:1.3rem">${esc(h4)}</h4>${flexCards(items)}`).join('')}
-    ${b.list ? `<div class="grid grid--2" style="max-width:980px;margin:24px auto 0">${b.list.map(([t, d]) => `<div class="card"><strong style="display:block;font-size:1.1rem;margin-bottom:6px">${esc(t)}</strong><p style="margin:0">${esc(d)}</p></div>`).join('')}</div>` : ''}
-    ${b.numbered ? `<div style="margin-top:24px">${flexCards(b.numbered, true)}</div>` : ''}
-    ${b.steps ? `<div style="margin-top:24px">${flexCards(b.steps, true)}</div>` : ''}
-    ${noteP(b.note)}
-  </div>`).join('')}
-  <div class="card" style="max-width:980px;margin:72px auto 0;padding:clamp(24px,3.5vw,48px)">
-    <h3 style="margin-top:0">${esc(x.closingTitle)}</h3>
-    ${x.closing.map((t) => `<p>${esc(t)}</p>`).join('')}
-    <p style="font-weight:650;color:var(--text);margin-top:18px">${esc(x.closingSub)}</p>
-    <div class="hero__actions" style="margin:24px 0 0">${actionsFor(s.slug)}</div>
-  </div>
-</div></section>`;
+// Bilgi bankası yazıları (hizmet sayfasında iç bağlantı)
+const kbFor = (slug) => kb.articles.filter((a) => a.svc === slug).slice(0, 6);
+const kbCard = (a) => `<a class="card" href="${a.path}" data-reveal><span class="chip">Bilgi Bankası</span><h3 style="margin:12px 0 8px;font-size:1.15rem">${esc(a.title)}</h3><p class="muted" style="margin:0">${esc(a.lead)}</p><span class="link-arrow" style="margin-top:14px">Rehberi oku ${icon('arrow')}</span></a>`;
 
 // Başvuru formu: sorular Google Form'dan (src/content/apply-forms.json), tasarım sitenin.
 // Yanıtlar main.js tarafından doğrudan Google Form'a gönderilir.
@@ -208,8 +167,6 @@ ${ctaBand()}`;
     <ul class="list-check" style="margin-top:18px">${s.features.map((f) => `<li>${icon('check')}<span>${esc(f)}</span></li>`).join('')}</ul>
   </div>
 </div></section>
-${s.extra ? extraSection(s, s.extra) : ''}
-${s.extra2 ? articleSection(s, s.extra2) : ''}
 ${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler"><div class="container">
   <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Avukat, doktor, mühendis ve müteahhitler için e-imza</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
   ${meslekGrid()}
@@ -222,6 +179,10 @@ ${q !== undefined ? `<section class="section section--tight"><div class="contain
 <section class="section"><div class="container">
   <div class="section-head center"><span class="eyebrow">S.S.S.</span><h2>${esc(s.short)} hakkında sık sorulanlar</h2></div>${faqBlock(s.faqs)}
 </div></section>
+${kbFor(s.slug).length ? `<section class="section" id="bilgi-bankasi"><div class="container">
+  <div class="section-head section-head--split"><div><span class="eyebrow">Bilgi Bankası</span><h2>${esc(s.short)} hakkında adım adım rehberler</h2></div>${btn('/bilgi-bankasi/', 'Bilgi Bankası', 'btn--ghost')}</div>
+  <div class="grid grid--3">${kbFor(s.slug).map(kbCard).join('')}</div>
+</div></section>` : ''}
 ${related.length ? `<section class="section section--light"><div class="container">
   <div class="section-head section-head--split"><div><span class="eyebrow">Rehberler</span><h2>${esc(s.short)} hakkında yazılarımız</h2></div>${btn('/blog/', 'Tüm yazılar', 'btn--ghost')}</div>
   <div class="grid grid--3">${related.map(postCard).join('')}</div>

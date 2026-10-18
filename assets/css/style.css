@@ -160,7 +160,9 @@ p { margin: 0 0 1em; }
 .dropdown small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.4; }
 .dropdown__all { grid-column: 1 / -1; justify-content: center; font-weight: 600; color: var(--link); font-size: .88rem; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px !important; margin-top: 4px; }
 .header__cta { display: flex; align-items: center; gap: 8px; }
-.header__phone { display: inline-flex; align-items: center; gap: 7px; font-weight: 500; font-size: .88rem; color: rgba(0, 0, 0, .8); padding: 8px 12px; }
+.header__phone { display: inline-flex; align-items: center; gap: 7px; font-weight: 500; font-size: .88rem; color: rgba(0, 0, 0, .8); padding: 8px 12px; white-space: nowrap; }
+.nav__link { white-space: nowrap; }
+@media (max-width: 1360px) { .header__phone { display: none; } }
 .header__phone svg { width: 16px; height: 16px; color: var(--brand); }
 .burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 0; background: transparent; cursor: pointer; place-items: center; }
 .burger span { display: block; width: 18px; height: 1.5px; background: var(--text); border-radius: 2px; position: relative; transition: background .2s; }
