@@ -1,5 +1,5 @@
 // Bilgi Bankası: her e-dönüşüm hizmeti için bir bilgi sayfası (patronun gönderdiği haberlerin yapısında).
-// Hepsi taslak: patron onaylayınca ilgili yazıdan `taslak: true` kaldırılır.
+// Patron onayladı (19 Ekim 2026). Yeni taslaklar için yazıya `taslak: true` eklenir.
 const { esc, btn, applyHref } = require('./lib');
 const { site } = require('./data');
 
@@ -27,7 +27,7 @@ function info(o) {
     buttons(o.svc, `${o.name} Fiyat Teklifi Alın`, o.name),
     h2(`Kurucu Bilişim ile ${o.name} Süreçlerinizi Dijitalleştirin`), p(o.kapanis), sub(o.kapanisSub),
   ].join('\n');
-  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, faqs: o.faqs, updated: '2026-10-19', taslak: true };
+  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, faqs: o.faqs, updated: '2026-10-19' };
 }
 
 module.exports = [

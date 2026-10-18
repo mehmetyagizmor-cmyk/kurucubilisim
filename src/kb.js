@@ -155,7 +155,7 @@ const articles = [
 
   // ========== 1. ADIM TASLAKLARI (patron onayı bekliyor) ==========
   {
-    cat: 'e-imza', slug: 'e-imza-kurulumu-nasil-yapilir', svc: 'e-imza', updated: '2026-10-19', taslak: true,
+    cat: 'e-imza', slug: 'e-imza-kurulumu-nasil-yapilir', svc: 'e-imza', updated: '2026-10-19',
     title: 'E-İmza Kurulumu Nasıl Yapılır? Adım Adım Rehber',
     lead: 'E-imzanızı bilgisayarınızda kullanabilmek için kart okuyucu sürücüsü, imza uygulaması ve gerekiyorsa Java kurulmalıdır. Adımları sırasıyla anlattık.',
     html: [
@@ -189,7 +189,7 @@ const articles = [
     ],
   },
   {
-    cat: 'e-imza', slug: 'e-imza-sifresi-pin-degistirme-ve-kilit-cozme', svc: 'e-imza', updated: '2026-10-19', taslak: true,
+    cat: 'e-imza', slug: 'e-imza-sifresi-pin-degistirme-ve-kilit-cozme', svc: 'e-imza', updated: '2026-10-19',
     title: 'E-İmza Şifresi (PIN) Nasıl Değiştirilir? Kilitlenirse Ne Yapılır?',
     lead: 'E-imza PIN’inizi imza uygulamasından değiştirebilirsiniz. Üst üste hatalı girişte kart kilitlenir; kilidi açmak için PUK kodu veya sağlayıcı desteği gerekir.',
     html: [
@@ -215,7 +215,7 @@ const articles = [
     ],
   },
   {
-    cat: 'e-imza', slug: 'e-devlete-e-imza-ile-giris-nasil-yapilir', svc: 'e-imza', updated: '2026-10-19', taslak: true,
+    cat: 'e-imza', slug: 'e-devlete-e-imza-ile-giris-nasil-yapilir', svc: 'e-imza', updated: '2026-10-19',
     title: 'E-Devlet’e E-İmza ile Giriş Nasıl Yapılır?',
     lead: 'E-Devlet giriş sayfasında “Elektronik İmza” seçeneğini seçip istenen imza uygulamasını kurduktan sonra kartınızla ve PIN’inizle giriş yapabilirsiniz.',
     html: [
@@ -238,7 +238,7 @@ const articles = [
     ].join('\n'),
   },
   {
-    cat: 'mali-muhur', slug: 'mali-muhur-pin-sifresi-nasil-olusturulur', svc: 'mali-muhur', updated: '2026-10-19', taslak: true,
+    cat: 'mali-muhur', slug: 'mali-muhur-pin-sifresi-nasil-olusturulur', svc: 'mali-muhur', updated: '2026-10-19',
     title: 'Mali Mühür PIN (Şifre) Nasıl Oluşturulur?',
     lead: 'Mali mühür teslim edildikten sonra kullanım için bir PIN (şifre) belirlenir. PIN oluşturma, aktivasyon ve kurulum adımlarını özetledik.',
     html: [
@@ -256,7 +256,7 @@ const articles = [
     ].join('\n'),
   },
   {
-    cat: 'kep', slug: 'kep-adresi-nasil-alinir', svc: 'kep-ik', updated: '2026-10-19', taslak: true,
+    cat: 'kep', slug: 'kep-adresi-nasil-alinir', svc: 'kep-ik', updated: '2026-10-19',
     title: 'KEP Adresi Nasıl Alınır? Online Başvuru Adımları',
     lead: 'Kurucu Bilişim KEP Başvuru Ayrıcalığı ile KEP adresi başvurusu tamamen online yapılır: NFC ile kimlik doğrulama ve e-Devlet onayı, dakikalar içinde hesap.',
     html: [
@@ -278,7 +278,7 @@ const articles = [
     ],
   },
   {
-    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-10-19', taslak: true,
+    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-10-19',
     title: 'E-Fatura Nasıl İptal Edilir? İtiraz Süresi ve Adımlar',
     lead: 'Düzenlenmiş bir e-fatura tek taraflı silinemez; iptal ve itiraz, GİB’in ilgili portalı ve mevzuattaki yöntemlerle, karşı tarafın da sürece dahil olmasıyla yapılır.',
     html: [
