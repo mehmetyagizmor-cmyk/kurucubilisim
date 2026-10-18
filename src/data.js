@@ -66,8 +66,8 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-fatura', icon: 'doc',
     name: 'E-Fatura', short: 'E-Fatura',
-    title: 'E-Fatura Başvurusu ve Geçiş Çözümleri | Kurucu Bilişim',
-    desc: 'GİB standartlarına tam uyumlu e-fatura geçişinizi hızlıca tamamlayın. Muhasebe ve ERP entegrasyonu, bulut arşiv ve 7/24 destek Kurucu Bilişim’de.',
+    title: 'E-Fatura Başvurusu Nasıl Yapılır? Geçiş Desteği | Kurucu Bilişim',
+    desc: 'E-fatura başvurusu nasıl yapılır, kimler geçmek zorunda? GİB başvurusu, mali mühür, muhasebe ve ERP entegrasyonu tek elden. Fiyat için teklif alın.',
     h1: 'E-Fatura Başvurusu ve Entegrasyon Çözümleri',
     lead: 'Faturalarınızı saniyeler içinde kesin, alıcılarına anında iletin. Kağıt, baskı ve kargo masraflarını sıfırlayarak tahsilat süreçlerinizi hızlandırın.',
     intro: [
@@ -81,6 +81,8 @@ const services = [
     ],
     features: ['GİB onaylı e-fatura altyapısı', 'Hızlı başvuru ve aktivasyon', 'Muhasebe & ERP entegrasyonu', 'Gelen ve giden fatura takibi', 'Toplu fatura gönderme & alma', '10 yıl yasal bulut arşiv', 'Mobil uygulama desteği', 'Kullanıcı eğitimi', '7/24 kesintisiz teknik destek'],
     faqs: [
+      ['E-fatura başvurusu nasıl yapılır?', 'Önce mali mühür veya e-imza temin edilir, ardından GİB’e e-fatura başvurusu yapılır ve kullandığınız programla entegrasyon kurulur. Bu adımların hepsini sizin için yapıyoruz.'],
+      ['E-fatura fiyatları ne kadar?', 'Ücret, kullanacağınız fatura adedine (kontör) ve ihtiyaç duyduğunuz entegrasyona göre değişir. Güncel fiyat için formdan veya WhatsApp’tan hemen teklif alabilirsiniz.'],
       ['E-faturaya kimler geçmek zorundadır?', 'GİB tarafından belirlenen yıllık ciro limitlerini aşan firmalar, e-ticaret satıcıları, gayrimenkul ve motorlu taşıt ticareti yapanlar ve belirli sektörlerdeki mükellefler için e-fatura zorunludur.'],
       ['E-faturaya geçiş süreci ne kadar sürer?', 'Mali mührünüz veya e-imzanız hazır olduğunda başvurunuz ve sistem kurulumunuz genellikle 1-2 iş günü içinde tamamlanır.'],
       ['Mevcut muhasebe programımla uyumlu mu?', 'Evet. Zirve, Logo, Mikro, Netsis, Paraşüt, Luca ve tüm popüler muhasebe yazılımlarıyla tam entegre çalışır.'],
@@ -308,9 +310,9 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-imza', icon: 'pen',
     name: 'E-İmza', short: 'E-İmza',
-    title: 'E-İmza Başvurusu | İstanbul İçi Aynı Gün Kurye',
-    desc: 'Nitelikli e-imzanızı hızlıca alın: İstanbul içi aynı gün kurye, 81 ile kurye ile teslim. Başvuru, kimlik doğrulama ve uzaktan kurulum desteği.',
-    h1: 'E-İmza Başvurusu, Teslimatı ve Kurulumu',
+    title: 'E-İmza Nasıl Alınır? Başvuru ve Aynı Gün Kurye | Kurucu Bilişim',
+    desc: 'E-imza nasıl alınır, hangi belgeler gerekir? İstanbul içi aynı gün kurye, 81 ile teslim, kurulum ve yenileme desteği. Fiyat için hemen teklif alın.',
+    h1: 'E-İmza Başvurusu, Kurulumu ve Yenilemesi',
     lead: '5070 sayılı Elektronik İmza Kanunu kapsamında ıslak imza ile aynı hukuki geçerliliğe sahip nitelikli e-imzanızı hızlı, kolay ve uygun fiyatla edinin.',
     intro: [
       'E-imza; MERSİS, e-Devlet, UYAP, EKAP, SGK ve ticaret sicili gibi birçok resmi platformda işlem yapmanızı, belgelerinizi dijital ortamda güvenle imzalamanızı sağlar. Kağıt israfını ortadan kaldırarak zaman ve maliyetten tasarruf ettirir.',
@@ -323,8 +325,11 @@ const services = [
     ],
     features: ['Yasal geçerlilik ve güvence', 'İstanbul içi aynı gün kurye', 'Şifrelenmiş güvenli teknoloji', 'MERSİS, UYAP, EKAP kullanımı', 'Uygun fiyatlı paketler', 'Uzaktan kurulum desteği', 'Kolay yenileme', '81 ile kurye ile teslim', 'Kurumsal ve bireysel çözümler'],
     faqs: [
+      ['E-imza nasıl alınır?', 'Başvuru formunu doldurursunuz, kimlik doğrulamanız yapılır ve e-imzanız İstanbul içinde aynı gün, diğer illere kurye ile teslim edilir. Ardından kart okuyucu sürücüsü ve imza uygulamasının kurulumunu uzaktan bağlantıyla biz yapıyoruz.'],
+      ['E-imza için gerekli belgeler nelerdir?', 'Bireysel başvurularda geçerli kimlik kartınız yeterlidir; kurumsal kullanımda kurum bilgileri de istenebilir. Süreci sizin için adım adım yönetiyoruz.'],
+      ['E-imza fiyatları ne kadar?', 'Fiyat, seçtiğiniz kullanım süresine (1, 2 veya 3 yıl) göre değişir. Güncel fiyat için formdan veya WhatsApp’tan hemen teklif alabilirsiniz.'],
+      ['E-imza nasıl yenilenir?', 'E-imzanızın süresi dolmadan yenileme başvurusu yapmanız gerekir. Yenileme başvurusunu, teslimatı ve kurulumu sizin için baştan sona yapıyoruz.'],
       ['E-imza ıslak imza ile aynı geçerliliğe sahip mi?', 'Evet. 5070 sayılı Elektronik İmza Kanunu’na göre güvenli elektronik imza, elle atılan imza ile aynı hukuki sonucu doğurur.'],
-      ['E-imza başvurusu için hangi belgeler gerekir?', 'Bireysel başvurularda kimlik kartı yeterlidir; kurumsal kullanımda kurum bilgileri de istenebilir. Süreci sizin için adım adım yönetiyoruz.'],
       ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanızı aynı gün kurye ile teslim ediyoruz. Türkiye’nin 81 iline de kurye ile gönderim yapıyoruz; teslim süresi kimlik doğrulamanın tamamlanmasına ve bulunduğunuz ile göre değişir.'],
       ['MERSİS işlemleri için e-imza zorunlu mu?', 'MERSİS üzerinden yapılan birçok başvuru ve onay işlemi için şirket yetkililerinin e-imzası gerekmektedir. Detaylar için blog yazımıza göz atabilirsiniz.'],
     ],
@@ -333,9 +338,9 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'mali-muhur', icon: 'seal',
     name: 'Mali Mühür', short: 'Mali Mühür',
-    title: 'Mali Mühür Başvurusu | Aynı Gün Teslimat | Kurucu Bilişim',
-    desc: 'E-fatura, e-arşiv ve e-defter için mali mühür: aynı gün, dakikalar içinde teslimat. Başvuru, kurulum ve yenileme desteği Kurucu Bilişim’de.',
-    h1: 'Mali Mühür Başvurusu ve Kurulumu',
+    title: 'Mali Mühür Başvurusu ve Yenileme | Aynı Gün Teslim | Kurucu Bilişim',
+    desc: 'Mali mühür başvurusu nasıl yapılır? Aynı gün teslimat, kurulum, şifre oluşturma ve yenileme desteği. E-fatura ve e-defter için. Fiyat için teklif alın.',
+    h1: 'Mali Mühür Başvurusu, Kurulumu ve Yenilemesi',
     lead: 'Tüzel kişiliğinizin dijital kimliği olan mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz; e-fatura, e-arşiv ve e-defter işlemlerinize hemen başlayın.',
     intro: [
       'Mali mühür, kurumların e-dönüşüm uygulamalarında kullandığı ve TÜBİTAK Kamu Sertifikasyon Merkezi tarafından üretilen elektronik sertifikadır. E-fatura, e-arşiv ve e-defter gibi uygulamalarda belgelerin kurumunuz tarafından oluşturulduğunu ve değiştirilmediğini garanti eder.',
@@ -348,19 +353,22 @@ const services = [
     ],
     features: ['Yasal geçerlilik', 'Aynı gün, dakikalar içinde teslimat', 'Şifrelenmiş veri koruma', 'E-fatura ve e-defter uyumu', 'Kurumsal çözümler', 'Teknik destek ve danışmanlık', 'Hızlı yenileme', 'Kolay kurulum', 'Uygun fiyat'],
     faqs: [
+      ['Mali mühür başvurusu nasıl yapılır?', 'Başvuru elektronik ortamda yapılır; şirket ve yetkili bilgileri doğrulandıktan sonra mali mührünüz hazırlanır. Başvuru dosyanızı hazırlıyor, onay sürecini takip ediyor ve mührünüzü aynı gün teslim ediyoruz.'],
+      ['Mali mühür ücreti ne kadar?', 'Ücret, seçtiğiniz sertifika süresine göre değişir. Güncel fiyat için formdan veya WhatsApp’tan hemen teklif alabilirsiniz.'],
+      ['Mali mühür şifresi nasıl oluşturulur?', 'Mali mühür teslim edildikten sonra kullanım için şifre (PIN) oluşturulur. Şifre oluşturma, aktivasyon ve kurulum adımlarında uzaktan bağlantıyla destek veriyoruz.'],
       ['Mali mühür ile e-imza arasındaki fark nedir?', 'E-imza gerçek kişiye, mali mühür ise tüzel kişiliğe (şirkete) aittir. Mali mühür e-fatura, e-arşiv ve e-defter gibi uygulamalarda şirket adına kullanılır.'],
       ['Mali mühür almak için ne gerekir?', 'Elektronik başvurunun yapılması, şirket bilgilerinin ve yetkili kişi bilgilerinin doğrulanması gerekir. Gerekli belgeleri ve adımları sizin için hazırlıyoruz.'],
       ['Mali mührüm ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz. Kurulumunu da uzaktan bağlantıyla hemen yapıyoruz.'],
-      ['Mali mühür ne kadar süre geçerlidir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
+      ['Mali mühür ne kadar geçerlidir, nasıl yenilenir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
     ],
     blog: /mali-muhur/,
   },
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'kep-ik', icon: 'mail',
     name: 'KEP (Kayıtlı Elektronik Posta) ve E-Bordro', short: 'KEP & E-Bordro',
-    title: 'KEP ve E-Bordro (KEP İK) Hizmeti | Kurucu Bilişim',
-    desc: 'Kayıtlı Elektronik Posta (KEP) adresi edinin, bordrolarınızı KEP İK ile yasal geçerlilikle dijital olarak gönderin ve arşivleyin.',
-    h1: 'KEP (Kayıtlı Elektronik Posta) ve E-Bordro',
+    title: 'KEP Adresi Nasıl Alınır? KEP ve E-Bordro | Kurucu Bilişim',
+    desc: 'KEP adresi nasıl alınır, hangi evraklar gerekir? KEP adresinizi hızlıca açıyor, bordrolarınızı KEP İK ile yasal geçerlilikle gönderiyoruz. Teklif alın.',
+    h1: 'KEP Adresi (Kayıtlı Elektronik Posta) ve E-Bordro',
     lead: 'Resmi yazışmalarınızı ve bordro süreçlerinizi yasal delil niteliğinde, zaman damgalı ve güvenli şekilde dijitale taşıyın.',
     intro: [
       'KEP, elektronik iletilerin gönderimi ve teslimini yasal delil sağlayacak şekilde belgeleyen, iadeli taahhütlü mektubun elektronik karşılığıdır. Vergi daireleri, SGK, belediyeler, mahkemeler, ticaret odaları ve bankalarla güvenli ve hızlı iletişim kurmanızı sağlar.',
@@ -373,6 +381,9 @@ const services = [
     ],
     features: ['Yasal delil niteliği', 'Zaman damgalı gönderim', 'E-bordro dağıtımı ve onayı', 'KVKK uyumlu süreç', 'Toplu gönderim', 'Güvenli arşiv', 'Resmi kurum yazışmaları', 'Kolay kullanım', 'Teknik destek'],
     faqs: [
+      ['KEP adresi nasıl alınır?', 'Başvurunuzu alıyor, kimlik doğrulamanızı yapıyor ve KEP hesabınızı çoğunlukla aynı gün, uzaktan işlemlerle aktif ediyoruz. Size sadece gerekli bilgileri iletmek kalıyor.'],
+      ['KEP adresi için gerekli evraklar nelerdir?', 'Bireysel başvurularda kimlik kartınız yeterlidir. Şirketler için genellikle imza sirküleri ve şirketi temsile yetkili kişinin kimlik bilgileri istenir. Size özel evrak listesini başvuru sırasında iletiyoruz.'],
+      ['KEP adresi ücreti ne kadar?', 'Ücret, seçtiğiniz pakete ve ileti sayısına göre değişir. Güncel fiyat için formdan veya WhatsApp’tan hemen teklif alabilirsiniz.'],
       ['KEP adresi kimler için zorunludur?', 'Türk Ticaret Kanunu kapsamında anonim, limited ve sermayesi paylara bölünmüş komandit şirketlerin KEP adresi edinmesi gerekmektedir. Şahıs işletmeleri ve bireyler de isteğe bağlı olarak KEP adresi alabilir.'],
       ['E-bordro yasal olarak geçerli mi?', 'Evet. KEP üzerinden ve elektronik imza ile gönderilen bordrolar yasal geçerliliğe sahiptir ve kağıt bordronun yerini alabilir.'],
       ['KEP hesabı ne kadar sürede açılır?', 'Gerekli bilgiler tamamlandıktan sonra KEP hesabınız çoğunlukla aynı gün içinde, uzaktan işlemlerle aktif edilir.'],
