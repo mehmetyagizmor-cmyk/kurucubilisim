@@ -704,7 +704,7 @@ module.exports = [
     surecTitle: 'Kurucu Bilişim ile E-Bordroya Nasıl Geçilir?',
     surec: [
       ['İhtiyaç analizi', 'Çalışan sayınızı, bordro sıklığınızı ve kullandığınız bordro programını birlikte değerlendiriyoruz.'],
-      ['KEP hesabının açılması', 'KEP Başvuru Ayrıcalığı ile şirketiniz için KEP hesabını NFC kimlik doğrulama ve e-Devlet onayıyla online açıyoruz.'],
+      ['KEP adreslerinin açılması', 'Firmanızın yetkili olarak atadığı kişiler ve tüm personeliniz için KEP adreslerini, KEP Başvuru Ayrıcalığı ile NFC kimlik doğrulama ve e-Devlet onayıyla online açıyoruz.'],
       ['Çalışan onaylarının alınması', 'Elektronik bildirim için gereken işçinin yazılı kabulü sürecini planlamanıza yardımcı oluyoruz.'],
       ['Gönderime başlama', 'Bordrolarınızı KEP İK üzerinden göndermeye başlıyor, ilk dönemlerde süreci birlikte takip ediyoruz.'],
     ],
@@ -713,7 +713,7 @@ module.exports = [
     faqs: [
       ['E-bordro zorunlu mu?', 'İşverenin çalışana ücret hesap pusulası verme yükümlülüğü vardır; bunun elektronik olarak verilmesi ise bir tercihtir. Elektronik bildirimde işçinin yazılı kabulü gibi mevzuattaki koşullara uyulması gerekir.'],
       ['E-bordro KEP ile gönderilmek zorunda mı?', 'Bordro farklı yollarla elektronik olarak iletilebilir. KEP ise gönderim ve teslim kayıtlarıyla hukuki delil sağladığı için uyuşmazlık durumunda ispat açısından güçlü bir seçenektir.'],
-      ['Çalışanların da KEP adresi olması gerekir mi?', 'Uygulama yapısına göre değişir. Kurulum sırasında işletmenize ve çalışanlarınıza uygun yöntemi birlikte belirliyoruz.'],
+      ['Çalışanların da KEP adresi olması gerekir mi?', 'Evet. Kurucu Bilişim E-Bordro (KEP İK) çözümünde, firma tarafından yetkili olarak atanan kişilerin ve tüm personelin KEP adresi bulunur. KEP adreslerinin açılmasından bordroların gönderilmesine kadar süreci uçtan uca biz yönetiyoruz.'],
       ['E-bordroda kişisel veriler nasıl korunur?', 'Bordrolar kişisel veri içerdiği için KVKK’ya uygun aydınlatma, yetkilendirme ve güvenli saklama önlemleri alınmalıdır. Ayrıntılar için e-bordroda KVKK uyumu yazımıza göz atabilirsiniz.'],
     ],
   }),
