@@ -11,44 +11,88 @@ const ul = (items) => `<ul>${items.map((t) => `<li>${esc(t)}</li>`).join('')}</u
 const olBold = (items) => `<ol>${items.map(([t, d]) => `<li><strong>${esc(t)}:</strong> ${esc(d)}</li>`).join('')}</ol>`;
 const note = (t) => `<blockquote><p>${esc(t)}</p></blockquote>`;
 
-// Ortak iskelet: giriş → nedir → kimler → avantajlar → süreç → fiyat → kapanış
+// Ek bölüm: [başlık, ...html parçaları] — html parçası düz metinse <p> olur
+const sect = ([t, ...parts]) => [h2(t), ...parts.map((x) => (x.startsWith('<') ? x : p(x)))].join('\n');
+// Resmî kaynaklar (yeni sekmede açılır)
+const sources = (list) => `<p><em>Resmî kaynaklar:</em> ${list.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`).join(' · ')}</p>`;
+
+// Ortak iskelet: (kısaca) → giriş → nedir → [ekler] → kimler → [ekler] → avantajlar → süreç → [ekler] → fiyat → [kaynaklar] → kapanış
+// Google: aranan soru ilk paragrafta 2 cümleyle cevaplanır (öne çıkan snippet), ardından kapsamlı bölümler gelir.
 function info(o) {
   const html = [
+    ...(o.kisaca ? [`<p><strong>Kısaca:</strong> ${esc(o.kisaca)}</p>`] : []),
     ...o.intro.map(p),
     sub(o.subline),
-    h2(`${o.name} Nedir?`), ...o.nedir.map(p),
+    h2(o.nedirTitle || `${o.name} Nedir?`), ...o.nedir.map(p),
+    ...(o.afterNedir || []).map(sect),
     h2(o.kimlerTitle || `${o.name} Kimler İçin Zorunlu?`), ...(o.kimlerIntro ? [p(o.kimlerIntro)] : []), ul(o.kimler), ...(o.kimlerNote ? [note(o.kimlerNote)] : []),
+    ...(o.afterKimler || []).map(sect),
     h2(`${o.name} Kullanmanın Avantajları`), ...o.avantaj.map(([t, d], i) => `${h3(`${i + 1}. ${t}`)}${p(d)}`),
     h2(o.surecTitle || `Kurucu Bilişim ile ${o.name} Süreci Nasıl İşler?`), olBold(o.surec),
-    h2(`${o.name} Fiyatları`), p(`${o.name} ücretleri; kullanım hacmine, seçilen pakete, entegrasyon ihtiyacına ve hizmet kapsamına göre değişir. İşletmenizin ihtiyaçlarını belirleyerek size özel fiyat teklifi hazırlıyoruz.`),
+    ...(o.afterSurec || []).map(sect),
+    h2(`${o.name} Fiyatları`), p(o.fiyat || `${o.name} ücretleri; kullanım hacmine, seçilen pakete, entegrasyon ihtiyacına ve hizmet kapsamına göre değişir. İşletmenizin ihtiyaçlarını belirleyerek size özel fiyat teklifi hazırlıyoruz.`),
+    ...(o.fiyatLink ? [o.fiyatLink] : []),
+    ...(o.sources ? [sources(o.sources)] : []),
   ].join('\n');
   // Kapanış SSS'den sonra, tek teklif kutusunun hemen üstünde durur (patron: butonlar yalnız en sonda)
   const outro = [h2(`Kurucu Bilişim ile ${o.name} Süreçlerinizi Dijitalleştirin`), p(o.kapanis), sub(o.kapanisSub)].join('\n');
-  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, outro, faqs: o.faqs, info: true, updated: '2026-10-19' };
+  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, outro, faqs: o.faqs, info: true, updated: o.updated || '2026-10-19' };
 }
 
 module.exports = [
   info({
     cat: 'e-fatura', svc: 'e-fatura', slug: 'e-fatura-rehberi', name: 'E-Fatura',
-    title: 'E-Fatura Rehberi: Nedir, Kimler Geçmek Zorunda, Nasıl Başvurulur?',
-    lead: 'E-fatura; faturaların elektronik ortamda düzenlenip GİB üzerinden iletildiği yasal uygulamadır. Kimlerin geçmesi gerektiğini ve başvuru adımlarını anlattık.',
+    title: 'E-Fatura Nedir? Kimler Geçmek Zorunda, Nasıl Başvurulur? (2026)',
+    lead: 'E-fatura; GİB sistemine kayıtlı mükellefler arasında elektronik ortamda düzenlenip iletilen yasal faturadır. Kimlerin geçmek zorunda olduğunu, nasıl çalıştığını ve başvuru adımlarını anlattık.',
+    updated: '2026-10-20',
+    kisaca: 'E-fatura, kâğıt faturayla aynı hukuki niteliğe sahip olan ve Gelir İdaresi Başkanlığı (GİB) sistemine kayıtlı iki mükellef arasında elektronik ortamda düzenlenip iletilen faturadır. 2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler, izleyen yılın Temmuz ayından itibaren e-faturaya geçmek zorundadır.',
     intro: [
-      'Faturaların kâğıda basılması, imzalanması, kargoyla gönderilmesi ve arşivlenmesi işletmeler için ciddi zaman ve maliyet demektir. E-fatura bu süreci tamamen dijital ortama taşır.',
-      'Gelir İdaresi Başkanlığı (GİB) tarafından belirlenen mükellefler için e-faturaya geçiş zorunludur; zorunlu olmayan işletmeler de isteğe bağlı olarak sisteme dahil olabilir.',
+      'Faturaların kâğıda basılması, imzalanması, kargoyla gönderilmesi ve arşivlenmesi işletmeler için ciddi zaman ve maliyet demektir. E-fatura bu süreci tamamen dijital ortama taşır: fatura saniyeler içinde alıcıya ulaşır, elektronik olarak saklanır ve muhasebe programınıza otomatik aktarılabilir.',
+      'Bu rehberde e-faturanın ne olduğunu, kimler için zorunlu olduğunu, nasıl çalıştığını, e-arşiv faturadan farkını ve başvuru adımlarını tek yerde topladık.',
     ],
     subline: 'E-faturaya geçişinizi mali mühür temininden program entegrasyonuna kadar tek noktadan yönetiyoruz.',
     nedir: [
-      'E-fatura, kâğıt faturayla aynı hukuki niteliğe sahip olan ve elektronik ortamda düzenlenen faturadır. E-fatura, GİB sistemine kayıtlı iki mükellef arasında GİB altyapısı üzerinden iletilir.',
-      'Faturalar mali mühür veya e-imza ile imzalanır; bu sayede belgenin kim tarafından düzenlendiği ve sonradan değiştirilmediği güvence altına alınır.',
+      'E-fatura, Vergi Usul Kanunu’na göre kâğıt faturayla aynı hukuki niteliğe sahip olan ve elektronik ortamda düzenlenen faturadır. E-fatura yalnızca GİB’in e-fatura sistemine kayıtlı iki mükellef arasında, GİB altyapısı üzerinden iletilir.',
+      'Faturalar şirketler için mali mühürle, gerçek kişi mükellefler için e-imzayla imzalanır. Bu sayede faturanın kim tarafından düzenlendiği ve sonradan değiştirilmediği güvence altına alınır.',
     ],
-    kimlerIntro: 'E-faturaya geçiş zorunluluğu GİB’in yayımladığı tebliğlerle belirlenir. Genel olarak şu mükellefler kapsamdadır:',
+    afterNedir: [
+      ['E-Fatura Nasıl Çalışır?',
+        olBold([
+          ['Düzenleme', 'Fatura, muhasebe programınızda, entegratör ekranında veya GİB portalında elektronik olarak hazırlanır.'],
+          ['İmzalama', 'Fatura mali mühür veya e-imzayla (ya da özel entegratör aracılığıyla) imzalanır.'],
+          ['İletim', 'İmzalı fatura GİB altyapısı üzerinden alıcının e-fatura kutusuna ulaşır.'],
+          ['Yanıt', 'Ticari fatura senaryosunda alıcı faturayı kabul veya reddedebilir; temel faturada yanıt beklenmez.'],
+          ['Saklama', 'Fatura, mevzuattaki saklama süreleri boyunca elektronik ortamda saklanır.'],
+        ])],
+      ['Temel Fatura ve Ticari Fatura Senaryoları',
+        'E-faturada iki senaryo vardır. Temel faturada fatura alıcıya iletildiğinde süreç tamamlanır; itiraz gerekirse sistem dışındaki yöntemlerle yapılır. Ticari faturada ise alıcı, faturayı sistem üzerinden kabul veya reddedebilir; ret için mevzuatta belirlenen süre (8 gün) içinde yanıt verilir.'],
+      ['E-Fatura ile E-Arşiv Fatura Arasındaki Fark',
+        ulBold([
+          ['E-fatura', 'Alıcı da e-fatura sistemine kayıtlıysa düzenlenir ve GİB üzerinden alıcının e-fatura kutusuna iletilir.'],
+          ['E-arşiv fatura', 'Alıcı e-fatura sistemine kayıtlı değilse (ör. son tüketici veya kayıtlı olmayan firma) düzenlenir; alıcıya e-posta veya kâğıt çıktı olarak iletilir ve GİB’e raporlanır.'],
+        ]),
+        `<p>Ayrıntılar için <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’ne bakabilirsiniz.</p>`],
+    ],
+    kimlerTitle: 'E-Faturaya Geçmek Kimler İçin Zorunlu?',
+    kimlerIntro: 'E-faturaya geçiş zorunluluğu GİB’in yayımladığı Vergi Usul Kanunu genel tebliğleriyle belirlenir. Başlıca kapsamdaki mükellefler:',
     kimler: [
-      'GİB’in belirlediği brüt satış hasılatı (ciro) sınırını aşan mükellefler',
-      'İnternet üzerinden mal ve hizmet satışı yapan ve belirlenen hadleri aşan e-ticaret işletmeleri',
-      'Gayrimenkul ve motorlu taşıt alım satımı gibi belirli faaliyetlerde bulunan mükellefler',
-      'GİB tarafından sektörel olarak kapsama alınan diğer mükellefler',
+      '2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler (izleyen yılın Temmuz ayından itibaren)',
+      'İnternet üzerinden mal ve hizmet satışı yapan ve tebliğde belirlenen hasılat sınırını (500 bin TL) aşan mükellefler',
+      'Gayrimenkul alım satımı, kiralanması veya motorlu taşıt ticaretiyle uğraşan ve belirlenen hadleri aşan mükellefler',
+      'Turizm işletme belgesine sahip konaklama işletmeleri gibi sektörel olarak kapsama alınanlar',
+      'Bu mükelleflerden mal veya hizmet alımı yapan ve belirli koşulları taşıyan diğer mükellefler',
     ],
-    kimlerNote: 'Ciro sınırları ve geçiş tarihleri zaman içinde değişebilir. İşletmenizin kapsamda olup olmadığını birlikte kontrol edebiliriz.',
+    kimlerNote: 'Ciro sınırları, sektörel kapsam ve geçiş tarihleri GİB tebliğleriyle güncellenebilir. İşletmenizin kapsamda olup olmadığını mali müşavirinizle veya bizimle birlikte kontrol etmeniz önerilir.',
+    afterKimler: [
+      ['E-Faturaya Geçmezsem Ne Olur?',
+        'Zorunlu kapsamda olduğu hâlde e-faturaya geçmeyen veya kâğıt fatura düzenlemeye devam eden mükelleflere Vergi Usul Kanunu kapsamında özel usulsüzlük cezası uygulanabilir. Ayrıca düzenlenen kâğıt faturalar hiç düzenlenmemiş sayılabilir. Ceza tutarları her yıl yeniden belirlendiği için güncel tutarı mali müşavirinizden teyit etmeniz önerilir.'],
+      ['E-Faturaya Geçmek İçin Ne Gerekir?',
+        ulBold([
+          ['Mali mühür veya e-imza', 'Şirketler mali mühür, gerçek kişi mükellefler mali mühür veya e-imza kullanabilir.'],
+          ['Kullanım yöntemi', 'GİB portalı, özel entegratör veya doğrudan entegrasyon yöntemlerinden biri seçilir.'],
+          ['Başvuru', 'E-fatura başvurusu GİB sistemi üzerinden yapılır ve onaylandığında mükellef e-fatura kayıtlı kullanıcılar listesine eklenir.'],
+        ])],
+    ],
     avantaj: [
       ['Anında İletim', 'Faturalarınız saniyeler içinde alıcıya ulaşır; kargo ve posta beklemesi ortadan kalkar.'],
       ['Maliyet Tasarrufu', 'Kâğıt, baskı, zarf ve kargo masrafları azalır.'],
@@ -61,12 +105,27 @@ module.exports = [
       ['GİB başvurusu', 'E-fatura başvurunuzu sizin adınıza yapıyoruz.'],
       ['Entegrasyon ve eğitim', 'Programınızla entegrasyonu kurup ekibinize fatura kesmeyi gösteriyoruz.'],
     ],
+    afterSurec: [
+      ['E-Fatura Kullanım Yöntemleri',
+        ulBold([
+          ['GİB Portal', 'GİB’in ücretsiz portalı üzerinden fatura düzenlenir. Az sayıda fatura kesen işletmeler için uygundur; muhasebe programıyla otomatik bağlantı yoktur.'],
+          ['Özel entegratör', 'GİB’den izinli bir entegratör aracılığıyla faturalar kesilir, saklanır ve muhasebe veya ERP programınızla entegre çalışır. Çok sayıda fatura kesen işletmeler için en pratik yöntemdir.'],
+          ['Doğrudan entegrasyon', 'Kendi bilgi işlem altyapısını GİB sistemine doğrudan bağlayan büyük ölçekli işletmeler tarafından tercih edilir.'],
+        ]),
+        `<p>Kullandığınız muhasebe veya ERP programıyla entegrasyon seçenekleri için <a href="/bilgi-bankasi/entegrasyon/muhasebe-ve-erp-programlari-entegrasyonu/">Muhasebe ve ERP Entegrasyonu</a> rehberimize, hatalı bir faturayı iptal etmek için <a href="/bilgi-bankasi/e-fatura/e-fatura-nasil-iptal-edilir/">E-Fatura Nasıl İptal Edilir?</a> rehberimize göz atabilirsiniz.</p>`],
+    ],
+    fiyat: 'E-fatura ücreti; kullanacağınız yönteme (GİB portalı veya özel entegratör), yıllık fatura adedine (kontör), arşivleme ihtiyacına, entegrasyon kapsamına ve mali mühür ihtiyacınıza göre değişir. İşletmenizin fatura hacmini birlikte belirleyerek size özel teklif hazırlıyoruz.',
+    sources: [['GİB e-Belge', 'https://ebelge.gib.gov.tr'], ['Gelir İdaresi Başkanlığı', 'https://www.gib.gov.tr']],
     kapanis: 'E-faturaya geçiş, doğru planlandığında işletmenize hem zaman hem maliyet kazandırır. Kurucu Bilişim olarak tüm adımları sizin yerinize takip ediyoruz.',
     kapanisSub: 'E-fatura geçişiniz için bugün teklif alın; faturalarınızı dijitalde güvenle yönetin.',
     faqs: [
+      ['E-faturaya kimler geçmek zorunda?', '2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler ile internet satışı, gayrimenkul ve motorlu taşıt ticareti gibi faaliyetlerde belirlenen hadleri aşan mükellefler e-faturaya geçmek zorundadır. Sınırlar GİB tebliğleriyle güncellenebilir.'],
+      ['E-faturaya ne zaman geçilmesi gerekir?', 'Hasılat sınırını aşan mükellefler, sınırın aşıldığı hesap dönemini izleyen yılın Temmuz ayı başından itibaren e-fatura uygulamasına geçmek zorundadır.'],
       ['E-faturaya geçiş ne kadar sürer?', 'Mali mührünüz veya e-imzanız hazır olduğunda başvuru ve kurulum genellikle birkaç iş günü içinde tamamlanır.'],
       ['Zorunlu olmadan e-faturaya geçebilir miyim?', 'Evet. Zorunlu kapsamda olmayan işletmeler de isteğe bağlı olarak e-fatura sistemine dahil olabilir.'],
-      ['E-fatura ile e-arşiv fatura arasındaki fark nedir?', 'E-fatura, iki e-fatura mükellefi arasında düzenlenir. Alıcı e-fatura sistemine kayıtlı değilse e-arşiv fatura düzenlenir.'],
+      ['E-fatura ile e-arşiv fatura arasındaki fark nedir?', 'E-fatura, iki e-fatura mükellefi arasında GİB üzerinden iletilir. Alıcı e-fatura sistemine kayıtlı değilse e-arşiv fatura düzenlenir.'],
+      ['Karşı tarafın e-fatura mükellefi olup olmadığını nasıl öğrenirim?', 'GİB’in e-fatura kayıtlı kullanıcılar listesinden alıcının vergi numarasıyla sorgulama yapabilirsiniz. Muhasebe ve entegratör programları bu kontrolü genellikle otomatik yapar.'],
+      ['E-fatura için mali mühür şart mı?', 'Şirketler için mali mühür gerekir; gerçek kişi mükellefler e-imza da kullanabilir. Özel entegratör kullanıldığında imzalama entegratör tarafından da yapılabilir.'],
     ],
   }),
   info({
@@ -401,11 +460,51 @@ module.exports = [
   }),
   info({
     cat: 'e-imza', svc: 'e-imza', slug: 'e-imza-rehberi', name: 'E-İmza',
-    title: 'E-İmza Rehberi: Nedir, Nerelerde Kullanılır, Nasıl Alınır?',
-    lead: 'Nitelikli elektronik imza, 5070 sayılı Kanun’a göre ıslak imzayla aynı hukuki sonucu doğurur. E-imzanın kullanım alanlarını ve alma adımlarını anlattık.',
+    title: 'E-İmza Nedir, Nasıl Alınır? Başvuru, Belgeler ve Kullanım Rehberi',
+    lead: 'Nitelikli elektronik imza, 5070 sayılı Kanun’a göre ıslak imzayla aynı hukuki sonucu doğurur. E-imzanın ne olduğunu, nasıl alındığını, gerekli belgeleri ve kullanım alanlarını anlattık.',
+    updated: '2026-10-20',
+    kisaca: 'E-imza (nitelikli elektronik imza), elektronik bir belgeyi imzalayan kişinin kimliğini doğrulayan ve belgenin sonradan değiştirilmediğini garanti eden, ıslak imzayla aynı hukuki sonucu doğuran dijital imzadır. E-imza, BTK tarafından yetkilendirilmiş elektronik sertifika hizmet sağlayıcılarından kimlik doğrulamasıyla alınır ve kart ile kart okuyucu üzerinden kullanılır.',
     intro: [
-      'E-Devlet, UYAP, EKAP, MERSİS ve SGK gibi birçok resmi platformda işlem yapmak için e-imzaya ihtiyaç duyulur. E-imza, belgelerinizi dijital ortamda güvenle imzalamanızı sağlar.',
+      'E-Devlet, UYAP, EKAP, MERSİS ve SGK gibi birçok resmi platformda işlem yapmak için e-imzaya ihtiyaç duyulur. E-imza, belgelerinizi bulunduğunuz yerden dakikalar içinde ve hukuken geçerli şekilde imzalamanızı sağlar.',
+      'Bu rehberde e-imzanın ne olduğunu, kimlerin ihtiyaç duyduğunu, başvuru için gerekli belgeleri, alma adımlarını, kullanım alanlarını ve sık sorulan soruları tek yerde topladık.',
     ],
+    afterNedir: [
+      ['E-İmza Türleri: Kartlı E-İmza ve Mobil İmza',
+        ulBold([
+          ['Kartlı e-imza', 'Akıllı kart ve bilgisayara takılan kart okuyucuyla kullanılır. Bilgisayar üzerinden yapılan resmi işlemlerde en yaygın kullanılan türdür.'],
+          ['Mobil imza', 'Cep telefonu hattınıza tanımlanan elektronik imzadır; GSM operatörleri üzerinden alınır ve telefon onayıyla kullanılır.'],
+        ]),
+        'Hangi türün size uygun olduğu, kullanacağınız sistemlere ve işlem sıklığınıza göre değişir. Kurucu Bilişim olarak kartlı e-imza başvurusu, teslimatı ve kurulumunu yönetiyoruz.'],
+      ['E-İmza ile Hangi İşlemler Yapılamaz?',
+        '5070 sayılı Elektronik İmza Kanunu’na göre kanunların resmî şekle veya özel bir merasime tabi tuttuğu hukuki işlemler ile teminat sözleşmeleri güvenli elektronik imzayla gerçekleştirilemez. Örneğin noterde yapılması gereken bazı işlemler için ıslak imza gerekir.'],
+    ],
+    afterKimler: [
+      ['E-İmza Başvurusu İçin Gerekli Belgeler',
+        ulBold([
+          ['Bireysel başvuru', 'T.C. kimlik numaralı geçerli kimlik belgesi (çipli kimlik kartı) yeterlidir.'],
+          ['Kurumsal başvuru', 'Kişisel kimlik bilgilerinin yanında çalışılan kuruma ait bilgiler ve sertifika sağlayıcısının istediği kurum belgeleri talep edilebilir.'],
+        ]),
+        'Başvuru sırasında kimlik doğrulaması yapılır. Hangi belgelerin gerektiğini başvuru öncesinde sizinle paylaşıyor, süreci sizin için yönetiyoruz.'],
+    ],
+    afterSurec: [
+      ['E-İmza Nerelerde Kullanılır?',
+        ul([
+          'E-Devlet Kapısı’na güvenli giriş ve kurum işlemleri',
+          'UYAP üzerinden dava ve icra işlemleri (avukatlar)',
+          'EKAP üzerinden kamu ihalelerine e-teklif verme',
+          'MERSİS’te şirket kuruluşu ve değişiklik işlemleri',
+          'SGK, e-reçete ve e-rapor işlemleri (sağlık çalışanları)',
+          'Yapı Denetim Sistemi (YDS) işlemleri (mühendisler)',
+          'Sözleşme ve belgelerin dijital ortamda imzalanması',
+          'KEP üzerinden imzalı resmi yazışmalar',
+        ]),
+        `<p>Mesleğinize özel kullanım için <a href="/e-donusum-hizmetleri/e-imza/avukatlar-icin-e-imza/">avukatlar</a>, <a href="/e-donusum-hizmetleri/e-imza/doktorlar-icin-e-imza/">doktorlar</a>, <a href="/e-donusum-hizmetleri/e-imza/muhendisler-icin-e-imza/">mühendisler</a> ve <a href="/e-donusum-hizmetleri/e-imza/muteahhitler-icin-e-imza/">müteahhitler</a> için hazırladığımız sayfalara göz atabilirsiniz.</p>`],
+      ['E-İmza Geldikten Sonra: Kurulum, Kullanım ve Yenileme',
+        `<p>E-imzanız elinize ulaştığında önce <a href="/bilgi-bankasi/e-imza/e-imza-aktivasyonu-ve-gerekli-programlar/">aktivasyon ve gerekli programlar</a>, ardından <a href="/bilgi-bankasi/e-imza/e-imza-kurulumu-nasil-yapilir/">kurulum</a> adımları tamamlanır. İlk imzanızı atmak için <a href="/bilgi-bankasi/e-imza/e-imza-nasil-atilir/">E-İmza Nasıl Atılır?</a>, şifre işlemleri için <a href="/bilgi-bankasi/e-imza/e-imza-sifresi-pin-degistirme-ve-kilit-cozme/">PIN rehberi</a>, süresi dolmak üzere olan e-imzalar için <a href="/bilgi-bankasi/e-imza/e-imza-yenileme-nasil-yapilir/">E-İmza Yenileme</a> rehberimize göz atabilirsiniz.</p>`],
+    ],
+    fiyat: 'E-imza ücreti; kullanım süresine (1, 2 veya 3 yıl), yeni başvuru ya da yenileme olmasına, kart okuyucu ihtiyacına ve teslimat şekline göre değişir. Güncel fiyat için bize ulaşın; ihtiyacınıza uygun paketi birlikte belirleyelim.',
+    fiyatLink: `<p>Ücreti etkileyen etkenler için <a href="/bilgi-bankasi/e-imza/e-imza-fiyati-neye-gore-degisir/">E-İmza Fiyatı Neye Göre Değişir?</a> rehberimize göz atabilirsiniz.</p>`,
+    sources: [['5070 sayılı Elektronik İmza Kanunu', 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5070&MevzuatTur=1&MevzuatTertip=5'], ['Bilgi Teknolojileri ve İletişim Kurumu', 'https://www.btk.gov.tr']],
     subline: 'E-imzanızı İstanbul içinde hızlı kuryeyle, 81 ile aynı gün kargoyla gönderiyor; kurulumunu uzaktan yapıyoruz.',
     nedir: [
       'Elektronik imza, bir belgeyi elektronik ortamda imzalayan kişinin kimliğini doğrulayan ve belgenin sonradan değiştirilmediğini garanti eden veridir.',
@@ -434,27 +533,57 @@ module.exports = [
     kapanis: 'E-imza, resmi işlemlerinizi hızlı ve güvenli şekilde dijital ortamda tamamlamanızı sağlar.',
     kapanisSub: 'E-imzanızı bugün alın; başvurudan kuruluma kadar yanınızdayız.',
     faqs: [
-      ['E-imza ıslak imza ile aynı geçerliliğe sahip mi?', 'Evet. 5070 sayılı Kanun’a göre güvenli elektronik imza, elle atılan imza ile aynı hukuki sonucu doğurur.'],
+      ['E-imza nasıl alınır?', 'Başvuru formunu doldurursunuz, kimlik doğrulamanız yapılır ve e-imzanız İstanbul içinde hızlı kuryeyle, diğer illere aynı gün kargoyla gönderilir. Ardından kurulum uzaktan bağlantıyla yapılır.'],
+      ['E-imza ıslak imza ile aynı geçerliliğe sahip mi?', 'Evet. 5070 sayılı Kanun’a göre güvenli elektronik imza, elle atılan imza ile aynı hukuki sonucu doğurur. Resmî şekle tabi işlemler ve teminat sözleşmeleri bunun dışındadır.'],
+      ['E-imza için hangi belgeler gerekir?', 'Bireysel başvurularda T.C. kimlik numaralı geçerli kimlik belgesi yeterlidir. Kurumsal başvurularda kurum bilgileri de istenebilir.'],
       ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde hızlı kuryeyle yönlendirilir; diğer illere aynı gün kargoya verilir ve ertesi gün teslimat seçeneği sunulur.'],
+      ['E-imza ne kadar süre geçerlidir?', 'E-imza, seçtiğiniz pakete göre 1, 2 veya 3 yıl geçerlidir. Süre dolmadan yenileme yapmanız gerekir.'],
+      ['E-imza ile mobil imza arasındaki fark nedir?', 'Kartlı e-imza kart ve kart okuyucuyla bilgisayarda kullanılır; mobil imza ise cep telefonu hattınıza tanımlanır ve telefon onayıyla kullanılır.'],
+      ['Şirket çalışanları için tek e-imza alınabilir mi?', 'Hayır. E-imza kişiye özeldir; her çalışan için ayrı e-imza düzenlenir. Toplu başvuruları tek elden yönetebiliriz.'],
     ],
   }),
   info({
     cat: 'mali-muhur', svc: 'mali-muhur', slug: 'mali-muhur-rehberi', name: 'Mali Mühür',
-    title: 'Mali Mühür Rehberi: Nedir, Kimler Kullanır, Nasıl Alınır?',
-    lead: 'Mali mühür; şirketlerin e-fatura, e-arşiv ve e-defter gibi uygulamalarda kullandığı elektronik sertifikadır. Ne işe yaradığını ve alma adımlarını anlattık.',
+    title: 'Mali Mühür Nedir, Nasıl Alınır? Başvuru, Kurulum ve Yenileme Rehberi',
+    lead: 'Mali mühür; şirketlerin e-fatura, e-arşiv, e-defter ve e-irsaliye gibi elektronik belgeleri şirket adına imzalamak için kullandığı elektronik sertifikadır. Ne işe yaradığını, kimlerin alması gerektiğini ve başvuru adımlarını anlattık.',
+    updated: '2026-10-20',
+    kisaca: 'Mali mühür, şirketlerin e-fatura, e-arşiv fatura, e-defter ve e-irsaliye gibi elektronik belgeleri tüzel kişilik adına imzalamak için kullandığı, TÜBİTAK Kamu Sertifikasyon Merkezi (Kamu SM) tarafından üretilen elektronik sertifikadır. Kart ve kart okuyucuyla kullanılır; kısaca şirket kaşesinin elektronik karşılığıdır.',
     intro: [
-      'E-dönüşüm uygulamalarında belgeleri şirket adına imzalamak için mali mühür kullanılır. Mali mühür, tüzel kişiliğin dijital kimliğidir.',
+      'E-dönüşüm uygulamalarına geçen her şirketin ilk ihtiyaçlarından biri mali mühürdür. Faturalarınızın ve defterlerinizin şirketiniz tarafından düzenlendiğini ve sonradan değiştirilmediğini mali mühür kanıtlar.',
+      'Bu rehberde mali mührün ne olduğunu, e-imzadan farkını, kimlerin alması gerektiğini, başvuru ve kurulum adımlarını ve yenilemede dikkat edilmesi gerekenleri anlattık.',
     ],
     subline: 'Mali mührünüzü aynı gün, dakikalar içinde teslim ediyor; kurulumunu uzaktan yapıyoruz.',
     nedir: [
-      'Mali mühür, kurumların e-dönüşüm uygulamalarında kullandığı ve TÜBİTAK Kamu Sertifikasyon Merkezi tarafından üretilen elektronik sertifikadır.',
-      'E-imza gerçek kişiye, mali mühür ise tüzel kişiliğe (şirkete) aittir.',
+      'Mali mühür, kurumların e-dönüşüm uygulamalarında kullandığı ve TÜBİTAK Kamu Sertifikasyon Merkezi tarafından üretilen elektronik sertifikadır. Mali mühürle imzalanan elektronik belgenin hangi kurum tarafından oluşturulduğu ve içeriğinin değiştirilmediği güvence altına alınır.',
+      'Mali mühür, bir akıllı kart ve bu kartı bilgisayara bağlayan kart okuyucudan oluşur. Kullanım sırasında kartın PIN (şifre) bilgisi girilir.',
+    ],
+    afterNedir: [
+      ['Mali Mühür ile E-İmza Arasındaki Fark',
+        ulBold([
+          ['Kime ait?', 'E-imza gerçek kişiye, mali mühür tüzel kişiliğe (şirkete) aittir.'],
+          ['Nerede kullanılır?', 'Mali mühür e-fatura, e-arşiv, e-defter ve e-irsaliye gibi e-belgelerde; e-imza ise e-Devlet, UYAP, EKAP, MERSİS gibi kişisel işlemlerde kullanılır.'],
+          ['Kim üretir?', 'Mali mühür TÜBİTAK Kamu SM tarafından; e-imza ise BTK tarafından yetkilendirilmiş elektronik sertifika hizmet sağlayıcıları tarafından üretilir.'],
+        ]),
+        'Şahıs şirketleri (gerçek kişi mükellefler) e-dönüşüm uygulamalarında mali mühür yerine e-imza da kullanabilir. Limited ve anonim şirketler gibi tüzel kişiler ise mali mühür kullanır.',
+        `<p>E-imza hakkında ayrıntılı bilgi için <a href="/bilgi-bankasi/e-imza/e-imza-rehberi/">E-İmza Rehberi</a>’ne bakabilirsiniz.</p>`],
     ],
     kimlerTitle: 'Mali Mühür Kimler İçin Gerekli?',
     kimler: [
-      'E-fatura, e-arşiv fatura ve e-defter kullanan şirketler',
+      'E-fatura ve e-arşiv fatura uygulamasına geçen şirketler',
+      'E-defter tutan ve berat yükleyen şirketler',
       'E-irsaliye ve diğer e-belge uygulamalarına geçen işletmeler',
       'E-dönüşüm uygulamalarını şirket adına yürüten tüzel kişiler',
+    ],
+    kimlerNote: 'Özel entegratör kullanan işletmelerde e-fatura imzalama işlemi entegratör tarafından da yapılabilir; ancak e-defter gibi uygulamalarda mali mühür ihtiyacı devam edebilir. İşletmenize uygun yapıyı birlikte belirleyelim.',
+    afterKimler: [
+      ['Mali Mühür Başvurusu İçin Gerekenler',
+        ul([
+          'Şirketin unvan ve vergi numarası bilgileri',
+          'Şirketi temsile yetkili kişinin kimlik ve iletişim bilgileri',
+          'Başvuru formunun yetkili kişi tarafından imzalanması',
+          'Başvuru ücretinin ödenmesi',
+        ]),
+        'Başvuru dosyanızı sizin için hazırlıyor, eksik bilgi nedeniyle başvurunun gecikmemesi için her adımı kontrol ediyoruz.'],
     ],
     avantaj: [
       ['Kurumsal İmza', 'Belgeler şirket adına güvenle imzalanır.'],
@@ -468,11 +597,32 @@ module.exports = [
       ['Teslimat', 'Mali mührünüzü aynı gün teslim ediyoruz.'],
       ['Kurulum', 'Kurulum ve şifre adımlarını uzaktan tamamlıyoruz.'],
     ],
+    afterSurec: [
+      ['Mali Mühür Kurulumu ve Kullanımı',
+        'Mali mühür teslim edildikten sonra kart okuyucu sürücüsü kurulur, karta PIN belirlenir ve mühür kullandığınız e-fatura, e-defter veya muhasebe programına tanıtılır. Kurulum tamamlandığında belgeleriniz bu programlar üzerinden mali mühürle imzalanır.',
+        `<p>Adımlar için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-pin-sifresi-nasil-olusturulur/">Mali Mühür PIN Nasıl Oluşturulur?</a> rehberimize göz atabilirsiniz.</p>`],
+      ['Mali Mühür Süresi ve Yenileme',
+        'Mali mühür sertifikaları belirli bir süre geçerlidir. Süre dolduğunda e-fatura ve e-defter işlemleri aksayacağı için yenilemenin süre bitmeden yapılması gerekir. Şirket unvanının değişmesi gibi durumlarda da yeni mali mühür gerekebilir.',
+        `<p>Yenileme adımları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-yenileme-nasil-yapilir/">Mali Mühür Yenileme Nasıl Yapılır?</a> rehberimize bakabilirsiniz.</p>`],
+      ['Mali Mühür Kullanımında Sık Karşılaşılan Sorunlar',
+        ulBold([
+          ['PIN kilitlendi', 'PIN üst üste hatalı girildiğinde kart kilitlenebilir. Deneme yapmadan önce bize ulaşın.'],
+          ['Program mühürü görmüyor', 'Kart okuyucu sürücüsü kurulu değilse veya kart doğru takılmamışsa mühür listelenmez.'],
+          ['Sertifika süresi doldu', 'Süresi dolan mali mühürle belge imzalanamaz; yenileme gerekir.'],
+        ])],
+    ],
+    fiyat: 'Mali mühür ücreti; sertifika süresine, yeni başvuru ya da yenileme olmasına, kart okuyucu ihtiyacına ve kurulum kapsamına göre değişir. Güncel fiyat için bize ulaşın; şirketinize uygun paketi birlikte belirleyelim.',
+    fiyatLink: `<p>Ücreti etkileyen etkenler için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-ucreti-neye-gore-degisir/">Mali Mühür Ücreti Neye Göre Değişir?</a> rehberimize göz atabilirsiniz.</p>`,
+    sources: [['TÜBİTAK Kamu SM', 'https://kamusm.bilgem.tubitak.gov.tr'], ['GİB e-Belge', 'https://ebelge.gib.gov.tr']],
     kapanis: 'Mali mühür, şirketinizin e-dönüşüm süreçlerinin temel taşıdır. Başvurudan kuruluma kadar tüm adımları sizin yerinize yönetiyoruz.',
     kapanisSub: 'Mali mührünüzü bugün alın; aynı gün teslimat avantajından yararlanın.',
     faqs: [
+      ['Mali mühür nedir?', 'Mali mühür, şirketlerin e-fatura, e-arşiv, e-defter ve e-irsaliye gibi elektronik belgeleri şirket adına imzalamak için kullandığı, TÜBİTAK Kamu SM tarafından üretilen elektronik sertifikadır.'],
       ['Mali mühür ile e-imza arasındaki fark nedir?', 'E-imza gerçek kişiye, mali mühür ise şirkete aittir. Mali mühür e-dönüşüm uygulamalarında şirket adına kullanılır.'],
-      ['Mali mühür ne kadar süre geçerlidir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenilenmesi gerekir.'],
+      ['Şahıs şirketi mali mühür almak zorunda mı?', 'Gerçek kişi mükellefler e-dönüşüm uygulamalarında mali mühür yerine e-imza da kullanabilir. Hangisinin size uygun olduğunu birlikte belirleyebiliriz.'],
+      ['Mali mühür ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyor ve kurulumunu uzaktan yapıyoruz.'],
+      ['Mali mühür ne kadar süre geçerlidir?', 'Mali mühür sertifikaları belirli bir süre için geçerlidir; süre bitmeden yenilenmesi gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
+      ['Şirket unvanı değişirse mali mühür ne olur?', 'Mali mühür şirket bilgileriyle düzenlendiği için unvan değişikliği gibi durumlarda yeni mali mühür gerekebilir. Değişiklik öncesinde bize danışmanız önerilir.'],
     ],
   }),
   info({
@@ -571,6 +721,28 @@ module.exports = [
     cat: 'kep', svc: 'kep-ik', slug: 'kep-rehberi', name: 'KEP',
     title: 'KEP Nedir? Kayıtlı Elektronik Posta Rehberi ve Hukuki Geçerliliği',
     lead: 'KEP (Kayıtlı Elektronik Posta), gönderim ve teslim anını hukuken kanıtlayan resmi e-posta sistemidir. Ne işe yaradığını, kimlerin kullandığını ve KEP adresinin nasıl alındığını anlattık.',
+    updated: '2026-10-20',
+    kisaca: 'KEP (Kayıtlı Elektronik Posta), elektronik iletilerin kim tarafından, ne zaman gönderildiğini ve alıcıya ne zaman ulaştığını kayıt altına alarak hukuki delil sağlayan resmi e-posta sistemidir. KEP hizmeti BTK tarafından yetkilendirilen KEP hizmet sağlayıcıları üzerinden verilir; KEP adresi bireyler ve şirketler için alınabilir.',
+    afterNedir: [
+      ['KEP ile Normal E-Posta Arasındaki Farklar',
+        ulBold([
+          ['Hukuki delil', 'Normal e-postada iletinin ulaştığı hukuken kanıtlanamaz; KEP’te gönderim ve teslim kayıtları delil niteliğindedir.'],
+          ['Zaman damgası', 'KEP iletileri zaman damgasıyla işaretlenir; gönderim ve teslim anı kesin olarak belirlenir.'],
+          ['İçerik bütünlüğü', 'KEP’te iletinin gönderildikten sonra değiştirilmediği güvence altındadır.'],
+          ['Kimlik doğrulama', 'KEP hesabı kimlik doğrulamasıyla açılır; gönderenin kim olduğu bellidir.'],
+        ])],
+      ['KEP’in Hukuki Dayanağı',
+        '6102 sayılı Türk Ticaret Kanunu’nun 18. maddesine göre tacirler arasında diğer tarafı temerrüde düşürmeye, sözleşmeyi feshe veya sözleşmeden dönmeye ilişkin ihbar ve ihtarlar; noter, taahhütlü mektup veya telgrafın yanı sıra güvenli elektronik imza kullanılarak kayıtlı elektronik posta sistemiyle de yapılabilir.',
+        'Ayrıca 24 Temmuz 2025 tarihli Resmî Gazete’de yayımlanan 7555 sayılı Kanun ile İş Kanunu’nun 109. maddesi değiştirilmiş; işçinin yazılı kabulü şartıyla iş ilişkisine ilişkin bildirimlerin KEP üzerinden yapılabilmesinin önü açılmıştır.',
+        `<p>KEP ile e-bordro gönderimi için <a href="/bilgi-bankasi/kep/e-bordro-rehberi/">E-Bordro Rehberi</a>’ne bakabilirsiniz.</p>`],
+    ],
+    afterSurec: [
+      ['KEP Nasıl Kullanılır?',
+        'KEP hesabınıza açıldıktan sonra internet üzerinden giriş yaparak ileti gönderebilir, gelen iletilerinizi ve gönderim–teslim kayıtlarınızı görüntüleyebilirsiniz. Belgeleri e-imzayla imzalayarak KEP üzerinden göndermek, hem imzanın hem de gönderimin hukuki delil niteliği taşımasını sağlar.',
+        `<p>Başvuru adımlarının ayrıntısı için <a href="/bilgi-bankasi/kep/kep-adresi-nasil-alinir/">KEP Adresi Nasıl Alınır?</a>, belge imzalamak için <a href="/bilgi-bankasi/e-imza/e-imza-nasil-atilir/">E-İmza Nasıl Atılır?</a> rehberlerimize göz atabilirsiniz.</p>`],
+    ],
+    fiyat: 'KEP ücreti; bireysel veya kurumsal hesap olmasına, kullanım süresine ve gönderim hacmine göre değişir. KEP İK ile e-bordro gönderiminde çalışan sayısı da teklifi etkiler. Güncel fiyat için bize ulaşın.',
+    sources: [['6102 sayılı Türk Ticaret Kanunu', 'https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6102&MevzuatTur=1&MevzuatTertip=5'], ['Resmî Gazete – 7555 sayılı Kanun', 'https://www.resmigazete.gov.tr/eskiler/2025/07/20250724-2.htm'], ['BTK', 'https://www.btk.gov.tr']],
     intro: [
       'Resmi bir kuruma dilekçe göndermek için çıktı almak, ıslak imza atmak, postaneye gitmek ve ardından “acaba ulaştı mı?” diye beklemek artık gerekmiyor. Kayıtlı Elektronik Posta (KEP) ile resmi yazışmalarınızı dakikalar içinde, hukuki delil niteliğinde gönderebilirsiniz.',
       'Bu rehberde KEP’in ne olduğunu, normal e-postadan farkını, hangi durumlarda kullanıldığını ve KEP adresini nasıl alabileceğinizi adım adım anlattık.',
