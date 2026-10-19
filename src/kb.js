@@ -395,12 +395,12 @@ const articles = [
   {
     cat: 'mali-muhur', slug: 'mali-muhur-ucreti-neye-gore-degisir', svc: 'mali-muhur', updated: '2026-10-20',
     title: 'Mali Mühür Ücreti Neye Göre Değişir? Paket Seçimi Rehberi',
-    lead: 'Mali mühür ücreti; sertifika süresine, yeni başvuru ya da yenileme olmasına ve kurulum desteğine göre değişir. Doğru paketi seçmek için bilmeniz gerekenleri anlattık.',
+    lead: 'Mali mühür ücreti; yeni başvuru ya da yenileme olmasına ve kurulum desteğine göre değişir. Doğru paketi seçmek için bilmeniz gerekenleri anlattık.',
     html: [
       p('E-fatura, e-arşiv fatura ve e-defter gibi uygulamalara geçen şirketlerin ihtiyaç duyduğu mali mühür, TÜBİTAK Kamu Sertifikasyon Merkezi tarafından üretilen elektronik sertifikadır. Mali mühür ücreti tek bir sabit tutar değildir; seçtiğiniz pakete ve hizmet kapsamına göre değişir.'),
       h2('Mali Mühür Ücretini Belirleyen Etkenler'),
       ulBold([
-        ['Sertifika süresi', 'Mali mühür sertifikaları seçilen pakete göre belirli bir süre geçerlidir. Uzun süreli paketler sık yenileme zahmetini azaltır.'],
+        ['Sertifika süresi', 'Mali mühür sertifikaları 3 yıl geçerlidir. Süre dolmadan yenileme yapılması gerekir.'],
         ['Yeni başvuru veya yenileme', 'İlk kez mali mühür alan şirketler yeni başvuru yapar; süresi dolmak üzere olan mali mühürler için yenileme yapılır.'],
         ['Kart okuyucu ihtiyacı', 'Mali mühür kart okuyucuyla kullanılır. Uyumlu bir okuyucunuz olup olmaması paketi etkileyebilir.'],
         ['Kurulum ve entegrasyon desteği', 'Mali mührün bilgisayarınıza ve kullandığınız e-fatura ya da muhasebe programına tanıtılması ayrı bir uzmanlık gerektirebilir.'],
@@ -418,7 +418,7 @@ const articles = [
       note('Ücretler seçilen pakete ve güncel tarifelere göre değişebilir. Güncel fiyat için bize ulaşın; şirketinize uygun paketi birlikte belirleyelim.'),
     ].join('\n'),
     faqs: [
-      ['Mali mühür ne kadar?', 'Mali mühür ücreti seçtiğiniz sertifika süresine, yeni başvuru veya yenileme olmasına ve kurulum ihtiyacınıza göre değişir. Güncel fiyat için formdan veya WhatsApp’tan teklif alabilirsiniz.'],
+      ['Mali mühür ne kadar?', 'Mali mühür ücreti yeni başvuru veya yenileme olmasına ve kurulum ihtiyacınıza göre değişir. Güncel fiyat için formdan veya WhatsApp’tan teklif alabilirsiniz.'],
       ['Mali mühür her şirket için zorunlu mu?', 'E-fatura, e-arşiv fatura veya e-defter gibi e-dönüşüm uygulamalarını kendi adına kullanan şirketler için mali mühür gerekir. Hangi uygulamalara geçmeniz gerektiğini birlikte belirleyebiliriz.'],
       ['Mali mühür ücretine kurulum dahil mi?', 'Kurucu Bilişim üzerinden aldığınız mali mührün kurulumunda uzaktan bağlantıyla destek veriyoruz. Teklifimizde hizmet kapsamını açıkça belirtiyoruz.'],
     ],
@@ -428,7 +428,7 @@ const articles = [
     title: 'Mali Mühür Yenileme Nasıl Yapılır? Süresi Dolmadan Yapılacaklar',
     lead: 'Mali mührün süresi dolarsa e-fatura, e-arşiv ve e-defter işlemleriniz aksayabilir. Yenilemeyi ne zaman yapmanız gerektiğini ve yenileme adımlarını anlattık.',
     html: [
-      p('Mali mühür, şirketinizin e-fatura, e-arşiv fatura ve e-defter gibi uygulamalarda belgeleri imzalamak için kullandığı elektronik sertifikadır. Sertifikanın süresi dolduğunda bu belgeler imzalanamaz; fatura kesme ve defter berat işlemleri aksayabilir. Bu nedenle yenilemenin süre dolmadan yapılması önemlidir.'),
+      p('Mali mühür, şirketinizin e-fatura, e-arşiv fatura ve e-defter gibi uygulamalarda belgeleri imzalamak için kullandığı elektronik sertifikadır. Sertifikanın süresi dolduğunda bu belgeler imzalanamaz; fatura kesme ve defter berat işlemleri aksayabilir. Mali mühür sertifikaları 3 yıl geçerlidir; bu nedenle yenilemenin süre dolmadan yapılması önemlidir.'),
       h2('Mali Mührün Süresi Dolarsa Ne Olur?'),
       ul([
         'E-fatura ve e-arşiv faturalarınızı mali mühürle imzalayamazsınız.',

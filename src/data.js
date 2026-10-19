@@ -377,7 +377,7 @@ const services = [
       ['Mali mühür ile e-imza arasındaki fark nedir?', 'E-imza gerçek kişiye, mali mühür ise tüzel kişiliğe (şirkete) aittir. Mali mühür e-fatura, e-arşiv ve e-defter gibi uygulamalarda şirket adına kullanılır.'],
       ['Mali mühür almak için ne gerekir?', 'Elektronik başvurunun yapılması, şirket bilgilerinin ve yetkili kişi bilgilerinin doğrulanması gerekir. Gerekli belgeleri ve adımları sizin için hazırlıyoruz.'],
       ['Mali mührüm ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz. Kurulumunu da uzaktan bağlantıyla hemen yapıyoruz.'],
-      ['Mali mühür ne kadar geçerlidir, nasıl yenilenir?', 'Sertifikalar seçilen pakete göre belirli bir süre geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
+      ['Mali mühür ne kadar geçerlidir, nasıl yenilenir?', 'Mali mühür sertifikaları 3 yıl geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
     ],
     steps: ['Mali mühür başvurusu nasıl yapılır?', [
       ['Başvuru', 'Formu doldurun; şirket ve yetkili bilgilerinizle başvuru dosyanızı birlikte hazırlayalım.'],
