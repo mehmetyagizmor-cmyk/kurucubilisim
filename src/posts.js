@@ -144,9 +144,14 @@ function summary(html, max = 155) {
 const descCount = {};
 RAW.forEach((p) => { const d = (p.yoast_head_json || {}).description; if (d) descCount[d] = (descCount[d] || 0) + 1; });
 
+// Yeniden yazılan yazılar: content/rewrites/<slug>.html varsa WordPress içeriğinin yerine geçer
+const REWRITE_DIR = path.join(__dirname, 'content/rewrites');
+const REWRITTEN = { 'mersiste-e-imza-zorunlulugu': '2026-10-19T12:00:00' };
+const contentOf = (p) => (REWRITTEN[p.slug] ? fs.readFileSync(path.join(REWRITE_DIR, p.slug + '.html'), 'utf8') : p.content.rendered);
+
 const posts = RAW.filter((p) => !EXCLUDE[p.slug]).map((p) => {
   const title = cleanTitle(p.slug, p.title.rendered);
-  const { html, toc } = cleanHtml(p.content.rendered, title);
+  const { html, toc } = cleanHtml(contentOf(p), title);
   const yd = (p.yoast_head_json || {}).description;
   const desc = SEO_DESC[p.slug] || (yd && descCount[yd] === 1 ? summary(`<p>${decode(yd)}</p>`, 160) : summary(html));
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
@@ -155,7 +160,7 @@ const posts = RAW.filter((p) => !EXCLUDE[p.slug]).map((p) => {
   return {
     slug: p.slug, path: `/${p.slug}/`, title, seoTitle: SEO_TITLE[p.slug] || title, desc, html, toc, words,
     minutes: Math.max(2, Math.round(words / 200)),
-    date: p.date, modified: p.modified, cats: cats.length ? cats : ['Dijital'], img,
+    date: p.date, modified: REWRITTEN[p.slug] || p.modified, cats: cats.length ? cats : ['Dijital'], img,
     thumb: img ? img.replace('.webp', '-640.webp') : null,
   };
 }).sort((a, b) => b.date.localeCompare(a.date));

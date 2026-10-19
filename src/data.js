@@ -497,13 +497,14 @@ const services = [
   {
     group: 'dijital-hizmetler', slug: 'kurumsal-tasarim', icon: 'palette',
     name: 'Kurumsal Tasarım', short: 'Kurumsal Tasarım',
-    title: 'Kurumsal Kimlik ve Logo Tasarımı | Kurucu Bilişim',
-    desc: 'Logo, kartvizit, kurumsal kimlik, marka kılavuzu ve ambalaj tasarımıyla markanızı profesyonel ve akılda kalıcı hale getirin.',
-    h1: 'Kurumsal Kimlik ve Logo Tasarımı',
-    lead: 'Logodan marka kılavuzuna, kartvizitten ambalaja kadar markanızın her temas noktasında tutarlı, güven veren ve akılda kalan bir kimlik oluşturuyoruz.',
+    title: 'Kurumsal Tasarım: Logo ve Kurumsal Kimlik | Kurucu Bilişim',
+    desc: 'Kurumsal tasarım hizmeti: logo, kurumsal kimlik, marka kılavuzu, kartvizit, antetli kağıt ve ambalaj tasarımı. Markanız için teklif alın.',
+    h1: 'Kurumsal Tasarım: Logo ve Kurumsal Kimlik',
+    lead: 'Logodan marka kılavuzuna, kartvizitten ambalaja kadar markanızın her temas noktasında tutarlı, güven veren ve akılda kalan bir kurumsal tasarım oluşturuyoruz.',
     intro: [
-      'Kurumsal tasarım; markanızın kimliğini dijital ve fiziksel dünyada etkili şekilde yansıtan en önemli unsurdur. Logo, renk paleti, tipografi ve kurumsal belgeler için bütüncül bir tasarım dili kuruyoruz.',
-      'Kurumsal tasarım yalnızca estetik değil; güvenilirlik, tutarlılık ve profesyonellik demektir. Markanızı daha tanınır ve hatırlanır kılarken hedef kitlenizle güçlü bir bağ kurmanıza yardımcı oluyoruz.',
+      'Kurumsal tasarım; bir markanın logosu, renkleri, yazı karakterleri ve basılı ya da dijital tüm materyallerinin ortak bir görsel dille hazırlanmasıdır. Müşterileriniz sizi kartvizitinizde, web sitenizde, sosyal medyanızda ve ürün ambalajınızda aynı kimlikle gördüğünde markanıza duyduğu güven artar.',
+      'Kurucu Bilişim olarak kurumsal tasarım sürecini marka analiziyle başlatıyor; logo, renk paleti, tipografi ve kurumsal belgeleri bütüncül bir tasarım dilinde birleştiriyoruz. Tüm kullanım kurallarını bir marka kılavuzunda topluyor, ekibinizin ve matbaanızın aynı standartta çalışmasını sağlıyoruz.',
+      'Kurumsal tasarım yalnızca estetik değil; güvenilirlik, tutarlılık ve profesyonellik demektir. Yeni kurulan şirketler için sıfırdan kurumsal kimlik oluşturuyor, mevcut markalar için logo yenileme ve kimlik güncelleme çalışmaları yapıyoruz.',
     ],
     highlights: [
       ['Logo & Kartvizit', 'Markanızı yansıtan özgün logo ve kartvizit tasarımları.'],
@@ -514,7 +515,18 @@ const services = [
     faqs: [
       ['Logo tasarımı süreci nasıl işler?', 'Marka analizi ve brif ile başlar; alternatif konseptler sunulur, geri bildirimlerinizle revize edilerek final logo ve kullanım kılavuzu teslim edilir.'],
       ['Hangi dosya formatlarında teslim ediyorsunuz?', 'Vektörel (AI, SVG, PDF) ve dijital kullanım için PNG/JPG formatlarında, renkli ve tek renk versiyonlarıyla teslim ediyoruz.'],
+      ['Kurumsal tasarım nedir, neleri kapsar?', 'Kurumsal tasarım; logo, renk paleti, tipografi, marka kılavuzu, kartvizit, antetli kağıt, zarf, sunum şablonu, sosyal medya görselleri ve ambalaj gibi markanızı temsil eden tüm materyallerin ortak bir görsel dille hazırlanmasıdır.'],
+      ['Kurumsal kimlik ile logo arasındaki fark nedir?', 'Logo, markanızı temsil eden tek bir işarettir. Kurumsal kimlik ise logonun yanında renkleri, yazı karakterlerini, kullanım kurallarını ve tüm basılı ve dijital materyalleri kapsayan bütün sistemdir.'],
+      ['Mevcut logomu yenileyebilir misiniz?', 'Evet. Mevcut logonuzun tanınırlığını koruyarak modernize edebilir veya markanız için baştan yeni bir kurumsal kimlik tasarlayabiliriz.'],
+      ['Kurumsal tasarım fiyatları nasıl belirlenir?', 'Fiyat; yalnızca logo mu yoksa kapsamlı bir kurumsal kimlik mi istediğinize, tasarlanacak materyal sayısına ve revizyon ihtiyacına göre değişir. İhtiyacınızı paylaşın, size özel teklif hazırlayalım.'],
+      ['Web sitesi ve sosyal medya tasarımını da yapıyor musunuz?', 'Evet. Kurumsal kimliğinize uyumlu web sitesi ve sosyal medya tasarımını aynı ekiple hazırlayarak markanızın her kanalda tutarlı görünmesini sağlıyoruz.'],
     ],
+    steps: ['Kurumsal tasarım süreci nasıl işler?', [
+      ['Marka analizi ve brif', 'Sektörünüzü, hedef kitlenizi, rakiplerinizi ve markanızın vermek istediği mesajı birlikte netleştiriyoruz.'],
+      ['Logo konseptleri', 'Analize dayanarak farklı logo ve renk alternatifleri hazırlayıp size sunuyoruz.'],
+      ['Revizyon ve onay', 'Geri bildirimlerinize göre seçtiğiniz tasarımı geliştiriyor, son hâlini onayınıza sunuyoruz.'],
+      ['Kurumsal kimlik ve teslim', 'Kartvizit, antetli kağıt ve diğer materyalleri tasarlıyor; marka kılavuzu ve tüm dosya formatlarıyla teslim ediyoruz.'],
+    ]],
     blog: /sosyal|web/,
   },
   {
