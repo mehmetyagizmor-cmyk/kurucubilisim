@@ -58,7 +58,7 @@ module.exports = (ctx) => {
 </div></section>
 <section class="section"><div class="container">
   <div class="section-head center"><span class="eyebrow">Değerlerimiz</span><h2>Bizi farklı kılan ne?</h2></div>
-  <div class="grid grid--4">${reasons.map(([t, d], i) => `<div class="card" data-reveal style="--d:${i * 0.07}s">${icBox(['users', 'bolt', 'coin', 'pin'][i])}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
+  <div class="grid grid--4">${reasons.map(([t, d], i) => `<div class="card" data-reveal style="--d:${i * 0.07}s">${icBox(['users', 'bolt', 'check', 'pin'][i])}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
 </div></section>
 <section class="section--tight"><div class="container">${partnersMarquee()}</div></section>
 <section class="section section--alt"><div class="container">
@@ -66,7 +66,7 @@ module.exports = (ctx) => {
 </div></section>
 <section class="section"><div class="container grid grid--2">
   <a class="card" href="/is-ortagi-basvurusu/">${icBox('handshake')}<h3>İş ortaklığı başvurusu</h3><p>Kurucu Bilişim ile iş ortaklığı yapmak ve birlikte büyümek için başvurun.</p><span class="link-arrow">Başvuru formu ${icon('arrow')}</span></a>
-  <a class="card" href="/basvuru-formu/">${icBox('doc')}<h3>Hizmet başvurusu</h3><p>İhtiyacınız olan hizmetleri seçin, size özel teklifi aynı gün iletelim.</p><span class="link-arrow">Teklif al ${icon('arrow')}</span></a>
+  <a class="card" href="/basvuru-formu/">${icBox('doc')}<h3>Hizmet başvurusu</h3><p>İhtiyacınız olan hizmetleri seçin, size özel teklifi hazırlayalım.</p><span class="link-arrow">Teklif al ${icon('arrow')}</span></a>
 </div></section>
 ${ctaBand()}`,
       schema: [{ '@type': 'AboutPage', url: abs(p), name: 'Hakkımızda', about: { '@id': site.url + '/#organization' } }],
@@ -134,7 +134,7 @@ ${ctaBand('Sorunuzun cevabını bulamadınız mı?', 'Uzman ekibimiz telefon, Wh
     const p = '/iletisim/', crumbs = [['Ana Sayfa', '/'], ['İletişim', p]];
     page(p, {
       title: 'İletişim | Kurucu Bilişim – Şişli, İstanbul', crumbs,
-      desc: `Kurucu Bilişim iletişim bilgileri: ${site.phoneDisplay}, ${site.email}. Quasar İstanbul, Şişli. Formu doldurun, aynı gün dönüş yapalım.`,
+      desc: `Kurucu Bilişim iletişim bilgileri: ${site.phoneDisplay}, ${site.email}. Quasar İstanbul, Şişli. Formu doldurun, en kısa sürede dönüş yapalım.`,
       body: `${pageHero({ eyebrow: 'İletişim', h1: 'Projenizi <span class="grad">konuşalım.</span>', lead: 'Sorularınız, teklif talepleriniz veya iş birliği fırsatları için buradayız. Formu doldurun, en kısa sürede dönüş yapalım.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container form-layout">
   <div>${contactInfo()}
@@ -163,10 +163,10 @@ ${ctaBand('Hemen konuşmak ister misiniz?', 'Telefonla arayın veya WhatsApp’t
     page(p, {
       title: 'Hizmet Başvurusu ve Teklif Formu | Kurucu Bilişim', crumbs,
       desc: 'E-imza, mali mühür, KEP, e-fatura, web tasarım ve e-ticaret hizmetleri için online başvuru ve teklif formu. Aynı gün içinde size dönüş yapıyoruz.',
-      body: `${pageHero({ eyebrow: 'Başvuru & Teklif', h1: 'Ücretsiz <span class="grad">teklif alın</span>', lead: 'İhtiyacınız olan hizmetleri seçin, bilgilerinizi bırakın. Size özel çözümü ve net fiyatı aynı gün iletelim.', crumbs })}
+      body: `${pageHero({ eyebrow: 'Başvuru & Teklif', h1: 'Ücretsiz <span class="grad">teklif alın</span>', lead: 'İhtiyacınız olan hizmetleri seçin, bilgilerinizi bırakın. Size özel çözümü ve teklifi hazırlayalım.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container form-layout">
   <div>
-    <ul class="list-check" style="margin-bottom:28px">${['Aynı gün içinde dönüş', 'Şeffaf ve net fiyatlandırma', 'Başvuru ve kurulum süreçlerini biz yönetiyoruz', 'Yerinde veya uzaktan kurulum'].map((t) => `<li>${icon('check')}<span>${t}</span></li>`).join('')}</ul>
+    <ul class="list-check" style="margin-bottom:28px">${['En kısa sürede dönüş', 'İhtiyacınıza özel teklif','Başvuru ve kurulum süreçlerini biz yönetiyoruz', 'Yerinde veya uzaktan kurulum'].map((t) => `<li>${icon('check')}<span>${t}</span></li>`).join('')}</ul>
     ${contactInfo()}
   </div>
   <div class="form-card">
@@ -194,7 +194,7 @@ ${ctaBand('Hemen konuşmak ister misiniz?', 'Telefonla arayın veya WhatsApp’t
       desc: 'E-dönüşüm, web tasarım ve e-ticaret alanlarında Kurucu Bilişim ile iş ortaklığı yapın. Birlikte büyümek için başvuru formunu doldurun.',
       body: `${pageHero({ eyebrow: 'İş Ortaklığı', h1: 'Birlikte <span class="grad">büyüyelim.</span>', lead: 'Mali müşavirler, yazılım firmaları, ajanslar ve bayiler için kazan-kazan esasına dayalı iş ortaklığı modeli.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container form-layout">
-  <div class="grid" style="gap:14px"><h2 class="sr-only">İş ortaklığı avantajları</h2>${[['coin', 'Kazançlı iş modeli', 'Kazan-kazan esasına dayalı, birlikte büyüyen bir iş birliği modeli.'], ['shield', 'Güçlü altyapı', 'Mevzuata uyumlu, yedekli ve 7/24 çalışan altyapı.'], ['users', 'Teknik destek', 'Kurulum ve destek süreçlerini sizin adınıza üstleniyoruz.']].map(([ic, t, d]) => `<div class="card">${icBox(ic)}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
+  <div class="grid" style="gap:14px"><h2 class="sr-only">İş ortaklığı avantajları</h2>${[['coin', 'Kazançlı iş modeli', 'Kazan-kazan esasına dayalı, birlikte büyüyen bir iş birliği modeli.'], ['shield', 'Güçlü altyapı', 'Mevzuata uyumlu, güvenli ve güncel altyapı.'], ['users', 'Teknik destek', 'Kurulum ve destek süreçlerini sizin adınıza üstleniyoruz.']].map(([ic, t, d]) => `<div class="card">${icBox(ic)}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
   <div class="form-card">
     <h2>İş ortaklığı başvuru formu</h2>
     ${formOpen('is-ortagi', '/is-ortakligi-talep-tesekkurler/')}

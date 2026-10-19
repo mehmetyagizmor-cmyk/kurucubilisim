@@ -147,6 +147,12 @@ function summary(html, max = 155) {
 const descCount = {};
 RAW.forEach((p) => { const d = (p.yoast_head_json || {}).description; if (d) descCount[d] = (descCount[d] || 0) + 1; });
 
+// Eski yazılarda doğrulanmamış iddiaların düzeltilmesi (patron onayı: 7/24 destek, şeffaf fiyat vb. kullanılmaz)
+const TEXT_FIX = [
+  ['<strong>Kesintisiz 7/24 Destek:</strong> GİB sunucularındaki bakım zamanlarında bile faturalarınız kuyruğa alınır, sistem açıldığında otomatik iletilir ve her sorunuzda uzman destek ekibimize anında ulaşabilirsiniz.',
+    '<strong>Kesintisiz Gönderim ve Uzman Destek:</strong> GİB sunucularındaki bakım zamanlarında bile faturalarınız kuyruğa alınır, sistem açıldığında otomatik iletilir; sorularınızda uzman destek ekibimiz yanınızdadır.'],
+];
+
 // Yeniden yazılan yazılar: content/rewrites/<slug>.html varsa WordPress içeriğinin yerine geçer
 const REWRITE_DIR = path.join(__dirname, 'content/rewrites');
 const REWRITTEN = { 'mersiste-e-imza-zorunlulugu': '2026-10-19T12:00:00' };
@@ -157,7 +163,8 @@ const posts = RAW.filter((p) => !EXCLUDE[p.slug]).map((p) => {
   const cleaned = cleanHtml(contentOf(p), title);
   const { toc } = cleaned;
   // Taşınan yazılara verilen iç bağlantılar doğrudan yeni adrese gider
-  const html = cleaned.html.replace(/href="\/([^"/]+)\/"/g, (m, s) => (EXCLUDE[s] ? `href="/${EXCLUDE[s]}/"` : m));
+  const html = TEXT_FIX.reduce((h, [from, to]) => h.split(from).join(to),
+    cleaned.html.replace(/href="\/([^"/]+)\/"/g, (m, s) => (EXCLUDE[s] ? `href="/${EXCLUDE[s]}/"` : m)));
   const yd = (p.yoast_head_json || {}).description;
   const desc = SEO_DESC[p.slug] || (yd && descCount[yd] === 1 ? summary(`<p>${decode(yd)}</p>`, 160) : summary(html));
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;

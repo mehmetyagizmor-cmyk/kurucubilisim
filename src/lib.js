@@ -288,7 +288,7 @@ function pageHero({ eyebrow, h1, lead, crumbs, actions = '' }) {
 </section>`;
 }
 
-function ctaBand(title = 'İşletmenizi dijitalde bir adım öne taşıyalım', text = 'Ücretsiz ön görüşmede ihtiyaçlarınızı dinleyelim, size özel çözümü ve net fiyatı aynı gün iletelim.') {
+function ctaBand(title = 'İşletmenizi dijitalde bir adım öne taşıyalım', text = 'Ücretsiz ön görüşmede ihtiyaçlarınızı dinleyelim; işletmenize özel çözümü ve teklifi hazırlayalım.') {
   return `<section class="section section--tight"><div class="container"><div class="cta" data-reveal>
   <div><h2>${esc(title)}</h2><p>${esc(text)}</p></div>
   <div class="cta__actions">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg')}${btn(`https://wa.me/${site.whatsapp}`, 'WhatsApp', 'btn--ghost btn--lg', false, ' target="_blank" rel="noopener"')}</div>

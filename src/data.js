@@ -35,7 +35,7 @@ const site = {
   formEndpoint: '/form.php',
   stats: [
     { value: 10, suffix: '+', label: 'Yıllık Tecrübe' },
-    { value: 7, suffix: '/24', label: 'Destek' },
+    { value: 81, suffix: '', label: 'İle Kargo Gönderimi' },
   ],
   // Banka bilgileri canlı sitede boş görünüyordu. Doldurulana kadar sayfa iletişim yönlendirmesi gösterir.
   banks: [
@@ -79,7 +79,7 @@ const services = [
       ['Maliyet Tasarrufu', 'Kağıt, zarf ve kargo harcamalarına kalıcı olarak veda edin.'],
       ['Tam Entegrasyon', 'Kullandığınız muhasebe veya ERP yazılımıyla otomatik çift yönlü veri akışı.'],
     ],
-    features: ['GİB onaylı e-fatura altyapısı', 'Hızlı başvuru ve aktivasyon', 'Muhasebe & ERP entegrasyonu', 'Gelen ve giden fatura takibi', 'Toplu fatura gönderme & alma', '10 yıl yasal bulut arşiv', 'Mobil uygulama desteği', 'Kullanıcı eğitimi', '7/24 kesintisiz teknik destek'],
+    features: ['GİB onaylı e-fatura altyapısı', 'Hızlı başvuru ve aktivasyon', 'Muhasebe & ERP entegrasyonu', 'Gelen ve giden fatura takibi', 'Toplu fatura gönderme & alma', '10 yıl yasal bulut arşiv', 'Mobil uygulama desteği', 'Kullanıcı eğitimi', 'Teknik destek'],
     faqs: [
       ['E-fatura başvurusu nasıl yapılır?', 'Önce mali mühür veya e-imza temin edilir, ardından GİB’e e-fatura başvurusu yapılır ve kullandığınız programla entegrasyon kurulur. Bu adımların hepsini sizin için yapıyoruz.'],
       ['E-fatura fiyatları ne kadar?', 'Ücret, kullanacağınız fatura adedine (kontör) ve ihtiyaç duyduğunuz entegrasyona göre değişir. Güncel fiyat için formdan veya WhatsApp’tan hemen teklif alabilirsiniz.'],
@@ -111,7 +111,7 @@ const services = [
       ['Portal Limitlerine Takılmayın', 'GİB portalı ile uğraşmadan tek tıkla e-arşiv faturanızı oluşturun.'],
       ['Güvenli Dijital Arşiv', 'Tüm geçmiş faturalara müşteri ve tarih bazlı saniyeler içinde erişin.'],
     ],
-    features: ['GİB mevzuatına %100 uyum', 'E-posta ve SMS ile anında fatura paylaşımı', 'Toplu fatura kesim özelliği', 'E-ticaret ve pazaryeri sipariş entegrasyonu', 'İptal ve iade süreçleri yönetimi', 'Mobil uyumlu kullanım', 'Zaman damgalı arşivleme', 'Muhasebe yazılımı entegrasyonu', 'Özel kurumsal fatura şablonu'],
+    features: ['GİB mevzuatına uyum','E-posta ve SMS ile anında fatura paylaşımı', 'Toplu fatura kesim özelliği', 'E-ticaret ve pazaryeri sipariş entegrasyonu', 'İptal ve iade süreçleri yönetimi', 'Mobil uyumlu kullanım', 'Zaman damgalı arşivleme', 'Muhasebe yazılımı entegrasyonu', 'Özel kurumsal fatura şablonu'],
     faqs: [
       ['E-fatura ile e-arşiv fatura arasındaki fark nedir?', 'E-fatura, iki e-fatura mükellefi arasında GİB posta kutuları üzerinden iletilir. E-arşiv fatura ise e-faturaya dahil olmayan kişi ve firmalara düzenlenir.'],
       ['E-arşiv faturanın çıktısı geçerli midir?', 'Evet. Üzerinde barkod veya karekod bulunan e-arşiv fatura çıktısı mali açıdan ıslak imzalı orijinal fatura ile tamamen aynı geçerliliğe sahiptir.'],
@@ -261,7 +261,7 @@ const services = [
       ['Finansal Standartlar', 'BDDK ve GİB güvenlik standartlarına tam uyumlu şifreleme ve mimari.'],
       ['Zaman Damgası Garantisi', 'İşlem anının hukuki delil niteliğiyle değişmez olarak sabitlenmesi.'],
     ],
-    features: ['GİB e-Dekont standartlarına tam uyum', 'Yüksek hızlı API entegrasyonu', 'Büyük veri ve işlem kapasitesi', 'Zaman damgalı arşivleme', 'Toplu dekont üretimi ve sorgulama', 'Müşteriye anlık bildirim altyapısı', 'Felaket kurtarma ve yedekleme', '7/24 SLA garantili altyapı', 'Kurumsal danışmanlık'],
+    features: ['GİB e-Dekont standartlarına tam uyum', 'Yüksek hızlı API entegrasyonu', 'Büyük veri ve işlem kapasitesi', 'Zaman damgalı arşivleme', 'Toplu dekont üretimi ve sorgulama', 'Müşteriye anlık bildirim altyapısı', 'Felaket kurtarma ve yedekleme', 'Yüksek erişilebilirlikli altyapı','Kurumsal danışmanlık'],
     faqs: [
       ['E-Dekont kimler tarafından kullanılır?', 'Bankalar, yetkili finansal kuruluşlar, ödeme ve menkul kıymet şirketleri ile tasarruf finansman kurumları tarafından kullanılır.'],
       ['Müşteriler e-dekonta nasıl ulaşır?', 'İnternet şubesi, mobil bankacılık veya güvenli e-posta bildirimleri üzerinden diledikleri zaman görüntülenebilir.'],
@@ -309,7 +309,7 @@ const services = [
       ['SMS ve E-Posta İletimi', 'Baskı ve matbaa maliyetini sıfırlayan dijital teslimat.'],
       ['GİB Raporlama Kolaylığı', 'Günlük bilet satış raporlarının GİB’e otomatik aktarımı.'],
     ],
-    features: ['GİB e-Bilet mevzuatına %100 uyum', 'Karekodlu (QR) biletleme', 'SMS ve e-posta ile bilet gönderimi', 'Turnike ve barkod okuyucu entegrasyonu', 'İptal, iade ve açığa alma süreçleri', 'Yolcu ve koltuk yönetimi', 'Günlük satış icmali ve GİB raporlaması', 'Yüksek trafik ve biletleme kapasitesi', '7/24 teknik altyapı desteği'],
+    features: ['GİB e-Bilet mevzuatına uyum','Karekodlu (QR) biletleme', 'SMS ve e-posta ile bilet gönderimi', 'Turnike ve barkod okuyucu entegrasyonu', 'İptal, iade ve açığa alma süreçleri', 'Yolcu ve koltuk yönetimi', 'Günlük satış icmali ve GİB raporlaması', 'Yüksek trafik ve biletleme kapasitesi', 'Teknik altyapı desteği'],
     faqs: [
       ['E-Bilet hangi sektörlerde zorunludur?', 'Şehirler arası yolcu taşımacılığı yapan karayolu firmaları, deniz ve havayolu işletmeleri ile sinema, tiyatro ve konser organizatörleri için zorunludur.'],
       ['Yolcunun bilet çıktısı alması gerekir mi?', 'Hayır, yolcunun telefonuna iletilen SMS linkindeki veya e-postadaki karekodlu bilet yeterlidir.'],
@@ -474,7 +474,7 @@ const services = [
     group: 'dijital-hizmetler', slug: 'web-tasarim', icon: 'monitor',
     name: 'Web Tasarım', short: 'Web Tasarım',
     title: 'Kurumsal Web Tasarım | SEO ve Mobil Uyumlu | Kurucu Bilişim',
-    desc: 'Hızlı, mobil uyumlu ve SEO odaklı kurumsal web siteleri. Anahtar teslim web tasarım, kolay yönetim paneli ve 7/24 destek.',
+    desc: 'Hızlı, mobil uyumlu ve SEO odaklı kurumsal web siteleri. Anahtar teslim web tasarım, kolay yönetim paneli ve teknik destek.',
     h1: 'Kurumsal Web Tasarım Hizmeti',
     lead: 'Estetik, hız ve kullanıcı deneyimini bir araya getirerek markanızı dijitalde en iyi şekilde temsil eden, dönüşüm odaklı web siteleri tasarlıyoruz.',
     intro: [
@@ -486,7 +486,7 @@ const services = [
       ['Hızlı ve Güncel Altyapı', 'Core Web Vitals odaklı, hızlı açılan sayfalar.'],
       ['Anahtar Teslim', 'Alan adı, hosting, kurulum ve eğitim dahil.'],
     ],
-    features: ['Mobil uyumlu, modern tasarım', 'Teknik SEO altyapısı', 'Hızlı teslimat', 'Kolay yönetim paneli', 'SSL ve güvenlik', 'Google Analytics & Search Console', 'Kullanıcı deneyimi odaklı arayüz', 'Taksit imkânı', 'Eğitim ve 7/24 destek'],
+    features: ['Mobil uyumlu, modern tasarım', 'Teknik SEO altyapısı', 'Hızlı teslimat', 'Kolay yönetim paneli', 'SSL ve güvenlik', 'Google Analytics & Search Console', 'Kullanıcı deneyimi odaklı arayüz', 'Taksit imkânı', 'Eğitim ve teknik destek'],
     faqs: [
       ['Web sitesi ne kadar sürede hazır olur?', 'İçeriklerin firma tarafından temin edilmesi durumunda kurumsal web siteleri genellikle 7–14 iş günü içinde tamamlanır.'],
       ['Siteyi kendim güncelleyebilir miyim?', 'Evet. Kullanıcı dostu bir yönetim paneli kuruyor ve sitenizi nasıl yöneteceğinizle ilgili eğitim veriyoruz.'],
@@ -642,15 +642,15 @@ const faqs = [
 
 const process = [
   ['Ücretsiz Analiz', 'İhtiyacınızı dinliyor, mevcut yapınızı inceliyor ve size özel yol haritası çıkarıyoruz.'],
-  ['Teklif & Planlama', 'Şeffaf fiyatlandırma, net teslim tarihi ve adım adım uygulama planı sunuyoruz.'],
+  ['Teklif & Planlama', 'İhtiyacınıza özel teklif, teslim tarihi ve adım adım uygulama planı sunuyoruz.'],
   ['Kurulum & Entegrasyon', 'Başvuru, kurulum ve entegrasyonları uzman ekibimizle hızla tamamlıyoruz.'],
-  ['Eğitim & 7/24 Destek', 'Ekibinizi eğitiyor, yenilemeleri takip ediyor ve her an yanınızda oluyoruz.'],
+  ['Eğitim & Destek', 'Ekibinizi eğitiyor, yenilemeleri takip ediyor ve ihtiyaç duyduğunuzda yanınızda oluyoruz.'],
 ];
 
 const reasons = [
   ['Uzman Kadro', 'E-dönüşüm ve dijital çözümlerde yılların deneyimine sahip uzman ekip.'],
   ['Güncel Altyapı', 'GİB ve ilgili mevzuatla her zaman uyumlu, güncel teknoloji.'],
-  ['Etik Ücret Tarifesi', 'Sürpriz maliyet yok; şeffaf, rekabetçi ve bütçe dostu fiyatlar.'],
+  ['Uçtan Uca Takip', 'Başvuru, kurulum, eğitim ve yenileme tarihlerini sizin yerinize takip ediyoruz.'],
   ['Yerinde Hizmet', 'İstanbul’da yerinde kurulum, Türkiye genelinde hızlı uzaktan destek.'],
 ];
 

@@ -114,7 +114,7 @@ ${servicesSection}
 <section class="section--tight"><div class="container">${statsBlock()}</div></section>
 <section class="section section--light"><div class="container">
   <div class="section-head center"><span class="eyebrow">Neden biz?</span><h2>Güvenle ilerleyen bir dönüşüm</h2></div>
-  <div class="grid grid--4">${reasons.map(([t, d], i) => `<div class="card" data-reveal style="--d:${i * 0.07}s">${icBox(['users', 'bolt', 'coin', 'pin'][i])}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
+  <div class="grid grid--4">${reasons.map(([t, d], i) => `<div class="card" data-reveal style="--d:${i * 0.07}s">${icBox(['users', 'bolt', 'check', 'pin'][i])}<h3>${t}</h3><p>${d}</p></div>`).join('')}</div>
 </div></section>
 <section class="section section--alt"><div class="container">
   <div class="section-head center"><span class="eyebrow">Süreç</span><h2>Nasıl ilerliyoruz?</h2></div>${stepsBlock()}
@@ -191,7 +191,7 @@ ${related.length ? `<section class="section section--light"><div class="containe
   <div class="section-head"><span class="eyebrow">Diğer hizmetler</span><h2>${esc(G.name)}</h2></div>
   <div class="grid grid--3">${others.slice(0, 3).map(serviceCard).join('')}</div>
 </div></section>
-${ctaBand(`${s.short} için hemen teklif alın`, 'Formu doldurun veya bizi arayın; ihtiyacınıza uygun paketi ve net fiyatı aynı gün iletelim.')}`;
+${ctaBand(`${s.short} için hemen teklif alın`, 'Formu doldurun veya bizi arayın; ihtiyacınıza uygun paketi belirleyip size özel teklif hazırlayalım.')}`;
 
     ctx.add(p, layout({
       path: p, title: s.title, desc: s.desc, crumbs, body,
