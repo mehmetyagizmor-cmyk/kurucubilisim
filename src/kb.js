@@ -38,6 +38,8 @@ const olBold = (items) => `<ol>${items.map(([t, d]) => `<li><strong>${esc(t)}:</
 const ul = (items) => `<ul>${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 const note = (t) => `<blockquote><p>${esc(t)}</p></blockquote>`;
 
+const SON_TARIH_LINK = '<p>Yaklaşan tüm tarihler için <a href="/bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi/">E-Dönüşüm Son Tarihler Takvimi</a>’ne bakabilirsiniz.</p>';
+
 const articles = [
   // ========== ENTEGRASYON (patron metinleri; e-dönüşüm entegrasyonu sayfasından taşındı) ==========
   {
@@ -516,7 +518,43 @@ const articles = [
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
-    cat: 'mevzuat', slug: 'e-tebligat-zorunlulugu-vuk-596', svc: 'e-donusum-danismanligi', updated: '2026-10-20',
+    cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-10-20', info: true,
+    kurum: ['GİB', 'Resmî Gazete'],
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 596)', '2026-10-11', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm', 'Hazine ve Maliye Bakanlığı']],
+    title: 'E-Dönüşüm Son Tarihler Takvimi 2026–2027: Yaklaşan Zorunluluklar',
+    lead: 'E-tebligat, e-arşiv fatura, e-fatura ve e-irsaliye için yaklaşan son tarihleri tek sayfada topladık. Takvim, yeni düzenlemeler yayımlandıkça güncellenir.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('En yakın son tarih, e-tebligat sistemine dahil olmayan zorunlu mükellefler için 30 Kasım 2026’dır. Basit usul ve işletme hesabına göre defter tutanlar için 1 Ocak 2027’de tamamen e-arşiv fatura dönemi başlar. 2026 hasılatı e-fatura veya e-irsaliye sınırını aşanlar 1 Temmuz 2027’de geçiş yapmalıdır.')}</p>`,
+      p('Mevzuattaki son tarihleri kaçırmak, ceza ve işlem aksaması riski doğurur. Aşağıdaki takvimde Gelir İdaresi Başkanlığı düzenlemelerine göre yaklaşan tarihleri, kimleri etkilediğini ve ne yapılması gerektiğini özetledik.'),
+      h2('Yaklaşan Son Tarihler'),
+      `<table><thead><tr><th>Tarih</th><th>Konu</th><th>Kimleri etkiler?</th></tr></thead><tbody>
+<tr><td><strong>30 Kasım 2026</strong></td><td><a href="/bilgi-bankasi/mevzuat/e-tebligat-zorunlulugu-vuk-596/">E-tebligat sistemine dahil olma</a> (VUK 596)</td><td>Henüz sisteme girmemiş kurumlar vergisi mükellefleri, gerçek usulde gelir vergisi mükellefleri, kollektif ve adi komandit şirketler</td></tr>
+<tr><td><strong>31 Aralık 2026</strong></td><td>3.000 TL altı satışlarda kâğıt fatura imkânının sona ermesi</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
+<tr><td><strong>1 Ocak 2027</strong></td><td><a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">Tamamen e-arşiv fatura</a> zorunluluğu</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
+<tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-faturaya geçiş</a></td><td>2026 brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler</td></tr>
+<tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-irsaliye/e-irsaliye-rehberi/">E-irsaliyeye geçiş</a></td><td>2026 brüt satış hasılatı 10 milyon TL ve üzeri olan e-fatura mükellefleri</td></tr>
+</tbody></table>`,
+      h2('Sürekli Geçerli Süreler'),
+      ulBold([
+        ['Yeni işe başlayanlar ve e-tebligat', 'İşe başlama tarihini izleyen 15 gün içinde e-tebligat sistemine dahil olunmalıdır.'],
+        ['Ticari e-faturada ret', 'Ticari senaryoyla gönderilen e-fatura, alıcı tarafından 8 gün içinde sistem üzerinden reddedilebilir.'],
+        ['Mali mühür yenileme', 'Mali mühür sertifikaları 3 yıl geçerlidir; süre dolmadan yenilenmelidir.'],
+        ['E-defter saklama', 'Ticari defter ve belgeler mevzuat gereği 10 yıl saklanmalıdır.'],
+      ]),
+      `<p>Yenileme adımları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-yenileme-nasil-yapilir/">Mali Mühür Yenileme</a> ve <a href="/bilgi-bankasi/e-imza/e-imza-yenileme-nasil-yapilir/">E-İmza Yenileme</a> rehberlerimize bakabilirsiniz.</p>`,
+      note('Takvim bilgilendirme amaçlıdır ve yeni düzenlemeler yayımlandıkça güncellenir. Tarih ve sınırlar Resmî Gazete ve GİB düzenlemeleriyle değişebileceği için işletmenize uygulanan kuralı mali müşavirinizle veya bizimle teyit etmeniz önerilir.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr" target="_blank" rel="noopener">Resmî Gazete</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a> · <a href="https://www.gib.gov.tr" target="_blank" rel="noopener">Gelir İdaresi Başkanlığı</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['E-tebligat için son tarih ne zaman?', 'Zorunlu kapsamda olup henüz sisteme dahil olmayan mevcut mükellefler için son tarih 30 Kasım 2026’dır.'],
+      ['Basit usul mükellefleri ne zaman tamamen e-arşive geçecek?', '1 Ocak 2027 itibarıyla basit usul ve işletme hesabına göre defter tutanlar için tamamen e-arşiv fatura zorunluluğu başlar.'],
+      ['2026’da hasılatım 3 milyon TL’yi geçti, e-faturaya ne zaman geçmeliyim?', 'Hasılat sınırını aştığınız yılı izleyen yılın Temmuz ayı başından, yani 1 Temmuz 2027’den itibaren e-fatura kullanmanız gerekir.'],
+    ],
+  },
+  {
+    cat: 'mevzuat', slug: 'e-tebligat-zorunlulugu-vuk-596', svc: 'e-donusum-danismanligi', updated: '2026-10-20', info: true,
+    kurum: ['GİB', 'Resmî Gazete'],
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 596)', '2026-10-11', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm', 'Hazine ve Maliye Bakanlığı']],
     title: 'E-Tebligat Zorunluluğu: VUK 596 Sıra No’lu Tebliğ ve Son Tarih',
     lead: '11 Ekim 2026 tarihli Resmî Gazete’de yayımlanan VUK Genel Tebliği (Sıra No: 596) ile e-tebligat kuralları yenilendi. Kapsamdaki mükellefler sisteme Kasım 2026 sonuna kadar dahil olmalı.',
     html: [
@@ -543,6 +581,7 @@ const articles = [
       ]),
       h2('Tebligat Ne Zaman Tebliğ Edilmiş Sayılır?'),
       p('Elektronik ortamda gönderilen belge, muhatabın e-tebligat adresine ulaştığı tarihi izleyen beşinci günün sonunda tebliğ edilmiş sayılır. SMS ve e-posta bildirimleri yalnızca bilgilendirme amaçlıdır; tebliğ tarihini değiştirmez. Bu nedenle e-tebligat kutunuzu düzenli kontrol etmeniz önemlidir.'),
+      SON_TARIH_LINK,
       note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. Bağlayıcı metin için resmî kaynağa bakınız; işletmenize özel durumu mali müşavirinizle değerlendirmeniz önerilir.'),
       `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm" target="_blank" rel="noopener">Resmî Gazete, 11 Ekim 2026, Sayı 33397</a> · <a href="https://dijital.gib.gov.tr" target="_blank" rel="noopener">Dijital Vergi Dairesi</a></p>`,
     ].join('\n'),
@@ -553,7 +592,9 @@ const articles = [
     ],
   },
   {
-    cat: 'mevzuat', slug: 'yeni-nesil-okc-ile-e-belge-vuk-593', svc: 'e-fatura', updated: '2026-10-20',
+    cat: 'mevzuat', slug: 'yeni-nesil-okc-ile-e-belge-vuk-593', svc: 'e-fatura', updated: '2026-10-20', info: true,
+    kurum: ['GİB', 'Resmî Gazete'],
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 593)', '2026-05-08', 'https://www.resmigazete.gov.tr/eskiler/2026/05/20260508-13.htm', 'Hazine ve Maliye Bakanlığı']],
     title: 'Yeni Nesil ÖKC ile E-Fatura ve E-Arşiv: VUK 593 Sıra No’lu Tebliğ',
     lead: '8 Mayıs 2026 tarihli Resmî Gazete’de yayımlanan VUK Genel Tebliği (Sıra No: 593) ile yeni nesil ödeme kaydedici cihazlardan (YN ÖKC) e-belge düzenlenmesinin yolu açıldı.',
     html: [
@@ -569,6 +610,7 @@ const articles = [
       h2('İşletmeler İçin Ne Anlama Geliyor?'),
       p('Perakende satış yapan işletmeler, ileride aynı cihazdan hem perakende satış fişi hem de e-fatura veya e-arşiv fatura düzenleyebilecek. Bu, ayrı bir fatura programı kullanma ihtiyacını azaltabilir. Ancak hangi cihaz modellerinin ve belge türlerinin onaylandığı GİB tarafından ayrıca duyurulacağı için cihaz değişikliği veya yeni yatırım kararından önce güncel listeyi kontrol etmek gerekir.'),
       `<p>E-fatura ve e-arşiv faturanın genel kuralları hakkında bilgi için <a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-Fatura Rehberi</a> ve <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’ne bakabilirsiniz.</p>`,
+      SON_TARIH_LINK,
       note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. Bağlayıcı metin ve onaylı cihaz listesi için resmî kaynaklara bakınız.'),
       `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2026/05/20260508-13.htm" target="_blank" rel="noopener">Resmî Gazete, 8 Mayıs 2026, Sayı 33247</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a></p>`,
     ].join('\n'),

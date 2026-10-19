@@ -25,8 +25,10 @@ function withToc(html) {
   return { html: out, toc };
 }
 
+// Mevzuat yazılarında kurum etiketleri (GİB, BTK, SGK…)
+const kurumChips = (a) => (a.kurum || []).map((k) => ` <span class="chip" style="background:var(--card);border:1px solid var(--line)">${esc(k)}</span>`).join('');
 const itemRow = (a) => `<a class="card kb-item" href="${a.path}" data-q="${esc((a.title + ' ' + a.lead + ' ' + catOf(a).name).toLocaleLowerCase('tr'))}" style="padding:20px 24px">
-  <span class="chip">${esc(catOf(a).name)}</span>${a.taslak ? ' <span class="chip" style="background:#fff3cd;color:#7a5b00">TASLAK</span>' : ''}
+  <span class="chip">${esc(catOf(a).name)}</span>${kurumChips(a)}${a.taslak ? ' <span class="chip" style="background:#fff3cd;color:#7a5b00">TASLAK</span>' : ''}
   <strong style="display:block;font-size:1.08rem;margin:10px 0 6px">${esc(a.title)}</strong>
   <span class="muted" style="font-size:.95rem">${esc(a.lead)}</span>
 </a>`;
@@ -96,7 +98,7 @@ ${ctaBand()}`;
     const body = `<section class="hero hero--page">${aurora}
   <div class="container" style="max-width:980px">
     ${crumbsHtml(crumbs)}
-    <span class="chip">${esc(c.name)}</span>${a.taslak ? ' <span class="chip" style="background:#fff3cd;color:#7a5b00">TASLAK – onay bekliyor</span>' : ''}
+    <span class="chip">${esc(c.name)}</span>${kurumChips(a)}${a.taslak ? ' <span class="chip" style="background:#fff3cd;color:#7a5b00">TASLAK – onay bekliyor</span>' : ''}
     <h1 style="font-size:clamp(2rem,4.4vw,3.2rem);margin-top:16px">${esc(a.title)}</h1>
     <p class="lead" style="margin-inline:auto">${esc(a.lead)}</p>
     <div class="post-meta"><span>${icon('doc')}Güncellendi: <time datetime="${a.updated}">${fmt(a.updated)}</time></span><span>${icon('users')}Kurucu Bilişim Destek Ekibi</span></div>
@@ -125,6 +127,8 @@ ${a.info ? '' : ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : und
       '@type': 'TechArticle', '@id': abs(a.path) + '#article', mainEntityOfPage: abs(a.path), headline: a.title, description: a.lead,
       dateModified: a.updated, inLanguage: 'tr-TR', articleSection: c.name,
       author: { '@type': 'Organization', '@id': orgId, name: site.name }, publisher: { '@id': orgId },
+      // Resmî dayanak: yazının özetlediği düzenleme(ler)
+      ...(a.mevzuat && { about: a.mevzuat.map(([name, date, url, by]) => ({ '@type': 'Legislation', name, legislationDate: date, url, legislationJurisdiction: 'TR', legislationPassedBy: { '@type': 'GovernmentOrganization', name: by } })), citation: a.mevzuat.map(([, , url]) => url) }),
     }];
     if (a.faqs) schema.push(faqSchema(a.faqs));
     ctx.add(a.path, layout({
