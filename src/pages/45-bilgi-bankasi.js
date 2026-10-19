@@ -1,8 +1,8 @@
 // Bilgi Bankası: /bilgi-bankasi/ → kategori → yazı (kısa, adım adım rehberler)
 const { site, services } = require('../data');
 const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, faqBlock, faqSchema, orgId, applyHref } = require('../lib');
-const { slugify } = require('../posts');
-const { cats, articles, catPath, SHOW_DRAFTS, KEP_IK_SLUG } = require('../kb');
+const { slugify, EXCLUDE } = require('../posts');
+const { cats, articles, catPath, SHOW_DRAFTS } = require('../kb');
 
 const ROOT = '/bilgi-bankasi/';
 const fmt = (d) => new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -134,9 +134,11 @@ ${a.info ? '' : ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : und
     }), { priority: '0.6', lastmod: a.updated });
   }
 
-  // Blogdan taşınan yazının eski adresi → yeni adres (.htaccess 301'ine ek, statik yedek)
-  const moved = articles.find((x) => x.slug === KEP_IK_SLUG);
-  if (moved) {
-    ctx.add(`/${KEP_IK_SLUG}/`, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${esc(moved.title)} | Kurucu Bilişim</title><link rel="canonical" href="${abs(moved.path)}"><meta http-equiv="refresh" content="0;url=${moved.path}"><meta name="robots" content="noindex"><meta name="description" content="Bu yazı Kurucu Bilişim Bilgi Bankası’na taşındı."></head><body><h1>${esc(moved.title)}</h1><script>location.replace('${moved.path}');</script><p><a href="${moved.path}">Yazı Bilgi Bankası’na taşındı, devam etmek için tıklayın</a>.</p></body></html>`, { sitemap: false });
+  // Blogdan Bilgi Bankası'na taşınan yazıların eski adresi → yeni adres
+  // (.htaccess 301'ine ek statik yedek; canlıdaki .htaccess güncellenmeden de çalışır)
+  for (const [from, to] of Object.entries(EXCLUDE)) {
+    const moved = articles.find((x) => x.path === `/${to}/`);
+    if (!moved) continue;
+    ctx.add(`/${from}/`, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${esc(moved.title)} | Kurucu Bilişim</title><link rel="canonical" href="${abs(moved.path)}"><meta http-equiv="refresh" content="0;url=${moved.path}"><meta name="description" content="Bu yazı Kurucu Bilişim Bilgi Bankası’na taşındı."></head><body><h1>${esc(moved.title)}</h1><script>location.replace('${moved.path}');</script><p><a href="${moved.path}">Yazı Bilgi Bankası’na taşındı, devam etmek için tıklayın</a>.</p></body></html>`, { sitemap: false });
   }
 };

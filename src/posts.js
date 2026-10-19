@@ -8,9 +8,15 @@ const IMG_DIR = path.join(__dirname, '../assets/img/blog');
 
 // Kopya içerik: 301 ile asıl yazıya yönlenir (seo.js)
 const EXCLUDE = {
-  'kep-kayitli-elektronik-posta-nedir-cloned': 'mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim',
+  'kep-kayitli-elektronik-posta-nedir-cloned': 'bilgi-bankasi/kep/kep-rehberi',
   // Bilgi Bankası'na taşındı
   'kep-ik-ve-e-bordro-hukuki-delil-saglayan-dijital-bordro-cozumu': 'bilgi-bankasi/kep/kep-ik-ve-e-bordro-hukuki-delil-saglayan-dijital-bordro-cozumu',
+  // Birbiriyle yarışan zayıf "nedir" yazıları Bilgi Bankası rehberlerinde birleştirildi (Search Console: 30–75. sıra)
+  'kep-kayitli-elektronik-posta-nedir': 'bilgi-bankasi/kep/kep-rehberi',
+  'kep-nedir-kayitli-elektronik-posta-sistemi-ve-hukuki-gecerliligi': 'bilgi-bankasi/kep/kep-rehberi',
+  'kayitli-elektronik-posta-kep-dijital-cagda-hayati-kolaylastiran-sessiz-kahraman': 'bilgi-bankasi/kep/kep-rehberi',
+  'e-fatura-nedir': 'bilgi-bankasi/e-fatura/e-fatura-rehberi',
+  'e-belge-nedir-dijitallesen-dunyada-e-belge-kullaniminin-onemi': 'bilgi-bankasi/danismanlik/e-donusum-gecis-rehberi',
 };
 
 const TITLE_FIX = {
@@ -20,16 +26,13 @@ const TITLE_FIX = {
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
-  'kayitli-elektronik-posta-kep-dijital-cagda-hayati-kolaylastiran-sessiz-kahraman': 'Kayıtlı Elektronik Posta (KEP): Avantajları ve Kullanımı',
   'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': 'Mali Mühür ve Dijital Hukuki Belgelerin Yasal Geçerliliği',
   'mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi': 'Mali Mühür ve Dijital Ticaretin Geleceği',
   'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': 'Mali Mühür ile Dijital İhale Başvuruları ve Yasal Geçerlilik',
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali Mühür ve İşlemlerin Denetimi: İzleme ve Kontrol',
   'mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi': 'Mali Mühür ile Vergi İadesi Süreçlerini Hızlandırın',
   '2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu': '2026 E-Fatura ve E-Arşiv Geçiş Zorunluluğu Rehberi',
-  'e-belge-nedir-dijitallesen-dunyada-e-belge-kullaniminin-onemi': 'E-Belge Nedir? E-Belge Kullanımının Önemi',
   'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro’nun Yasal Zorunluluğu ve Avantajları',
-  'kep-nedir-kayitli-elektronik-posta-sistemi-ve-hukuki-gecerliligi': 'KEP Nedir? Kayıtlı Elektronik Posta ve Hukuki Geçerliliği',
   'kurucu-bilisim-ile-e-defter-saklama-dijital-arsiviniz-artik-guvende': 'E-Defter Saklama: Dijital Arşiviniz Artık Güvende',
   'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'Mali Mühür Zorunluluğu ve Yasal Yükümlülükler',
   'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': 'Mali Mühür ve Kredi Başvurularında Dijital Onay',
@@ -151,7 +154,10 @@ const contentOf = (p) => (REWRITTEN[p.slug] ? fs.readFileSync(path.join(REWRITE_
 
 const posts = RAW.filter((p) => !EXCLUDE[p.slug]).map((p) => {
   const title = cleanTitle(p.slug, p.title.rendered);
-  const { html, toc } = cleanHtml(contentOf(p), title);
+  const cleaned = cleanHtml(contentOf(p), title);
+  const { toc } = cleaned;
+  // Taşınan yazılara verilen iç bağlantılar doğrudan yeni adrese gider
+  const html = cleaned.html.replace(/href="\/([^"/]+)\/"/g, (m, s) => (EXCLUDE[s] ? `href="/${EXCLUDE[s]}/"` : m));
   const yd = (p.yoast_head_json || {}).description;
   const desc = SEO_DESC[p.slug] || (yd && descCount[yd] === 1 ? summary(`<p>${decode(yd)}</p>`, 160) : summary(html));
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;

@@ -477,7 +477,7 @@ module.exports = [
   }),
   info({
     cat: 'danismanlik', svc: 'e-donusum-danismanligi', slug: 'e-donusum-gecis-rehberi', name: 'E-Dönüşüm',
-    title: 'E-Dönüşüm Geçiş Rehberi: Hangi Uygulamalara Geçmeliyim?',
+    title: 'E-Belge Nedir? E-Dönüşüm Geçiş Rehberi ve E-Belge Türleri',
     lead: 'E-fatura, e-arşiv, e-irsaliye, e-defter ve diğer e-belgeler… İşletmenizin hangi e-dönüşüm uygulamalarına geçmesi gerektiğini nasıl belirleyeceğinizi anlattık.',
     intro: [
       'E-dönüşüm, işletmelerin fatura, irsaliye, defter ve benzeri belgelerini elektronik ortamda düzenlemesini ve saklamasını kapsayan uygulamaların genel adıdır.',
@@ -485,6 +485,7 @@ module.exports = [
     ],
     subline: 'İşletmenize uygun e-dönüşüm yol haritasını birlikte çıkaralım.',
     nedir: [
+      'E-belge; fatura, irsaliye, defter ve makbuz gibi kâğıt üzerinde düzenlenen belgelerin elektronik ortamda oluşturulması, iletilmesi ve saklanmasıdır. Kâğıt, baskı ve posta masraflarını ortadan kaldırır, belgelerin kaybolma riskini azaltır ve muhasebe programlarıyla entegre çalışarak işlemleri hızlandırır.',
       'E-dönüşüm; e-fatura, e-arşiv fatura, e-irsaliye, e-defter, e-SMM, e-müstahsil makbuzu, e-gider pusulası ve benzeri elektronik belge uygulamalarını kapsar.',
       'Bu uygulamaların çoğu mali mühür veya e-imza ile çalışır ve kullandığınız muhasebe programıyla entegre edilebilir.',
     ],
@@ -514,6 +515,58 @@ module.exports = [
     kapanisSub: 'E-dönüşüm yol haritanız için bugün ücretsiz ön görüşme talep edin.',
     faqs: [
       ['E-dönüşüme geçmek için ne gerekir?', 'Çoğu uygulama için mali mühür veya e-imza ve ilgili GİB başvuruları gerekir. Tüm adımları sizin yerinize yönetiyoruz.'],
+      ['E-belge nedir?', 'E-belge; fatura, irsaliye, defter, makbuz gibi kâğıt üzerinde düzenlenen belgelerin elektronik ortamda oluşturulması, iletilmesi ve saklanmasıdır. E-fatura, e-arşiv fatura, e-irsaliye, e-defter, e-SMM ve e-müstahsil makbuzu en yaygın e-belge türleridir.'],
+      ['E-belge kullanmak zorunlu mu?', 'Gelir İdaresi Başkanlığı’nın belirlediği ciro, sektör ve faaliyet kriterlerini sağlayan mükellefler için ilgili e-belge uygulamalarına geçmek zorunludur. Zorunlu olmayan işletmeler de isteğe bağlı olarak geçiş yapabilir.'],
+      ['E-belgeler nasıl saklanır?', 'E-belgeler elektronik ortamda, mevzuatta belirtilen süre boyunca erişilebilir şekilde saklanmalıdır. Saklama hizmetini entegratörünüz üzerinden veya kendi sisteminizde yapabilirsiniz.'],
+    ],
+  }),
+  info({
+    cat: 'kep', svc: 'kep-ik', slug: 'kep-rehberi', name: 'KEP',
+    title: 'KEP Nedir? Kayıtlı Elektronik Posta Rehberi ve Hukuki Geçerliliği',
+    lead: 'KEP (Kayıtlı Elektronik Posta), gönderim ve teslim anını hukuken kanıtlayan resmi e-posta sistemidir. Ne işe yaradığını, kimlerin kullandığını ve KEP adresinin nasıl alındığını anlattık.',
+    intro: [
+      'Resmi bir kuruma dilekçe göndermek için çıktı almak, ıslak imza atmak, postaneye gitmek ve ardından “acaba ulaştı mı?” diye beklemek artık gerekmiyor. Kayıtlı Elektronik Posta (KEP) ile resmi yazışmalarınızı dakikalar içinde, hukuki delil niteliğinde gönderebilirsiniz.',
+      'Bu rehberde KEP’in ne olduğunu, normal e-postadan farkını, hangi durumlarda kullanıldığını ve KEP adresini nasıl alabileceğinizi adım adım anlattık.',
+    ],
+    subline: 'Kurucu Bilişim KEP Başvuru Ayrıcalığı ile KEP adresinizi NFC kimlik doğrulama ve e-Devlet onayıyla tamamen online, dakikalar içinde açıyoruz.',
+    nedir: [
+      'KEP, Kayıtlı Elektronik Posta’nın kısaltmasıdır. Elektronik iletilerin gönderimi ve teslimine ilişkin kayıtları tutarak hukuki delil sağlayan, standart e-postadan farklı nitelikte bir elektronik posta sistemidir.',
+      'Bir KEP iletisinin kim tarafından, ne zaman gönderildiği, içeriği ve alıcıya ne zaman ulaştığı kayıt altına alınır. İletiler zaman damgasıyla işaretlenir ve içeriğin gönderildikten sonra değiştirilmediği güvence altındadır. Bu nedenle KEP, kısaca “e-postanın noter tasdiklisi” olarak da tanımlanır.',
+      'KEP hizmeti, Bilgi Teknolojileri ve İletişim Kurumu (BTK) tarafından yetkilendirilen KEP hizmet sağlayıcıları üzerinden verilir. KEP adresleri bu sağlayıcıların alan adlarıyla oluşturulur.',
+    ],
+    kimlerTitle: 'KEP Kimler İçin Gerekli?',
+    kimlerIntro: 'Resmi ve ispat gerektiren yazışma yapan herkes KEP kullanabilir. Başlıca kullanıcılar:',
+    kimler: [
+      'Şirketler: ihtarname, sözleşme bildirimi, sipariş teyidi ve resmi yazışmalar',
+      'İnsan kaynakları birimleri: işçinin yazılı kabulüyle iş ilişkisi bildirimleri ve e-bordro (KEP İK)',
+      'Avukatlar ve hukuk büroları: resmi bildirim ve yazışmalar',
+      'Mali müşavirler ve serbest meslek erbapları',
+      'Kamu kurumları ve kurumlarla resmi yazışma yapan kişi ve şirketler',
+      'Elektronik tebligat almak veya ispatlı bildirim göndermek isteyen herkes',
+    ],
+    kimlerNote: 'Hangi yazışmaların KEP ile yapılabileceği ilgili mevzuata göre değişebilir; örneğin iş sözleşmesinin feshi sonucunu doğuracak bildirimler her hâlükârda yazılı yapılmalıdır.',
+    avantaj: [
+      ['Hukuki Delil', 'Gönderim ve teslim anı kayıt altına alındığı için “ben almadım” veya “ben göndermedim” tartışmaları ortadan kalkar.'],
+      ['Zaman Damgası', 'Her ileti zaman damgasıyla işaretlenir; gönderim ve teslim tarihi kesin olarak ispatlanır.'],
+      ['İçerik Bütünlüğü', 'İletinin içeriğinin gönderildikten sonra değiştirilmediği güvence altına alınır.'],
+      ['Zaman ve Maliyet Tasarrufu', 'Postane, kargo, kâğıt ve iadeli taahhütlü mektup masrafları ortadan kalkar; işlemler dakikalar içinde tamamlanır.'],
+      ['Her Yerden Erişim', 'KEP hesabınıza internet olan her yerden ulaşabilir, yazışmalarınızı dijital ortamda düzenli şekilde arşivleyebilirsiniz.'],
+    ],
+    surecTitle: 'KEP Adresi Nasıl Alınır?',
+    surec: [
+      ['Başvuru', 'Formu doldurun veya WhatsApp’tan yazın; bireysel ya da kurumsal KEP ihtiyacınızı birlikte belirleyelim.'],
+      ['Bilgilerin alınması', 'Başvuru için gerekli bilgileri KVKK kapsamında güvenli şekilde online alıyoruz; fiziki evrak veya şubeye gitmeniz gerekmez.'],
+      ['NFC ile kimlik doğrulama', 'Kimliğinizi çipli T.C. Kimlik Kartınız üzerinden NFC ile doğrularsınız.'],
+      ['E-Devlet onayı', 'Başvurunuzu e-Devlet üzerinden onaylarsınız; KEP hesabınız dakikalar içinde açılır.'],
+    ],
+    kapanis: 'KEP, resmi yazışmalarınızı hızlı, güvenli ve hukuken ispatlanabilir hale getirir. Kurucu Bilişim KEP Başvuru Ayrıcalığı ile başvurunuz baştan sona online ilerler.',
+    kapanisSub: 'KEP adresinizi bugün alın; resmi yazışmalarınızı dakikalar içinde güvenle gönderin.',
+    faqs: [
+      ['KEP ile normal e-posta arasındaki fark nedir?', 'Normal e-postada iletinin ulaşıp ulaşmadığı ve içeriğinin değişip değişmediği hukuken kanıtlanamaz. KEP ise gönderim ve teslim kayıtlarını zaman damgasıyla tutar ve hukuki delil sağlar.'],
+      ['KEP ile gönderilen ileti hukuken geçerli mi?', 'KEP, gönderim ve teslimata ilişkin hukuki delil sağlayan bir sistemdir. Bir yazışmanın hukuki sonucu ise belgenin niteliğine ve ilgili mevzuatın aradığı koşullara bağlıdır.'],
+      ['KEP adresi almak için hangi belgeler gerekir?', 'Fiziki evrak getirmenize gerek yoktur. Gerekli bilgileri KVKK kapsamında online alıyoruz; kimlik doğrulaması çipli T.C. Kimlik Kartınızla NFC üzerinden, onay ise e-Devlet üzerinden yapılır.'],
+      ['KEP adresine e-imza gerekir mi?', 'KEP üzerinden belge imzalayarak göndermek için e-imza veya kurumlar için mali mühür kullanılabilir. İhtiyacınıza uygun yapıyı başvuru sırasında birlikte belirliyoruz.'],
+      ['Bireyler de KEP adresi alabilir mi?', 'Evet. KEP adresi hem şirketler hem de bireyler için alınabilir.'],
     ],
   }),
 ];
