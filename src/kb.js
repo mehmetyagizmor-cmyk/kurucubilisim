@@ -25,6 +25,7 @@ const cats = [
   { slug: 'kep', name: 'KEP ve E-Bordro', icon: 'mail', svc: 'kep-ik', desc: 'KEP adresi alma, KEP İK ile e-bordro ve hukuki geçerlilik.' },
   { slug: 'entegrasyon', name: 'E-Dönüşüm Entegrasyonu', icon: 'sync', svc: 'e-donusum-entegrasyonu', desc: 'Muhasebe, ERP, e-ticaret ve pazaryeri entegrasyonları.' },
   { slug: 'danismanlik', name: 'Başvuru ve Geçiş Danışmanlığı', icon: 'compass', svc: 'e-donusum-danismanligi', desc: 'Hangi e-dönüşüm uygulamasına ne zaman geçmeli.' },
+  { slug: 'mevzuat', name: 'Mevzuat ve Güncel Gelişmeler', icon: 'scales', svc: 'e-donusum-danismanligi', desc: 'GİB taslakları ve Resmî Gazete’de yayımlanan e-dönüşüm düzenlemeleri.' },
 ];
 
 // --- Yardımcılar: patron metinlerindeki kalıplar (# başlık, *...* kalın alt başlık)
@@ -512,6 +513,70 @@ const articles = [
       ]),
       note('İptal ve itiraz kuralları ile süreler mevzuata göre değişebilir. İşleminize özel durumu birlikte değerlendirmek için bize ulaşabilirsiniz.'),
     ].join('\n'),
+  },
+  // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
+  {
+    cat: 'mevzuat', slug: 'e-tebligat-zorunlulugu-vuk-596', svc: 'e-donusum-danismanligi', updated: '2026-10-20',
+    title: 'E-Tebligat Zorunluluğu: VUK 596 Sıra No’lu Tebliğ ve Son Tarih',
+    lead: '11 Ekim 2026 tarihli Resmî Gazete’de yayımlanan VUK Genel Tebliği (Sıra No: 596) ile e-tebligat kuralları yenilendi. Kapsamdaki mükellefler sisteme Kasım 2026 sonuna kadar dahil olmalı.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('Kurumlar vergisi mükellefleri, gerçek usulde vergilendirilen gelir vergisi mükellefleri ile kollektif ve adi komandit şirketler e-tebligat sistemine dahil olmak zorundadır. Henüz dahil olmayan mevcut mükellefler için son tarih, tebliğin yayımını izleyen ayın sonu, yani 30 Kasım 2026’dır.')}</p>`,
+      p('Gelir İdaresi Başkanlığı’nın hazırladığı Vergi Usul Kanunu Genel Tebliği (Sıra No: 596), 11 Ekim 2026 tarihli ve 33397 sayılı Resmî Gazete’de yayımlandı. Tebliğ, 7587 sayılı Kanun ile değişen Vergi Usul Kanunu’nun 107/A maddesine dayanıyor ve 2015’ten beri uygulanan 456 Sıra No’lu Tebliğ’in yerini alıyor.'),
+      h2('E-Tebligat Kimler İçin Zorunlu?'),
+      ul([
+        'Kurumlar vergisi mükellefleri',
+        'Ticari, zirai veya mesleki kazancı gerçek usulde vergilendirilen gelir vergisi mükellefleri',
+        'Kollektif şirketler ve adi komandit şirketler',
+        'Tescile tabi ÖTV (II) sayılı listedeki malları ilk kez iktisap edenler (tescil işlemi için)',
+      ]),
+      p('Bu kapsamda olmayanlar da isterse sisteme gönüllü olarak dahil olabilir. Engellilik oranı %90 ve üzeri olanlar ile 18 yaşından küçükler zorunluluktan muaftır.'),
+      h2('Son Başvuru Tarihleri'),
+      ulBold([
+        ['Mevcut mükellefler', 'Tebliğin yayımını izleyen ayın sonuna kadar, yani 30 Kasım 2026’ya kadar.'],
+        ['Yeni işe başlayanlar', 'İşe başlama tarihini izleyen 15 gün içinde.'],
+        ['Zaten sistemde olanlar', '1 Temmuz 2026’dan önce sisteme dahil olanlar mevcut kullanıcı kodu ve şifreleriyle devam eder; yeniden başvuru gerekmez.'],
+      ]),
+      h2('E-Tebligat Başvurusu Nasıl Yapılır?'),
+      olBold([
+        ['Online başvuru', 'Dijital Vergi Dairesi’ne (dijital.gib.gov.tr) e-Devlet ile giriş yapıp e-tebligat başvurusunu tamamlayın; aktivasyon e-posta veya SMS doğrulamasıyla yapılır.'],
+        ['Vergi dairesinden başvuru', 'Tebliğ ekindeki talep bildirimini vergi dairesine kendiniz, kanuni temsilciniz veya özel yetkili vekiliniz aracılığıyla verin.'],
+      ]),
+      h2('Tebligat Ne Zaman Tebliğ Edilmiş Sayılır?'),
+      p('Elektronik ortamda gönderilen belge, muhatabın e-tebligat adresine ulaştığı tarihi izleyen beşinci günün sonunda tebliğ edilmiş sayılır. SMS ve e-posta bildirimleri yalnızca bilgilendirme amaçlıdır; tebliğ tarihini değiştirmez. Bu nedenle e-tebligat kutunuzu düzenli kontrol etmeniz önemlidir.'),
+      note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. Bağlayıcı metin için resmî kaynağa bakınız; işletmenize özel durumu mali müşavirinizle değerlendirmeniz önerilir.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm" target="_blank" rel="noopener">Resmî Gazete, 11 Ekim 2026, Sayı 33397</a> · <a href="https://dijital.gib.gov.tr" target="_blank" rel="noopener">Dijital Vergi Dairesi</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['E-tebligat için son tarih nedir?', 'Zorunlu kapsamda olup henüz sisteme dahil olmayan mevcut mükellefler için son tarih 30 Kasım 2026’dır. Yeni işe başlayanlar işe başlamayı izleyen 15 gün içinde başvurmalıdır.'],
+      ['Daha önce e-tebligat başvurusu yaptım, tekrar başvurmalı mıyım?', 'Hayır. 1 Temmuz 2026’dan önce sisteme dahil olanlar mevcut kullanıcı kodu ve şifreleriyle devam eder.'],
+      ['E-tebligat ile KEP aynı şey mi?', 'Hayır. E-tebligat, vergi dairesinin mükellefe resmî bildirimleri elektronik ortamda iletmesidir. KEP ise kişi ve kurumlar arasında hukuki delil niteliğinde elektronik yazışma sağlayan kayıtlı e-posta sistemidir.'],
+    ],
+  },
+  {
+    cat: 'mevzuat', slug: 'yeni-nesil-okc-ile-e-belge-vuk-593', svc: 'e-fatura', updated: '2026-10-20',
+    title: 'Yeni Nesil ÖKC ile E-Fatura ve E-Arşiv: VUK 593 Sıra No’lu Tebliğ',
+    lead: '8 Mayıs 2026 tarihli Resmî Gazete’de yayımlanan VUK Genel Tebliği (Sıra No: 593) ile yeni nesil ödeme kaydedici cihazlardan (YN ÖKC) e-belge düzenlenmesinin yolu açıldı.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('VUK 593 Sıra No’lu Tebliğ ile GİB’in onayladığı yeni nesil ödeme kaydedici cihazlardan (YN ÖKC) e-fatura ve e-arşiv fatura gibi e-belgeler düzenlenebilecek. Hangi cihazların ve belge türlerinin kullanılabileceğini GİB internet sitesinde duyuracak.')}</p>`,
+      p('Vergi Usul Kanunu Genel Tebliği (Sıra No: 593), 8 Mayıs 2026 tarihli ve 33247 sayılı Resmî Gazete’de yayımlandı ve yayımı tarihinde yürürlüğe girdi. Tebliğ, perakende satış yapan işletmelerin kullandığı yeni nesil ÖKC’lerden e-belge düzenlenmesine ilişkin usul ve esasları belirliyor.'),
+      h2('Tebliğ Neleri Düzenliyor?'),
+      ulBold([
+        ['YN ÖKC’den e-belge', 'GİB’in yayımladığı kılavuzlarda belirtilen e-belge türleri, onaylı YN ÖKC’lerden düzenlenebilecek.'],
+        ['Mali sertifika ile imza', 'YN ÖKC’nin mali sertifikasıyla imzalanan e-belgeler, işletme sahibinin veya yetkilisinin imzası yerine geçer.'],
+        ['Üretici onayı', 'Bu hizmeti sunmak isteyen cihaz üreticileri GİB’e başvurur; teknik incelemeler GİB ve TÜBİTAK tarafından yapılır.'],
+        ['Üretici sorumluluğu', 'Onaylanan YN ÖKC üreticileri, e-belgelerin oluşturulması, iletilmesi ve saklanmasında özel entegratörlerle benzer yükümlülükler üstlenir.'],
+      ]),
+      h2('İşletmeler İçin Ne Anlama Geliyor?'),
+      p('Perakende satış yapan işletmeler, ileride aynı cihazdan hem perakende satış fişi hem de e-fatura veya e-arşiv fatura düzenleyebilecek. Bu, ayrı bir fatura programı kullanma ihtiyacını azaltabilir. Ancak hangi cihaz modellerinin ve belge türlerinin onaylandığı GİB tarafından ayrıca duyurulacağı için cihaz değişikliği veya yeni yatırım kararından önce güncel listeyi kontrol etmek gerekir.'),
+      `<p>E-fatura ve e-arşiv faturanın genel kuralları hakkında bilgi için <a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-Fatura Rehberi</a> ve <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’ne bakabilirsiniz.</p>`,
+      note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. Bağlayıcı metin ve onaylı cihaz listesi için resmî kaynaklara bakınız.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2026/05/20260508-13.htm" target="_blank" rel="noopener">Resmî Gazete, 8 Mayıs 2026, Sayı 33247</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['YN ÖKC’den e-fatura kesilebilir mi?', 'VUK 593 Sıra No’lu Tebliğ ile GİB’in onayladığı YN ÖKC’lerden, kılavuzlarda belirtilen e-belge türleri düzenlenebilecek. Onaylı cihaz ve belge türleri GİB internet sitesinde duyurulur.'],
+      ['VUK 593 ne zaman yürürlüğe girdi?', 'Tebliğ, 8 Mayıs 2026 tarihli Resmî Gazete’de yayımlandığı gün yürürlüğe girdi.'],
+      ['Mevcut ÖKC’mi değiştirmem gerekir mi?', 'Tebliğ bir cihaz değiştirme zorunluluğu getirmiyor. YN ÖKC’den e-belge düzenlemek isterseniz cihazınızın GİB onaylı listede olup olmadığını kontrol etmeniz gerekir.'],
+    ],
   },
 ];
 
