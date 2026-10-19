@@ -526,7 +526,52 @@ const all = [
   ...require('./kb-hizmetler'),
   ...articles.slice(2),
 ];
-const visible = all.filter((a) => SHOW_DRAFTS || !a.taslak).map((a) => ({ ...a, path: `/bilgi-bankasi/${a.cat}/${a.slug}/` }));
+// Nasıl yapılır yazıları: başa kısa cevap (öne çıkan snippet için) ve ek SSS
+const KISACA = {
+  'e-imza-kurulumu-nasil-yapilir': 'E-imza kurulumu için önce kart okuyucu sürücüsünü kurun, ardından sertifika sağlayıcınızın imza uygulamasını (gerekirse Java ile birlikte) yükleyin, kartınızı takıp PIN’inizle sertifikanızı kontrol edin ve deneme imzası atın.',
+  'e-imza-sifresi-pin-degistirme-ve-kilit-cozme': 'E-imza PIN’i, sağlayıcınızın imza veya kart yönetim uygulamasındaki “PIN Değiştir” bölümünden değiştirilir. Kart kilitlenirse PUK kodu ile kilit açılır; PUK yoksa sertifika sağlayıcısının süreci izlenir.',
+  'e-devlete-e-imza-ile-giris-nasil-yapilir': 'Kart okuyucuyu takın, giris.turkiye.gov.tr adresinde “Elektronik İmza” yöntemini seçin, istenen imza uygulamasını kurun, sertifikanızı seçip PIN’inizi girerek giriş yapın.',
+  'mali-muhur-pin-sifresi-nasil-olusturulur': 'Mali mühür PIN’i, kart okuyucu sürücüsü kurulduktan sonra sertifika sağlayıcısının yönlendirdiği ekran veya uygulamadan belirlenir; ardından mali mühür e-fatura, e-arşiv veya e-defter programınızda tanımlanır.',
+  'kep-adresi-nasil-alinir': 'KEP adresi online başvuruyla alınır: başvuru formunu doldurursunuz, çipli kimlik kartınızla NFC üzerinden kimliğinizi doğrular ve e-Devlet’ten onay verirsiniz; fiziki evrak gerekmez.',
+  'e-fatura-nasil-iptal-edilir': 'E-fatura tek taraflı silinemez. Ticari senaryolu fatura alıcı tarafından süresi içinde sistem üzerinden reddedilebilir; diğer durumlarda GİB’in iptal/itiraz portalı veya KEP, noter gibi yasal yollar kullanılır.',
+};
+const EXTRA_FAQ = {
+  'e-imza-kurulumu-nasil-yapilir': [
+    ['E-imza kurulumu için hangi programlar gerekir?', 'Kart okuyucu sürücüsü, sertifika sağlayıcınızın imza uygulaması ve bazı imza araçları için Java gerekir. Kullanacağınız sistem (UYAP, EKAP, MERSİS gibi) ayrıca kendi imza aracını isteyebilir.'],
+    ['E-imza kurulumunu uzaktan yaptırabilir miyim?', 'Evet. Kurucu Bilişim olarak e-imza kurulumunu uzaktan bağlantıyla sizin yerinize yapıyoruz.'],
+  ],
+  'e-imza-sifresi-pin-degistirme-ve-kilit-cozme': [
+    ['PUK kodu nedir?', 'PUK, PIN üst üste hatalı girildiğinde kilitlenen kartın kilidini açmak için kullanılan koddur. Kartla birlikte size iletilir.'],
+    ['Kilitlenen e-imza için yeni sertifika gerekir mi?', 'Her zaman gerekmez. PUK ile kilit açılabilir; PUK da kilitlendiyse sertifika sağlayıcısının sürecine göre yeni sertifika gerekebilir.'],
+  ],
+  'e-devlete-e-imza-ile-giris-nasil-yapilir': [
+    ['E-Devlet e-imza ile girişte hangi uygulama gerekir?', 'Giriş sayfası, “Elektronik İmza” seçildiğinde gereken imza uygulamasına yönlendirir. Ayrıca kart okuyucu sürücüsünün kurulu olması gerekir.'],
+    ['Süresi dolmuş e-imza ile e-Devlet’e girilir mi?', 'Hayır. Süresi dolan e-imzayla giriş yapılamaz; e-imzanızın yenilenmesi gerekir.'],
+    ['E-Devlet’e e-imza ile giriş yapamıyorum, ne yapmalıyım?', 'Kart okuyucu sürücüsünü, kartın doğru takıldığını ve sertifikanızın süresini kontrol edin. Sorun devam ederse uzaktan bağlantıyla destek veriyoruz.'],
+  ],
+  'mali-muhur-pin-sifresi-nasil-olusturulur': [
+    ['Mali mühür PIN’i nereden belirlenir?', 'Sertifika sağlayıcısının yönlendirdiği ekrandan veya uygulamadan belirlenir. Teslim sırasında size iletilen bilgileri hazır tutmanız gerekir.'],
+    ['Mali mühür PIN’imi unuttum, ne yapmalıyım?', 'Deneme yaparak mali mührü kilitlemeyin. Kilit çözme ve yeni PIN belirleme sertifika sağlayıcısının belirlediği adımlarla yapılır; bu süreçte destek veriyoruz.'],
+    ['Mali mühür hangi programlarda tanımlanır?', 'Şirketinizin e-fatura, e-arşiv ve e-defter için kullandığı programlarda tanımlanır.'],
+  ],
+  'kep-adresi-nasil-alinir': [
+    ['KEP başvurusu için şubeye gitmem gerekir mi?', 'Hayır. Kimlik doğrulama NFC ile, onay e-Devlet üzerinden yapılır; şubeye gitmenize gerek yoktur.'],
+  ],
+  'e-fatura-nasil-iptal-edilir': [
+    ['E-fatura kaç gün içinde reddedilebilir?', 'Ticari senaryoyla gönderilen e-fatura, alıcı tarafından 8 gün içinde sistem üzerinden reddedilebilir. Temel senaryoda sistem üzerinden ret yoktur.'],
+    ['Süresi geçen e-fatura nasıl iptal edilir?', 'GİB’in e-fatura iptal/itiraz portalı üzerinden talep oluşturulabilir veya KEP, noter, taahhütlü posta gibi yasal yollarla itiraz edilebilir.'],
+    ['E-fatura iptal edilince muhasebede ne yapılır?', 'İptal edilen faturanın muhasebe kayıtlarına da doğru şekilde yansıtılması gerekir; bunu mali müşavirinizle birlikte yapmanızı öneririz.'],
+  ],
+};
+const visible = all.filter((a) => SHOW_DRAFTS || !a.taslak).map((a) => ({
+  ...a,
+  ...(KISACA[a.slug] && {
+    updated: '2026-10-20',
+    html: `<p><strong>Kısaca:</strong> ${esc(KISACA[a.slug])}</p>\n${a.html}`,
+    faqs: [...(a.faqs || []), ...(EXTRA_FAQ[a.slug] || [])],
+  }),
+  path: `/bilgi-bankasi/${a.cat}/${a.slug}/`,
+}));
 const catPath = (c) => `/bilgi-bankasi/${c.slug}/`;
 
 module.exports = { cats, articles: visible, catPath, SHOW_DRAFTS, KEP_IK_SLUG };
