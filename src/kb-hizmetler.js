@@ -1,7 +1,6 @@
 // Bilgi Bankası: her e-dönüşüm hizmeti için bir bilgi sayfası (patronun gönderdiği haberlerin yapısında).
 // Patron onayladı (19 Ekim 2026). Yeni taslaklar için yazıya `taslak: true` eklenir.
-const { esc, btn, applyHref } = require('./lib');
-const { site } = require('./data');
+const { esc } = require('./lib');
 
 const p = (t) => `<p>${esc(t)}</p>`;
 const sub = (t) => `<p><strong>${esc(t)}</strong></p>`;
@@ -11,23 +10,21 @@ const ulBold = (items) => `<ul>${items.map(([t, d]) => `<li><strong>${esc(t)}:</
 const ul = (items) => `<ul>${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 const olBold = (items) => `<ol>${items.map(([t, d]) => `<li><strong>${esc(t)}:</strong> ${esc(d)}</li>`).join('')}</ol>`;
 const note = (t) => `<blockquote><p>${esc(t)}</p></blockquote>`;
-const buttons = (svc, label, name) => `<p>${btn(applyHref(svc), label, 'btn--primary', false)} ${btn(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Merhaba, ${name} hakkında bilgi almak istiyorum.`)}`, 'WhatsApp’tan Yazın', 'btn--ghost', false, ' target="_blank" rel="noopener"')}</p>`;
 
 // Ortak iskelet: giriş → nedir → kimler → avantajlar → süreç → fiyat → kapanış
 function info(o) {
   const html = [
     ...o.intro.map(p),
     sub(o.subline),
-    buttons(o.svc, `${o.name} için Teklif Alın`, o.name),
     h2(`${o.name} Nedir?`), ...o.nedir.map(p),
     h2(o.kimlerTitle || `${o.name} Kimler İçin Zorunlu?`), ...(o.kimlerIntro ? [p(o.kimlerIntro)] : []), ul(o.kimler), ...(o.kimlerNote ? [note(o.kimlerNote)] : []),
     h2(`${o.name} Kullanmanın Avantajları`), ...o.avantaj.map(([t, d], i) => `${h3(`${i + 1}. ${t}`)}${p(d)}`),
     h2(o.surecTitle || `Kurucu Bilişim ile ${o.name} Süreci Nasıl İşler?`), olBold(o.surec),
     h2(`${o.name} Fiyatları`), p(`${o.name} ücretleri; kullanım hacmine, seçilen pakete, entegrasyon ihtiyacına ve hizmet kapsamına göre değişir. İşletmenizin ihtiyaçlarını belirleyerek size özel fiyat teklifi hazırlıyoruz.`),
-    buttons(o.svc, `${o.name} Fiyat Teklifi Alın`, o.name),
-    h2(`Kurucu Bilişim ile ${o.name} Süreçlerinizi Dijitalleştirin`), p(o.kapanis), sub(o.kapanisSub),
   ].join('\n');
-  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, faqs: o.faqs, updated: '2026-10-19' };
+  // Kapanış SSS'den sonra, tek teklif kutusunun hemen üstünde durur (patron: butonlar yalnız en sonda)
+  const outro = [h2(`Kurucu Bilişim ile ${o.name} Süreçlerinizi Dijitalleştirin`), p(o.kapanis), sub(o.kapanisSub)].join('\n');
+  return { cat: o.cat, slug: o.slug, svc: o.svc, title: o.title, lead: o.lead, html, outro, faqs: o.faqs, info: true, updated: '2026-10-19' };
 }
 
 module.exports = [

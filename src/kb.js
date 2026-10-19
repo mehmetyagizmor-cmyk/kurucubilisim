@@ -302,7 +302,11 @@ const articles = [
 
 const all = [
   { cat: 'kep', slug: KEP_IK_SLUG, svc: 'kep-ik', updated: '2026-10-18', img: '/assets/img/blog/' + KEP_IK_SLUG + '.webp',
-    title: kepPost.title.rendered, lead: kepPost.yoast_head_json.description, html: extLinks(kepPost.content.rendered) },
+    title: kepPost.title.rendered, lead: kepPost.yoast_head_json.description, info: true,
+    // Yazı içindeki buton satırları ve girişteki teklif cümlesi çıkarılır; tek teklif kutusu sayfa sonunda (patron isteği)
+    html: extLinks(kepPost.content.rendered)
+      .replace(/<p><a class="btn[\s\S]*?<\/p>\n?/g, '')
+      .replace(/<p>Kurucu Bilişim ile KEP İK ve e-bordro süreçlerinizi dijitalleştirin;[^<]*<\/p>\n?/, '') },
   ...articles.slice(0, 2),
   ...require('./kb-hizmetler'),
   ...articles.slice(2),

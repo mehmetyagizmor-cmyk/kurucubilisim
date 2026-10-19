@@ -32,6 +32,8 @@ const itemRow = (a) => `<a class="card kb-item" href="${a.path}" data-q="${esc((
 </a>`;
 
 const helpCard = (a, svc) => `<div class="card svc-cta">${icBox('phone')}<h3>Çözemediniz mi? Uzaktan bağlanıp biz yapalım</h3><p>Adımlarda takıldıysanız uzmanlarımız uzaktan bağlantıyla işleminizi sizin yerinize tamamlasın.</p><div class="hero__actions" style="margin:18px 0 0">${btn(wa(`Merhaba, Bilgi Bankası'ndaki "${a.title}" konusunda destek almak istiyorum.`), 'WhatsApp’tan Destek Al', 'btn--primary btn--sm', false, ' target="_blank" rel="noopener"')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost btn--sm', false)}</div>${svc ? `<p style="margin:16px 0 0;font-size:.92rem"><a href="${svcPath(svc)}">${esc(svc.short)} hizmetimizi inceleyin →</a></p>` : ''}</div>`;
+// Bilgi sayfalarında (info) tek teklif kutusu: yazının en sonunda
+const offerCard = (svc) => `<div class="card svc-cta">${icBox(svc.icon)}<h3>${esc(svc.short)} için teklif alın</h3><p>İhtiyacınızı paylaşın; işletmenize uygun çözümü ve fiyat teklifini uzman ekibimiz hazırlasın.</p><div class="hero__actions" style="margin:18px 0 0">${btn(applyHref(svc.slug), 'Teklif Alın', 'btn--primary', false)}${btn(wa(`Merhaba, ${svc.short} hakkında bilgi almak istiyorum.`), 'WhatsApp’tan Yazın', 'btn--ghost', false, ' target="_blank" rel="noopener"')}</div><p style="margin:16px 0 0;font-size:.92rem"><a href="${svcPath(svc)}">${esc(svc.short)} hizmetimizi inceleyin →</a></p></div>`;
 
 module.exports = async (ctx) => {
   const live = cats.filter((c) => inCat(c).length);
@@ -105,11 +107,12 @@ ${ctaBand()}`;
   <div class="article-layout">
     <article class="prose" data-article>${html}
       ${a.faqs ? `<h2 id="sik-sorulan-sorular">Sık Sorulan Sorular</h2>${faqBlock(a.faqs)}` : ''}
-      <div style="margin-top:48px">${helpCard(a, svc)}</div>
+      ${a.outro || ''}
+      <div style="margin-top:48px">${a.info ? offerCard(svc) : helpCard(a, svc)}</div>
     </article>
     <aside class="sidebar" aria-label="Rehber araçları">
       ${toc.length >= 2 ? `<nav class="card" aria-label="İçindekiler"><h2>İçindekiler</h2><ol class="toc">${toc.map(([id, t]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join('')}</ol></nav>` : ''}
-      ${helpCard(a, svc)}
+      ${a.info ? '' : helpCard(a, svc)}
     </aside>
   </div>
 </div></section>
@@ -117,7 +120,7 @@ ${related.length ? `<section class="section section--alt"><div class="container"
   <div class="section-head section-head--split"><div><span class="eyebrow">${esc(c.name)}</span><h2>İlgili rehberler</h2></div>${btn(ROOT, 'Bilgi Bankası', 'btn--ghost')}</div>
   <div style="display:grid;gap:14px;max-width:880px;margin:0 auto">${related.map(itemRow).join('')}</div>
 </div></section>` : ''}
-${ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : undefined, 'Başvurudan kuruluma kadar tüm adımları uzman ekibimizle hızlı ve hatasız yönetiyoruz.')}`;
+${a.info ? '' : ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : undefined, 'Başvurudan kuruluma kadar tüm adımları uzman ekibimizle hızlı ve hatasız yönetiyoruz.')}`;
     const schema = [{
       '@type': 'TechArticle', '@id': abs(a.path) + '#article', mainEntityOfPage: abs(a.path), headline: a.title, description: a.lead,
       dateModified: a.updated, inLanguage: 'tr-TR', articleSection: c.name,
