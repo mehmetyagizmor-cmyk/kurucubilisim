@@ -530,9 +530,10 @@ const articles = [
       `<table><thead><tr><th>Tarih</th><th>Konu</th><th>Kimleri etkiler?</th></tr></thead><tbody>
 <tr><td><strong>30 Kasım 2026</strong></td><td><a href="/bilgi-bankasi/mevzuat/e-tebligat-zorunlulugu-vuk-596/">E-tebligat sistemine dahil olma</a> (VUK 596)</td><td>Henüz sisteme girmemiş kurumlar vergisi mükellefleri, gerçek usulde gelir vergisi mükellefleri, kollektif ve adi komandit şirketler</td></tr>
 <tr><td><strong>31 Aralık 2026</strong></td><td>3.000 TL altı satışlarda kâğıt fatura imkânının sona ermesi</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
-<tr><td><strong>1 Ocak 2027</strong></td><td><a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">Tamamen e-arşiv fatura</a> zorunluluğu</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
+<tr><td><strong>1 Ocak 2027</strong></td><td><a href="/bilgi-bankasi/mevzuat/basit-usul-e-arsiv-zorunlulugu-2027-vuk-589/">Tamamen e-arşiv fatura</a> zorunluluğu (VUK 589)</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
 <tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-faturaya geçiş</a></td><td>2026 brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler</td></tr>
 <tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-irsaliye/e-irsaliye-rehberi/">E-irsaliyeye geçiş</a></td><td>2026 brüt satış hasılatı 10 milyon TL ve üzeri olan e-fatura mükellefleri</td></tr>
+<tr><td><strong>31 Aralık 2027</strong></td><td><a href="/bilgi-bankasi/mevzuat/sermaye-artirimi-suresi-uzatildi-2027/">Asgari sermayeye yükseltme</a></td><td>Sermayesi 250.000 TL’nin altındaki anonim ve 50.000 TL’nin altındaki limited şirketler</td></tr>
 </tbody></table>`,
       h2('Sürekli Geçerli Süreler'),
       ulBold([
@@ -552,6 +553,105 @@ const articles = [
     ],
   },
   {
+    cat: 'mevzuat', slug: 'sermaye-artirimi-suresi-uzatildi-2027', svc: 'e-imza', updated: '2026-10-20', info: true,
+    kurum: ['Ticaret Bakanlığı', 'Resmî Gazete'],
+    mevzuat: [['Anonim ve Limited Şirketlerin Sermayelerini Yeni Asgari Tutarlara Yükseltme Süresinin Uzatılmasına İlişkin Tebliğ', '2026-10-17', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261017-12.htm', 'Ticaret Bakanlığı']],
+    title: 'Sermaye Artırımı Süresi 2027’ye Uzatıldı: A.Ş. ve Ltd. Ne Yapmalı?',
+    lead: '17 Ekim 2026 tarihli Resmî Gazete’de yayımlanan tebliğle, sermayesi yeni asgari tutarların altında kalan anonim ve limited şirketlerin sermaye artırımı için süre 31 Aralık 2027’ye uzatıldı.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('Sermayesi anonim şirketlerde 250.000 TL’nin, limited şirketlerde 50.000 TL’nin altında olan şirketler, sermayelerini yeni asgari tutarlara 31 Aralık 2027’ye kadar yükseltmelidir. Süre, Ticaret Bakanlığı’nın 17 Ekim 2026 tarihli tebliğiyle 31 Aralık 2026’dan 31 Aralık 2027’ye uzatıldı.')}</p>`,
+      p('Ticaret Bakanlığı’nın “Anonim ve Limited Şirketlerin Sermayelerini Yeni Asgari Tutarlara Yükseltme Süresinin Uzatılmasına İlişkin Tebliğ”i, 17 Ekim 2026 tarihli ve 33403 sayılı Resmî Gazete’de yayımlanarak aynı gün yürürlüğe girdi. Tebliğ, Türk Ticaret Kanunu’nun geçici 15. maddesindeki uyum süresini bir yıl uzatıyor.'),
+      h2('Asgari Sermaye Tutarları Ne Kadar?'),
+      p('1 Ocak 2024’ten itibaren geçerli olan asgari sermaye tutarları şöyledir:'),
+      ulBold([
+        ['Anonim şirket', '250.000 TL'],
+        ['Kayıtlı sermaye sistemini benimsemiş, halka açık olmayan anonim şirket', '500.000 TL başlangıç sermayesi'],
+        ['Limited şirket', '50.000 TL'],
+      ]),
+      p('Bu tarihten önce kurulmuş ve sermayesi bu tutarların altında kalan şirketlerin, sermayelerini yeni tutarlara yükseltmesi gerekiyor.'),
+      h2('Süresinde Sermaye Artırılmazsa Ne Olur?'),
+      p('Türk Ticaret Kanunu’nun geçici 15. maddesine göre, sermayesini belirlenen süre içinde asgari tutara yükseltmeyen şirketler infisah etmiş, yani sona ermiş sayılır. Yeni son tarih 31 Aralık 2027 olsa da işlemleri son güne bırakmamak gerekir.'),
+      h2('Sermaye Artırımı İçin E-İmza Neden Gerekli?'),
+      p('Sermaye artırımında genel kurul kararı alınır, esas sözleşme değişikliği yapılır ve işlem ticaret siciline tescil ettirilir. Bu işlemlerin başvuruları MERSİS (Merkezi Sicil Kayıt Sistemi) üzerinden yürütülür ve şirket yetkililerinin MERSİS işlemlerinde e-imza kullanması gerekir.'),
+      `<p>Hangi MERSİS işlemlerinde e-imza gerektiğini <a href="/mersiste-e-imza-zorunlulugu/">MERSİS’te E-İmza Zorunluluğu</a> yazımızda, e-imza alma adımlarını <a href="/bilgi-bankasi/e-imza/e-imza-rehberi/">E-İmza Rehberi</a>’nde anlattık. Şirket yetkililerinizin e-imzasını İstanbul içinde hızlı kuryeyle, diğer illere kargoyla ulaştırıyor ve kurulumunu uzaktan yapıyoruz.</p>`,
+      SON_TARIH_LINK,
+      note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. Sermaye artırımı işlemleriniz için mali müşavirinizle ve ticaret sicili müdürlüğüyle görüşmeniz önerilir.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2026/10/20261017-12.htm" target="_blank" rel="noopener">Resmî Gazete, 17 Ekim 2026, Sayı 33403</a> · <a href="https://mersis.ticaret.gov.tr" target="_blank" rel="noopener">MERSİS</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['Sermaye artırımı için son tarih ne zaman?', 'Sermayesi yeni asgari tutarların altında kalan anonim ve limited şirketler için son tarih 31 Aralık 2027’dir.'],
+      ['Limited şirket için asgari sermaye ne kadar?', 'Limited şirketlerde asgari sermaye 50.000 TL, anonim şirketlerde 250.000 TL’dir.'],
+      ['Sermaye artırımında e-imza gerekir mi?', 'Evet. Sermaye artırımı başvuruları MERSİS üzerinden yürütülür ve şirket yetkililerinin MERSİS işlemleri için e-imza kullanması gerekir.'],
+    ],
+  },
+  {
+    cat: 'mevzuat', slug: 'toplu-sms-e-imza-zorunlulugu-btk', svc: 'e-imza', updated: '2026-10-20', info: true,
+    kurum: ['BTK'],
+    mevzuat: [['Bilgi Teknolojileri ve İletişim Kurulu Kararı 2025/DK-YED/399 (SMS Hizmeti Sunumu ile ilgili Düzenlemeler)', '2025-12-16', 'https://www.btk.gov.tr', 'Bilgi Teknolojileri ve İletişim Kurumu']],
+    title: 'Toplu SMS İçin E-İmza Zorunluluğu: BTK Kararı ve Yapılacaklar',
+    lead: 'BTK’nın 2025/DK-YED/399 sayılı kararıyla 1 Nisan 2026’dan itibaren toplu SMS ve MMS gönderim panellerine güvenli elektronik imza ile giriş zorunlu hâle geldi.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('1 Nisan 2026’dan itibaren toplu SMS ve MMS gönderim panellerine, göndericinin veya gönderim yetkisi olan kişinin güvenli elektronik imza (e-imza) ile giriş yapması zorunludur. Ayrıca uygulamadan kişiye (A2P) SMS ve MMS abonelik başvuruları KEP üzerinden alınır.')}</p>`,
+      p('Bilgi Teknolojileri ve İletişim Kurulu, 16 Aralık 2025 tarihli ve 2025/DK-YED/399 sayılı kararıyla SMS hizmeti sunumuna ilişkin 2020 tarihli kararında değişiklik yaptı. Karar 1 Nisan 2026’da yürürlüğe girdi. Amaç, dolandırıcılık ve izinsiz toplu mesaj gönderimlerinin önüne geçmek.'),
+      h2('Kararla Neler Değişti?'),
+      ulBold([
+        ['Panele e-imza ile giriş', 'SMS ve MMS gönderim arayüzlerine göndericinin veya SMS ve MMS göndermeye yetkili kişinin güvenli elektronik imza ile giriş yapması zorunlu.'],
+        ['KEP ile abonelik başvurusu', 'Uygulamadan kişiye (A2P) SMS ve MMS hizmeti veren işletmeciler, bu hizmetlere ilişkin abonelik başvurularını ve belgeleri KEP üzerinden almak zorunda.'],
+        ['Yurt dışından bağlantılı mesajlar', 'Yurt dışından gönderilen ve internet adresi (bağlantı) içeren A2P mesajlar yurt içindeki abonelere iletilmiyor.'],
+      ]),
+      h2('Kimler Etkileniyor?'),
+      p('Kampanya, bilgilendirme, doğrulama kodu veya hatırlatma amacıyla toplu SMS gönderen tüm işletmeler etkileniyor: e-ticaret siteleri, perakendeciler, klinikler, eğitim kurumları, ajanslar ve SMS paneli kullanan diğer firmalar. Panele erişimi olan her yetkili kişinin kendi e-imzasıyla giriş yapması gerekir.'),
+      h2('Toplu SMS İçin E-İmza Nasıl Alınır?'),
+      olBold([
+        ['Yetkili kişileri belirleyin', 'SMS paneline giriş yapacak çalışanlarınızı ve yetkililerinizi belirleyin.'],
+        ['E-imza başvurusu yapın', 'Her yetkili kişi için e-imza başvurusunu tamamlayın; başvuru sürecini sizin adınıza yönetiyoruz.'],
+        ['Teslim ve kurulum', 'E-imzanızı İstanbul içinde hızlı kuryeyle, diğer illere kargoyla ulaştırıyor, kurulumunu uzaktan yapıyoruz.'],
+        ['Panele e-imza ile giriş', 'SMS hizmet sağlayıcınızın panelinde e-imzanızla giriş yaparak gönderimlerinize devam edin.'],
+      ]),
+      `<p>Yeni toplu SMS aboneliği için KEP adresi gerekiyorsa <a href="/bilgi-bankasi/kep/kep-adresi-nasil-alinir/">KEP adresi alma</a> sürecini de tamamen online olarak dakikalar içinde tamamlıyoruz. E-imza hakkında ayrıntılı bilgi için <a href="/bilgi-bankasi/e-imza/e-imza-rehberi/">E-İmza Rehberi</a>’ne bakabilirsiniz.</p>`,
+      note('Bu yazı, BTK kurul kararının bilgilendirme amaçlı özetidir. Panelinize özel giriş adımları için SMS hizmet sağlayıcınızın duyurularını takip ediniz.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.btk.gov.tr" target="_blank" rel="noopener">Bilgi Teknolojileri ve İletişim Kurumu</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['Toplu SMS göndermek için e-imza zorunlu mu?', 'Evet. BTK’nın 2025/DK-YED/399 sayılı kararıyla 1 Nisan 2026’dan itibaren SMS ve MMS gönderim panellerine güvenli elektronik imza ile giriş zorunludur.'],
+      ['Panele giren her çalışan için ayrı e-imza gerekir mi?', 'Karar, göndericinin veya SMS göndermeye yetkili kişinin e-imzayla giriş yapmasını öngörür. Panele giriş yapacak her yetkili kişinin kendi e-imzası olması gerekir.'],
+      ['Toplu SMS aboneliği için KEP gerekir mi?', 'Uygulamadan kişiye (A2P) SMS ve MMS hizmeti veren işletmeciler abonelik başvurularını KEP üzerinden almak zorundadır; bu nedenle yeni aboneliklerde KEP adresi gerekebilir.'],
+    ],
+  },
+  {
+    cat: 'mevzuat', slug: 'basit-usul-e-arsiv-zorunlulugu-2027-vuk-589', svc: 'e-arsiv-fatura', updated: '2026-10-20', info: true,
+    kurum: ['GİB', 'Resmî Gazete'],
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 509)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 589)', '2025-12-31', 'https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-32.pdf', 'Hazine ve Maliye Bakanlığı']],
+    title: 'Basit Usulde E-Arşiv Zorunluluğu 2027’ye Ertelendi (VUK 589)',
+    lead: 'VUK 589 Sıra No’lu Tebliğ ile basit usul mükellefleri ve işletme hesabı esasına göre defter tutanlar için tutarına bakılmaksızın e-arşiv fatura zorunluluğu 1 Ocak 2027’ye ertelendi.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('Basit usul mükellefleri ve işletme hesabı esasına göre defter tutanlar, 31 Aralık 2026’ya kadar yalnızca vergiler dâhil 3.000 TL’yi aşan faturalarını e-arşiv olarak düzenler. 1 Ocak 2027’den itibaren ise tutarına bakılmaksızın tüm faturalarını e-arşiv fatura olarak düzenlemek zorundadır.')}</p>`,
+      p('Vergi Usul Kanunu Genel Tebliği (Sıra No: 589), 31 Aralık 2025 tarihli ve 33124 sayılı Resmî Gazete’nin 5. mükerrer sayısında yayımlanarak aynı gün yürürlüğe girdi. Tebliğ, e-arşiv fatura zorunluluğunu düzenleyen 509 Sıra No’lu Tebliğ’de basit usul ve işletme esasındaki mükellefler için tarihleri bir yıl öteliyor.'),
+      h2('Kimler İçin Hangi Kural Geçerli?'),
+      `<table><thead><tr><th>Mükellef</th><th>3.000 TL’yi aşan faturalar</th><th>Tutarına bakılmaksızın tüm faturalar</th></tr></thead><tbody>
+<tr><td>Basit usul mükellefleri ve işletme hesabı esasına göre defter tutanlar</td><td>1 Ocak 2025 – 31 Aralık 2026 arası e-arşiv</td><td><strong>1 Ocak 2027’den itibaren</strong> e-arşiv</td></tr>
+<tr><td>E-arşive kayıtlı olmayan diğer mükellefler</td><td>1 Ocak 2025 – 31 Aralık 2025 arası e-arşiv</td><td><strong>1 Ocak 2026’dan itibaren</strong> e-arşiv</td></tr>
+</tbody></table>`,
+      p('Bu mükellefler, e-arşiv fatura uygulamasına kayıtlı değilse faturalarını GİB’in e-Arşiv Portalı üzerinden düzenleyebilir.'),
+      h2('2027’ye Nasıl Hazırlanmalı?'),
+      olBold([
+        ['Fatura hacminizi değerlendirin', 'Günlük ve aylık kestiğiniz fatura sayısına göre GİB portalı veya özel entegratör yöntemini seçin.'],
+        ['E-imza veya mali mühür edinin', 'E-arşiv faturalarınızı imzalamak için gerçek kişiler e-imza, şirketler mali mühür kullanır.'],
+        ['Programınızı bağlayın', 'Kullandığınız ön muhasebe veya satış programını e-arşiv sistemine entegre edin.'],
+        ['Son güne bırakmayın', '1 Ocak 2027’den önce geçişi tamamlayarak ilk günden sorunsuz fatura kesin.'],
+      ]),
+      `<p>E-arşiv faturanın nasıl çalıştığını <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’nde anlattık.</p>`,
+      SON_TARIH_LINK,
+      note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. İşletmenize uygulanan kuralı mali müşavirinizle teyit etmeniz önerilir.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-32.pdf" target="_blank" rel="noopener">Resmî Gazete, 31 Aralık 2025, Sayı 33124 (5. Mükerrer)</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['Basit usul mükellefleri ne zaman e-arşive geçecek?', '31 Aralık 2026’ya kadar vergiler dâhil 3.000 TL’yi aşan faturalar e-arşiv olarak düzenlenir; 1 Ocak 2027’den itibaren tüm faturalar tutarına bakılmaksızın e-arşiv olarak düzenlenmek zorundadır.'],
+      ['2026’da 3.000 TL altındaki satışlarda kâğıt fatura kesilebilir mi?', 'Evet. Basit usul ve işletme esasındaki mükellefler 31 Aralık 2026’ya kadar 3.000 TL’yi aşmayan satışlarında kâğıt fatura veya perakende satış fişi kullanabilir.'],
+      ['E-arşiv fatura için e-imza gerekir mi?', 'Gerçek kişi mükellefler e-arşiv faturalarını e-imzayla, şirketler mali mühürle imzalar.'],
+    ],
+  },
+  {
     cat: 'mevzuat', slug: 'e-tebligat-zorunlulugu-vuk-596', svc: 'e-donusum-danismanligi', updated: '2026-10-20', info: true,
     kurum: ['GİB', 'Resmî Gazete'],
     mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 596)', '2026-10-11', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm', 'Hazine ve Maliye Bakanlığı']],
@@ -559,7 +659,7 @@ const articles = [
     lead: '11 Ekim 2026 tarihli Resmî Gazete’de yayımlanan VUK Genel Tebliği (Sıra No: 596) ile e-tebligat kuralları yenilendi. Kapsamdaki mükellefler sisteme Kasım 2026 sonuna kadar dahil olmalı.',
     html: [
       `<p><strong>Kısaca:</strong> ${esc('Kurumlar vergisi mükellefleri, gerçek usulde vergilendirilen gelir vergisi mükellefleri ile kollektif ve adi komandit şirketler e-tebligat sistemine dahil olmak zorundadır. Henüz dahil olmayan mevcut mükellefler için son tarih, tebliğin yayımını izleyen ayın sonu, yani 30 Kasım 2026’dır.')}</p>`,
-      p('Gelir İdaresi Başkanlığı’nın hazırladığı Vergi Usul Kanunu Genel Tebliği (Sıra No: 596), 11 Ekim 2026 tarihli ve 33397 sayılı Resmî Gazete’de yayımlandı. Tebliğ, 7587 sayılı Kanun ile değişen Vergi Usul Kanunu’nun 107/A maddesine dayanıyor ve 2015’ten beri uygulanan 456 Sıra No’lu Tebliğ’in yerini alıyor.'),
+      p('Gelir İdaresi Başkanlığı’nın hazırladığı Vergi Usul Kanunu Genel Tebliği (Sıra No: 596), 11 Ekim 2026 tarihli ve 33397 sayılı Resmî Gazete’de yayımlandı. Tebliğ, 1 Temmuz 2026 tarihli Resmî Gazete’de yayımlanan 7587 sayılı Kanun ile yeniden düzenlenen Vergi Usul Kanunu’nun 107/A maddesine dayanıyor ve 2015’ten beri uygulanan 456 Sıra No’lu Tebliğ’in yerini alıyor.'),
       h2('E-Tebligat Kimler İçin Zorunlu?'),
       ul([
         'Kurumlar vergisi mükellefleri',
@@ -579,6 +679,8 @@ const articles = [
         ['Online başvuru', 'Dijital Vergi Dairesi’ne (dijital.gib.gov.tr) e-Devlet ile giriş yapıp e-tebligat başvurusunu tamamlayın; aktivasyon e-posta veya SMS doğrulamasıyla yapılır.'],
         ['Vergi dairesinden başvuru', 'Tebliğ ekindeki talep bildirimini vergi dairesine kendiniz, kanuni temsilciniz veya özel yetkili vekiliniz aracılığıyla verin.'],
       ]),
+      h3('Şirketler İçin Online Aktivasyon'),
+      p('GİB’in Ekim 2026 duyurusuna göre şirket temsilcileri, vergi dairesine gitmeden Dijital Vergi Dairesi’ne giriş yapıp e-Tebligat menüsünden temsilcisi oldukları şirketin e-tebligat aktivasyonunu tamamlayabiliyor.'),
       h2('Tebligat Ne Zaman Tebliğ Edilmiş Sayılır?'),
       p('Elektronik ortamda gönderilen belge, muhatabın e-tebligat adresine ulaştığı tarihi izleyen beşinci günün sonunda tebliğ edilmiş sayılır. SMS ve e-posta bildirimleri yalnızca bilgilendirme amaçlıdır; tebliğ tarihini değiştirmez. Bu nedenle e-tebligat kutunuzu düzenli kontrol etmeniz önemlidir.'),
       SON_TARIH_LINK,
