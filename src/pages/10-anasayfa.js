@@ -1,8 +1,7 @@
 // Faz 3: Ana sayfa
-const { site, services, faqs, reasons, meslekler } = require('../data');
-const { layout, aurora, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, SOCIAL, svcPath, esc } = require('../lib');
-const { serviceCard, statsBlock, stepsBlock, quotesBlock, partnersMarquee, logoWall, postCard, activeCampaigns, campaignCard, meslekGrid, meslekPath } = require('../components');
-const { posts } = require('../posts');
+const { site, services, faqs, meslekler } = require('../data');
+const { layout, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, svcPath, esc } = require('../lib');
+const { serviceCard, quotesBlock, partnersMarquee, logoWall, activeCampaigns, campaignCard, meslekGrid, meslekPath } = require('../components');
 
 module.exports = (ctx) => {
   // Çözüm bulucu: ziyaretçi durumunu seçer, ona uygun hizmetlere gider (gerçek bağlantılar, SEO için metin)
@@ -47,10 +46,10 @@ module.exports = (ctx) => {
   const hero = `<section class="hero hero--home">
   <div class="container hero__center">
     <span class="badge hero-in"><b>10+ YIL</b> İşletmelerin dijital dönüşüm ortağı</span>
-    <h1 class="hero-in" style="--d:.05s">Dijital Dönüşüm<br><span class="grad">Çözümleri</span></h1>
-    <p class="lead hero-in" style="--d:.12s">E-imza, mali mühür, KEP, e-fatura ve e-defterden web tasarım, e-ticaret ve ERP'ye kadar; tüm dijital süreçlerinizi hızlı, güvenli ve mevzuata uygun şekilde kuruyoruz.</p>
+    <h1 class="hero-in" style="--d:.05s"><span style="white-space:nowrap">E-İmza,</span> <span style="white-space:nowrap">Mali Mühür,</span> KEP ve <span style="white-space:nowrap">E-Fatura</span><br><span class="grad">tek ekipte</span></h1>
+    <p class="lead hero-in" style="--d:.12s">Başvurudan kuruluma kadar tüm e-dönüşüm işlemlerinizi hızlı, güvenli ve mevzuata uygun şekilde yönetiyoruz. Web tasarım, e-ticaret ve ERP çözümleriyle dijital büyümenizi de destekliyoruz.</p>
     <div class="hero__actions hero-in" style="--d:.18s">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg', false)}<a class="link-arrow" href="#hizmetler">Hizmetleri keşfedin ${icon('arrow')}</a></div>
-    <ul class="ticks hero-in" style="--d:.24s"><li>${icon('check')}Aynı gün dönüş</li><li>${icon('check')}Yerinde & uzaktan kurulum</li><li>${icon('check')}7/24 destek</li></ul>
+    <ul class="ticks hero-in" style="--d:.24s"><li>${icon('check')}İstanbul içi hızlı kurye</li><li>${icon('check')}81 ile kargo</li><li>${icon('check')}Yerinde & uzaktan kurulum</li></ul>
   </div>
   <div class="container hero__finder hero-in" style="--d:.3s">
     <div class="finder">
@@ -63,8 +62,36 @@ module.exports = (ctx) => {
   </div>
 </section>`;
 
-  const keyEDonusumSlugs = ['e-fatura', 'e-arsiv-fatura', 'e-irsaliye', 'e-defter', 'e-smm', 'e-imza', 'mali-muhur', 'kep-ik'];
-  const homeEDonusum = byGroup('e-donusum-hizmetleri').filter((s) => keyEDonusumSlugs.includes(s.slug));
+  // En çok aranan hizmetler önce (Search Console): e-imza, mali mühür, KEP, e-fatura
+  const keyEDonusumSlugs = ['e-imza', 'mali-muhur', 'kep-ik', 'e-fatura', 'e-arsiv-fatura', 'e-defter', 'e-irsaliye', 'e-smm'];
+  const homeEDonusum = keyEDonusumSlugs.map((slug) => byGroup('e-donusum-hizmetleri').find((s) => s.slug === slug)).filter(Boolean);
+
+  // Ayrıcalıklar: patronun öne çıkardığı, doğrulanmış hizmet farkları (butonsuz, hizmet sayfasına bağlanır)
+  const perks = [
+    ['pen', 'E-İmza Teslimatı', 'İstanbul içi hızlı kurye, 81 ile kargo', 'İstanbul içinde e-imzanız hızlı kuryeyle adresinize yönlendirilir; diğer illere aynı gün kargoya verilir, ertesi gün teslimat seçeneği sunulur.', '/e-donusum-hizmetleri/e-imza/'],
+    ['mail', 'KEP Başvuru Ayrıcalığı', 'NFC + e-Devlet ile tamamen online', 'Fiziki evrak gerekmeden; kimliğiniz çipli kimlik kartınızla NFC üzerinden doğrulanır, onay e-Devlet’ten verilir ve KEP hesabınız dakikalar içinde açılır.', '/e-donusum-hizmetleri/kep-ik/'],
+    ['seal', 'Mali Mühür', 'Aynı gün, dakikalar içinde teslim', 'Şirketinizin e-fatura, e-arşiv ve e-defter işlemlerinde kullanacağı mali mührü aynı gün teslim ediyor, kurulumunu uzaktan yapıyoruz.', '/e-donusum-hizmetleri/mali-muhur/'],
+  ];
+  const perksSection = `<section class="section section--light"><div class="container">
+  <div class="section-head center"><span class="eyebrow">Kurucu Bilişim ayrıcalıkları</span><h2>Beklemeden, evrak taşımadan.</h2></div>
+  <div class="grid grid--3">${perks.map(([ic, t, s, d, href], i) => `<a class="card" href="${href}" data-reveal style="--d:${i * 0.08}s">${icBox(ic)}<h3 style="margin:14px 0 4px">${esc(t)}</h3><p style="margin:0 0 10px;font-weight:600;color:var(--link)">${esc(s)}</p><p class="muted" style="margin:0">${esc(d)}</p><span class="link-arrow" style="margin-top:14px">Detayları inceleyin ${icon('arrow')}</span></a>`).join('')}</div>
+</div></section>`;
+
+  // Ana sayfaya özel "neden biz" maddeleri (fiyat ve 7/24 iddiası içermez)
+  const homeReasons = [
+    ['Uzman Kadro', 'E-dönüşüm ve dijital çözümlerde 10 yılı aşkın deneyime sahip ekip.'],
+    ['Uçtan Uca Takip', 'Başvuru, kurulum, eğitim ve yenileme tarihlerini sizin yerinize takip ediyoruz.'],
+    ['Mevzuata Uyum', 'GİB ve ilgili mevzuattaki değişiklikleri izliyor, kurulumları güncel kurallara göre yapıyoruz.'],
+    ['Yerinde Hizmet', 'İstanbul’da yerinde kurulum, Türkiye genelinde uzaktan destek.'],
+  ];
+
+  // Bilgi Bankası: en güçlü rehberler
+  const kb = require('../kb');
+  const kbHome = ['e-imza-rehberi', 'kep-rehberi', 'e-fatura-rehberi', 'e-donusum-gecis-rehberi'].map((s) => kb.articles.find((a) => a.slug === s)).filter(Boolean);
+  const kbSection = `<section class="section section--light"><div class="container">
+  <div class="section-head section-head--split"><div><span class="eyebrow">Bilgi Bankası</span><h2>Aklınıza takılanlar,<br>adım adım rehberler.</h2></div><div class="hero__actions" style="margin:0">${btn('/bilgi-bankasi/', 'Bilgi Bankası', 'btn--ghost')}${btn('/blog/', 'Blog', 'btn--ghost')}</div></div>
+  <div class="grid grid--2">${kbHome.map((a) => `<a class="card" href="${a.path}" data-reveal><span class="chip" style="align-self:flex-start">${esc(kb.cats.find((c) => c.slug === a.cat).name)}</span><h3 style="margin:12px 0 8px;font-size:1.15rem">${esc(a.title)}</h3><p class="muted" style="margin:0">${esc(a.lead)}</p><span class="link-arrow" style="margin-top:14px">Rehberi oku ${icon('arrow')}</span></a>`).join('')}</div>
+</div></section>`;
   // Yatay kaydırmalı kart şeridi (oklar JS ile çalışır; JS yoksa parmakla/kaydırma çubuğuyla kayar)
   const rail = (cards, label) => `<div class="rail" data-rail><div class="rail__track" tabindex="0" aria-label="${label}">${cards}</div>
     <div class="rail__nav"><button type="button" data-dir="-1" aria-label="Önceki kartlar">${icon('arrow')}</button><button type="button" data-dir="1" aria-label="Sonraki kartlar">${icon('arrow')}</button></div></div>`;
@@ -85,52 +112,42 @@ module.exports = (ctx) => {
   const why = `<section class="section section--light"><div class="container split story">
   <div class="media" data-reveal data-scroll data-scroll-start="1" data-scroll-len="1.3">
     <img src="/assets/img/brand/dijital-donusum-ofis.webp" alt="Kurucu Bilişim dijital dönüşüm ve raporlama ekranı" width="1100" height="770" loading="lazy" decoding="async">
-    <div class="media__chip"><strong>%100</strong><span>GİB ve mevzuat uyumlu e-dönüşüm altyapısı</span></div>
+    <div class="media__chip"><strong>10+</strong><span>yıllık e-dönüşüm deneyimi</span></div>
   </div>
   <div>
     <span class="eyebrow">Neden Kurucu Bilişim?</span>
     <h2>Teknoloji ortağınızdan beklediğiniz her şey.</h2>
-    <p class="lead">Başvurudan kuruluma, eğitimden yenileme takibine kadar tüm süreci biz yönetiyoruz. Siz işinize odaklanın.</p>
-    <div>${reasons.map(([t, d], i) => `<div class="reason" data-story>${icBox(['users', 'bolt', 'coin', 'pin'][i])}<div><h3>${t}</h3><p>${d}</p></div></div>`).join('')}</div>
+    <p class="lead">E-fatura, e-imza, KEP ya da yepyeni bir web sitesi. Başvurudan kuruluma, eğitimden yenileme takibine kadar tüm süreci tek ekip yönetir; siz işinize odaklanın.</p>
+    <div>${homeReasons.map(([t, d], i) => `<div class="reason" data-story>${icBox(['users', 'bolt', 'coin', 'pin'][i])}<div><h3>${t}</h3><p>${d}</p></div></div>`).join('')}</div>
   </div>
 </div></section>`;
 
+  // Akış: ilk ekran → ayrıcalıklar → hizmetler → mesleğe özel e-imza → kampanyalar → neden biz → referanslar ve yorumlar → bilgi bankası → SSS → tek teklif bandı
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
-<section class="section--tight"><div class="container">${statsBlock()}</div></section>
-${activeCampaigns().length ? `<section class="section section--light promos"><div class="container">
-  <div class="section-head section-head--split"><div><span class="eyebrow">Kampanyalar</span><h2>Şimdi başlamak için<br>tam zamanı.</h2></div>${btn('/kampanyalar/', 'Tüm kampanyalar', 'btn--ghost')}</div>
-  ${rail(activeCampaigns().map((c, i) => campaignCard(c, i)).join(''), 'Güncel kampanyalar')}
-</div></section>` : ''}
-<section class="section statement"><div class="container"><p class="statement__text" data-words>E-fatura, e-imza, KEP ya da yepyeni bir web sitesi. Ne gerekiyorsa tek bir ekip baştan sona yönetir. <span class="grad">Siz sadece işinize odaklanın.</span></p></div></section>
+${perksSection}
 ${tabs}
 <section class="section section--light" style="padding-top:clamp(56px,7vw,96px)"><div class="container">
   <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis<br>ve müteahhitler için.</h2></div>
     <p class="lead" style="margin:0">UYAP’tan e-reçeteye, Yapı Denetim Sistemi’nden EKAP’a; mesleğinizin sistemlerinde sorunsuz çalışan e-imzayı kuruyoruz.</p></div>
   ${meslekGrid()}
 </div></section>
+${activeCampaigns().length ? `<section class="section promos"><div class="container">
+  <div class="section-head section-head--split"><div><span class="eyebrow">Kampanyalar</span><h2>Şimdi başlamak için<br>tam zamanı.</h2></div>${btn('/kampanyalar/', 'Tüm kampanyalar', 'btn--ghost')}</div>
+  ${rail(activeCampaigns().map((c, i) => campaignCard(c, i)).join(''), 'Güncel kampanyalar')}
+</div></section>` : ''}
 ${why}
-<section class="section section--alt"><div class="container">
-  <div class="section-head center"><span class="eyebrow">Nasıl çalışıyoruz?</span><h2>4 adımda sorunsuz geçiş</h2><p class="lead">Net bir plan, şeffaf fiyat ve her adımda ulaşabileceğiniz bir ekip.</p></div>
-  ${stepsBlock()}
-</div></section>
-<section class="section section--light"><div class="container">
+<section class="section"><div class="container">
   <div class="section-head section-head--split"><div><span class="eyebrow">Referanslarımız</span><h2>Bize güvenen markalar</h2></div>${btn('/referanslarimiz/', 'Tüm referanslar', 'btn--ghost')}</div>
   ${logoWall(18)}
+  <div style="margin-top:clamp(40px,5vw,64px)">${quotesBlock()}</div>
 </div></section>
+${kbSection}
 <section class="section"><div class="container">
-  <div class="section-head center"><span class="eyebrow">Müşteri yorumları</span><h2>Müşterilerimiz ne diyor?</h2></div>
-  ${quotesBlock()}
-</div></section>
-<section class="section section--light"><div class="container">
   <div class="section-head center"><span class="eyebrow">Sıkça sorulan sorular</span><h2>Aklınızdaki sorular</h2><p class="lead">Aradığınız cevap burada yoksa <a href="/iletisim/" style="color:var(--link);font-weight:600">bize ulaşın</a>, hemen yanıtlayalım.</p></div>
   ${faqBlock(faqs.slice(0, 6))}
 </div></section>
-<section class="section"><div class="container">
-  <div class="section-head section-head--split"><div><span class="eyebrow">Blog</span><h2>Rehberler ve güncel bilgiler</h2></div>${btn('/blog/', 'Tüm yazılar', 'btn--ghost')}</div>
-  <div class="grid grid--3">${posts.slice(0, 3).map(postCard).join('')}</div>
-</div></section>
-${ctaBand()}`;
+${ctaBand('İşletmenizi dijitalde bir adım öne taşıyalım', 'Ücretsiz ön görüşmede ihtiyaçlarınızı dinleyelim; işletmenize özel çözümü ve teklifi hazırlayalım.')}`;
 
   ctx.add('/', layout({
     path: '/',
