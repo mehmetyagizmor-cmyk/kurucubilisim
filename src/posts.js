@@ -17,6 +17,10 @@ const EXCLUDE = {
   'kayitli-elektronik-posta-kep-dijital-cagda-hayati-kolaylastiran-sessiz-kahraman': 'bilgi-bankasi/kep/kep-rehberi',
   'e-fatura-nedir': 'bilgi-bankasi/e-fatura/e-fatura-rehberi',
   'e-belge-nedir-dijitallesen-dunyada-e-belge-kullaniminin-onemi': 'bilgi-bankasi/danismanlik/e-donusum-gecis-rehberi',
+  // Search Console "Tarandı - dizine eklenmedi" (Google yetersiz buldu): ilgili rehberlerde birleştirildi
+  'mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim': 'bilgi-bankasi/mali-muhur/mali-muhur-rehberi',
+  'mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi': 'bilgi-bankasi/mali-muhur/mali-muhur-rehberi',
+  'e-bordro-ile-ik-ve-muhasebe-sureclerinde-verimlilik-artisi': 'bilgi-bankasi/kep/e-bordro-rehberi',
 };
 
 const TITLE_FIX = {
@@ -30,7 +34,6 @@ const SEO_TITLE = {
   'mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi': 'Mali Mühür ve Dijital Ticaretin Geleceği',
   'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': 'Mali Mühür ile Dijital İhale Başvuruları ve Yasal Geçerlilik',
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali Mühür ve İşlemlerin Denetimi: İzleme ve Kontrol',
-  'mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi': 'Mali Mühür ile Vergi İadesi Süreçlerini Hızlandırın',
   '2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu': '2026 E-Fatura ve E-Arşiv Geçiş Zorunluluğu Rehberi',
   'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro’nun Yasal Zorunluluğu ve Avantajları',
   'kurucu-bilisim-ile-e-defter-saklama-dijital-arsiviniz-artik-guvende': 'E-Defter Saklama: Dijital Arşiviniz Artık Güvende',

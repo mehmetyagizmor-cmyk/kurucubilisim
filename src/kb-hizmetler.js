@@ -520,6 +520,53 @@ module.exports = [
       ['E-belgeler nasıl saklanır?', 'E-belgeler elektronik ortamda, mevzuatta belirtilen süre boyunca erişilebilir şekilde saklanmalıdır. Saklama hizmetini entegratörünüz üzerinden veya kendi sisteminizde yapabilirsiniz.'],
     ],
   }),
+  // Search Console (19 Ekim 2026): "e-bordro" aramaları 14. sırada; ayrı rehber yoktu
+  info({
+    cat: 'kep', svc: 'kep-ik', slug: 'e-bordro-rehberi', name: 'E-Bordro',
+    title: 'E-Bordro Nedir? Elektronik Bordro Gönderimi ve KEP İK Rehberi',
+    lead: 'E-bordro, çalışanlara verilen ücret hesap pusulasının elektronik ortamda hazırlanıp iletilmesidir. KEP ile nasıl gönderildiğini, hukuki çerçevesini ve işletmenize sağladıklarını anlattık.',
+    intro: [
+      'Her ay bordro yazdırmak, çalışanlara imzalatmak, teslim kayıtlarını toplamak ve dosyalamak insan kaynakları ekipleri için ciddi bir iş yüküdür. E-bordro, bu süreci dijital ortama taşıyarak hem zaman kazandırır hem de takip edilebilir hâle getirir.',
+      'Bu rehberde e-bordronun ne olduğunu, KEP üzerinden nasıl gönderildiğini, ilgili hukuki düzenlemeleri ve geçiş adımlarını anlattık.',
+    ],
+    subline: 'KEP İK ile bordrolarınızı hukuki delil sağlayan KEP altyapısı üzerinden gönderin; gönderim ve teslim kayıtlarınız otomatik olarak oluşsun.',
+    nedir: [
+      'E-bordro, işverenin her ödeme döneminde çalışana vermesi gereken ücret hesap pusulasının (bordro) elektronik ortamda hazırlanması ve çalışana dijital olarak iletilmesidir. 4857 sayılı İş Kanunu’nun 37. maddesine göre işveren, ücret ödemelerinde çalışana ücret hesap pusulası vermekle yükümlüdür.',
+      '24 Temmuz 2025 tarihli Resmî Gazete’de yayımlanan 7555 sayılı Kanun ile İş Kanunu’nun 109. maddesi yeniden düzenlenmiş; İş Kanunu kapsamındaki bildirimlerin, işçinin yazılı kabulü şartıyla, hukuki delil sağlayan Kayıtlı Elektronik Posta (KEP) üzerinden yapılabilmesinin önü açılmıştır.',
+      'KEP İK, bordro ve uygun çalışan bildirimlerinin KEP altyapısı üzerinden gönderilmesini sağlayan çözümdür. Gönderim ve teslim anı zaman damgasıyla kayıt altına alınır.',
+    ],
+    kimlerTitle: 'E-Bordro Kimler İçin Uygun?',
+    kimler: [
+      'Her ay çok sayıda çalışana bordro dağıtan şirketler',
+      'İnsan kaynakları, bordro ve özlük işleri ekipleri',
+      'Birden fazla şubesi veya lokasyonu bulunan işletmeler',
+      'Uzaktan veya sahada çalışan personeli olan firmalar',
+      'Bordro dağıtımında kâğıt ve imza takibini azaltmak isteyen işverenler',
+    ],
+    kimlerNote: 'Elektronik bildirimlerde işçinin yazılı kabulü aranır; iş sözleşmesinin feshi sonucunu doğuracak bildirimler ise her hâlükârda yazılı yapılmalıdır. KEP sisteminin kullanım maliyeti işveren tarafından karşılanır.',
+    avantaj: [
+      ['Zaman Tasarrufu', 'Bordrolar her ay yazdırılıp dağıtılmak yerine dakikalar içinde dijital olarak gönderilir.'],
+      ['Gönderim ve Teslim Kaydı', 'KEP sayesinde bordronun ne zaman gönderildiği ve çalışana ne zaman ulaştığı kayıt altına alınır.'],
+      ['Kâğıt ve Arşiv Yükünün Azalması', 'Baskı, imza toplama ve fiziksel arşivleme ihtiyacı azalır.'],
+      ['Çalışan Memnuniyeti', 'Çalışanlar bordrolarına bulundukları yerden, istedikleri zaman ulaşabilir.'],
+      ['Düzenli Belge Yönetimi', 'Bordro ve çalışan bildirimleri tek bir dijital düzende takip edilir.'],
+    ],
+    surecTitle: 'Kurucu Bilişim ile E-Bordroya Nasıl Geçilir?',
+    surec: [
+      ['İhtiyaç analizi', 'Çalışan sayınızı, bordro sıklığınızı ve kullandığınız bordro programını birlikte değerlendiriyoruz.'],
+      ['KEP hesabının açılması', 'KEP Başvuru Ayrıcalığı ile şirketiniz için KEP hesabını NFC kimlik doğrulama ve e-Devlet onayıyla online açıyoruz.'],
+      ['Çalışan onaylarının alınması', 'Elektronik bildirim için gereken işçinin yazılı kabulü sürecini planlamanıza yardımcı oluyoruz.'],
+      ['Gönderime başlama', 'Bordrolarınızı KEP İK üzerinden göndermeye başlıyor, ilk dönemlerde süreci birlikte takip ediyoruz.'],
+    ],
+    kapanis: 'E-bordro, insan kaynakları ekibinizin her ay harcadığı zamanı azaltırken bordro teslimini hukuki delil sağlayan bir altyapıyla kayıt altına alır.',
+    kapanisSub: 'E-bordroya geçiş için bugün teklif alın; bordrolarınızı KEP İK ile güvenle gönderin.',
+    faqs: [
+      ['E-bordro zorunlu mu?', 'İşverenin çalışana ücret hesap pusulası verme yükümlülüğü vardır; bunun elektronik olarak verilmesi ise bir tercihtir. Elektronik bildirimde işçinin yazılı kabulü gibi mevzuattaki koşullara uyulması gerekir.'],
+      ['E-bordro KEP ile gönderilmek zorunda mı?', 'Bordro farklı yollarla elektronik olarak iletilebilir. KEP ise gönderim ve teslim kayıtlarıyla hukuki delil sağladığı için uyuşmazlık durumunda ispat açısından güçlü bir seçenektir.'],
+      ['Çalışanların da KEP adresi olması gerekir mi?', 'Uygulama yapısına göre değişir. Kurulum sırasında işletmenize ve çalışanlarınıza uygun yöntemi birlikte belirliyoruz.'],
+      ['E-bordroda kişisel veriler nasıl korunur?', 'Bordrolar kişisel veri içerdiği için KVKK’ya uygun aydınlatma, yetkilendirme ve güvenli saklama önlemleri alınmalıdır. Ayrıntılar için e-bordroda KVKK uyumu yazımıza göz atabilirsiniz.'],
+    ],
+  }),
   info({
     cat: 'kep', svc: 'kep-ik', slug: 'kep-rehberi', name: 'KEP',
     title: 'KEP Nedir? Kayıtlı Elektronik Posta Rehberi ve Hukuki Geçerliliği',
