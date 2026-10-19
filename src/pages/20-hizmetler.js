@@ -13,7 +13,7 @@ const actionsFor = (slug) => btn(applyForms[slug] ? '#basvuru' : applyHref(slug)
 const heroActions = actionsFor('');
 
 // Bilgi bankası yazıları (hizmet sayfasında iç bağlantı)
-const kbFor = (slug) => kb.articles.filter((a) => a.svc === slug).slice(0, 6);
+const kbFor = (slug) => kb.articles.filter((a) => a.svc === slug).slice(0, 9);
 const kbCard = (a) => `<a class="card" href="${a.path}" data-reveal><span class="chip">Bilgi Bankası</span><h3 style="margin:12px 0 8px;font-size:1.15rem">${esc(a.title)}</h3><p class="muted" style="margin:0">${esc(a.lead)}</p><span class="link-arrow" style="margin-top:14px">Rehberi oku ${icon('arrow')}</span></a>`;
 
 // Başvuru formu: sorular Google Form'dan (src/content/apply-forms.json), tasarım sitenin.

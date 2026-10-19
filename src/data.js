@@ -322,7 +322,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-imza', icon: 'pen',
     name: 'E-İmza', short: 'E-İmza',
-    title: 'E-İmza Nasıl Alınır? Başvuru ve Hızlı Kurye | Kurucu Bilişim',
+    title: 'E-İmza Nasıl Alınır? Hızlı Kurye, 81 İle Kargo | Kurucu Bilişim',
     desc: 'E-imza nasıl alınır, hangi belgeler gerekir? İstanbul içi hızlı kurye, 81 ile aynı gün kargo ve ertesi gün teslim, kurulum ve yenileme. Teklif alın.',
     h1: 'E-İmza Başvurusu, Kurulumu ve Yenilemesi',
     lead: '5070 sayılı Elektronik İmza Kanunu kapsamında ıslak imza ile aynı hukuki geçerliliğe sahip nitelikli e-imzanızı hızlı, kolay ve uygun fiyatla edinin.',
@@ -356,7 +356,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'mali-muhur', icon: 'seal',
     name: 'Mali Mühür', short: 'Mali Mühür',
-    title: 'Mali Mühür Başvurusu ve Yenileme | Aynı Gün Teslim | Kurucu Bilişim',
+    title: 'Mali Mühür: Aynı Gün Teslim, Başvuru ve Yenileme | Kurucu Bilişim',
     desc: 'Mali mühür başvurusu nasıl yapılır? Aynı gün teslimat, kurulum, şifre oluşturma ve yenileme desteği. E-fatura ve e-defter için. Fiyat için teklif alın.',
     h1: 'Mali Mühür Başvurusu, Kurulumu ve Yenilemesi',
     lead: 'Tüzel kişiliğinizin dijital kimliği olan mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz; e-fatura, e-arşiv ve e-defter işlemlerinize hemen başlayın.',
@@ -390,7 +390,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'kep-ik', icon: 'mail',
     name: 'KEP (Kayıtlı Elektronik Posta) ve E-Bordro', short: 'KEP & E-Bordro',
-    title: 'KEP Adresi Nasıl Alınır? KEP ve E-Bordro | Kurucu Bilişim',
+    title: 'KEP Adresi Nasıl Alınır? Evraksız, Online Başvuru | Kurucu Bilişim',
     desc: 'KEP adresi nasıl alınır? NFC kimlik doğrulama ve e-Devlet onayıyla tamamen online, dakikalar içinde KEP başvurusu. KEP İK ile e-bordro. Teklif alın.',
     h1: 'KEP Adresi (Kayıtlı Elektronik Posta) ve E-Bordro',
     lead: 'Resmi yazışmalarınızı ve bordro süreçlerinizi yasal delil niteliğinde, zaman damgalı ve güvenli şekilde dijitale taşıyın.',
