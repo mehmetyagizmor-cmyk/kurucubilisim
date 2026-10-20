@@ -121,7 +121,7 @@ function header(path) {
       <div class="nav__item"><a class="nav__link" href="/iletisim/"${cur('/iletisim/')}>İletişim</a></div>
     </nav>
     <div class="header__cta">
-      <a class="header__phone" href="tel:${site.phone}">${icon('phone')}${site.phoneDisplay}</a>
+      <a class="btn btn--ghost btn--sm header__call" href="tel:${site.phone}" title="${site.phoneDisplay}">${icon('phone')}Hemen Arayın</a>
       ${btn('/basvuru-formu/', 'Teklif Al', 'btn--primary btn--sm', false)}
       <button class="burger" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="drawer"><span></span></button>
     </div>
@@ -184,6 +184,11 @@ function footer() {
   <button class="fab__top" type="button" aria-label="Sayfanın başına dön">${icon('up')}</button>
   <a class="fab__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">${SOCIAL.whatsapp}</a>
 </div>
+<nav class="mbar" aria-label="Hızlı iletişim">
+  <a href="tel:${site.phone}">${icon('phone')}<span>Ara</span></a>
+  <a class="mbar__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${SOCIAL.whatsapp}<span>WhatsApp</span></a>
+  <a class="mbar__cta" href="/basvuru-formu/">${icon('doc')}<span>Teklif Al</span></a>
+</nav>
 <div class="cookie" role="dialog" aria-live="polite" aria-label="Çerez bildirimi">
   <strong>Çerez Tercihleri</strong>
   Deneyiminizi iyileştirmek ve site trafiğini analiz etmek için çerezler kullanıyoruz. Ayrıntılar için <a href="/cerez-politikasi/">Çerez Politikası</a> ve <a href="/kvkk-politikamiz/">KVKK Aydınlatma Metni</a>’ni inceleyebilirsiniz.
