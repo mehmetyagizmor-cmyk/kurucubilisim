@@ -21,6 +21,9 @@ const EXCLUDE = {
   'mali-muhur-nedir-dijital-guvenlikte-yeni-bir-adim': 'bilgi-bankasi/mali-muhur/mali-muhur-rehberi',
   'mali-muhur-ve-vergi-iadeleri-dijital-imzalar-ile-iade-sureclerinin-hizlandirilmasi': 'bilgi-bankasi/mali-muhur/mali-muhur-rehberi',
   'e-bordro-ile-ik-ve-muhasebe-sureclerinde-verimlilik-artisi': 'bilgi-bankasi/kep/e-bordro-rehberi',
+  // "e-imza nasıl alınır / belgeler" aramalarında rehberle yarışıyordu (Search Console: 59–63. sıra)
+  'e-imza-nasil-alinir-adim-adim-basvuru-rehberi': 'bilgi-bankasi/e-imza/e-imza-rehberi',
+  'e-imza-basvurusu-gerekli-belgeler-sartlar-ve-basvuru-turleri': 'bilgi-bankasi/e-imza/e-imza-rehberi',
 };
 
 const TITLE_FIX = {
