@@ -137,7 +137,7 @@ ${why}
 </div></section>
 <section class="section section--light"><div class="container">
   <div class="section-head center"><span class="eyebrow">Sıkça sorulan sorular</span><h2>Aklınızdaki sorular</h2><p class="lead">Aradığınız cevap burada yoksa <a href="/iletisim/" style="color:var(--link);font-weight:600">bize ulaşın</a>, hemen yanıtlayalım.</p></div>
-  ${faqBlock(faqs.slice(0, 6))}
+  ${faqBlock(faqs.slice(0, 4))}
 </div></section>
 ${ctaBand('İşletmenizi dijitalde bir adım öne taşıyalım', 'Ücretsiz ön görüşmede ihtiyaçlarınızı dinleyelim; işletmenize özel çözümü ve teklifi hazırlayalım.')}`;
 
@@ -147,7 +147,7 @@ ${ctaBand('İşletmenizi dijitalde bir adım öne taşıyalım', 'Ücretsiz ön 
     desc: 'İstanbul merkezli Kurucu Bilişim; e-imza, mali mühür, KEP, e-fatura, e-defter, web tasarım, e-ticaret, ERP ve CRM çözümleri sunar. Ücretsiz teklif alın.',
     body,
     schema: [
-      faqSchema(faqs.slice(0, 6)),
+      faqSchema(faqs.slice(0, 4)),
       { '@type': 'WebPage', '@id': site.url + '/#webpage', url: site.url + '/', name: 'Kurucu Bilişim', isPartOf: { '@id': site.url + '/#website' }, about: { '@id': site.url + '/#organization' }, inLanguage: 'tr-TR' },
     ],
   }), { priority: '1.0' });
