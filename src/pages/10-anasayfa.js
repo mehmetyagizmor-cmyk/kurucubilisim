@@ -1,7 +1,7 @@
 // Faz 3: Ana sayfa
 const { site, services, faqs, meslekler } = require('../data');
-const { layout, icon, icBox, btn, byGroup, faqBlock, faqSchema, ctaBand, svcPath, esc } = require('../lib');
-const { serviceCard, quotesBlock, partnersMarquee, logoWall, activeCampaigns, campaignCard, meslekGrid, meslekPath } = require('../components');
+const { layout, icon, icBox, btn, faqBlock, faqSchema, ctaBand, svcPath, esc } = require('../lib');
+const { quotesBlock, partnersMarquee, logoWall, activeCampaigns, campaignCard, meslekGrid, meslekPath } = require('../components');
 
 module.exports = (ctx) => {
   // Çözüm bulucu: ziyaretçi durumunu seçer, ona uygun hizmetlere gider (gerçek bağlantılar, SEO için metin)
@@ -48,23 +48,19 @@ module.exports = (ctx) => {
     <span class="badge hero-in"><b>10+ YIL</b> İşletmelerin dijital dönüşüm ortağı</span>
     <h1 class="hero-in" style="--d:.05s"><span style="white-space:nowrap">E-İmza,</span> <span style="white-space:nowrap">Mali Mühür,</span> KEP ve <span style="white-space:nowrap">E-Fatura</span><br><span class="grad">tek ekipte</span></h1>
     <p class="lead hero-in" style="--d:.12s">Başvurudan kuruluma kadar tüm e-dönüşüm işlemlerinizi hızlı, güvenli ve mevzuata uygun şekilde yönetiyoruz. Web tasarım, e-ticaret ve ERP çözümleriyle dijital büyümenizi de destekliyoruz.</p>
-    <div class="hero__actions hero-in" style="--d:.18s">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg', false)}<a class="link-arrow" href="#hizmetler">Hizmetleri keşfedin ${icon('arrow')}</a></div>
+    <div class="hero__actions hero-in" style="--d:.18s">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al', 'btn--primary btn--lg', false)}<a class="link-arrow" href="#cozumler">Hizmetleri keşfedin ${icon('arrow')}</a></div>
     <ul class="ticks hero-in" style="--d:.24s"><li>${icon('check')}İstanbul içi hızlı kurye</li><li>${icon('check')}81 ile kargo</li><li>${icon('check')}Yerinde & uzaktan kurulum</li></ul>
   </div>
-  <div class="container hero__finder hero-in" style="--d:.3s">
+  <div class="container hero__finder hero-in" id="cozumler" style="--d:.3s">
     <div class="finder">
       <div class="finder__head"><h2>Faaliyet alanınıza uygun çözümler</h2><p>Faaliyet alanınızı seçin, ilgili hizmetlerimizi listeleyelim.</p></div>
       <div class="tabs finder__tabs" role="tablist" aria-label="Faaliyet alanınızı seçin">${finder.map(([t], i) => `<button type="button" role="tab" id="ft${i}" aria-controls="fp${i}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t)}</button>`).join('')}</div>
       ${finder.map(([t, items], i) => `<div class="finder__panel" role="tabpanel" id="fp${i}" aria-labelledby="ft${i}"${i ? ' hidden' : ''}>${items.map(([href, ic, name, why]) => `<a class="finder__item" href="${href}">${icBox(ic)}<span class="finder__txt"><strong>${esc(name)}</strong><small>${esc(why)}</small></span>${icon('arrow')}</a>`).join('')}</div>`).join('')}
-      <p class="finder__foot">İhtiyacınız olan çözümü birlikte belirleyelim. <a href="/iletisim/">Ücretsiz danışmanlık alın ${icon('arrow')}</a></p>
+      <p class="finder__foot">İhtiyacınız olan çözümü birlikte belirleyelim. <a href="/iletisim/">Ücretsiz danışmanlık alın ${icon('arrow')}</a> · <a href="/e-donusum-hizmetleri/">Tüm e-dönüşüm hizmetleri ${icon('arrow')}</a> · <a href="/dijital-hizmetler/">Dijital hizmetler ${icon('arrow')}</a></p>
     </div>
     <ul class="trust">${trust.map(([ic, t, d]) => `<li>${icBox(ic)}<span><strong>${t}</strong><small>${d}</small></span></li>`).join('')}</ul>
   </div>
 </section>`;
-
-  // En çok aranan hizmetler önce (Search Console): e-imza, mali mühür, KEP, e-fatura
-  const keyEDonusumSlugs = ['e-imza', 'mali-muhur', 'kep-ik', 'e-fatura', 'e-arsiv-fatura', 'e-defter', 'e-irsaliye', 'e-smm'];
-  const homeEDonusum = keyEDonusumSlugs.map((slug) => byGroup('e-donusum-hizmetleri').find((s) => s.slug === slug)).filter(Boolean);
 
   // Ayrıcalıklar: patronun öne çıkardığı, doğrulanmış hizmet farkları (butonsuz, hizmet sayfasına bağlanır)
   const perks = [
@@ -88,19 +84,6 @@ module.exports = (ctx) => {
   // Yatay kaydırmalı kart şeridi (oklar JS ile çalışır; JS yoksa parmakla/kaydırma çubuğuyla kayar)
   const rail = (cards, label) => `<div class="rail" data-rail><div class="rail__track" tabindex="0" aria-label="${label}">${cards}</div>
     <div class="rail__nav"><button type="button" data-dir="-1" aria-label="Önceki kartlar">${icon('arrow')}</button><button type="button" data-dir="1" aria-label="Sonraki kartlar">${icon('arrow')}</button></div></div>`;
-  const tabs = `<section class="section" id="hizmetler"><div class="container">
-  <div class="section-head section-head--split">
-    <div><span class="eyebrow">Hizmetlerimiz</span><h2>İhtiyacınız olan her şey.<br>Tek bir ekipte.</h2></div>
-    <p class="lead" style="margin:0">Yasal zorunluluklardan büyüme odaklı dijital çözümlere kadar işletmenizi uçtan uca destekliyoruz.</p>
-  </div>
-  <div class="tabs" role="tablist" aria-label="Hizmet grupları">
-    <button type="button" role="tab" id="t1" aria-controls="p1" aria-selected="true">E-Dönüşüm</button>
-    <button type="button" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">Dijital Hizmetler</button>
-  </div>
-  <div role="tabpanel" id="p1" aria-labelledby="t1">${rail(homeEDonusum.map(serviceCard).join('') + `
-    <a class="card card--feature" href="/e-donusum-hizmetleri/"><h3 style="margin-top:0">Tüm 15 E-Dönüşüm Hizmeti</h3><p>e-Adisyon, e-Bilet, Müstahsil, Entegrasyon, Geçiş Danışmanlığı ve tüm e-belgelerimizi keşfedin.</p><span class="link-arrow">Tümünü incele ${icon('arrow')}</span></a>`, 'E-Dönüşüm hizmetleri')}</div>
-  <div role="tabpanel" id="p2" aria-labelledby="t2" hidden>${rail(byGroup('dijital-hizmetler').map(serviceCard).join(''), 'Dijital hizmetler')}</div>
-</div></section>`;
 
   const why = `<section class="section section--light"><div class="container split story">
   <div class="media" data-reveal data-scroll data-scroll-start="1" data-scroll-len="1.3">
@@ -119,8 +102,7 @@ module.exports = (ctx) => {
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
 ${perksSection}
-${tabs}
-<section class="section section--light" style="padding-top:clamp(56px,7vw,96px)"><div class="container">
+<section class="section"><div class="container">
   <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis<br>ve müteahhitler için.</h2></div>
     <p class="lead" style="margin:0">UYAP’tan e-reçeteye, Yapı Denetim Sistemi’nden EKAP’a; mesleğinizin sistemlerinde sorunsuz çalışan e-imzayı kuruyoruz.</p></div>
   ${meslekGrid()}

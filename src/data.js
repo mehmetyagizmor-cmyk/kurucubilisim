@@ -651,10 +651,11 @@ const services = [
   },
 ];
 
+// Müşteri yorumları isimsiz gösterilir (patron isteği): [müşteri türü, yorum]
 const testimonials = [
-  ['Köksal Malkoç', 'E-İmza Müşterisi', 'Firmamızın e-imza süreçleri için Kurucu Bilişim’den destek aldık. Hem hızlı dönüş sağladılar hem de tüm süreci adım adım anlatarak yardımcı oldular. Teknik destek ekibi gerçekten çok ilgili.'],
-  ['Kenan Başkan', 'KEP Müşterisi', 'KEP hesabı açtırmak için başvurdum, birkaç saat içinde işlemlerim uzaktan tamamlandı. Bu kadar pratik olacağını düşünmemiştim. Müşteri hizmetleri çok kibar ve çözüm odaklı.'],
-  ['Sema Kılıç', 'Web Tasarım Müşterisi', 'Web sitemizi yenileme sürecinde harika bir deneyim yaşadık. Hem şık hem de işlevsel bir tasarım sundular ve tüm süreç boyunca bizimle yakından ilgilendiler.'],
+  ['E-İmza Müşterisi', 'Firmamızın e-imza süreçleri için Kurucu Bilişim’den destek aldık. Hem hızlı dönüş sağladılar hem de tüm süreci adım adım anlatarak yardımcı oldular. Teknik destek ekibi gerçekten çok ilgili.'],
+  ['KEP Müşterisi', 'KEP hesabı açtırmak için başvurdum, birkaç saat içinde işlemlerim uzaktan tamamlandı. Bu kadar pratik olacağını düşünmemiştim. Müşteri hizmetleri çok kibar ve çözüm odaklı.'],
+  ['Web Tasarım Müşterisi', 'Web sitemizi yenileme sürecinde harika bir deneyim yaşadık. Hem şık hem de işlevsel bir tasarım sundular ve tüm süreç boyunca bizimle yakından ilgilendiler.'],
 ];
 
 const faqs = [

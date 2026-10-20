@@ -1,6 +1,6 @@
 // Birden çok sayfada kullanılan içerik bileşenleri.
 const { site, testimonials, process, partners, references, services, meslekler } = require('./data');
-const { esc, icon, icBox, svcPath, initials, applyHref, activeCampaigns } = require('./lib');
+const { esc, icon, icBox, svcPath, applyHref, activeCampaigns } = require('./lib');
 const { fmtDate } = require('./posts');
 
 const postCard = (p, i = 0) => `<a class="card post-card" href="${p.path}" data-reveal style="--d:${i * 0.07}s" data-cats="${esc(p.cats.join('|'))}">
@@ -18,7 +18,7 @@ const statsBlock = () => `<div class="stats" data-reveal>${site.stats.map((s) =>
 
 const stepsBlock = (list = process) => `<div class="steps" data-scroll data-scroll-start=".85" data-scroll-len=".45">${list.map(([t, d], i) => `<div class="step" data-reveal style="--d:${i * 0.12}s"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>`;
 
-const quoteCard = ([n, r, q], i = 0) => `<figure class="card quote" data-reveal style="--d:${i * 0.08}s"><div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">${icon('star').repeat(5)}</div><blockquote>“${esc(q)}”</blockquote><figcaption><footer><span class="avatar" aria-hidden="true">${initials(n)}</span><span><strong>${esc(n)}</strong><small>${esc(r)}</small></span></footer></figcaption></figure>`;
+const quoteCard = ([r, q], i = 0) => `<figure class="card quote" data-reveal style="--d:${i * 0.08}s"><div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">${icon('star').repeat(5)}</div><blockquote>“${esc(q)}”</blockquote><figcaption><footer><span class="avatar" aria-hidden="true">${icon('users')}</span><span><strong>${esc(r)}</strong></span></footer></figcaption></figure>`;
 const quotesBlock = (list = testimonials) => `<div class="quotes">${list.map(quoteCard).join('')}</div>`;
 
 const partnersMarquee = () => {
