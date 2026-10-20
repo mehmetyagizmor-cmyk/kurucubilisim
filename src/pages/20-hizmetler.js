@@ -98,7 +98,7 @@ module.exports = (ctx) => {
       const guvenlik = list.filter((s) => s.category !== 'belge');
       servicesSection = `
 <section class="section" style="padding-top:0"><div class="container">
-  <div class="section-head center"><span class="eyebrow">e-Belge Çözümleri</span><h2>GİB Uyumlu Dijital Belgeler</h2><p class="lead">Kağıt, baskı ve kargo maliyetlerini sıfırlayan, Gelir İdaresi Başkanlığı standartlarına tam uyumlu e-belge çözümleri.</p></div>
+  <div class="section-head center"><span class="eyebrow">e-Belge Çözümleri</span><h2>GİB Uyumlu Dijital Belgeler</h2><p class="lead">Kağıt, baskı ve kargo maliyetlerini azaltan, Gelir İdaresi Başkanlığı mevzuatına uygun e-belge çözümleri.</p></div>
   <div class="grid grid--3">${belgeler.map(serviceCard).join('')}</div>
 </div></section>
 <section class="section section--alt"><div class="container">

@@ -47,7 +47,7 @@ const groups = {
   'e-donusum-hizmetleri': {
     name: 'E-Dönüşüm Hizmetleri',
     title: 'E-Dönüşüm Hizmetleri: E-Fatura, E-İmza, Mali Mühür, KEP',
-    desc: 'E-fatura, e-arşiv, e-irsaliye, e-defter, e-SMM, e-imza, mali mühür, KEP ve e-dönüşüm entegrasyonu hizmetlerini tek noktadan, mevzuata tam uyumlu alın.',
+    desc: 'E-fatura, e-arşiv, e-irsaliye, e-defter, e-SMM, e-imza, mali mühür, KEP ve e-dönüşüm entegrasyonu hizmetlerini tek noktadan, mevzuata uygun şekilde alın.',
     h1: 'E-Dönüşüm Hizmetleri',
     lead: 'Gelir İdaresi Başkanlığı ve ilgili mevzuatla uyumlu e-dönüşüm süreçlerinizi başvurudan kuruluma, saklamadan desteğe kadar uçtan uca yönetiyoruz.',
   },
@@ -69,7 +69,7 @@ const services = [
     title: 'E-Fatura Başvurusu Nasıl Yapılır? Geçiş Desteği | Kurucu Bilişim',
     desc: 'E-fatura başvurusu nasıl yapılır, kimler geçmek zorunda? GİB başvurusu, mali mühür, muhasebe ve ERP entegrasyonu tek elden. Fiyat için teklif alın.',
     h1: 'E-Fatura Başvurusu ve Entegrasyon Çözümleri',
-    lead: 'Faturalarınızı saniyeler içinde kesin, alıcılarına anında iletin. Kağıt, baskı ve kargo masraflarını sıfırlayarak tahsilat süreçlerinizi hızlandırın.',
+    lead: 'Faturalarınızı saniyeler içinde kesin, alıcılarına anında iletin. Kağıt, baskı ve kargo masraflarını azaltarak tahsilat süreçlerinizi hızlandırın.',
     intro: [
       'E-fatura; faturaların elektronik ortamda düzenlenmesini, Gelir İdaresi Başkanlığı (GİB) üzerinden güvenle iletilmesini ve dijital olarak saklanmasını sağlayan yasal bir çözümdür. Matbu faturaların kaybolma, gecikme ve yüksek kargo maliyeti risklerini ortadan kaldırır.',
       'Kurucu Bilişim olarak mali mühür veya e-imza temininden GİB portal başvurularına, kullandığınız ön muhasebe/ERP yazılımı entegrasyonundan personel eğitimine kadar tüm süreci anahtar teslim yönetiyoruz.',
@@ -101,7 +101,7 @@ const services = [
     title: 'E-Arşiv Fatura Çözümleri ve Başvuru | Kurucu Bilişim',
     desc: 'E-fatura mükellefi olmayan kurumlara ve nihai tüketicilere e-posta veya SMS ile anında e-arşiv fatura düzenleyin. Hızlı, yasal ve güvenli.',
     h1: 'E-Arşiv Fatura Düzenleme ve Arşivleme Çözümleri',
-    lead: 'E-fatura kullanıcısı olmayan firmalara ve son tüketicilere dijital fatura kesin. E-posta veya SMS ile anında iletin, 10 yıl güvenle saklayın.',
+    lead: 'E-fatura kullanıcısı olmayan firmalara ve son tüketicilere dijital fatura kesin. E-posta veya SMS ile anında iletin.',
     intro: [
       'E-arşiv fatura, e-fatura sistemine kayıtlı olmayan kurumlara ve nihai tüketicilere elektronik ortamda düzenlenen faturadır. İkinci nüshası dijitalde saklanır; alıcıya ise e-posta, SMS linki veya kağıt çıktı olarak teslim edilir.',
       'GİB interaktif portalındaki limitlere takılmadan, kendi logonuz ve kurumsal şablonunuzla sınırsız e-arşiv fatura düzenleyebilir, e-ticaret siparişlerinizi otomatik faturalandırabilirsiniz.',
@@ -155,7 +155,7 @@ const services = [
     title: 'E-Defter ve E-Defter Saklama Hizmeti | Kurucu Bilişim',
     desc: 'E-defter oluşturma, beratlama, GİB’e gönderim ve 10 yıl güvenli e-defter saklama hizmeti. Muhasebe yazılımınızla tam entegre.',
     h1: 'E-Defter ve E-Defter Saklama Hizmeti',
-    lead: 'Defteriniz dijitalde, geleceğiniz güvende. E-defter oluşturma, onaylama ve saklama süreçlerinizi GİB standartlarına tam uyumlu şekilde yönetiyoruz.',
+    lead: 'Defteriniz dijitalde, geleceğiniz güvende. E-defter oluşturma, onaylama ve saklama süreçlerinizi GİB mevzuatına uygun şekilde yönetiyoruz.',
     intro: [
       'Gelir İdaresi Başkanlığı’nın teknik ve yasal standartlarına uyumlu çözümlerimizle yevmiye ve kebir defterlerinizi gönül rahatlığıyla oluşturur ve beratlarını alırsınız. Tüm e-defter ve beratlar zaman damgasıyla korunur; yasal geçerliliğini korur.',
       'Defter ve beratlarınızı güvenli bulut sunucularda 10 yıl boyunca saklıyor, GİB ikincil kopya yükleme süreçlerini otomatikleştiriyoruz. Mevcut muhasebe yazılımınızla entegre altyapımız sayesinde dijital geçiş ek iş yükü oluşturmaz.',
@@ -163,7 +163,7 @@ const services = [
     highlights: [
       ['Zaman Damgalı E-Defter', 'Yasal geçerlilik ve defter değişmezliği güvence altında.'],
       ['10 Yıl Güvenli Saklama', 'Yedekli bulut sunucularda denetimlere her zaman hazır arşiv.'],
-      ['Yazılım Entegrasyonu', 'GİB onaylı altyapı, mevcut muhasebe sisteminizle tam uyumlu.'],
+      ['Yazılım Entegrasyonu', 'GİB onaylı altyapı, mevcut muhasebe sisteminizle entegre çalışır.'],
     ],
     features: ['GİB uyumlu e-defter', 'Berat oluşturma ve gönderim', 'Zaman damgası entegrasyonu', '10 yıl güvenli bulut saklama', 'Muhasebe yazılımı entegrasyonu', 'Yedekli sunucu altyapısı', 'Aylık süreç takibi', 'Denetimlere hazır arşiv', 'Teknik ve mevzuat desteği'],
     faqs: [
@@ -179,7 +179,7 @@ const services = [
     title: 'E-SMM (Elektronik Serbest Meslek Makbuzu) | Kurucu Bilişim',
     desc: 'Avukat, doktor, mali müşavir, mühendis ve mimarlar için pratik e-SMM. Makbuzlarınızı dijitalde kesin, stopaj ve KDV’yi otomatik hesaplayın.',
     h1: 'Elektronik Serbest Meslek Makbuzu (E-SMM)',
-    lead: 'Serbest meslek erbapları için pratik, hızlı ve GİB uyumlu e-makbuz çözümü. Stopaj ve KDV kesintilerini tek tıkla hesaplayın, müşterinize anında iletin.',
+    lead: 'Serbest meslek erbapları için pratik, hızlı ve GİB uyumlu e-makbuz çözümü. Makbuzlarınızı elektronik ortamda düzenleyin, müşterinize anında iletin.',
     intro: [
       'E-SMM; serbest meslek erbaplarının (avukatlar, mali müşavirler, doktorlar, mühendisler, mimarlar, danışmanlar) düzenlediği serbest meslek makbuzunun elektronik ortamda düzenlenmesini, iletilmesini ve saklanmasını sağlar.',
       'Stopaj, KDV, tevkifat kesintilerini otomatik hesaplayan kullanıcı dostu arayüzümüz ile cep telefonunuzdan veya bilgisayarınızdan saniyeler içinde makbuz kesip e-posta ile müşterinize ulaştırabilirsiniz.',
@@ -225,7 +225,7 @@ const services = [
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-gider-pusulasi', icon: 'receipt',
     name: 'E-Gider Pusulası', short: 'E-Gider Pusulası',
     title: 'E-Gider Pusulası Çözümü | Kurucu Bilişim',
-    desc: 'Vergi mükellefi olmayan kişilerden alınan mal ve hizmetler için gider pusulalarınızı elektronik ortamda düzenleyin. GİB onaylı, hızlı ve mevzuata tam uyumlu.',
+    desc: 'Vergi mükellefi olmayan kişilerden alınan mal ve hizmetler için gider pusulalarınızı elektronik ortamda düzenleyin. Hızlı ve mevzuata uygun.',
     h1: 'Elektronik Gider Pusulası (E-Gider Pusulası)',
     lead: 'Esnaf muaflığından yararlanan veya vergi mükellefi olmayan kişilerden yapılan alımlar için gider pusulalarınızı dijital ortamda düzenleyin, arşivleyin.',
     intro: [
@@ -258,7 +258,7 @@ const services = [
     ],
     highlights: [
       ['Yüksek İşlem Hacmi', 'Milyonlarca finansal işlemi saniyeler içinde işleyen dayanıklı altyapı.'],
-      ['Finansal Standartlar', 'BDDK ve GİB güvenlik standartlarına tam uyumlu şifreleme ve mimari.'],
+      ['Finansal Standartlar', 'Mevzuata uygun, güvenli altyapı.'],
       ['Zaman Damgası Garantisi', 'İşlem anının hukuki delil niteliğiyle değişmez olarak sabitlenmesi.'],
     ],
     features: ['GİB e-Dekont standartlarına tam uyum', 'Yüksek hızlı API entegrasyonu', 'Büyük veri ve işlem kapasitesi', 'Zaman damgalı arşivleme', 'Toplu dekont üretimi ve sorgulama', 'Müşteriye anlık bildirim altyapısı', 'Felaket kurtarma ve yedekleme', 'Yüksek erişilebilirlikli altyapı','Kurumsal danışmanlık'],
@@ -306,7 +306,7 @@ const services = [
     ],
     highlights: [
       ['Karekodlu Hızlı Giriş', 'Turnikelerde ve araç girişlerinde saniyeler içinde okutulan QR biletler.'],
-      ['SMS ve E-Posta İletimi', 'Baskı ve matbaa maliyetini sıfırlayan dijital teslimat.'],
+      ['SMS ve E-Posta İletimi', 'Baskı ve matbaa maliyetini azaltan dijital teslimat.'],
       ['GİB Raporlama Kolaylığı', 'Günlük bilet satış raporlarının GİB’e otomatik aktarımı.'],
     ],
     features: ['GİB e-Bilet mevzuatına uyum','Karekodlu (QR) biletleme', 'SMS ve e-posta ile bilet gönderimi', 'Turnike ve barkod okuyucu entegrasyonu', 'İptal, iade ve açığa alma süreçleri', 'Yolcu ve koltuk yönetimi', 'Günlük satış icmali ve GİB raporlaması', 'Yüksek trafik ve biletleme kapasitesi', 'Teknik altyapı desteği'],
@@ -478,7 +478,7 @@ const services = [
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-donusum-danismanligi', icon: 'compass',
     name: 'E-Dönüşüm Başvuru ve Geçiş Danışmanlığı', short: 'Başvuru & Geçiş Danışmanlığı',
     title: 'E-Dönüşüm Başvuru ve Geçiş Danışmanlığı | Kurucu Bilişim',
-    desc: 'GİB başvuruları, mali mühür temini, entegratör seçimi ve geçiş süreçlerinizi uçtan uca yönetiyoruz. Ceza riskini sıfırlayan uzman danışmanlık.',
+    desc: 'GİB başvuruları, mali mühür temini, entegratör seçimi ve geçiş süreçlerinizi uçtan uca yönetiyoruz. Ceza riskini azaltan uzman danışmanlık.',
     h1: 'E-Dönüşüm Başvuru ve Geçiş Danışmanlığı',
     lead: 'Yasal zorunluluklar, başvuru takvimleri ve teknik kurulumlar arasında kaybolmayın. Başvurudan ilk faturanın kesilmesine kadar tüm süreci sizin adınıza yönetiyoruz.',
     intro: [
