@@ -85,13 +85,6 @@ module.exports = (ctx) => {
     ['Yerinde Hizmet', 'İstanbul’da yerinde kurulum, Türkiye genelinde uzaktan destek.'],
   ];
 
-  // Bilgi Bankası: en güçlü rehberler
-  const kb = require('../kb');
-  const kbHome = ['e-imza-rehberi', 'kep-rehberi', 'e-fatura-rehberi', 'e-donusum-gecis-rehberi'].map((s) => kb.articles.find((a) => a.slug === s)).filter(Boolean);
-  const kbSection = `<section class="section section--light"><div class="container">
-  <div class="section-head section-head--split"><div><span class="eyebrow">Bilgi Bankası</span><h2>Aklınıza takılanlar,<br>adım adım rehberler.</h2></div><div class="hero__actions" style="margin:0">${btn('/bilgi-bankasi/', 'Bilgi Bankası', 'btn--ghost')}${btn('/blog/', 'Blog', 'btn--ghost')}</div></div>
-  <div class="grid grid--2">${kbHome.map((a) => `<a class="card" href="${a.path}" data-reveal><span class="chip" style="align-self:flex-start">${esc(kb.cats.find((c) => c.slug === a.cat).name)}</span><h3 style="margin:12px 0 8px;font-size:1.15rem">${esc(a.title)}</h3><p class="muted" style="margin:0">${esc(a.lead)}</p><span class="link-arrow" style="margin-top:14px">Rehberi oku ${icon('arrow')}</span></a>`).join('')}</div>
-</div></section>`;
   // Yatay kaydırmalı kart şeridi (oklar JS ile çalışır; JS yoksa parmakla/kaydırma çubuğuyla kayar)
   const rail = (cards, label) => `<div class="rail" data-rail><div class="rail__track" tabindex="0" aria-label="${label}">${cards}</div>
     <div class="rail__nav"><button type="button" data-dir="-1" aria-label="Önceki kartlar">${icon('arrow')}</button><button type="button" data-dir="1" aria-label="Sonraki kartlar">${icon('arrow')}</button></div></div>`;
@@ -122,7 +115,7 @@ module.exports = (ctx) => {
   </div>
 </div></section>`;
 
-  // Akış: ilk ekran → ayrıcalıklar → hizmetler → mesleğe özel e-imza → kampanyalar → neden biz → referanslar ve yorumlar → bilgi bankası → SSS → tek teklif bandı
+  // Akış: ilk ekran → ayrıcalıklar → hizmetler → mesleğe özel e-imza → kampanyalar → neden biz → referanslar ve yorumlar → SSS (Bilgi Bankası menüde; ana sayfada değil, patron isteği) → tek teklif bandı
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
 ${perksSection}
@@ -142,8 +135,7 @@ ${why}
   ${logoWall(18)}
   <div style="margin-top:clamp(40px,5vw,64px)">${quotesBlock()}</div>
 </div></section>
-${kbSection}
-<section class="section"><div class="container">
+<section class="section section--light"><div class="container">
   <div class="section-head center"><span class="eyebrow">Sıkça sorulan sorular</span><h2>Aklınızdaki sorular</h2><p class="lead">Aradığınız cevap burada yoksa <a href="/iletisim/" style="color:var(--link);font-weight:600">bize ulaşın</a>, hemen yanıtlayalım.</p></div>
   ${faqBlock(faqs.slice(0, 6))}
 </div></section>

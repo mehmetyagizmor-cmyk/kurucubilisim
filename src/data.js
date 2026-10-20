@@ -34,7 +34,7 @@ const site = {
   // Form gönderimleri bu PHP dosyasına gider (server/form.php → kök dizine kopyalanır).
   formEndpoint: '/form.php',
   stats: [
-    { value: 10, suffix: '+', label: 'Yıllık Tecrübe' },
+    { value: 10, suffix: '+', label: 'Yıllık Deneyim' },
     { value: 81, suffix: '', label: 'İle Kargo Gönderimi' },
   ],
   // Banka bilgileri canlı sitede boş görünüyordu. Doldurulana kadar sayfa iletişim yönlendirmesi gösterir.

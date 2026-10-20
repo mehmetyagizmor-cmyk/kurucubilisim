@@ -32,7 +32,7 @@ Sitemap: ${site.url}/sitemap.xml
   // ---------- llms.txt (yapay zekâ arama motorları için özet) ----------
   out('llms.txt', `# ${site.name}
 
-> İstanbul (Şişli) merkezli bilişim firması. E-imza, mali mühür, KEP ve e-bordro, e-fatura/e-arşiv/e-belge, e-defter ve e-defter saklama gibi e-dönüşüm hizmetleri ile web tasarım, e-ticaret, kurumsal tasarım, ERP, CRM ve sosyal medya yönetimi hizmetleri sunar. 10+ yıllık tecrübe.
+> İstanbul (Şişli) merkezli bilişim firması. E-imza, mali mühür, KEP ve e-bordro, e-fatura/e-arşiv/e-belge, e-defter ve e-defter saklama gibi e-dönüşüm hizmetleri ile web tasarım, e-ticaret, kurumsal tasarım, ERP, CRM ve sosyal medya yönetimi hizmetleri sunar. 10+ yıllık deneyim.
 
 İletişim: ${site.phoneDisplay} · ${site.email} · ${site.address.street}, ${site.address.postalCode} ${site.address.district}/${site.address.city}
 Çalışma saatleri: ${site.hours.map((h) => `${h.label} ${h.text}`).join(', ')}, Pazar kapalı
