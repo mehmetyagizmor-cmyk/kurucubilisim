@@ -694,15 +694,14 @@ a.featured { display: grid; grid-template-columns: 1.15fr 1fr; padding: 0; margi
 .esig figcaption { position: absolute; right: 4px; bottom: 6px; font-size: .78rem; color: var(--muted); }
 @media (max-width: 560px) { .esig { padding-left: 14px; } .esig__token { width: 112px; height: 60px; } }
 
-/* Telefonda alt iletişim şeridi: Ara | WhatsApp | Teklif Al (pop-up yerine; içeriği kapatmaz) */
+/* Telefonda alt iletişim şeridi: Ara | WhatsApp (teklif butonu sayfada; patron isteği (pop-up yerine; içeriği kapatmaz) */
 .mbar { display: none; }
 @media (max-width: 640px) {
-  .mbar { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, .94); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-top: 1px solid var(--line); }
+  .mbar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: rgba(255, 255, 255, .94); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-top: 1px solid var(--line); }
   .mbar a { display: flex; align-items: center; justify-content: center; gap: 6px; height: 44px; border-radius: 999px; border: 1px solid var(--line-2); font-weight: 600; font-size: .9rem; color: var(--text); text-decoration: none; }
   .mbar svg { width: 18px; height: 18px; flex: none; }
   .mbar a:first-child svg { color: var(--brand); }
   .mbar__wa svg { color: #25d366; }
-  .mbar__cta { background: var(--brand); border-color: var(--brand) !important; color: #fff !important; }
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
   .fab .fab__wa { display: none; }
   .fab { bottom: calc(74px + env(safe-area-inset-bottom)); }

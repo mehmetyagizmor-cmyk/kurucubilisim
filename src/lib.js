@@ -186,8 +186,7 @@ function footer() {
 </div>
 <nav class="mbar" aria-label="Hızlı iletişim">
   <a href="tel:${site.phone}">${icon('phone')}<span>Ara</span></a>
-  <a class="mbar__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${SOCIAL.whatsapp}<span>WhatsApp</span></a>
-  <a class="mbar__cta" href="/basvuru-formu/">${icon('doc')}<span>Teklif Al</span></a>
+  <a class="mbar__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${SOCIAL.whatsapp}<span>WhatsApp</span></a>
 </nav>
 <div class="cookie" role="dialog" aria-live="polite" aria-label="Çerez bildirimi">
   <strong>Çerez Tercihleri</strong>
