@@ -142,26 +142,6 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  // Sayaçlar: HTML'de gerçek değer yazılı (SEO), görünür olunca 0'dan sayar
-  var counters = $$('[data-count]');
-  if (counters.length && 'IntersectionObserver' in window && !reduce) {
-    var fmt = function (n) { return n.toLocaleString('tr-TR'); };
-    var co = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var el = en.target, end = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null;
-        co.unobserve(el);
-        (function tick(t) {
-          if (!t0) t0 = t;
-          var p = Math.min(Math.max((t - t0) / 1800, 0), 1), e = 1 - Math.pow(1 - p, 4);
-          el.textContent = fmt(Math.round(end * e)) + suf;
-          if (p < 1) requestAnimationFrame(tick);
-        })(performance.now());
-      });
-    }, { threshold: .5 });
-    counters.forEach(function (el) { co.observe(el); });
-  }
-
   // Sekmeler (segment kontrol: seçili arka plan kayarak hareket eder)
   $$('[role="tablist"]').forEach(function (list) {
     var tabs = $$('[role="tab"]', list);
