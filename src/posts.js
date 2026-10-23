@@ -24,6 +24,16 @@ const EXCLUDE = {
   // "e-imza nasıl alınır / belgeler" aramalarında rehberle yarışıyordu (Search Console: 59–63. sıra)
   'e-imza-nasil-alinir-adim-adim-basvuru-rehberi': 'bilgi-bankasi/e-imza/e-imza-rehberi',
   'e-imza-basvurusu-gerekli-belgeler-sartlar-ve-basvuru-turleri': 'bilgi-bankasi/e-imza/e-imza-rehberi',
+  // Blog temizliği (Search Console, 23.10.2026): rehber / hizmet sayfasıyla aynı aramalarda yarışan, tıklama almayan yazılar
+  'avukatlar-icin-e-imza-uyap-ve-dijital-dava-sureclerinde-kullanim': 'e-donusum-hizmetleri/e-imza/avukatlar-icin-e-imza',
+  'e-imza-nedir': 'bilgi-bankasi/e-imza/e-imza-rehberi',
+  'e-imza-kullanim-alanlari-elektronik-imza-nerelerde-kullanilir': 'bilgi-bankasi/e-imza/e-imza-rehberi',
+  'e-imzanin-yasal-gecerliligi-5070-sayili-kanun-ve-hukuki-sonuclari': 'bilgi-bankasi/e-imza/e-imza-rehberi',
+  'e-bordro-nedir-firmalar-ve-calisanlar-icin-temel-rehber': 'bilgi-bankasi/kep/e-bordro-rehberi',
+  'e-bordro-nasil-olusturulur-adim-adim-uygulama-rehberi': 'bilgi-bankasi/kep/e-bordro-rehberi',
+  'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'bilgi-bankasi/mali-muhur/mali-muhur-rehberi',
+  'kurucu-bilisim-ile-e-defter-dijital-muhasebeye-gecisin-akilli-yolu': 'bilgi-bankasi/e-defter/e-defter-rehberi',
+  '2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu': 'bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi',
 };
 
 const TITLE_FIX = {

@@ -140,9 +140,14 @@ ${a.info ? '' : ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : und
 
   // Blogdan Bilgi Bankası'na taşınan yazıların eski adresi → yeni adres
   // (.htaccess 301'ine ek statik yedek; canlıdaki .htaccess güncellenmeden de çalışır)
+  // Hedef Bilgi Bankası dışında bir sayfa olabilir (ör. mesleğe özel e-imza sayfası)
+  const { meslekler } = require('../data');
   for (const [from, to] of Object.entries(EXCLUDE)) {
-    const moved = articles.find((x) => x.path === `/${to}/`);
+    const path = `/${to}/`;
+    const kbMoved = articles.find((x) => x.path === path);
+    const m = meslekler.find((x) => `e-donusum-hizmetleri/e-imza/${x.slug}` === to);
+    const moved = kbMoved || (m && { path, title: m.short });
     if (!moved) continue;
-    ctx.add(`/${from}/`, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${esc(moved.title)} | Kurucu Bilişim</title><link rel="canonical" href="${abs(moved.path)}"><meta http-equiv="refresh" content="0;url=${moved.path}"><meta name="description" content="Bu yazı Kurucu Bilişim Bilgi Bankası’na taşındı."></head><body><h1>${esc(moved.title)}</h1><script>location.replace('${moved.path}');</script><p><a href="${moved.path}">Yazı Bilgi Bankası’na taşındı, devam etmek için tıklayın</a>.</p></body></html>`, { sitemap: false });
+    ctx.add(`/${from}/`, `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${esc(moved.title)} | Kurucu Bilişim</title><link rel="canonical" href="${abs(moved.path)}"><meta http-equiv="refresh" content="0;url=${moved.path}"><meta name="description" content="Bu yazı güncel sayfasına taşındı."></head><body><h1>${esc(moved.title)}</h1><script>location.replace('${moved.path}');</script><p><a href="${moved.path}">Yazı güncel sayfasına taşındı, devam etmek için tıklayın</a>.</p></body></html>`, { sitemap: false });
   }
 };
