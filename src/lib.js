@@ -171,7 +171,7 @@ function footer() {
           <li>${icon('clock')}<span>${site.hours.map((h) => `${h.label}: ${h.text}`).join('<br>')}</span></li>
         </ul>
         <h2 style="margin-top:28px">Kurumsal</h2>
-        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li>${activeCampaigns().length ? '<li><a href="/kampanyalar/">Kampanyalar</a></li>' : ''}<li><a href="/blog/">Blog</a></li><li><a href="/bilgi-bankasi/">Bilgi Bankası</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
+        <ul><li><a href="/hakkimizda/">Hakkımızda</a></li><li><a href="/referanslarimiz/">Referanslarımız</a></li>${activeCampaigns().length ? '<li><a href="/kampanyalar/">Kampanyalar</a></li>' : ''}<li><a href="/blog/">Blog</a></li><li><a href="/bilgi-bankasi/">Bilgi Bankası</a></li><li><a href="/e-fatura-zorunlu-muyum/">E-Fatura Zorunluluk Testi</a></li><li><a href="/sikca-sorulan-sorular/">S.S.S.</a></li></ul>
       </div>
     </div>
     <div class="footer__bottom">
@@ -186,7 +186,7 @@ function footer() {
 </div>
 <nav class="mbar" aria-label="Hızlı iletişim">
   <a href="tel:${site.phone}">${icon('phone')}<span>Ara</span></a>
-  <a class="mbar__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${SOCIAL.whatsapp}<span>WhatsApp</span></a>
+  <a class="mbar__wa" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${SOCIAL.whatsapp}<span>WhatsApp</span></a>
 </nav>
 <div class="cookie" role="dialog" aria-live="polite" aria-label="Çerez bildirimi">
   <strong>Çerez Tercihleri</strong>

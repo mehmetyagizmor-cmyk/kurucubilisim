@@ -101,6 +101,7 @@ module.exports = (ctx) => {
   // Akış: ilk ekran → ayrıcalıklar → hizmetler → mesleğe özel e-imza → kampanyalar → neden biz → referanslar ve yorumlar → SSS (Bilgi Bankası menüde; ana sayfada değil, patron isteği) → tek teklif bandı
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
+<div class="container"><a class="zt-strip" href="/e-fatura-zorunlu-muyum/">${icBox('check')}<span><strong>İşletmeniz e-fatura geçiş zorunluluğu kapsamında mı?</strong><small>E-fatura, e-arşiv, e-defter ve e-tebligat zorunluluklarınızı 30 saniyede öğrenin.</small></span><span class="zt-strip__go">Testi çözün ${icon('arrow')}</span></a></div>
 ${perksSection}
 <section class="section"><div class="container">
   <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis<br>ve müteahhitler için.</h2></div>

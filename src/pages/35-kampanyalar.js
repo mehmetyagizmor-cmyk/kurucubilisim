@@ -44,7 +44,7 @@ ${ctaBand('Size en uygun paketi birlikte seçelim', 'Hangi kampanyanın işletme
 ${c.hizmet === 'e-fatura' ? `<section class="section section--light"><div class="container" style="max-width:820px">
   <h2>2027’de kimler e-faturaya geçmek zorunda?</h2>
   <p>2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler, sınırı aştıkları yılı izleyen yılın Temmuz ayından itibaren e-fatura kullanmak zorundadır. Yani 2026 yılında hasılatı 3 milyon TL’yi geçen işletmelerin <strong>1 Temmuz 2027</strong>’ye kadar e-faturaya geçmesi gerekir.</p>
-  <p>Zorunlu olup olmadığınızı 30 saniyede öğrenmek için <a href="/e-fatura-zorunlu-muyum/">E-Fatura Zorunlu muyum? testini</a> çözebilirsiniz.</p>
+  <p>Zorunlu olup olmadığınızı 30 saniyede öğrenmek için <a href="/e-fatura-zorunlu-muyum/">e-fatura zorunluluk testini</a> çözebilirsiniz.</p>
   <p>Ayrıntılar için <a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-Fatura Rehberi</a> ve <a href="/bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi/">e-dönüşüm son tarihler takvimi</a> sayfalarımıza göz atabilirsiniz.${svc ? ` Hizmetimizin ayrıntıları: <a href="${svcPath(svc)}">${esc(svc.short)}</a>.` : ''}</p>
 </div></section>` : ''}
 <section class="section"><div class="container">

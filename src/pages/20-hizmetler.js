@@ -11,6 +11,8 @@ const quoteFor = { 'e-fatura': 0, 'e-imza': 0, 'kep-ik': 1, 'web-tasarim': 2, 'k
 const actionsFor = (slug) => btn(applyForms[slug] ? '#basvuru' : applyHref(slug), applyForms[slug] ? 'Hemen Başvur' : 'Ücretsiz Teklif Al', 'btn--primary btn--lg') +
   btn(`https://wa.me/${site.whatsapp}`, 'WhatsApp’tan Yazın', 'btn--ghost btn--lg', false, ' target="_blank" rel="noopener"');
 const heroActions = actionsFor('');
+// Zorunluluk testi bağlantısı gösterilen e-dönüşüm hizmetleri
+const ZT_SVC = ['e-fatura', 'e-arsiv-fatura', 'e-defter', 'e-irsaliye', 'e-smm', 'e-donusum-danismanligi'];
 // Hizmete bağlı, kendi sayfası olan aktif kampanya varsa hero'da bağlantısı
 const campLink = (slug) => activeCampaigns().filter((c) => c.sayfa && c.hizmet === slug).map((c) => `<a class="link-arrow" href="${campPath(c)}">Kampanya: ${esc(c.rozet)} ${icon('arrow')}</a>`).join('');
 
@@ -152,7 +154,7 @@ ${ctaBand()}`;
     const others = byGroup(s.group).filter((x) => x !== s);
     const q = quoteFor[s.slug];
 
-    const body = `${pageHero({ eyebrow: G.name, h1: esc(s.h1), lead: esc(s.lead), crumbs, actions: actionsFor(s.slug) + campLink(s.slug) })}
+    const body = `${pageHero({ eyebrow: G.name, h1: esc(s.h1), lead: esc(s.lead), crumbs, actions: actionsFor(s.slug) + campLink(s.slug) + (ZT_SVC.includes(s.slug) ? `<a class="link-arrow" href="/e-fatura-zorunlu-muyum/">Kapsamda mısınız? Testi çözün ${icon('arrow')}</a>` : '') })}
 <section class="section" style="padding-top:0"><div class="container">
   <h2 class="sr-only">Öne çıkan özellikler</h2>
   <div class="grid grid--3">${s.highlights.map(([t, d], i) => `<div class="card" data-reveal style="--d:${i * 0.08}s">${icBox(['bolt', 'shield', 'coin'][i])}<h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('')}</div>

@@ -38,7 +38,7 @@ const olBold = (items) => `<ol>${items.map(([t, d]) => `<li><strong>${esc(t)}:</
 const ul = (items) => `<ul>${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 const note = (t) => `<blockquote><p>${esc(t)}</p></blockquote>`;
 
-const ZT_LINK = '<p>Hangi zorunlulukların sizin için geçerli olduğunu öğrenmek için <a href="/e-fatura-zorunlu-muyum/">E-Fatura Zorunlu muyum? testini</a> çözebilirsiniz.</p>';
+const ZT_LINK = '<p>Hangi zorunlulukların sizin için geçerli olduğunu öğrenmek için <a href="/e-fatura-zorunlu-muyum/">e-fatura zorunluluk testini</a> çözebilirsiniz.</p>';
 const SON_TARIH_LINK = '<p>Yaklaşan tüm tarihler için <a href="/bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi/">E-Dönüşüm Son Tarihler Takvimi</a>’ne bakabilirsiniz.</p>' + ZT_LINK;
 
 const articles = [

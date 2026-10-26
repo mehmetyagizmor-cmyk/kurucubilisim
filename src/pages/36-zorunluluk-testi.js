@@ -19,7 +19,7 @@ const faqs = [
 ];
 
 module.exports = (ctx) => {
-  const crumbs = [['Ana Sayfa', '/'], ['Bilgi Bankası', '/bilgi-bankasi/'], ['E-Fatura Zorunlu muyum?', P]];
+  const crumbs = [['Ana Sayfa', '/'], ['Bilgi Bankası', '/bilgi-bankasi/'], ['E-Fatura Zorunluluk Testi', P]];
   const camp = activeCampaigns().find((c) => c.sayfa && c.hizmet === 'e-fatura');
   const cfg = {
     camp: camp ? { href: campPath(camp), title: camp.baslik, ozet: camp.ozet, bitis: camp.bitis } : null,
@@ -144,7 +144,7 @@ f.addEventListener('submit',function(e){
 })();
 </script>`;
 
-  const body = `${pageHero({ eyebrow: 'Ücretsiz test', h1: 'E-Fatura Zorunlu muyum?', lead: 'Birkaç kısa soruyu yanıtlayın; e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat için zorunluluklarınızı ve son tarihleri hemen görün.', crumbs })}
+  const body = `${pageHero({ eyebrow: 'Ücretsiz test', h1: 'İşletmem E-Fatura Geçiş Zorunluluğu Kapsamında mı?', lead: 'Birkaç kısa soruyu yanıtlayın; e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat için zorunluluklarınızı ve son tarihleri hemen görün.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
   ${form}
 </div></section>
@@ -170,7 +170,7 @@ ${script}`;
 
   ctx.add(P, layout({
     path: P, crumbs, body, extraHead: style,
-    title: 'E-Fatura Zorunlu muyum? Zorunluluk Testi | Kurucu Bilişim',
+    title: 'İşletmem E-Fatura Geçiş Zorunluluğu Kapsamında mı?',
     desc: 'Birkaç soruda e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat zorunluluğunuzu ve son tarihleri öğrenin. Ücretsiz, kayıt gerektirmez.',
     schema: [faqSchema(faqs)],
   }), { priority: '0.8' });
