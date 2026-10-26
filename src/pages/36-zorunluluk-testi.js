@@ -88,7 +88,7 @@ var C=${JSON.stringify(cfg).replace(/</g, '\\u003c')};
 var f=document.getElementById('zt'),out=document.getElementById('zt-result'),err=document.getElementById('zt-err');
 function v(n){var x=f.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
 function sek(){return Array.prototype.map.call(f.querySelectorAll('input[name="sek"]:checked'),function(x){return x.value;});}
-function sync(){var t=v('tur');Array.prototype.forEach.call(f.querySelectorAll('[data-ciro]'),function(e){e.hidden=t==='basit';});f.querySelector('[data-bd]').hidden=t!=='sirket';}
+function sync(){var t=v('tur');Array.prototype.forEach.call(f.querySelectorAll('[data-ciro]'),function(e){e.hidden=t==='basit';});f.querySelector('[data-bd]').hidden=t!=='sirket';var i=0;Array.prototype.forEach.call(f.querySelectorAll('.zt-q'),function(e){if(!e.hidden)e.querySelector('legend b').textContent=++i;});}
 f.addEventListener('change',sync);sync();
 function a(h,t){return ' <a href="'+h+'">'+t+'</a>';}
 function row(k,b,h,p){return '<div class="zt-row zt-row--'+k+'"><span class="zt-badge">'+b+'</span><div><h3>'+h+'</h3><p>'+p+'</p></div></div>';}
@@ -144,7 +144,7 @@ f.addEventListener('submit',function(e){
 })();
 </script>`;
 
-  const body = `${pageHero({ eyebrow: 'Ücretsiz test', h1: 'E-Fatura Zorunlu muyum?', lead: 'Altı kısa soruyu yanıtlayın; e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat için zorunluluklarınızı ve son tarihleri hemen görün.', crumbs })}
+  const body = `${pageHero({ eyebrow: 'Ücretsiz test', h1: 'E-Fatura Zorunlu muyum?', lead: 'Birkaç kısa soruyu yanıtlayın; e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat için zorunluluklarınızı ve son tarihleri hemen görün.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
   ${form}
 </div></section>
@@ -171,7 +171,7 @@ ${script}`;
   ctx.add(P, layout({
     path: P, crumbs, body, extraHead: style,
     title: 'E-Fatura Zorunlu muyum? Zorunluluk Testi | Kurucu Bilişim',
-    desc: 'Altı soruda e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat zorunluluğunuzu ve son tarihleri öğrenin. Ücretsiz, kayıt gerektirmez.',
+    desc: 'Birkaç soruda e-fatura, e-arşiv, e-defter, e-irsaliye, e-SMM ve e-tebligat zorunluluğunuzu ve son tarihleri öğrenin. Ücretsiz, kayıt gerektirmez.',
     schema: [faqSchema(faqs)],
   }), { priority: '0.8' });
 };
