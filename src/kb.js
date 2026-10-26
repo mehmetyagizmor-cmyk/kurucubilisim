@@ -38,7 +38,8 @@ const olBold = (items) => `<ol>${items.map(([t, d]) => `<li><strong>${esc(t)}:</
 const ul = (items) => `<ul>${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 const note = (t) => `<blockquote><p>${esc(t)}</p></blockquote>`;
 
-const SON_TARIH_LINK = '<p>Yaklaşan tüm tarihler için <a href="/bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi/">E-Dönüşüm Son Tarihler Takvimi</a>’ne bakabilirsiniz.</p>';
+const ZT_LINK = '<p>Hangi zorunlulukların sizin için geçerli olduğunu öğrenmek için <a href="/e-fatura-zorunlu-muyum/">E-Fatura Zorunlu muyum? testini</a> çözebilirsiniz.</p>';
+const SON_TARIH_LINK = '<p>Yaklaşan tüm tarihler için <a href="/bilgi-bankasi/mevzuat/e-donusum-son-tarihler-takvimi/">E-Dönüşüm Son Tarihler Takvimi</a>’ne bakabilirsiniz.</p>' + ZT_LINK;
 
 const articles = [
   // ========== ENTEGRASYON (patron metinleri; e-dönüşüm entegrasyonu sayfasından taşındı) ==========
@@ -542,6 +543,7 @@ const articles = [
         ['Mali mühür yenileme', 'Mali mühür sertifikaları 3 yıl geçerlidir; süre dolmadan yenilenmelidir.'],
         ['E-defter saklama', 'Ticari defter ve belgeler mevzuat gereği 10 yıl saklanmalıdır.'],
       ]),
+      ZT_LINK,
       `<p>Yenileme adımları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-yenileme-nasil-yapilir/">Mali Mühür Yenileme</a> ve <a href="/bilgi-bankasi/e-imza/e-imza-yenileme-nasil-yapilir/">E-İmza Yenileme</a> rehberlerimize bakabilirsiniz.</p>`,
       note('Takvim bilgilendirme amaçlıdır ve yeni düzenlemeler yayımlandıkça güncellenir. Tarih ve sınırlar Resmî Gazete ve GİB düzenlemeleriyle değişebileceği için işletmenize uygulanan kuralı mali müşavirinizle veya bizimle teyit etmeniz önerilir.'),
       `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr" target="_blank" rel="noopener">Resmî Gazete</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a> · <a href="https://www.gib.gov.tr" target="_blank" rel="noopener">Gelir İdaresi Başkanlığı</a></p>`,
