@@ -723,12 +723,34 @@ const applyForms = {
 // Kampanyalar — bitiş tarihi (bitis) geçenler derlemede otomatik gizlenir.
 // ornek: true olan kampanyalar YER TUTUCUDUR: gerçek kampanyalarla değiştirilmeden yayına almayın.
 // tema: kartın renk tonu (kirmizi | turuncu | mor | yesil | mavi)
+// sayfa: varsa kampanyanın kendi sayfası üretilir (/kampanyalar/<slug>/); kartlar o sayfaya bağlanır
 const campaigns = [
-  { slug: 'e-imza-mali-muhur-paketi', rozet: '%15 indirim', baslik: 'E-İmza + Mali Mühür Paketi', ozet: 'İkisini birlikte alın, paket fiyatına %15 indirim kazanın. Kurulum ve aktivasyon bizden.', detay: ['E-imza ve mali mühür aynı başvuruda', 'Uzaktan kurulum ve aktivasyon dahil', 'Yenileme hatırlatması ücretsiz'], hizmet: 'e-imza', bitis: '2026-12-31', tema: 'kirmizi' },
-  { slug: 'e-fatura-ucretsiz-kurulum', rozet: 'Kurulum ücretsiz', baslik: 'E-Fatura’ya Geçişte Ücretsiz Kurulum', ozet: '2026 geçiş zorunluluğu kapsamındaki işletmelere e-fatura ve e-arşiv kurulumu ücretsiz.', detay: ['GİB başvuru süreci bizden', 'Muhasebe programı entegrasyonu', 'İlk ay ücretsiz destek'], hizmet: 'e-fatura', bitis: '2026-12-31', tema: 'turuncu' },
-  { slug: 'kep-ilk-yil', rozet: 'İlk yıl %20', baslik: 'KEP Adresinde İlk Yıl Avantajı', ozet: 'Yeni KEP adresi açtıran işletmelere ilk yıl %20 indirim ve ücretsiz ileti paketi.', detay: ['Aynı gün KEP adresi', '100 ileti hediye', 'E-Bordro ile birlikte kullanım'], hizmet: 'kep-ik', bitis: '2026-11-30', tema: 'mor' },
-  { slug: 'web-sitesi-hosting-hediye', rozet: '1 yıl hosting hediye', baslik: 'Kurumsal Web Sitesine 1 Yıl Hosting', ozet: 'Kurumsal web sitesi yaptıranlara 1 yıllık hosting ve SSL sertifikası hediye.', detay: ['Mobil uyumlu, SEO hazır tasarım', 'Alan adı ve SSL kurulumu', '1 yıl hosting dahil'], hizmet: 'web-tasarim', bitis: '2026-12-31', tema: 'mavi' },
-  { slug: 'mali-musavir-toplu-basvuru', rozet: 'Mali müşavirlere özel', baslik: 'Toplu E-İmza Başvurusunda Ek İndirim', ozet: 'Müşterileri için 5 ve üzeri e-imza başvurusu yapan mali müşavirlere ek indirim.', detay: ['Tek noktadan toplu başvuru', 'Başvuru takibi sizin yerinize', 'İş ortaklığı avantajları'], hizmet: 'e-imza', bitis: '2027-01-31', tema: 'yesil' },
+  {
+    slug: 'e-fatura-100-kontor-hediye', rozet: '100 kontör hediye', baslik: 'E-Faturaya Geçişte 100 Kontör Hediye', tema: 'turuncu', hizmet: 'e-fatura', bitis: '2026-12-31',
+    ozet: 'Kurucu Bilişim ile e-faturaya geçin; ilk 100 e-fatura ya da e-arşiv faturanızı ücretsiz kesin.',
+    detay: ['100 kontör hediye', 'Aynı gün kurulum', 'İlk faturanıza kadar yanınızdayız'],
+    sayfa: {
+      title: 'E-Fatura Kampanyası: 100 Kontör Hediye | Kurucu Bilişim',
+      desc: 'E-faturaya Kurucu Bilişim ile geçin, 100 kontör hediye! Aynı gün kurulum, mali mühür desteği ve GİB onayına kadar eşlik. 2027 zorunluluğuna hazırlanın.',
+      h1: 'E-Faturaya Geçişte 100 Kontör Hediye: İlk 100 Faturanız Bizden!',
+      lead: 'E-faturaya geçiş zorunluluğu yaklaşıyor. Kurucu Bilişim ile e-faturaya geçen işletmelere 100 kontör hediye ediyoruz. Aynı gün kurulum, mali mühür ve e-imza başvurusundan ilk faturanıza kadar her adımda yanınızdayız.',
+      ozellikler: [
+        ['100 kontör hediye', 'İlk 100 e-fatura ya da e-arşiv faturanızı ücretsiz kesin.'],
+        ['Aynı gün kurulum', 'Kurulumu uzaktan ya da Şişli ofisimizde yapıyoruz.'],
+        ['Mali mühür ve e-imza', 'Mali mühür ve e-imza başvuru sürecinizi uçtan uca biz takip ediyoruz.'],
+        ['İlk faturanız birlikte', 'İlk faturanızı birlikte kesiyor, GİB onayına kadar eşlik ediyoruz.'],
+        ['Hepsi tek yerden', 'E-fatura, e-arşiv, e-defter, KEP ve e-imza işlemlerinizin hepsini tek yerden yönetin.'],
+      ],
+      kosullar: [
+        'Kampanya, ilk defa Kurucu Bilişim aracılığıyla EDM Bilişim kullanacak mükelleflerimiz için geçerlidir.',
+        'Kampanyaya son katılım tarihi 31 Aralık 2026’dır.',
+        'Kampanya dahilindeki hediye kontörlerin kullanım süresi 1 yıldır.',
+        'Tüm faturaların 10 yıl saklanması ücretsizdir.',
+        'Resmî muhasebe programlarına aktarım ücretsizdir.',
+        'Yerinde hizmet ve kurulum bedeli ayrıca uygulanabilir.',
+      ],
+    },
+  },
 ];
 
 // Mesleğe özel e-imza sayfaları: /e-donusum-hizmetleri/e-imza/<slug>/
