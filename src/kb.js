@@ -303,14 +303,15 @@ const articles = [
   },
   // Search Console (19 Ekim 2026): "e imza aktivasyon", "e imza için gerekli programlar", "e imza uygulaması"
   {
-    cat: 'e-imza', slug: 'e-imza-aktivasyonu-ve-gerekli-programlar', svc: 'e-imza', updated: '2026-10-19',
-    title: 'E-İmza Aktivasyonu ve Gerekli Programlar: İlk Kullanım Rehberi',
-    lead: 'E-imzanız elinize ulaştığında önce aktivasyonu tamamlanır, ardından kart okuyucu sürücüsü ve imza uygulaması kurulur. İlk kullanım için gereken her şeyi tek listede topladık.',
+    cat: 'e-imza', slug: 'e-imza-aktivasyonu-ve-gerekli-programlar', svc: 'e-imza', updated: '2026-10-28',
+    title: 'E-İmza İlk Aktivasyon İşlemi ve Gerekli Programlar: Adım Adım',
+    lead: 'E-imzanız elinize ulaştığında önce ilk aktivasyon işlemi tamamlanır, ardından kart okuyucu sürücüsü ve imza uygulaması kurulur. İlk kullanım için gereken her şeyi tek listede topladık.',
     html: [
       p('Yeni e-imzanız elinize ulaştı ama nereden başlayacağınızı bilmiyor musunuz? E-imzayı ilk kez kullanmadan önce sertifikanızın aktif hâle getirilmesi ve bilgisayarınıza birkaç programın kurulması gerekir.'),
-      h2('E-İmza Aktivasyonu Nedir?'),
-      p('Aktivasyon, sertifikanın size teslim edildiğinin onaylanması ve e-imzanın kullanıma açılmasıdır. Aktivasyonun nasıl yapılacağı sertifika sağlayıcısına göre değişir; çoğunlukla sağlayıcının internet sitesi, SMS veya teslimatla birlikte iletilen bilgilerle tamamlanır.'),
-      h2('E-İmza Aktivasyonu Adımları'),
+      h2('E-İmza İlk Aktivasyon Nedir?'),
+      p('İlk aktivasyon, sertifikanın size teslim edildiğinin onaylanması ve e-imzanın ilk kez kullanıma açılmasıdır. Aktivasyon yapılmadan e-imzayla imza atamaz veya e-Devlet gibi sistemlere giriş yapamazsınız. İlk aktivasyon işleminin nasıl yapılacağı sertifika sağlayıcısına göre değişir; çoğunlukla sağlayıcının internet sitesi, SMS doğrulaması veya teslimatla birlikte iletilen bilgilerle tamamlanır ve internet bağlantısı gerektirir.'),
+      p('Kart okuyucunuzun veya teslimat paketinin üzerinde e-imzanızı aldığınız sertifika sağlayıcısının adı yazar. Aktivasyon ve kurulum için bu sağlayıcının yönlendirmelerini izlemeniz gerekir.'),
+      h2('E-İmza İlk Aktivasyon İşlemi Adım Adım'),
       olBold([
         ['Teslimatı kontrol edin', 'E-imza kartınızı, kart okuyucunuzu ve size iletilen şifre (PIN) bilgisini kontrol edin.'],
         ['Teslim onayını verin', 'Sertifika sağlayıcınızın size ilettiği yönteme (internet sitesi, SMS veya teslim formu) göre teslim onayını tamamlayın.'],
@@ -335,6 +336,7 @@ const articles = [
       note('Aktivasyon ve kurulum adımları sertifika sağlayıcısına göre farklılık gösterebilir. Kurucu Bilişim olarak e-imzanızın aktivasyonu ve kurulumunda uzaktan bağlantıyla yanınızdayız.'),
     ].join('\n'),
     faqs: [
+      ['E-imza ilk aktivasyon nedir?', 'Sertifikanın size teslim edildiğinin onaylanması ve e-imzanın ilk kez kullanıma açılmasıdır. Aktivasyon tamamlanmadan e-imza kullanılamaz.'],
       ['E-imza aktivasyonu ne kadar sürer?', 'Teslim onayı ve programların kurulumu genellikle kısa sürede tamamlanır. Programlar kuruluysa ilk kullanıma birkaç dakika içinde hazır olursunuz.'],
       ['E-imza için hangi program gerekli?', 'Temel olarak kart okuyucu sürücüsü ve sertifika sağlayıcınızın imza uygulaması gerekir. Bazı sistemler ayrıca Java veya kendi imza aracını ister.'],
       ['E-imza uygulaması ücretli mi?', 'Sertifika sağlayıcılarının imza uygulamaları ve sürücüleri genellikle e-imzayla birlikte kullanıma sunulur. Kurulumu sizin için uzaktan yapıyoruz.'],
@@ -445,8 +447,8 @@ const articles = [
     ],
   },
   {
-    cat: 'mali-muhur', slug: 'mali-muhur-yenileme-nasil-yapilir', svc: 'mali-muhur', updated: '2026-10-20',
-    title: 'Mali Mühür Yenileme Nasıl Yapılır? Süresi Dolmadan Yapılacaklar',
+    cat: 'mali-muhur', slug: 'mali-muhur-yenileme-nasil-yapilir', svc: 'mali-muhur', updated: '2026-10-28',
+    title: 'Mali Mühür Yenileme Nasıl Yapılır? Yenileme Başvurusu Adım Adım',
     lead: 'Mali mührün süresi dolarsa e-fatura, e-arşiv ve e-defter işlemleriniz aksayabilir. Yenilemeyi ne zaman yapmanız gerektiğini ve yenileme adımlarını anlattık.',
     html: [
       p('Mali mühür, şirketinizin e-fatura, e-arşiv fatura ve e-defter gibi uygulamalarda belgeleri imzalamak için kullandığı elektronik sertifikadır. Sertifikanın süresi dolduğunda bu belgeler imzalanamaz; fatura kesme ve defter berat işlemleri aksayabilir. Mali mühür sertifikaları 3 yıl geçerlidir; bu nedenle yenilemenin süre dolmadan yapılması önemlidir.'),
@@ -456,7 +458,16 @@ const articles = [
         'E-defter berat yükleme işlemleriniz aksayabilir.',
         'Yeni sertifika gelene kadar e-dönüşüm işlemlerinizde gecikme yaşanabilir.',
       ]),
-      h2('Mali Mühür Yenileme Adımları'),
+      h2('Mali Mühür Yenileme Başvurusu Nereden Yapılır?'),
+      p('Mali mühür sertifikalarını TÜBİTAK Kamu Sertifikasyon Merkezi (Kamu SM) üretir. Kamu SM’nin açıkladığı sürece göre yenileme, ilk başvurudaki adımların tekrarlanmasıyla yapılır:'),
+      olBold([
+        ['Online İşlemler', 'Kamu SM Online İşlemler sayfasına (onlineislemler.kamusm.gov.tr) giriş yapılır.'],
+        ['Başvuru oluşturma', '“Mali Mühür İşlemleri” bölümünden “Başvuru Oluşturma” adımıyla yeni başvuru yapılır.'],
+        ['Ödeme', 'Başvuru sonunda verilen bilgilere göre ödeme yapılır.'],
+        ['Üretim ve teslim', 'Başvuru ve ödeme tamamlandığında yeni mali mühür üretilir; akıllı kart, yetkiliye veya seçilen şubeye kuryeyle teslim edilir. Yeni sertifikanın süresi üretimle birlikte başlar.'],
+      ]),
+      p('Kamu SM, sertifikanın bitişine 3 ay, 2 ay, 1 ay ve 1 hafta kala kayıtlı e-posta adresine hatırlatma gönderir. Bu e-postaları beklemeden de yenileme başvurusu yapabilirsiniz.'),
+      h2('Kurucu Bilişim ile Mali Mühür Yenileme'),
       olBold([
         ['Bitiş tarihini kontrol edin', 'Mali mühür sertifikanızın bitiş tarihini kontrol edin; yenilemeyi son günlere bırakmayın.'],
         ['Yenileme başvurusu', 'Şirket ve yetkili bilgilerinizle yenileme başvurusunu yapıyoruz; başvuru dosyanızı sizin yerinize hazırlıyoruz.'],
@@ -469,6 +480,8 @@ const articles = [
     ].join('\n'),
     faqs: [
       ['Mali mühür ne zaman yenilenmeli?', 'Sertifikanın süresi dolmadan, tercihen birkaç hafta önce yenileme başvurusu yapılması önerilir. Böylece e-fatura ve e-defter işlemleriniz aksamaz.'],
+      ['Mali mühür yenileme başvurusu nereden yapılır?', 'Kamu SM Online İşlemler sayfasında “Mali Mühür İşlemleri → Başvuru Oluşturma” adımıyla yapılır. Başvuru ve ödeme tamamlandığında yeni mali mühür üretilir. Başvuruyu sizin adınıza da yönetiyoruz.'],
+      ['Mali mühür yenileme hatırlatması gelir mi?', 'Evet. Kamu SM, sertifikanın bitişine 3 ay, 2 ay, 1 ay ve 1 hafta kala kayıtlı e-posta adresine hatırlatma gönderir.'],
       ['Mali mühür yenilemede yeni kart gerekir mi?', 'Bu, yenileme sürecine ve mevcut kartınızın durumuna göre değişir. Başvuru sırasında sizi bilgilendiriyoruz.'],
       ['Süresi dolan mali mühürle fatura kesilebilir mi?', 'Hayır. Süresi dolan mali mühürle belgeler imzalanamaz. Yenileme tamamlandığında işlemlerinize kaldığınız yerden devam edebilirsiniz.'],
     ],

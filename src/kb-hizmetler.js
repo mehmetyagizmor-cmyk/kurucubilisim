@@ -826,9 +826,9 @@ module.exports = [
   }),
   info({
     cat: 'kep', svc: 'kep-ik', slug: 'kep-rehberi', name: 'KEP',
-    title: 'KEP Nedir? Kayıtlı Elektronik Posta Rehberi ve Hukuki Geçerliliği',
+    title: 'KEP Nedir? KEP Rehberi ve Kayıtlı Elektronik Posta Hukuku',
     lead: 'KEP (Kayıtlı Elektronik Posta), gönderim ve teslim anını hukuken kanıtlayan resmi e-posta sistemidir. Ne işe yaradığını, kimlerin kullandığını ve KEP adresinin nasıl alındığını anlattık.',
-    updated: '2026-10-20',
+    updated: '2026-10-28',
     kisaca: 'KEP (Kayıtlı Elektronik Posta), elektronik iletilerin kim tarafından, ne zaman gönderildiğini ve alıcıya ne zaman ulaştığını kayıt altına alarak hukuki delil sağlayan resmi e-posta sistemidir. KEP hizmeti BTK tarafından yetkilendirilen KEP hizmet sağlayıcıları üzerinden verilir; KEP adresi bireyler ve şirketler için alınabilir.',
     afterNedir: [
       ['KEP ile Normal E-Posta Arasındaki Farklar',
@@ -842,6 +842,14 @@ module.exports = [
         '6102 sayılı Türk Ticaret Kanunu’nun 18. maddesine göre tacirler arasında diğer tarafı temerrüde düşürmeye, sözleşmeyi feshe veya sözleşmeden dönmeye ilişkin ihbar ve ihtarlar; noter, taahhütlü mektup veya telgrafın yanı sıra güvenli elektronik imza kullanılarak kayıtlı elektronik posta sistemiyle de yapılabilir.',
         'Ayrıca 24 Temmuz 2025 tarihli Resmî Gazete’de yayımlanan 7555 sayılı Kanun ile İş Kanunu’nun 109. maddesi değiştirilmiş; işçinin yazılı kabulü şartıyla iş ilişkisine ilişkin bildirimlerin KEP üzerinden yapılabilmesinin önü açılmıştır.',
         `<p>KEP ile e-bordro gönderimi için <a href="/bilgi-bankasi/kep/e-bordro-rehberi/">E-Bordro Rehberi</a>’ne bakabilirsiniz.</p>`],
+      ['KEP Rehberi Nedir? “Rehberde Görünmek İstiyor musunuz?” Ne Demek?',
+        'KEP rehberi, KEP adreslerinin kayıtlı olduğu ve bir KEP adresinin doğrulanmasında kullanılan rehberdir. 3 Temmuz 2021 tarihli Resmî Gazete’de yayımlanan tebliğ değişikliğiyle rehber, Bilgi Teknolojileri ve İletişim Kurumu (BTK) tarafından kurulan ve işletilen merkezi bir yapıya geçmiştir.',
+        ulBold([
+          ['Gerçek kişiler', 'KEP hesabı açarken rehber kaydınızın sorguya açık olup olmayacağına ilişkin onayınız alınır. Başvuru sırasında karşınıza çıkan “Rehberde görünmek istiyor musunuz?” sorusu bu tercihi ifade eder.'],
+          ['Şirketler (tüzel kişiler)', 'Şirketlerin KEP kayıtları onay aranmadan rehberde yer alır ve şirketler rehber kaydının silinmesini talep edemez.'],
+          ['Rehber sorgulama', 'KEP rehberi yalnızca hizmet aldığınız KEP hizmet sağlayıcısı aracılığıyla sorgulanabilir.'],
+        ]),
+        `<p><em>Kaynak:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2021/07/20210703-19.htm" target="_blank" rel="noopener">Resmî Gazete, 3 Temmuz 2021 – KEP Rehberi Tebliğinde Değişiklik</a></p>`],
     ],
     afterSurec: [
       ['KEP Nasıl Kullanılır?',
@@ -893,6 +901,7 @@ module.exports = [
       ['KEP adresi almak için hangi belgeler gerekir?', 'Fiziki evrak getirmenize gerek yoktur. Gerekli bilgileri KVKK kapsamında online alıyoruz; kimlik doğrulaması çipli T.C. Kimlik Kartınızla NFC üzerinden, onay ise e-Devlet üzerinden yapılır.'],
       ['KEP adresine e-imza gerekir mi?', 'KEP üzerinden belge imzalayarak göndermek için e-imza veya kurumlar için mali mühür kullanılabilir. İhtiyacınıza uygun yapıyı başvuru sırasında birlikte belirliyoruz.'],
       ['Bireyler de KEP adresi alabilir mi?', 'Evet. KEP adresi hem şirketler hem de bireyler için alınabilir.'],
+      ['KEP rehberinde görünmek zorunlu mu?', 'Gerçek kişilerde rehber kaydının sorguya açık olması için onay alınır, yani tercih size aittir. Şirketlerin KEP kayıtları ise onay aranmadan merkezi KEP rehberinde yer alır.'],
     ],
   }),
 ];
