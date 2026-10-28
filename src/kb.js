@@ -448,7 +448,7 @@ const articles = [
   },
   {
     cat: 'mali-muhur', slug: 'mali-muhur-yenileme-nasil-yapilir', svc: 'mali-muhur', updated: '2026-10-28',
-    title: 'Mali Mühür Yenileme Nasıl Yapılır? Yenileme Başvurusu Adım Adım',
+    title: 'Mali Mühür Yenileme Nasıl Yapılır? Süresi Dolmadan Yapılacaklar',
     lead: 'Mali mührün süresi dolarsa e-fatura, e-arşiv ve e-defter işlemleriniz aksayabilir. Yenilemeyi ne zaman yapmanız gerektiğini ve yenileme adımlarını anlattık.',
     html: [
       p('Mali mühür, şirketinizin e-fatura, e-arşiv fatura ve e-defter gibi uygulamalarda belgeleri imzalamak için kullandığı elektronik sertifikadır. Sertifikanın süresi dolduğunda bu belgeler imzalanamaz; fatura kesme ve defter berat işlemleri aksayabilir. Mali mühür sertifikaları 3 yıl geçerlidir; bu nedenle yenilemenin süre dolmadan yapılması önemlidir.'),
@@ -458,16 +458,7 @@ const articles = [
         'E-defter berat yükleme işlemleriniz aksayabilir.',
         'Yeni sertifika gelene kadar e-dönüşüm işlemlerinizde gecikme yaşanabilir.',
       ]),
-      h2('Mali Mühür Yenileme Başvurusu Nereden Yapılır?'),
-      p('Mali mühür sertifikalarını TÜBİTAK Kamu Sertifikasyon Merkezi (Kamu SM) üretir. Kamu SM’nin açıkladığı sürece göre yenileme, ilk başvurudaki adımların tekrarlanmasıyla yapılır:'),
-      olBold([
-        ['Online İşlemler', 'Kamu SM Online İşlemler sayfasına (onlineislemler.kamusm.gov.tr) giriş yapılır.'],
-        ['Başvuru oluşturma', '“Mali Mühür İşlemleri” bölümünden “Başvuru Oluşturma” adımıyla yeni başvuru yapılır.'],
-        ['Ödeme', 'Başvuru sonunda verilen bilgilere göre ödeme yapılır.'],
-        ['Üretim ve teslim', 'Başvuru ve ödeme tamamlandığında yeni mali mühür üretilir; akıllı kart, yetkiliye veya seçilen şubeye kuryeyle teslim edilir. Yeni sertifikanın süresi üretimle birlikte başlar.'],
-      ]),
-      p('Kamu SM, sertifikanın bitişine 3 ay, 2 ay, 1 ay ve 1 hafta kala kayıtlı e-posta adresine hatırlatma gönderir. Bu e-postaları beklemeden de yenileme başvurusu yapabilirsiniz.'),
-      h2('Kurucu Bilişim ile Mali Mühür Yenileme'),
+      h2('Mali Mühür Yenileme Adımları'),
       olBold([
         ['Bitiş tarihini kontrol edin', 'Mali mühür sertifikanızın bitiş tarihini kontrol edin; yenilemeyi son günlere bırakmayın.'],
         ['Yenileme başvurusu', 'Şirket ve yetkili bilgilerinizle yenileme başvurusunu yapıyoruz; başvuru dosyanızı sizin yerinize hazırlıyoruz.'],
@@ -480,8 +471,6 @@ const articles = [
     ].join('\n'),
     faqs: [
       ['Mali mühür ne zaman yenilenmeli?', 'Sertifikanın süresi dolmadan, tercihen birkaç hafta önce yenileme başvurusu yapılması önerilir. Böylece e-fatura ve e-defter işlemleriniz aksamaz.'],
-      ['Mali mühür yenileme başvurusu nereden yapılır?', 'Kamu SM Online İşlemler sayfasında “Mali Mühür İşlemleri → Başvuru Oluşturma” adımıyla yapılır. Başvuru ve ödeme tamamlandığında yeni mali mühür üretilir. Başvuruyu sizin adınıza da yönetiyoruz.'],
-      ['Mali mühür yenileme hatırlatması gelir mi?', 'Evet. Kamu SM, sertifikanın bitişine 3 ay, 2 ay, 1 ay ve 1 hafta kala kayıtlı e-posta adresine hatırlatma gönderir.'],
       ['Mali mühür yenilemede yeni kart gerekir mi?', 'Bu, yenileme sürecine ve mevcut kartınızın durumuna göre değişir. Başvuru sırasında sizi bilgilendiriyoruz.'],
       ['Süresi dolan mali mühürle fatura kesilebilir mi?', 'Hayır. Süresi dolan mali mühürle belgeler imzalanamaz. Yenileme tamamlandığında işlemlerinize kaldığınız yerden devam edebilirsiniz.'],
     ],
