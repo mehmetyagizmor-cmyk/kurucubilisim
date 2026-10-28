@@ -276,7 +276,7 @@ module.exports = [
     cat: 'e-defter', svc: 'e-defter', slug: 'e-defter-rehberi', name: 'E-Defter',
     title: 'E-Defter Nedir? Kimler Zorunlu, Berat Yükleme ve Saklama Rehberi',
     lead: 'E-defter; yevmiye defteri ve defter-i kebirin elektronik ortamda tutulup beratlarının GİB’e yüklendiği uygulamadır. Kimlerin zorunlu olduğunu, berat sürecini ve saklama yükümlülüklerini anlattık.',
-    updated: '2026-10-20',
+    updated: '2026-10-28',
     kisaca: 'E-defter, yevmiye defteri ve defter-i kebirin GİB’in belirlediği formatta elektronik ortamda oluşturulması, mali mühür veya e-imzayla imzalanması ve berat dosyalarının GİB sistemine yüklenmesidir. E-fatura uygulamasına geçen mükellefler e-deftere de geçmek zorundadır; e-defterler 10 yıl saklanmalıdır.',
     intro: [
       'Yevmiye ve kebir defterlerinin kâğıtta tutulması, noter onayına götürülmesi ve yıllarca saklanması işletmeler için ciddi bir yüktür. E-defter bu süreçleri elektronik ortama taşır: defterleriniz muhasebe programınızdan üretilir, beratlarıyla onaylanır ve dijital olarak saklanır.',
@@ -293,7 +293,7 @@ module.exports = [
         'Donanım arızası, veri kaybı veya siber saldırı gibi durumlarda defterlerinize ulaşamamak ciddi sorunlara yol açabilir. E-defter saklama hizmeti, defterlerinizin yedekli ve güvenli bir ortamda korunmasını sağlar.'],
     ],
     fiyat: 'E-defter ücreti; defter hacmine, kullanılan muhasebe programına, berat takibi ve e-defter saklama hizmeti ihtiyacına göre değişir. İşletmenize özel teklif hazırlıyoruz.',
-    sources: [['e-Defter (GİB)', 'https://www.edefter.gov.tr'], ['Gelir İdaresi Başkanlığı', 'https://www.gib.gov.tr']],
+    sources: [['Resmî Gazete – Elektronik Defter Genel Tebliği (Sıra No: 5), 8 Kasım 2024', 'https://www.resmigazete.gov.tr/eskiler/2024/11/20241108-2.htm'], ['e-Defter (GİB)', 'https://www.edefter.gov.tr'], ['Gelir İdaresi Başkanlığı', 'https://www.gib.gov.tr']],
     subline: 'E-defter oluşturma, beratlama ve güvenli saklama süreçlerinizi tek noktadan yönetiyoruz.',
     nedir: [
       'E-defter, yevmiye defteri ve defter-i kebirin GİB’in belirlediği formatta elektronik ortamda oluşturulması ve beratlarının GİB sistemine yüklenmesidir.',
@@ -301,10 +301,9 @@ module.exports = [
     ],
     kimlerIntro: 'E-defter zorunluluğu GİB düzenlemeleriyle belirlenir. Genel olarak:',
     kimler: [
-      'E-fatura uygulamasına geçmiş olan mükellefler (e-faturaya geçişi izleyen dönemden itibaren)',
+      'Bilanço esasına göre defter tutan tüm mükellefler: 1 Ocak 2025’ten itibaren (A.Ş. ve Ltd. gibi sermaye şirketleri dahil). Bilanço esasına yeni geçenler ve yeni işe başlayanlar geçiş tarihinden itibaren',
+      'E-fatura uygulamasına geçiş zorunluluğu bulunan mükellefler (e-faturaya yıl içinde geçenler izleyen yılın başından itibaren)',
       'Bağımsız denetime tabi şirketler',
-      'GİB’in belirlediği ciro ve sektör kriterlerini sağlayan diğer mükellefler',
-      'Belirli lisanslı faaliyetlerde bulunan mükellefler',
     ],
     kimlerNote: 'Berat yükleme süreleri ve zorunluluk kriterleri tebliğlerle güncellenebilir. Güncel takvimi mali müşavirinizle veya bizimle birlikte takip etmeniz önerilir.',
     avantaj: [
@@ -323,7 +322,8 @@ module.exports = [
     kapanisSub: 'E-defter ve e-defter saklama hizmeti için bugün teklif alın.',
     faqs: [
       ['E-defter nedir?', 'E-defter, yevmiye defteri ve defter-i kebirin elektronik ortamda oluşturulması ve berat dosyalarının mali mühür veya e-imzayla imzalanarak GİB’e yüklenmesidir.'],
-      ['E-defter kimler için zorunlu?', 'E-fatura uygulamasına geçen mükellefler ve bağımsız denetime tabi şirketler başta olmak üzere GİB’in belirlediği kriterleri sağlayan mükellefler e-defter tutmak zorundadır.'],
+      ['E-defter kimler için zorunlu?', '1 Ocak 2025’ten itibaren bilanço esasına göre defter tutan tüm mükellefler (sermaye şirketleri dahil) e-defter tutmak zorundadır. Ayrıca e-fatura uygulamasına geçiş zorunluluğu bulunanlar ve bağımsız denetime tabi şirketler de kapsamdadır.'],
+      ['Şirketim e-defter tutmak zorunda mı?', 'Evet. A.Ş. ve Ltd. gibi sermaye şirketleri bilanço esasına göre defter tutar; bilanço esasına göre defter tutan mükellefler 1 Ocak 2025’ten itibaren e-defter kullanmak zorundadır.'],
       ['E-defter beratı ne zaman yüklenir?', 'Berat dosyaları aylık veya geçici vergi dönemleri bazında, mevzuatta belirlenen süreler içinde GİB’e yüklenir. Süreleri sizin yerinize takip edebiliriz.'],
       ['E-defterler ne kadar süre saklanmalıdır?', 'Ticari defter ve belgelerin mevzuat gereği 10 yıl saklanması gerekir.'],
       ['E-defter saklama hizmeti neden gerekli?', 'Donanım arızası veya veri kaybı gibi durumlarda defterlerinizin yedekli ve güvenli ortamda korunmasını sağlar.'],

@@ -12,9 +12,9 @@ const q = (n, legend, inner, extra = '') => `<fieldset class="zt-q"${extra}><leg
 
 const faqs = [
   ['E-faturaya geçmek zorunda mıyım?', '2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler, sınırı aştıkları yılı izleyen yılın 1 Temmuz’undan itibaren e-fatura kullanmak zorundadır. İnternetten satış yapanlar ile gayrimenkul ve motorlu taşıt işiyle uğraşanlarda sınır 500 bin TL’dir; SGK ile anlaşmalı sağlık kuruluşları, eczaneler, belgeli oteller, EPDK lisanslı akaryakıt bayileri ve hal komisyoncuları ise cirodan bağımsız olarak zorunludur.'],
-  ['2026’da cirom 3 milyon TL’yi geçti, ne zaman e-faturaya geçmeliyim?', 'Sınırı 2026 yılında aştıysanız 1 Temmuz 2027’ye kadar e-fatura uygulamasına geçmeniz gerekir. E-defter ise takip eden yılın başından, yani 1 Ocak 2028’den itibaren zorunlu olur.'],
+  ['2026’da cirom 3 milyon TL’yi geçti, ne zaman e-faturaya geçmeliyim?', 'Sınırı 2026 yılında aştıysanız 1 Temmuz 2027’ye kadar e-fatura uygulamasına geçmeniz gerekir. Şirketler ve bilanço esasına göre defter tutanlar zaten 1 Ocak 2025’ten beri e-defter kullanmak zorundadır; işletme defteri tutanlar ise takip eden yılın başından, yani 1 Ocak 2028’den itibaren e-deftere geçer.'],
   ['Serbest meslek sahipleri e-faturaya geçmek zorunda mı?', 'Serbest meslek sahipleri için ciro 3 milyon TL’yi aşsa da e-fatura zorunluluğu yoktur; serbest meslek makbuzlarını e-SMM olarak düzenlemeleri zorunludur. Gelen e-faturaları takip edebilmek için mali müşavirin tavsiyesiyle gönüllü olarak e-faturaya geçilebilir.'],
-  ['E-faturaya geçen e-deftere de geçmek zorunda mı?', 'Evet. E-faturaya yıl içinde zorunlu olarak geçen mükellefler, takip eden yılın 1 Ocak’ından itibaren e-defter tutmak zorundadır. Bağımsız denetime tabi şirketler de e-defter kapsamındadır.'],
+  ['Kimler e-defter tutmak zorunda?', '1 Ocak 2025’ten itibaren bilanço esasına göre defter tutan tüm mükellefler (A.Ş. ve Ltd. gibi sermaye şirketleri dahil) e-defter tutmak zorundadır. İşletme defteri tutanlar ise e-faturaya geçtikleri yılı takip eden yılın 1 Ocak’ından itibaren e-defter tutar.'],
   ['Basit usul mükellefleri e-arşiv fatura kesmek zorunda mı?', 'Evet. Basit usul ve işletme hesabına göre defter tutanlar 31 Aralık 2026’ya kadar 3.000 TL’yi aşan faturalarını, 1 Ocak 2027’den itibaren ise tutarına bakılmaksızın tüm faturalarını e-arşiv fatura olarak düzenlemek zorundadır.'],
 ];
 
@@ -38,7 +38,6 @@ module.exports = (ctx) => {
   ${q(3, '2026 yılı için beklediğiniz ciro?', CIRO.map(([v, l]) => opt('c26', v, l)).join(''), ' data-ciro')}
   ${q(4, 'İnternetten satış yapıyor musunuz? (kendi siteniz, Trendyol, Hepsiburada vb.)', opt('net', 'e', 'Evet') + opt('net', 'h', 'Hayır'))}
   ${q(5, 'Faaliyet alanınız (birden çok seçebilirsiniz)', [['gm', 'Gayrimenkul veya motorlu taşıt alım-satım, kiralama, aracılık'], ['sg', 'SGK anlaşmalı sağlık hizmeti, eczane, optik, medikal ürün'], ['ot', 'Belgeli otel / konaklama'], ['ak', 'Akaryakıt / LPG (EPDK lisanslı, bayilik dahil)'], ['hl', 'Sebze-meyve hal komisyoncusu / tüccarı'], ['ag', 'Demir-çelik, maden, şeker veya gübre']].map(([v, l]) => opt('sek', v, l, 'checkbox')).join(''))}
-  ${q(6, 'Şirketiniz bağımsız denetime tabi mi?', opt('bd', 'e', 'Evet') + opt('bd', 'h', 'Hayır') + opt('bd', 'b', 'Bilmiyorum'), ' data-bd')}
   <p class="zt-err" id="zt-err" role="alert" hidden></p>
   <button class="btn btn--primary btn--lg" type="submit">Sonucu Göster ${icon('arrow')}</button>
   <p class="zt-privacy">${icon('shield')} Cevaplarınız hiçbir yere gönderilmez ve kaydedilmez; hesaplama tarayıcınızda yapılır.</p>
@@ -88,7 +87,7 @@ var C=${JSON.stringify(cfg).replace(/</g, '\\u003c')};
 var f=document.getElementById('zt'),out=document.getElementById('zt-result'),err=document.getElementById('zt-err');
 function v(n){var x=f.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
 function sek(){return Array.prototype.map.call(f.querySelectorAll('input[name="sek"]:checked'),function(x){return x.value;});}
-function sync(){var t=v('tur');Array.prototype.forEach.call(f.querySelectorAll('[data-ciro]'),function(e){e.hidden=t==='basit';});f.querySelector('[data-bd]').hidden=t!=='sirket';var i=0;Array.prototype.forEach.call(f.querySelectorAll('.zt-q'),function(e){if(!e.hidden)e.querySelector('legend b').textContent=++i;});}
+function sync(){var t=v('tur');Array.prototype.forEach.call(f.querySelectorAll('[data-ciro]'),function(e){e.hidden=t==='basit';});var i=0;Array.prototype.forEach.call(f.querySelectorAll('.zt-q'),function(e){if(!e.hidden)e.querySelector('legend b').textContent=++i;});}
 f.addEventListener('change',sync);sync();
 function a(h,t){return ' <a href="'+h+'">'+t+'</a>';}
 function row(k,b,h,p){return '<div class="zt-row zt-row--'+k+'"><span class="zt-badge">'+b+'</span><div><h3>'+h+'</h3><p>'+p+'</p></div></div>';}
@@ -113,11 +112,9 @@ f.addEventListener('submit',function(e){
   else if(ef==='z'){r.push(row('z','Zorunlu','E-Arşiv Fatura','E-faturayla birlikte e-arşiv fatura uygulamasına da geçmeniz gerekir; e-fatura kullanmayan alıcılara faturalarınızı e-arşiv olarak düzenlersiniz.'+a(L.ea,'E-Arşiv Rehberi')));}
   else{r.push(row('z','1 Ocak 2027','E-Arşiv Fatura','31 Aralık 2026’ya kadar 3.000 TL’yi aşan faturalarınızı, 1 Ocak 2027’den itibaren ise tutarına bakılmaksızın tüm faturalarınızı e-arşiv olarak düzenlemeniz gerekiyor.'+a(L.ea,'E-Arşiv Rehberi')));}
   // E-Defter
-  var bd=t==='sirket'?v('bd'):'';
-  if(ef==='z'&&efY){r.push(row('z','1 Ocak '+(efY+1),'E-Defter','E-faturaya yıl içinde geçenler, takip eden yılın 1 Ocak’ından itibaren e-defter tutmak zorundadır.'+a(L.ed,'E-Defter Rehberi')));}
+  if(t==='sirket'||t==='bilanco'){r.push(row('z','Zorunlu','E-Defter','1 Ocak 2025’ten itibaren bilanço esasına göre defter tutan tüm mükellefler (A.Ş. ve Ltd. gibi sermaye şirketleri dahil) e-defter tutmak zorundadır. Bilanço esasına yeni geçenler ve yeni işe başlayanlar geçiş tarihinden itibaren e-defter tutar.'+a(L.ed,'E-Defter Rehberi')));}
+  else if(ef==='z'&&efY){r.push(row('z','1 Ocak '+(efY+1),'E-Defter','E-faturaya yıl içinde geçenler, takip eden yılın 1 Ocak’ından itibaren e-defter tutmak zorundadır.'+a(L.ed,'E-Defter Rehberi')));}
   else if(ef==='z'){r.push(row('z','Zorunlu','E-Defter','E-faturaya geçtiğiniz yılı takip eden yılın 1 Ocak’ından itibaren e-defter tutmanız gerekir.'+a(L.ed,'E-Defter Rehberi')));}
-  else if(bd==='e'){r.push(row('z','Zorunlu','E-Defter','Bağımsız denetime tabi şirketler, bu şartı sağladıkları yılı izleyen yılın başından itibaren e-defter tutmak zorundadır.'+a(L.ed,'E-Defter Rehberi')));}
-  else if(bd==='b'){r.push(row('b','Danışın','E-Defter','Bağımsız denetime tabi şirketler e-defter tutmak zorundadır. Şirketinizin bu kapsamda olup olmadığını mali müşavirinize danışın.'+a(L.ed,'E-Defter Rehberi')));}
   else if(t!=='basit'){r.push(row('d','Zorunlu değil','E-Defter','Verdiğiniz bilgilere göre şu an e-defter zorunluluğunuz yok.'+a(L.ed,'E-Defter Rehberi')));}
   // E-İrsaliye
   var irsSek=has('ak')||has('hl');
@@ -154,7 +151,7 @@ f.addEventListener('submit',function(e){
   <table><thead><tr><th>Belge</th><th>Ne zaman zorunlu?</th></tr></thead><tbody>
   <tr><td><strong>E-Fatura</strong></td><td>Ciro 3 milyon TL ve üzeri (internetten satış, gayrimenkul ve motorlu taşıt işlerinde 500 bin TL): sınırın aşıldığı yılı izleyen yılın 1 Temmuz’u. Bazı sektörlerde cirodan bağımsız.</td></tr>
   <tr><td><strong>E-Arşiv Fatura</strong></td><td>Bilanço esasında 1 Ocak 2026’dan, basit usul ve işletme defterinde 1 Ocak 2027’den itibaren tüm faturalar.</td></tr>
-  <tr><td><strong>E-Defter</strong></td><td>E-faturaya yıl içinde geçenler için takip eden yılın 1 Ocak’ı; bağımsız denetime tabi şirketler.</td></tr>
+  <tr><td><strong>E-Defter</strong></td><td>Bilanço esasına göre defter tutan tüm mükellefler (şirketler dahil): 1 Ocak 2025’ten itibaren. İşletme defterinde e-faturaya geçenler: takip eden yılın 1 Ocak’ı.</td></tr>
   <tr><td><strong>E-İrsaliye</strong></td><td>Cirosu 10 milyon TL ve üzeri e-fatura mükellefleri: izleyen yılın 1 Temmuz’u. Bazı sektörlerde cirodan bağımsız.</td></tr>
   <tr><td><strong>E-SMM</strong></td><td>Vergiden muaf olmayan tüm serbest meslek sahipleri.</td></tr>
   <tr><td><strong>E-Tebligat</strong></td><td>Şirketler ve gerçek usuldeki mükellefler; henüz dahil olmayanlar için 30 Kasım 2026.</td></tr>
