@@ -176,7 +176,7 @@ ${s.guide ? `<section class="section" id="bilmeniz-gerekenler"><div class="conta
   <div class="grid grid--2">${s.guide[1].map(([t, d], i) => `<div class="card" data-reveal style="--d:${(i % 2) * 0.08}s"><h3 style="margin-top:0">${esc(t)}</h3><p style="margin:0">${d}</p></div>`).join('')}</div>
 </div></section>` : ''}
 ${s.slug === 'e-imza' ? `<section class="section section--light" id="meslekler"><div class="container">
-  <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Avukat, doktor, mühendis ve müteahhitler için e-imza</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
+  <div class="section-head center"><span class="eyebrow">Mesleğinize özel</span><h2>Mesleğinize özel e-imza çözümleri</h2><p class="lead">UYAP, e-reçete ve Medula, Yapı Denetim Sistemi ve EKAP gibi mesleğinizin sistemlerinde e-imzayı nasıl kullanacağınızı inceleyin.</p></div>
   ${meslekGrid()}
 </div></section>` : ''}
 ${applyForms[s.slug] ? applySection(s, applyForms[s.slug]) : ''}

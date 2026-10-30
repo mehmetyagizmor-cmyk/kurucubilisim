@@ -104,7 +104,7 @@ module.exports = (ctx) => {
 <div class="container"><a class="zt-strip" href="/e-fatura-zorunlu-muyum/">${icBox('check')}<span><strong>İşletmeniz e-fatura geçiş zorunluluğu kapsamında mı?</strong><small>E-fatura, e-arşiv, e-defter ve e-tebligat zorunluluklarınızı 30 saniyede öğrenin.</small></span><span class="zt-strip__go">Testi çözün ${icon('arrow')}</span></a></div>
 ${perksSection}
 <section class="section"><div class="container">
-  <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis<br>ve müteahhitler için.</h2></div>
+  <div class="section-head section-head--split"><div><span class="eyebrow">Mesleğinize özel e-imza</span><h2>Avukat, doktor, mühendis,<br>mimar ve mali müşavirler için.</h2></div>
     <p class="lead" style="margin:0">UYAP’tan e-reçeteye, Yapı Denetim Sistemi’nden EKAP’a; mesleğinizin sistemlerinde sorunsuz çalışan e-imzayı kuruyoruz.</p></div>
   ${meslekGrid()}
 </div></section>
