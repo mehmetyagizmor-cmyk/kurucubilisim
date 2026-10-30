@@ -66,7 +66,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-fatura', icon: 'doc',
     name: 'E-Fatura', short: 'E-Fatura',
-    title: 'E-Fatura Başvurusu Nasıl Yapılır? Geçiş Desteği | Kurucu Bilişim',
+    title: 'E-Fatura Başvurusu ve Fiyatı 2026: Geçiş Desteği | Kurucu Bilişim',
     desc: 'E-fatura başvurusu nasıl yapılır, kimler geçmek zorunda? GİB başvurusu, mali mühür, muhasebe ve ERP entegrasyonu tek elden. Fiyat için teklif alın.',
     h1: 'E-Fatura Başvurusu ve Entegrasyon Çözümleri',
     lead: 'Faturalarınızı saniyeler içinde kesin, alıcılarına anında iletin. Kağıt, baskı ve kargo masraflarını azaltarak tahsilat süreçlerinizi hızlandırın.',
@@ -87,6 +87,10 @@ const services = [
       ['E-faturaya geçiş süreci ne kadar sürer?', 'Mali mührünüz veya e-imzanız hazır olduğunda başvuru ve kurulum genellikle birkaç iş günü içinde tamamlanır.'],
       ['Mevcut muhasebe programımla uyumlu mu?', 'Logo, Mikro, Netsis, Zirve, Luca ve Paraşüt gibi yaygın programlar dahil 600’den fazla muhasebe ve ERP yazılımıyla entegrasyon desteği sunuyoruz. Kullandığınız programı birlikte kontrol ediyoruz.'],
       ['Ticari e-faturayı alıcı reddedebilir mi?', 'Evet. Ticari senaryoyla gönderilen e-fatura, alıcı tarafından 8 gün içinde sistem üzerinden reddedilebilir. Temel senaryoda sistem üzerinden ret yoktur.'],
+      ['E-faturaya geçmezsem ne olur?', 'Zorunlu kapsamda olduğu hâlde e-faturaya geçmeyen veya kâğıt fatura düzenlemeye devam eden mükelleflere Vergi Usul Kanunu kapsamında ceza uygulanabilir. Güncel tutarı mali müşavirinizden teyit etmeniz önerilir.'],
+      ['E-fatura ile e-arşiv fatura arasındaki fark nedir?', 'Alıcı e-fatura sistemine kayıtlıysa e-fatura, kayıtlı değilse (son tüketici veya kayıtlı olmayan firma) e-arşiv fatura düzenlenir. E-faturaya geçen mükellefler e-arşiv uygulamasına da geçer.'],
+      ['E-faturaya geçince e-defter de gerekir mi?', 'Şirketler ve bilanço esasına göre defter tutanlar 1 Ocak 2025’ten beri zaten e-defter kullanmak zorundadır. İşletme defteri tutanlar ise e-faturaya geçtikleri yılı takip eden yılın 1 Ocak’ından itibaren e-defter tutar.'],
+      ['Serbest meslek sahipleri e-faturaya geçmek zorunda mı?', 'Hayır. Serbest meslek sahipleri için ciro 3 milyon TL’yi aşsa da e-fatura zorunluluğu yoktur; makbuzlarını e-SMM olarak düzenlemeleri zorunludur. Mali müşavirin tavsiyesiyle gönüllü olarak geçilebilir.'],
     ],
     guide: ['E-Fatura Hakkında Bilmeniz Gerekenler', [
       ['E-faturaya kimler geçmek zorunda?', '2022 ve sonraki hesap dönemlerinde brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler ile internet üzerinden satış yapan ve 500 bin TL hasılat sınırını aşan işletmeler e-faturaya geçmek zorundadır. Sınırlar GİB tebliğleriyle güncellenebilir. <a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-Fatura Rehberi</a>'],
@@ -331,7 +335,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-imza', icon: 'pen',
     name: 'E-İmza', short: 'E-İmza',
-    title: 'E-İmza Nasıl Alınır? Hızlı Kurye, 81 İle Kargo | Kurucu Bilişim',
+    title: 'E-İmza Nasıl Alınır? Başvuru ve Fiyat 2026 | Kurucu Bilişim',
     desc: 'E-imza nasıl alınır, hangi belgeler gerekir? İstanbul içi hızlı kurye, 81 ile aynı gün kargo ve ertesi gün teslim, kurulum ve yenileme. Teklif alın.',
     h1: 'E-İmza Başvurusu, Kurulumu ve Yenilemesi',
     lead: '5070 sayılı Elektronik İmza Kanunu kapsamında ıslak imza ile aynı hukuki geçerliliğe sahip nitelikli e-imzanızı hızlı, kolay ve uygun fiyatla edinin.',
@@ -354,6 +358,9 @@ const services = [
       ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanız, adresinize dakikalar içerisinde ulaştırılmak üzere hızlıca kuryeye yönlendirilir. Türkiye’nin 81 iline aynı gün kargoya veriyor, ertesi gün teslimat seçeneği sunuyoruz; süre kimlik doğrulamanın tamamlanmasına göre değişebilir.'],
       ['MERSİS işlemleri için e-imza zorunlu mu?', 'MERSİS üzerinden yapılan birçok başvuru ve onay işlemi için şirket yetkililerinin e-imzası gerekmektedir. Detaylar için blog yazımıza göz atabilirsiniz.'],
       ['Toplu SMS göndermek için e-imza gerekir mi?', 'Evet. BTK kararıyla 1 Nisan 2026’dan itibaren toplu SMS ve MMS gönderim panellerine, gönderim yetkisi olan kişinin e-imzasıyla giriş yapması zorunludur. Panele giriş yapacak yetkilileriniz için e-imza sağlıyoruz.'],
+      ['E-imza kaç yıllık alınabilir?', 'E-imza 1, 2 veya 3 yıllık kullanım süresiyle alınabilir. İhtiyacınıza uygun süreyi başvuru sırasında birlikte seçiyoruz.'],
+      ['Şirket adına e-imza alınabilir mi?', 'E-imza kişiye özeldir ve kişinin kendi adına düzenlenir. Şirket yetkilileri kendi adlarına e-imza alır; şirketin e-fatura ve e-defter gibi belgeleri için ise mali mühür kullanılır.'],
+      ['E-imza ile mobil imza arasındaki fark nedir?', 'E-imza bilgisayara takılan kart okuyucu veya USB ile çalışır; mobil imza ise SIM kartınıza tanımlanır ve kart okuyucu gerektirmez. Yoğun belge imzalıyorsanız e-imza genellikle daha pratiktir.'],
     ],
     // Hizmet sayfasında "bilmeniz gerekenler" kartları (bilgiler Bilgi Bankası rehberleriyle aynı; bağlantılar rehberlere gider)
     guide: ['E-İmza Hakkında Bilmeniz Gerekenler', [
@@ -375,7 +382,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'mali-muhur', icon: 'seal',
     name: 'Mali Mühür', short: 'Mali Mühür',
-    title: 'Mali Mühür: Aynı Gün Teslim, Başvuru ve Yenileme | Kurucu Bilişim',
+    title: 'Mali Mühür Başvurusu ve Fiyatı 2026: Aynı Gün Teslim',
     desc: 'Mali mühür başvurusu nasıl yapılır? Aynı gün teslimat, kurulum, şifre oluşturma ve yenileme desteği. E-fatura ve e-defter için. Fiyat için teklif alın.',
     h1: 'Mali Mühür Başvurusu, Kurulumu ve Yenilemesi',
     lead: 'Tüzel kişiliğinizin dijital kimliği olan mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz; e-fatura, e-arşiv ve e-defter işlemlerinize hemen başlayın.',
@@ -398,6 +405,9 @@ const services = [
       ['Mali mührüm ne kadar sürede teslim edilir?', 'Başvurunuz tamamlandığında mali mührünüzü aynı gün, dakikalar içinde teslim ediyoruz. Kurulumunu da uzaktan bağlantıyla hemen yapıyoruz.'],
       ['Mali mühür ne kadar geçerlidir, nasıl yenilenir?', 'Mali mühür sertifikaları 3 yıl geçerlidir; süre bitmeden yenileme yapılması gerekir. Yenileme tarihlerinizi takip ederek sizi önceden bilgilendiriyoruz.'],
       ['Şahıs şirketi mali mühür almak zorunda mı?', 'Gerçek kişi mükellefler e-dönüşüm uygulamalarında mali mühür yerine e-imza da kullanabilir. Hangisinin size uygun olduğunu birlikte belirleyebiliriz.'],
+      ['Mali mühür kimler için gerekli?', 'E-fatura, e-arşiv fatura, e-defter veya e-irsaliye gibi uygulamaları kullanan şirketler mali mühür kullanır. Gerçek kişi mükellefler mali mühür yerine e-imza da kullanabilir.'],
+      ['Mali mührü kim üretir?', 'Mali mühür sertifikaları TÜBİTAK Kamu Sertifikasyon Merkezi (Kamu SM) tarafından üretilir. Başvuru, kurulum ve yenileme sürecini sizin için yönetiyoruz.'],
+      ['Mali mührün süresi dolarsa ne olur?', 'Süresi dolan mali mühürle belgeler imzalanamaz; e-fatura ve e-defter işlemleriniz aksayabilir. Bu nedenle yenilemeyi süre dolmadan yapmanız önerilir.'],
     ],
     guide: ['Mali Mühür Hakkında Bilmeniz Gerekenler', [
       ['Mali mühür nedir?', 'Mali mühür, şirketlerin e-fatura, e-arşiv fatura, e-defter ve e-irsaliye gibi elektronik belgeleri tüzel kişilik adına imzalamak için kullandığı, TÜBİTAK Kamu Sertifikasyon Merkezi (Kamu SM) tarafından üretilen elektronik sertifikadır. Bir akıllı kart ve kart okuyucudan oluşur. <a href="/bilgi-bankasi/mali-muhur/mali-muhur-rehberi/">Mali Mühür Rehberi</a>'],
@@ -418,7 +428,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'kep-ik', icon: 'mail',
     name: 'KEP (Kayıtlı Elektronik Posta) ve E-Bordro', short: 'KEP & E-Bordro',
-    title: 'KEP Adresi Nasıl Alınır? Evraksız, Online Başvuru | Kurucu Bilişim',
+    title: 'KEP Adresi Nasıl Alınır? Başvuru ve Fiyat 2026 | Kurucu Bilişim',
     desc: 'KEP adresi nasıl alınır? NFC kimlik doğrulama ve e-Devlet onayıyla tamamen online, dakikalar içinde KEP başvurusu. KEP İK ile e-bordro. Teklif alın.',
     h1: 'KEP Adresi (Kayıtlı Elektronik Posta) ve E-Bordro',
     lead: 'Resmi yazışmalarınızı ve bordro süreçlerinizi yasal delil niteliğinde, zaman damgalı ve güvenli şekilde dijitale taşıyın.',
@@ -441,6 +451,9 @@ const services = [
       ['E-bordro yasal olarak geçerli mi?', 'Evet. 7555 sayılı Kanun ile düzenlenen İş Kanunu’nun 109. maddesine göre, işçinin yazılı kabulü şartıyla bildirimler hukuki delil sağlayan KEP ile yapılabilir. KEP üzerinden gönderilen bordronun gönderim ve teslim anı zaman damgasıyla kayıt altına alınır.'],
       ['KEP hesabı ne kadar sürede açılır?', 'NFC kimlik doğrulama ve e-Devlet onayı tamamlandığında KEP hesabınız herhangi bir fiziki işlem gerekmeden dakikalar içinde açılır.'],
       ['Bordro veri güvenliği nasıl sağlanır?', 'Bordrolar kişisel veri içerdiği için KVKK’ya uygun aydınlatma, yetkilendirme ve güvenli saklama önlemleri alınmalıdır. KEP İK ile her bordro, ilgili çalışanın KEP adresine gönderilir; gönderim ve teslim anı zaman damgasıyla kayıt altına alınır.'],
+      ['KEP ile normal e-posta arasındaki fark nedir?', 'Normal e-postada iletinin ulaştığı ve içeriğinin değişmediği hukuken kanıtlanamaz. KEP ise gönderim ve teslim kayıtlarını zaman damgasıyla tutar ve hukuki delil sağlar.'],
+      ['Bireyler de KEP adresi alabilir mi?', 'Evet. KEP adresi hem şirketler hem de bireyler için alınabilir.'],
+      ['KEP rehberinde görünmek zorunlu mu?', 'Gerçek kişilerde rehber kaydının sorguya açık olması için onay alınır, yani tercih size aittir. Şirketlerin KEP kayıtları ise onay aranmadan merkezi KEP rehberinde yer alır.'],
     ],
     guide: ['KEP ve E-Bordro Hakkında Bilmeniz Gerekenler', [
       ['KEP adresi kimler için zorunlu?', 'Türk Ticaret Kanunu kapsamında anonim, limited ve sermayesi paylara bölünmüş komandit şirketlerin KEP adresi edinmesi gerekir. Şahıs işletmeleri ve bireyler de isteğe bağlı olarak KEP adresi alabilir. Ayrıntılar için <a href="/bilgi-bankasi/kep/kep-rehberi/">KEP Rehberi</a>’ne bakabilirsiniz.'],
