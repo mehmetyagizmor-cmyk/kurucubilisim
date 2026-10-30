@@ -43,6 +43,10 @@ const TITLE_FIX = {
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
+  // Yeni yazılar (30 Ekim 2026)
+  'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Serbest Meslek Sahipleri E-Faturaya Geçmek Zorunda mı?',
+  'mersiste-e-imza-ile-yonetim-kurulu-karari': 'MERSİS’te E-İmzayla Yönetim Kurulu Kararı Nasıl Alınır?',
+  'e-faturaya-gecis-kontrol-listesi-2027': 'E-Faturaya Geçiş Kontrol Listesi: 1 Temmuz 2027 Son Tarih',
   'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': 'Mali Mühür ve Dijital Hukuki Belgelerin Yasal Geçerliliği',
   'mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi': 'Mali Mühür ve Dijital Ticaretin Geleceği',
   'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': 'Mali Mühür ile Dijital İhale Başvuruları ve Yasal Geçerlilik',
@@ -65,6 +69,9 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Avukat, doktor, mühendis ve mali müşavirler için e-SMM zorunlu, e-fatura ise zorunlu değil. Gönüllü e-faturanın ne zaman mantıklı olduğunu anlattık.',
+  'mersiste-e-imza-ile-yonetim-kurulu-karari': 'A.Ş. yönetim kurulu ve limited şirket genel kurul kararlarını MERSİS’te e-imzayla, toplantı yapmadan almak mümkün. Kimler kullanabilir, ne gerekir?',
+  'e-faturaya-gecis-kontrol-listesi-2027': '2026 cirosu 3 milyon TL’yi aşan işletmeler 1 Temmuz 2027’ye kadar e-faturaya geçmeli. Mali mühürden ilk faturaya adım adım kontrol listesi.',
   'e-bordroda-kvkk-uyum-sureci-ve-veri-guvenligi': 'E-bordroda çalışan verileri nasıl korunur? Veri envanteri, yetkilendirme, aydınlatma metni ve güvenli saklama adımlarıyla KVKK uyumlu bordro süreci.',
   'mersiste-e-imza-zorunlulugu': 'MERSİS’te şirket kuruluşu ve değişiklik işlemlerinde e-imza neden zorunlu, hangi işlemlerde gerekir ve e-imzanız yoksa ne yapmalısınız? Kısaca anlattık.',
   'e-bordroda-sik-yapilan-hatalar-ve-dogrulari': 'Yanlış parametre, eksik personel bilgisi, e-imzasız bordro, düzensiz arşiv… E-bordroda en sık yapılan hataları ve doğru uygulamaları tek listede topladık.',
