@@ -753,6 +753,7 @@ const articles = [
         ['Fidye talebi', 'Ele geçirilen veriler için kripto para istenebiliyor.'],
       ]),
       p('Bu bilgiler resmî bir kurum açıklamasına değil, haberde görüş veren adli bilişim uzmanına dayanıyor. Yine de alınacak önlemler basit olduğu için herkesin uygulaması yerinde olur. Gelir İdaresi Başkanlığı da kurum adına sahte adreslerden gönderilen, virüslü ek içeren veya sahte sitelere yönlendiren e-postaların kendisiyle ilgisi olmadığını duyurmuştur.'),
+      `<p>GİB de kurum adını kullanan sahte e-posta ve internet siteleri konusunda <a href="https://www.gib.gov.tr/en/en/important-announcement-about-forgery-and-fraud-attempts-fraud-alert" target="_blank" rel="noopener">uyarı yayımlamıştır</a>.</p>`,
       h2('Hangi Tebligat Nereden Gelir?'),
       p('Karışıklığın önemli bir kısmı, farklı sistemlerin aynı adla anılmasından kaynaklanıyor.'),
       `<table><thead><tr><th>Sistem</th><th>Ne için kullanılır?</th><th>Nereden kontrol edilir?</th></tr></thead><tbody>

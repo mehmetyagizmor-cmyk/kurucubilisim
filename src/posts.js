@@ -43,6 +43,7 @@ const TITLE_FIX = {
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
+  'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
   // Yeni yazılar (30 Ekim 2026)
   'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Serbest Meslek Sahipleri E-Faturaya Geçmek Zorunda mı?',
   'mersiste-e-imza-ile-yonetim-kurulu-karari': 'MERSİS’te E-İmzayla Yönetim Kurulu Kararı Nasıl Alınır?',
@@ -69,6 +70,7 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço esasına göre defter tutan herkes e-defter kullanmak zorunda. 2027’de bilançoya geçecek ya da yeni şirket kuracaksanız yapmanız gerekenler.',
   'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Avukat, doktor, mühendis ve mali müşavirler için e-SMM zorunlu, e-fatura ise zorunlu değil. Gönüllü e-faturanın ne zaman mantıklı olduğunu anlattık.',
   'mersiste-e-imza-ile-yonetim-kurulu-karari': 'A.Ş. yönetim kurulu ve limited şirket genel kurul kararlarını MERSİS’te e-imzayla, toplantı yapmadan almak mümkün. Kimler kullanabilir, ne gerekir?',
   'e-faturaya-gecis-kontrol-listesi-2027': '2026 cirosu 3 milyon TL’yi aşan işletmeler 1 Temmuz 2027’ye kadar e-faturaya geçmeli. Mali mühürden ilk faturaya adım adım kontrol listesi.',
