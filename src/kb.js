@@ -556,7 +556,7 @@ const articles = [
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
-    cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-10-20', info: true,
+    cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-10-30', info: true,
     kurum: ['GİB', 'Resmî Gazete'],
     mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 596)', '2026-10-11', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm', 'Hazine ve Maliye Bakanlığı']],
     title: 'E-Dönüşüm Son Tarihler Takvimi 2026–2027: Yaklaşan Zorunluluklar',
@@ -569,6 +569,7 @@ const articles = [
 <tr><td><strong>30 Kasım 2026</strong></td><td><a href="/bilgi-bankasi/mevzuat/e-tebligat-zorunlulugu-vuk-596/">E-tebligat sistemine dahil olma</a> (VUK 596)</td><td>Henüz sisteme girmemiş kurumlar vergisi mükellefleri, gerçek usulde gelir vergisi mükellefleri, kollektif ve adi komandit şirketler</td></tr>
 <tr><td><strong>31 Aralık 2026</strong></td><td>3.000 TL altı satışlarda kâğıt fatura imkânının sona ermesi</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
 <tr><td><strong>1 Ocak 2027</strong></td><td><a href="/bilgi-bankasi/mevzuat/basit-usul-e-arsiv-zorunlulugu-2027-vuk-589/">Tamamen e-arşiv fatura</a> zorunluluğu (VUK 589)</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
+<tr><td><strong>30 Haziran 2027</strong></td><td><a href="/bilgi-bankasi/e-mustahsil/e-mustahsil-makbuzu-rehberi/">E-müstahsil makbuzunda ıslak imza yerine doğrulama</a> geliştirmeleri (GİB duyurusu, 28.10.2026)</td><td>E-müstahsil makbuzu düzenleyen mükellefler</td></tr>
 <tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-fatura/e-fatura-rehberi/">E-faturaya geçiş</a></td><td>2026 brüt satış hasılatı 3 milyon TL ve üzeri olan mükellefler</td></tr>
 <tr><td><strong>1 Temmuz 2027</strong></td><td><a href="/bilgi-bankasi/e-irsaliye/e-irsaliye-rehberi/">E-irsaliyeye geçiş</a></td><td>2026 brüt satış hasılatı 10 milyon TL ve üzeri olan e-fatura mükellefleri</td></tr>
 <tr><td><strong>31 Aralık 2027</strong></td><td><a href="/bilgi-bankasi/mevzuat/sermaye-artirimi-suresi-uzatildi-2027/">Asgari sermayeye yükseltme</a></td><td>Sermayesi 250.000 TL’nin altındaki anonim ve 50.000 TL’nin altındaki limited şirketler</td></tr>

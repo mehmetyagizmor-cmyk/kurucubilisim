@@ -372,6 +372,8 @@ module.exports = [
     cat: 'e-mustahsil', svc: 'e-mustahsil-makbuzu', slug: 'e-mustahsil-makbuzu-rehberi', name: 'E-Müstahsil Makbuzu',
     title: 'E-Müstahsil Makbuzu Rehberi: Nedir, Kimler İçin Zorunlu?',
     lead: 'E-müstahsil makbuzu; çiftçi ve üreticilerden yapılan tarımsal ürün alımlarında düzenlenen belgenin elektronik versiyonudur. Kapsamı ve adımları anlattık.',
+    updated: '2026-10-30',
+    sources: [['GİB – E-Müstahsil Makbuzu Süre Uzatım Duyurusu (28.10.2026)', 'https://ebelge.gib.gov.tr/dosyalar/e-Mustahsil_Makbuzu_Sure_Uzatim_Duyurusu.pdf'], ['GİB e-Belge Duyuruları', 'https://ebelge.gib.gov.tr/duyurular.html']],
     intro: [
       'Tarımsal ürün alımı yapan tüccar ve sanayiciler, gerçek usulde vergiye tabi olmayan çiftçilerden yaptıkları alımlar için müstahsil makbuzu düzenler. E-müstahsil makbuzu bu belgenin dijital hâlidir.',
     ],
@@ -385,6 +387,11 @@ module.exports = [
       'GİB’in belirlediği hadleri aşan tarım tüccarları ve sanayiciler',
     ],
     kimlerNote: 'Zorunluluk kapsamı GİB düzenlemelerine göre değişebilir; durumunuzu birlikte kontrol edebiliriz.',
+    afterKimler: [
+      ['Islak İmza Yerine Doğrulama: Süre 30 Haziran 2027’ye Uzatıldı',
+        'GİB’in 22 Mayıs 2026 tarihli duyurusuna göre e-müstahsil makbuzunun ıslak imza yerine bilgi teknolojileri ve/veya iletişim araç ve ortamları üzerinden doğrulanarak düzenlenmesi 5 Kasım 2026’dan itibaren zorunlu olacaktı. GİB, 28 Ekim 2026 tarihli duyurusuyla “e-Müstahsil Makbuzu Teknik Kılavuzu”nda belirtilen geliştirmelerin yapılması için bu süreyi 30 Haziran 2027’ye uzattı.',
+        'Geliştirmelerini tamamlayan mükellefler uygulamayı bu tarihten önce de kullanabilir. Kullandığınız yazılımın kılavuzdaki geliştirmeleri ne zaman tamamlayacağını sağlayıcınızdan öğrenmeniz önerilir.'],
+    ],
     avantaj: [
       ['Sahada Kullanım', 'Makbuzu tarlada veya alım noktasında mobil cihazdan düzenleyebilirsiniz.'],
       ['Hatasız Kesinti', 'Stopaj ve diğer kesintiler otomatik hesaplanır.'],
@@ -400,6 +407,7 @@ module.exports = [
     kapanis: 'E-müstahsil makbuzu, tarımsal alımlarınızı hızlı ve hatasız şekilde belgelemenizi sağlar.',
     kapanisSub: 'E-müstahsil makbuzu geçişiniz için bugün teklif alın.',
     faqs: [
+      ['E-müstahsil makbuzunda ıslak imza ne zamana kadar kullanılabilir?', 'GİB’in 28 Ekim 2026 tarihli duyurusuna göre makbuzun doğrulanarak düzenlenmesine yönelik geliştirmelerin yapılması için süre 30 Haziran 2027’ye uzatılmıştır. Geliştirmelerini tamamlayanlar uygulamayı bu tarihten önce de kullanabilir.'],
       ['Çiftçinin sistemde kayıtlı olması gerekir mi?', 'Hayır. Belgeyi ürünü satın alan mükellef elektronik olarak düzenler.'],
       ['Çiftçiye nasıl teslim edilir?', 'Belgenin çıktısı verilebilir veya SMS/e-posta ile paylaşılabilir.'],
     ],
