@@ -37,6 +37,7 @@ const EXCLUDE = {
 };
 
 const TITLE_FIX = {
+  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro Zorunlu mu? Yasal Durum ve Avantajları',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? ERP Yazılımı Seçerken Dikkat Edilmesi Gerekenler',
   'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'Mali Mühür Zorunluluğu: Dijital Güvenlik ve Yasal Yükümlülükler',
 };
@@ -54,7 +55,7 @@ const SEO_TITLE = {
   'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': 'Mali Mühür ile Dijital İhale Başvuruları ve Yasal Geçerlilik',
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali Mühür ve İşlemlerin Denetimi: İzleme ve Kontrol',
   '2026-e-fatura-ve-e-arsiv-gecis-zorunlulugu': '2026 E-Fatura ve E-Arşiv Geçiş Zorunluluğu Rehberi',
-  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro’nun Yasal Zorunluluğu ve Avantajları',
+  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro Zorunlu mu? Yasal Durum ve Avantajları',
   'kurucu-bilisim-ile-e-defter-saklama-dijital-arsiviniz-artik-guvende': 'E-Defter Saklama: Dijital Arşiviniz Artık Güvende',
   'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'Mali Mühür Zorunluluğu ve Yasal Yükümlülükler',
   'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': 'Mali Mühür ve Kredi Başvurularında Dijital Onay',
@@ -71,6 +72,7 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'Ücret hesap pusulası zorunlu, elektronik vermek tercih. İş Kanunu’na göre e-bordronun şartlarını, saklama sürelerini ve avantajlarını anlattık.',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Basit usul ve işletme hesabı mükellefleri 1 Ocak 2027’den itibaren tüm faturalarını e-Arşiv düzenleyecek. Kapsamı ve hazırlık adımlarını anlattık.',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço esasına göre defter tutan herkes e-defter kullanmak zorunda. 2027’de bilançoya geçecek ya da yeni şirket kuracaksanız yapmanız gerekenler.',
   'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Avukat, doktor, mühendis ve mali müşavirler için e-SMM zorunlu, e-fatura ise zorunlu değil. Gönüllü e-faturanın ne zaman mantıklı olduğunu anlattık.',
@@ -182,7 +184,12 @@ const TEXT_FIX = [
 
 // Yeniden yazılan yazılar: content/rewrites/<slug>.html varsa WordPress içeriğinin yerine geçer
 const REWRITE_DIR = path.join(__dirname, 'content/rewrites');
-const REWRITTEN = { 'mersiste-e-imza-zorunlulugu': '2026-10-19T12:00:00' };
+const REWRITTEN = {
+  'mersiste-e-imza-zorunlulugu': '2026-10-19T12:00:00',
+  'e-bordroda-sik-yapilan-hatalar-ve-dogrulari': '2026-10-31T12:00:00',
+  'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': '2026-10-31T12:00:00',
+  'e-bordroda-kvkk-uyum-sureci-ve-veri-guvenligi': '2026-10-31T12:00:00',
+};
 const contentOf = (p) => (REWRITTEN[p.slug] ? fs.readFileSync(path.join(REWRITE_DIR, p.slug + '.html'), 'utf8') : p.content.rendered);
 
 const posts = RAW.filter((p) => !EXCLUDE[p.slug]).map((p) => {
