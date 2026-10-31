@@ -141,6 +141,12 @@ const SAHNELER = {
   'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': () => `${bg('acik', [[260, 220], [1340, 840]])}
     ${doc(640, 170, 520, 640, { head: true })}${signature(700, 640, .9)}${seal(1120, 690, 104)}
     ${gavel(330, 470, .8, -24)}${tile('book', 1300, 230, 150)}`,
+  // Kâğıt faturadan e-Arşiv'e geçiş: koçan → portal
+  'kagit-fatura-kalkiyor-mu-e-arsiv-2027': () => `${bg('sicak', [[1280, 220], [280, 860]])}
+    ${doc(170, 210, 430, 560)}<rect x="226" y="600" width="180" height="44" rx="22" fill="${RED}" fill-opacity=".12"/>${ic('receipt', 240, 606, 32, RED, 2)}
+    ${badge('arrow', 730, 490, 78)}
+    ${laptop(880, 240, 560)}${lines(960, 330, [300, 380, 340, 240], 42, 15)}<rect x="960" y="326" width="210" height="22" rx="11" fill="${INK}" fill-opacity=".8"/>${verified(960, 500)}
+    ${tile('archive', 1290, 640, 140)}${badge('check', 1190, 740, 56, OK)}`,
 };
 
 (async () => {

@@ -659,7 +659,7 @@ const articles = [
     ],
   },
   {
-    cat: 'mevzuat', slug: 'basit-usul-e-arsiv-zorunlulugu-2027-vuk-589', svc: 'e-arsiv-fatura', updated: '2026-10-20', info: true,
+    cat: 'mevzuat', slug: 'basit-usul-e-arsiv-zorunlulugu-2027-vuk-589', svc: 'e-arsiv-fatura', updated: '2026-10-31', info: true,
     kurum: ['GİB', 'Resmî Gazete'],
     mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 509)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 589)', '2025-12-31', 'https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-32.pdf', 'Hazine ve Maliye Bakanlığı']],
     title: 'Basit Usulde E-Arşiv Zorunluluğu 2027’ye Ertelendi (VUK 589)',
@@ -672,15 +672,15 @@ const articles = [
 <tr><td>Basit usul mükellefleri ve işletme hesabı esasına göre defter tutanlar</td><td>1 Ocak 2025 – 31 Aralık 2026 arası e-arşiv</td><td><strong>1 Ocak 2027’den itibaren</strong> e-arşiv</td></tr>
 <tr><td>E-arşive kayıtlı olmayan diğer mükellefler</td><td>1 Ocak 2025 – 31 Aralık 2025 arası e-arşiv</td><td><strong>1 Ocak 2026’dan itibaren</strong> e-arşiv</td></tr>
 </tbody></table>`,
-      p('Bu mükellefler, e-arşiv fatura uygulamasına kayıtlı değilse faturalarını GİB’in e-Arşiv Portalı üzerinden düzenleyebilir.'),
+      p('Bu mükellefler, e-arşiv fatura uygulamasına kayıtlı değilse faturalarını GİB’in e-Arşiv Portalı üzerinden düzenleyebilir. GİB’in duyurusuna göre portala mali mühür veya e-imza olmadan, İnteraktif Vergi Dairesi kullanıcı kodu ve şifresiyle girilebilir.'),
       h2('2027’ye Nasıl Hazırlanmalı?'),
       olBold([
         ['Fatura hacminizi değerlendirin', 'Günlük ve aylık kestiğiniz fatura sayısına göre GİB portalı veya özel entegratör yöntemini seçin.'],
-        ['E-imza veya mali mühür edinin', 'E-arşiv faturalarınızı imzalamak için gerçek kişiler e-imza, şirketler mali mühür kullanır.'],
-        ['Programınızı bağlayın', 'Kullandığınız ön muhasebe veya satış programını e-arşiv sistemine entegre edin.'],
+        ['Giriş bilgilerinizi kontrol edin', 'Portal için İnteraktif Vergi Dairesi kullanıcı kodu ve şifresi yeterlidir. E-arşiv uygulamasına başvurarak dahil olacaksanız gerçek kişiler e-imza veya mali mühür, tüzel kişiler mali mühür kullanır.'],
+        ['Programınızı bağlayın', 'Ön muhasebe veya satış programı kullanıyorsanız e-arşiv sistemine entegre edin.'],
         ['Son güne bırakmayın', '1 Ocak 2027’den önce geçişi tamamlayarak ilk günden sorunsuz fatura kesin.'],
       ]),
-      `<p>E-arşiv faturanın nasıl çalıştığını <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’nde anlattık.</p>`,
+      `<p>Hazırlık adımlarını <a href="/kagit-fatura-kalkiyor-mu-e-arsiv-2027/">Kâğıt Fatura Kalkıyor mu?</a> yazımızda, e-arşiv faturanın nasıl çalıştığını <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’nde anlattık.</p>`,
       SON_TARIH_LINK,
       note('Bu yazı, Resmî Gazete’de yayımlanan tebliğin bilgilendirme amaçlı özetidir. İşletmenize uygulanan kuralı mali müşavirinizle teyit etmeniz önerilir.'),
       `<p><em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2025/12/20251231M5-32.pdf" target="_blank" rel="noopener">Resmî Gazete, 31 Aralık 2025, Sayı 33124 (5. Mükerrer)</a> · <a href="https://ebelge.gib.gov.tr" target="_blank" rel="noopener">GİB e-Belge</a></p>`,
@@ -688,7 +688,7 @@ const articles = [
     faqs: [
       ['Basit usul mükellefleri ne zaman e-arşive geçecek?', '31 Aralık 2026’ya kadar vergiler dâhil 3.000 TL’yi aşan faturalar e-arşiv olarak düzenlenir; 1 Ocak 2027’den itibaren tüm faturalar tutarına bakılmaksızın e-arşiv olarak düzenlenmek zorundadır.'],
       ['2026’da 3.000 TL altındaki satışlarda kâğıt fatura kesilebilir mi?', 'Evet. Basit usul ve işletme esasındaki mükellefler 31 Aralık 2026’ya kadar 3.000 TL’yi aşmayan satışlarında kâğıt fatura veya perakende satış fişi kullanabilir.'],
-      ['E-arşiv fatura için e-imza gerekir mi?', 'Gerçek kişi mükellefler e-arşiv faturalarını e-imzayla, şirketler mali mühürle imzalar.'],
+      ['E-arşiv fatura için e-imza gerekir mi?', 'GİB portalını İnteraktif Vergi Dairesi kullanıcı kodu ve şifresiyle kullanacaksanız gerekmez. E-arşiv uygulamasına başvurarak dahil olacaksanız gerçek kişiler e-imza veya mali mühür, tüzel kişiler mali mühür kullanır.'],
     ],
   },
   {

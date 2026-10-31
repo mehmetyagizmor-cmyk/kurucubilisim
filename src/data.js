@@ -721,7 +721,7 @@ const webProjects = [
 // Blog kategorileri: slug üzerinden otomatik eşleşir.
 const blogCats = [
   ['E-İmza', /e-imza|mersis/], ['Mali Mühür', /mali-muhur/], ['KEP', /kep/],
-  ['E-Bordro', /e-bordro/], ['E-Defter', /e-defter/], ['E-Fatura & E-Belge', /e-fatura|e-belge/],
+  ['E-Bordro', /e-bordro/], ['E-Defter', /e-defter/], ['E-Fatura & E-Belge', /e-fatura|e-belge|e-arsiv/],
   ['Dijital', /erp|sosyal|web|crm/],
 ];
 

@@ -43,6 +43,7 @@ const TITLE_FIX = {
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
+  'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
   // Yeni yazılar (30 Ekim 2026)
   'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Serbest Meslek Sahipleri E-Faturaya Geçmek Zorunda mı?',
@@ -70,6 +71,7 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Basit usul ve işletme hesabı mükellefleri 1 Ocak 2027’den itibaren tüm faturalarını e-Arşiv düzenleyecek. Kapsamı ve hazırlık adımlarını anlattık.',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço esasına göre defter tutan herkes e-defter kullanmak zorunda. 2027’de bilançoya geçecek ya da yeni şirket kuracaksanız yapmanız gerekenler.',
   'serbest-meslek-sahipleri-e-faturaya-gecmek-zorunda-mi': 'Avukat, doktor, mühendis ve mali müşavirler için e-SMM zorunlu, e-fatura ise zorunlu değil. Gönüllü e-faturanın ne zaman mantıklı olduğunu anlattık.',
   'mersiste-e-imza-ile-yonetim-kurulu-karari': 'A.Ş. yönetim kurulu ve limited şirket genel kurul kararlarını MERSİS’te e-imzayla, toplantı yapmadan almak mümkün. Kimler kullanabilir, ne gerekir?',
