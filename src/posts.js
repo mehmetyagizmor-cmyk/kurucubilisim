@@ -72,6 +72,12 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': 'Sözleşmede mali mühür mü, e-imza mı kullanılır? Hangi belgede hangi aracın geçerli olduğunu ve e-imzayla yapılamayan işlemleri anlattık.',
+  'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali mühür denetimde neyi kanıtlar, neyi kanıtlamaz? Şirket içi kontrol düzeni, PIN güvenliği ve denetime hazırlık listesi.',
+  'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': 'Kredi başvurusu için mali mühür şart mı? Bankaların dijital veri kullanımını, başvuru hazırlığını ve dikkat edilecek güvenlik adımlarını anlattık.',
+  'mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi': 'E-ticarette mali mühür nerede kullanılır? E-fatura zinciri, entegratör mührü, KVKK ayrımı ve izlenmesi gereken yeni düzenlemeler.',
+  'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': 'İhalede mali mühür mü, e-imza mı gerekir? Kamu ve özel ihalelerde hangi aracın kullanıldığını ve ihale öncesi kontrol listesini anlattık.',
+  'mali-muhur-ve-kamu-ihale-sureclerinde-dijital-guvenlik': 'EKAP’ta e-imza, e-anahtar ve teklif gizliliği nasıl çalışır? Firmaların sık yaptığı hatalar ve mali mührün ihale sürecindeki gerçek yeri.',
   'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'Ücret hesap pusulası zorunlu, elektronik vermek tercih. İş Kanunu’na göre e-bordronun şartlarını, saklama sürelerini ve avantajlarını anlattık.',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Basit usul ve işletme hesabı mükellefleri 1 Ocak 2027’den itibaren tüm faturalarını e-Arşiv düzenleyecek. Kapsamı ve hazırlık adımlarını anlattık.',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço esasına göre defter tutan herkes e-defter kullanmak zorunda. 2027’de bilançoya geçecek ya da yeni şirket kuracaksanız yapmanız gerekenler.',
@@ -189,6 +195,12 @@ const REWRITTEN = {
   'e-bordroda-sik-yapilan-hatalar-ve-dogrulari': '2026-10-31T12:00:00',
   'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': '2026-10-31T12:00:00',
   'e-bordroda-kvkk-uyum-sureci-ve-veri-guvenligi': '2026-10-31T12:00:00',
+  'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': '2026-11-01T12:00:00',
+  'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': '2026-11-01T12:00:00',
+  'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': '2026-11-01T12:00:00',
+  'mali-muhur-ve-dijital-ticaretin-gelecegi-yasal-sureclerin-dijitallesmesi': '2026-11-01T12:00:00',
+  'mali-muhur-ve-ihale-surecleri-dijital-ihale-basvurularinda-yasal-gecerlilik': '2026-11-01T12:00:00',
+  'mali-muhur-ve-kamu-ihale-sureclerinde-dijital-guvenlik': '2026-11-01T12:00:00',
 };
 const contentOf = (p) => (REWRITTEN[p.slug] ? fs.readFileSync(path.join(REWRITE_DIR, p.slug + '.html'), 'utf8') : p.content.rendered);
 
