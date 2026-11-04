@@ -38,12 +38,13 @@ const EXCLUDE = {
 
 const TITLE_FIX = {
   'e-bordronun-yasal-zorunlulugu-ve-avantajlari-2025-guncel-bilgilerle': 'E-Bordro Zorunlu mu? Yasal Durum ve Avantajları',
-  'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? ERP Yazılımı Seçerken Dikkat Edilmesi Gerekenler',
+  'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modülleri, Faydaları ve ERP Yazılımı Seçerken Dikkat Edilmesi Gerekenler',
   'mali-muhur-nedir-dijital-guvenlik-ve-yasal-zorunluluklar': 'Mali Mühür Zorunluluğu: Dijital Güvenlik ve Yasal Yükümlülükler',
 };
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
+  'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modüller, Faydalar ve Seçim Rehberi 2026',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
   // Yeni yazılar (30 Ekim 2026)
@@ -72,6 +73,7 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP nedir, hangi modüllerden oluşur, muhasebe programından farkı ne? ERP yazılımı seçerken dikkat edilecekler, kurulum adımları ve e-fatura entegrasyonu.',
   'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': 'Sözleşmede mali mühür mü, e-imza mı kullanılır? Hangi belgede hangi aracın geçerli olduğunu ve e-imzayla yapılamayan işlemleri anlattık.',
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali mühür denetimde neyi kanıtlar, neyi kanıtlamaz? Şirket içi kontrol düzeni, PIN güvenliği ve denetime hazırlık listesi.',
   'mali-muhur-ve-kredi-basvurulari-dijital-onay-sureclerinin-guvenligi': 'Kredi başvurusu için mali mühür şart mı? Bankaların dijital veri kullanımını, başvuru hazırlığını ve dikkat edilecek güvenlik adımlarını anlattık.',
