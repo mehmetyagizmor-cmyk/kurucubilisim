@@ -644,25 +644,56 @@ const articles = [
     ],
   },
   {
-    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-10-19',
-    title: 'E-Fatura Nasıl İptal Edilir? İtiraz Süresi ve Adımlar',
-    lead: 'Düzenlenmiş bir e-fatura tek taraflı silinemez; iptal ve itiraz, GİB’in ilgili portalı ve mevzuattaki yöntemlerle, karşı tarafın da sürece dahil olmasıyla yapılır.',
+    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-11-07',
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 509)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 526)', '2021-02-09', 'https://www.resmigazete.gov.tr/eskiler/2021/02/20210209-5.htm', 'Hazine ve Maliye Bakanlığı']],
+    title: 'E-Fatura Nasıl İptal Edilir? 8 Günlük Süre ve Adımlar',
+    lead: 'E-fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir. Ticari faturada iptal “ret” yanıtıyla, temel faturada GİB’in e-Fatura İptal/İtiraz Portalı’ndan yapılır; 8 gün geçtikten sonra sistem iptal talebine izin vermez.',
     html: [
-      p('E-fatura sistemine gönderilen bir fatura, kâğıt fatura gibi yırtılıp atılamaz. Hatalı düzenlenen veya iptal edilmesi gereken e-faturalar için Gelir İdaresi Başkanlığı’nın (GİB) belirlediği yöntemler kullanılır.'),
-      h2('E-Fatura İptali İçin Yöntemler'),
-      ulBold([
-        ['Ticari faturada ret', 'Ticari senaryoyla gönderilen bir faturayı alıcı, sistem üzerinden belirlenen süre içinde reddedebilir.'],
-        ['GİB iptal / itiraz portalı', 'Temel senaryolu faturalar veya süresi geçen durumlar için GİB’in e-fatura iptal ve itiraz portalı üzerinden talep oluşturulabilir; karşı tarafın onayı gerekir.'],
-        ['Diğer yasal yöntemler', 'Mevzuatta belirtilen KEP, noter veya taahhütlü posta gibi yöntemlerle itiraz edilebilir.'],
+      `<p><strong>Kısaca:</strong> ${esc('GİB’in e-Fatura İptal, İhtar/İtiraz Bildirim Kılavuzu’na (Ocak 2025, v1.2) göre: Ticari senaryodaki e-fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde sistem üzerinden “ret” yanıtıyla iptal edilir. Temel senaryodaki e-fatura ise yine 8 gün içinde e-Fatura İptal/İtiraz Portalı’ndan oluşturulan iptal talebinin karşı tarafça onaylanmasıyla iptal edilir. 8 günü aşan sürelerde sistem iptal talebi oluşturulmasına veya onaylanmasına izin vermez.')}</p>`,
+      p('E-fatura sistemine gönderilen bir fatura, kâğıt fatura gibi yırtılıp atılamaz. Hatalı düzenlenen veya iptal edilmesi gereken e-faturalar için Gelir İdaresi Başkanlığı’nın (GİB) belirlediği yöntemler ve süreler uygulanır. 1 Mayıs 2021’den bu yana e-belgelere ilişkin iptal ve itirazların da GİB sistemine bildirilmesi zorunludur.'),
+      h2('Senaryoya Göre E-Fatura İptali'),
+      `<table><thead><tr><th>Fatura senaryosu</th><th>İptal nasıl yapılır?</th><th>Süre</th></tr></thead><tbody>
+<tr><td><strong>Ticari fatura</strong></td><td>Alıcı, e-fatura sistemi içinden “Ret Uygulama Yanıtı” gönderir.</td><td>Faturanın alıcıya iletildiği tarihten itibaren 8 gün</td></tr>
+<tr><td><strong>Temel fatura</strong></td><td>Alıcı veya satıcı, e-Fatura İptal/İtiraz Portalı’ndan iptal talebi oluşturur; karşı taraf talebi onaylar veya reddeder.</td><td>Faturanın alıcıya iletildiği tarihten itibaren 8 gün</td></tr>
+<tr><td><strong>Hal tipi fatura</strong></td><td>Temel faturadaki gibi portal üzerinden iptal talebi oluşturulur.</td><td>8 gün</td></tr>
+<tr><td><strong>Kamu faturası</strong></td><td>Portal yalnızca satıcının itiraz bildirimi için kullanılır.</td><td>—</td></tr>
+</tbody></table>`,
+      h2('E-Fatura İptal/İtiraz Portalı Nasıl Kullanılır?'),
+      olBold([
+        ['Gerekenleri hazırlayın', 'Mali mühür veya e-imza kartınız takılı olmalı ve GİB’in imzalama aracı programı çalışıyor olmalıdır. Portal kullanıldığı sürece imzalama aracı arka planda açık kalmalıdır.'],
+        ['Portala girin', 'e-Fatura İptal/İtiraz Portalı’na (portal.efatura.gov.tr/FaturaIptal/) mali mühür veya e-imzanızla giriş yapın.'],
+        ['Talep oluşturun', '“Fatura İptal Talebi Oluşturmak İçin Tıklayınız” butonuna basın, işlem sahibi olarak “Alıcı” veya “Satıcı”yı seçin.'],
+        ['Fatura bilgilerini girin', 'Faturanın 16 haneli fatura numarasını ve faturada yazan ödenecek tutarı girin, akıllı kart bilgilerinizi onaylayıp “Talep Oluştur”a tıklayın.'],
+        ['Talebi takip edin', 'Talep, karşı tarafın portal ekranına düşer. Durumunu “Fatura İptal Taleplerinin Durumlarını Görmek…” sekmesinden takip edebilirsiniz; onaylanırsa durum “Fatura İptal Edildi” olarak güncellenir.'],
       ]),
+      p('Karşı tarafın iptal talebini onaylama zorunluluğu yoktur. Talep reddedilirse veya 8 gün içinde onaylanmazsa fatura geçerliliğini korur ve her iki tarafın GİB sistemindeki kayıtlarında yer almaya devam eder.'),
+      h2('E-Faturaya İtiraz Nasıl Yapılır?'),
+      p('Türk Ticaret Kanunu’na göre fatura alan kişi, aldığı tarihten itibaren 8 gün içinde faturanın içeriğine itiraz etmezse içeriği kabul etmiş sayılır. GİB kılavuzuna göre itiraz yolları şöyledir:'),
+      ulBold([
+        ['Ticari fatura', '8 gün içinde sistem üzerinden ret yanıtıyla veya harici yöntemlerle itiraz edilebilir.'],
+        ['Temel ve diğer senaryolar', '8 gün içinde yalnızca harici yöntemlerle itiraz edilir: noter aracılığıyla, taahhütlü mektupla, telgrafla veya güvenli elektronik imza kullanılarak KEP ile.'],
+        ['GİB’e bildirim', 'Harici yöntemle yapılan itiraz, e-Fatura İptal/İtiraz Portalı’ndan GİB’e bildirilir. Bildirim itirazın kendisi değildir; TTK kapsamında yapılan itiraz hakkında GİB’e bilgi verilmesini sağlar.'],
+      ]),
+      `<p>KEP ile itiraz için kendi KEP adresiniz olmalıdır; karşı tarafın KEP adresini nasıl bulacağınızı <a href="/bilgi-bankasi/kep/kep-adresi-sorgulama/">KEP Adresi Sorgulama</a> rehberimizde anlattık.</p>`,
+      h2('8 Gün Geçtiyse Ne Yapılır?'),
+      p('8 günlük süre geçtikten sonra portal iptal talebi oluşturulmasına izin vermez. Bu durumda hatanın türüne göre iade faturası düzenlenmesi gibi düzeltme yöntemleri için mali müşavirinizle görüşmeniz gerekir.'),
       h2('Dikkat Edilmesi Gerekenler'),
       ul([
-        'İtiraz ve iptal işlemleri yasal süreler içinde yapılmalıdır.',
-        'İptal edilen faturanın muhasebe kayıtlarına da doğru şekilde yansıtılması gerekir.',
+        '8 günlük süre faturanın düzenlendiği tarihten değil, alıcıya iletildiği tarihten itibaren başlar.',
         'Siparişin iptal edilmesi, düzenlenmiş faturayı kendiliğinden ortadan kaldırmaz.',
+        'İptal edilen faturanın muhasebe kayıtlarına da doğru şekilde yansıtılması gerekir.',
+        'Faturanın e-fatura mı e-arşiv mi olması gerektiğini kesmeden önce kontrol etmek iptal ihtiyacını azaltır.',
       ]),
-      note('İptal ve itiraz kuralları ile süreler mevzuata göre değişebilir. İşleminize özel durumu birlikte değerlendirmek için bize ulaşabilirsiniz.'),
+      `<p>Alıcının e-fatura kullanıcısı olup olmadığını <a href="/bilgi-bankasi/e-fatura/e-fatura-mukellefi-sorgulama/">E-Fatura Mükellefi Sorgulama</a> rehberimizden öğrenebilirsiniz. <em>Resmî kaynak:</em> <a href="https://ebelge.gib.gov.tr/dosyalar/kilavuzlar/e-Fatura_Iptal_Ihtar_Itiraz_Bildirim_Kilavuzu_V_1.2.pdf" target="_blank" rel="noopener">GİB – e-Fatura Uygulaması İptal, İhtar/İtiraz Bildirim Kılavuzu (v1.2)</a></p>`,
+      note('E-fatura iptal ve itiraz işlemlerinde, portal kullanımı ve imzalama aracı kurulumunda destek veriyoruz.'),
     ].join('\n'),
+    faqs: [
+      ['E-fatura kaç gün içinde iptal edilebilir?', 'GİB kılavuzuna göre e-fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir. 8 günü aşan sürelerde sistem iptal talebi oluşturulmasına veya onaylanmasına izin vermez.'],
+      ['Ticari e-fatura nasıl iptal edilir?', 'Ticari senaryodaki e-faturayı alıcı, 8 gün içinde e-fatura sistemi üzerinden “Ret Uygulama Yanıtı” göndererek iptal eder.'],
+      ['Temel e-fatura nasıl iptal edilir?', 'Alıcı veya satıcı, 8 gün içinde e-Fatura İptal/İtiraz Portalı’ndan iptal talebi oluşturur; karşı taraf talebi onaylarsa fatura iptal edilir.'],
+      ['Karşı taraf iptal talebimi onaylamazsa ne olur?', 'Karşı tarafın onaylama zorunluluğu yoktur. Talep reddedilir veya 8 gün içinde onaylanmazsa fatura geçerliliğini korur.'],
+      ['E-fatura iptal portalına nasıl girilir?', 'portal.efatura.gov.tr/FaturaIptal/ adresinden, mali mühür veya e-imzanızla ve GİB imzalama aracı açıkken giriş yapılır.'],
+    ],
   },
   {
     cat: 'e-fatura', slug: 'e-fatura-mukellefi-sorgulama', svc: 'e-fatura', updated: '2026-11-05',
@@ -1047,7 +1078,7 @@ const KISACA = {
   'e-devlete-e-imza-ile-giris-nasil-yapilir': 'giris.turkiye.gov.tr adresinde “e-İmza” seçeneğini tıklayıp T.C. kimlik numaranızı girin, e-Devlet Kapısı e-İmza Uygulaması’nı açıp ekrandaki işlem kodunu yazın, kart tipinizi ve sertifikanızı seçin, PIN’inizi girerek girişi tamamlayın.',
   'mali-muhur-pin-sifresi-nasil-olusturulur': 'Mali mühür PIN’i, Kamu SM Online İşlemler’e e-Devlet ile girip “Mali Mühür İşlemleri → Diğer Mali Mühür İşlemleri → PIN Oluşturma/Kilit Çözme” adımlarıyla belirlenir. Kilitlenen mali mührün kilidi de aynı yerden çözülür; PUK kodu ile işlem yapılmamalıdır.',
   'kep-adresi-nasil-alinir': 'KEP adresi online başvuruyla alınır: başvuru formunu doldurursunuz, çipli kimlik kartınızla NFC üzerinden kimliğinizi doğrular ve e-Devlet’ten onay verirsiniz; fiziki evrak gerekmez.',
-  'e-fatura-nasil-iptal-edilir': 'E-fatura tek taraflı silinemez. Ticari senaryolu fatura alıcı tarafından süresi içinde sistem üzerinden reddedilebilir; diğer durumlarda GİB’in iptal/itiraz portalı veya KEP, noter gibi yasal yollar kullanılır.',
+  'e-fatura-nasil-iptal-edilir': 'E-fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir. Ticari faturada alıcı sistem üzerinden “ret” yanıtı gönderir; temel faturada GİB’in e-Fatura İptal/İtiraz Portalı’ndan iptal talebi oluşturulur. 8 gün geçtikten sonra sistem iptal talebine izin vermez.',
 };
 const EXTRA_FAQ = {
   'e-imza-kurulumu-nasil-yapilir': [
@@ -1076,7 +1107,7 @@ const EXTRA_FAQ = {
   ],
   'e-fatura-nasil-iptal-edilir': [
     ['E-fatura kaç gün içinde reddedilebilir?', 'Ticari senaryoyla gönderilen e-fatura, alıcı tarafından 8 gün içinde sistem üzerinden reddedilebilir. Temel senaryoda sistem üzerinden ret yoktur.'],
-    ['Süresi geçen e-fatura nasıl iptal edilir?', 'GİB’in e-fatura iptal/itiraz portalı üzerinden talep oluşturulabilir veya KEP, noter, taahhütlü posta gibi yasal yollarla itiraz edilebilir.'],
+    ['Süresi geçen e-fatura nasıl iptal edilir?', 'GİB kılavuzuna göre e-fatura iptali, faturanın alıcıya iletildiği tarihten itibaren 8 gün içinde yapılabilir; bu süre geçtikten sonra e-Fatura İptal/İtiraz Portalı talep oluşturulmasına izin vermez. Süre geçtiyse iade faturası gibi düzeltme yöntemleri için mali müşavirinizle görüşmeniz gerekir.'],
     ['E-fatura iptal edilince muhasebede ne yapılır?', 'İptal edilen faturanın muhasebe kayıtlarına da doğru şekilde yansıtılması gerekir; bunu mali müşavirinizle birlikte yapmanızı öneririz.'],
   ],
 };
