@@ -159,7 +159,7 @@ const articles = [
 
   // ========== 1. ADIM TASLAKLARI (patron onayı bekliyor) ==========
   {
-    cat: 'e-imza', slug: 'e-imza-kurulumu-nasil-yapilir', svc: 'e-imza', updated: '2026-10-19',
+    cat: 'e-imza', slug: 'e-imza-kurulumu-nasil-yapilir', svc: 'e-imza', updated: '2026-11-07',
     title: 'E-İmza Kurulumu Nasıl Yapılır? Adım Adım Rehber',
     lead: 'E-imzanızı bilgisayarınızda kullanabilmek için kart okuyucu sürücüsü, imza uygulaması ve gerekiyorsa Java kurulmalıdır. Adımları sırasıyla anlattık.',
     html: [
@@ -179,6 +179,19 @@ const articles = [
         ['Sertifikanızı kontrol edin', 'İmza uygulamasını açın, kart okuyucunuzu seçin ve PIN’inizi girerek sertifikanızın göründüğünü kontrol edin.'],
         ['Deneme imzası atın', 'Örnek bir belgeyi imzalayarak kurulumun doğru çalıştığından emin olun.'],
       ]),
+      h2('Sertifika Sağlayıcısına Göre Kurulum Sayfaları'),
+      p('Türkiye’de nitelikli elektronik sertifika (e-imza), Bilgi Teknolojileri ve İletişim Kurumu’nun (BTK) yetkilendirdiği elektronik sertifika hizmet sağlayıcılarından alınır. Kurulum dosyaları da e-imzanızı aldığınız sağlayıcının resmî sitesinden indirilir. Sağlayıcınızın adı kart okuyucunun veya teslimat paketinin üzerinde yazar.'),
+      `<table><thead><tr><th>Sağlayıcı</th><th>Resmî kurulum sayfası</th><th>Not</th></tr></thead><tbody>
+<tr><td><strong>TÜRKTRUST</strong></td><td><a href="https://www.turktrust.com.tr/kurulum-islemleri.html" target="_blank" rel="noopener">Kurulum ve Aktivasyon İşlemleri</a></td><td>Akıllı kart yönetim yazılımı Palma’nın bilgisayarınıza uygun 32 veya 64 bit sürümü kurulur; e-imza aktivasyon adımları da aynı sayfadadır.</td></tr>
+<tr><td><strong>E-Güven</strong></td><td><a href="https://www.e-guven.com/uygulama-kullanim-kilavuzlari" target="_blank" rel="noopener">Uygulama Kullanım Kılavuzları</a></td><td>Kurulum ve kullanım kılavuzları ile destek masası bağlantısı bu sayfadadır.</td></tr>
+<tr><td><strong>E-Tuğra</strong></td><td><a href="https://helpdesk.e-tugra.com.tr" target="_blank" rel="noopener">Teknik Destek (Helpdesk)</a></td><td>“E-imza Kurulumu” ve “Kurulum / Aktivasyon” başlıklı yardım dokümanları yer alır.</td></tr>
+<tr><td><strong>E-İmzaTR</strong></td><td><a href="https://www.e-imzatr.com.tr/tr/yardim-destek/gerekli-yazilim-dokumanlar" target="_blank" rel="noopener">Kaynak Yazılım ve Dökümanlar</a></td><td>PIN oluşturma ve PIN bloke kaldırma sayfaları da “Yardım &amp; Destek” menüsündedir.</td></tr>
+<tr><td><strong>Ayyıldız İmza</strong></td><td><a href="https://www.ayyildizimza.com.tr/teknik/ayyildiz-kurulum-dosyalari-indir" target="_blank" rel="noopener">Kurulum Dosyaları</a></td><td>Aktivasyon ve PIN değiştirme adımları “Yardım &amp; Destek” menüsündedir.</td></tr>
+<tr><td><strong>ArkİMZA</strong></td><td><a href="https://www.arksigner.com/indir" target="_blank" rel="noopener">ArkSigner Middleware ve Sürücüler</a></td><td>Mobil uygulaması App Store ve Google Play’de de bulunur.</td></tr>
+<tr><td><strong>Kamu SM</strong></td><td><a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/" target="_blank" rel="noopener">Sürücü Yükleme Servisi</a></td><td>BTK’ya göre yalnızca kamu çalışanlarına e-imza sertifikası verir.</td></tr>
+</tbody></table>`,
+      p('Bu sayfaların dışındaki sitelerden kurulum dosyası indirmeyin. Bazı sağlayıcılar resmî sitelerinde, yalnızca kendi alan adları üzerinden hizmet verdiklerini ve farklı adreslerden verilen bilgilere itibar edilmemesi gerektiğini özellikle belirtir.'),
+      `<p><em>Kaynak:</em> <a href="https://www.btk.gov.tr/elektronik-sertifika-hizmet-saglayicilari" target="_blank" rel="noopener">BTK – Elektronik Sertifika Hizmet Sağlayıcıları</a></p>`,
       h2('Sık Görülen Kurulum Sorunları'),
       ulBold([
         ['Kart okuyucu bulunamadı', 'Sürücü kurulmamış veya okuyucu farklı bir USB girişine takılmış olabilir. Sürücüyü yeniden kurup bilgisayarı yeniden başlatın.'],
@@ -190,6 +203,8 @@ const articles = [
     faqs: [
       ['E-imza kurulumu ne kadar sürer?', 'Gerekli programlar hazır olduğunda kurulum genellikle birkaç dakika sürer. Uzaktan bağlantıyla kurulumu sizin yerinize yapabiliyoruz.'],
       ['E-imza Mac bilgisayarda çalışır mı?', 'Çoğu sertifika sağlayıcısı macOS için de sürücü sunar; ancak bazı kamu sistemleri yalnızca belirli işletim sistemlerinde tam uyumlu çalışabilir. Kullanacağınız sistemi kontrol etmek gerekir.'],
+      ['TÜRKTRUST e-imza kurulumu nasıl yapılır?', 'TÜRKTRUST’ın “Kurulum ve Aktivasyon İşlemleri” sayfasından bilgisayarınıza uygun 32 veya 64 bit Palma (Akıllı Kart Yönetim Yazılımı) indirilip kurulur, ardından aynı sayfadaki e-imza aktivasyon adımları izlenir.'],
+      ['E-imzamı hangi sağlayıcıdan aldığımı nasıl anlarım?', 'Sağlayıcının adı kart okuyucunun veya teslimat paketinin üzerinde yazar. Ayrıca e-Devlet’teki “Nitelikli Elektronik Sertifika Sorgulama” hizmetinden adınıza üretilmiş sertifikaları görebilirsiniz.'],
     ],
   },
   {
