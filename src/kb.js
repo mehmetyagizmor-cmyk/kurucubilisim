@@ -462,7 +462,7 @@ const articles = [
     ],
   },
   {
-    cat: 'mali-muhur', slug: 'mali-muhur-yenileme-nasil-yapilir', svc: 'mali-muhur', updated: '2026-10-28',
+    cat: 'mali-muhur', slug: 'mali-muhur-yenileme-nasil-yapilir', svc: 'mali-muhur', updated: '2026-11-08',
     title: 'Mali Mühür Yenileme Nasıl Yapılır? Süresi Dolmadan Yapılacaklar',
     lead: 'Mali mührün süresi dolarsa e-fatura, e-arşiv ve e-defter işlemleriniz aksayabilir. Yenilemeyi ne zaman yapmanız gerektiğini ve yenileme adımlarını anlattık.',
     html: [
@@ -481,12 +481,23 @@ const articles = [
         ['Teslim ve kurulum', 'Yeni mali mührünüzü aynı gün, dakikalar içinde teslim ediyor; kurulumunu ve PIN oluşturma adımlarını uzaktan yapıyoruz.'],
         ['Programlara tanıtma', 'Yeni sertifikanın kullandığınız e-fatura ve muhasebe programında doğru çalıştığını kontrol ediyoruz.'],
       ]),
+      h2('Kamu SM’ye Göre Mali Mühür Yenileme Süreci'),
+      p('TÜBİTAK Kamu Sertifikasyon Merkezi’nin (Kamu SM) mali mühür süreçleri sayfasına göre yenileme şöyle işler:'),
+      ulBold([
+        ['Geçerlilik süresi', 'Mali mühür sertifikaları 3 yıl süreyle kullanılır.'],
+        ['Hatırlatma e-postaları', 'Süresi bitmek üzere olan sertifikalar için kayıtlı e-posta adresine 3 ay, 2 ay, 1 ay ve 1 hafta kala hatırlatma e-postası gönderilir.'],
+        ['Yenileme = yeni başvuru', 'Mali mühür kullanımına devam edecek kurumlar, başvuru süreci adımlarını tekrarlar ve yeni bir mali mühür üretilir. Başvuru Kamu SM Online İşlemler’de “Mali Mühür İşlemleri > Başvuru Oluşturma” adımlarıyla yapılır.'],
+        ['Ödeme ve üretim', 'Ödeme Kamu SM’nin Borç Sorgulama ve Online Ödeme sayfasından yapılır; Vakıfbank ve Ziraat Bankası kanallarından yapılan ödemeler sisteme 1 iş günü sonra yansır. Sertifika üretimi ödeme Kamu SM hesabına geçtikten sonra başlar.'],
+        ['Unvan veya VKN değişikliği', 'Kurumun vergi kimlik numarası veya unvanı değiştiyse yenileme yerine yeni mali mühür alınması gerekir.'],
+      ]),
+      `<p>Yeni mali mühür elinize ulaştığında kurulum ve PIN adımları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a> rehberimize bakabilirsiniz. <em>Resmî kaynak:</em> <a href="https://mm.kamusm.gov.tr/surecler/" target="_blank" rel="noopener">Kamu SM – Mali Mühür Süreçleri</a></p>`,
       `<p>PIN oluşturma adımları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-pin-sifresi-nasil-olusturulur/">Mali Mühür PIN Nasıl Oluşturulur?</a>, ücreti etkileyen etkenler için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-ucreti-neye-gore-degisir/">Mali Mühür Ücreti Neye Göre Değişir?</a> rehberlerimize göz atabilirsiniz.</p>`,
-      note('Yenileme süreci ve gerekli bilgiler güncel düzenlemelere göre değişebilir. Yenileme tarihinizi takip ediyor, süreci baştan sona sizin için yönetiyoruz.'),
+      note('Yenileme başvurusunu sizin yerinize hazırlıyor, yeni mali mührünüzü aynı gün teslim ediyor ve programlarınızda çalıştığını kontrol ediyoruz.'),
     ].join('\n'),
     faqs: [
-      ['Mali mühür ne zaman yenilenmeli?', 'Sertifikanın süresi dolmadan, tercihen birkaç hafta önce yenileme başvurusu yapılması önerilir. Böylece e-fatura ve e-defter işlemleriniz aksamaz.'],
-      ['Mali mühür yenilemede yeni kart gerekir mi?', 'Bu, yenileme sürecine ve mevcut kartınızın durumuna göre değişir. Başvuru sırasında sizi bilgilendiriyoruz.'],
+      ['Mali mühür ne zaman yenilenmeli?', 'Sertifikanın süresi dolmadan, tercihen birkaç hafta önce yenileme başvurusu yapılması önerilir. Kamu SM de kayıtlı e-posta adresinize 3 ay, 2 ay, 1 ay ve 1 hafta kala hatırlatma gönderir.'],
+      ['Mali mühür yenilemede yeni kart gerekir mi?', 'Kamu SM’ye göre yenilemede başvuru süreci adımları tekrarlanır ve yeni bir mali mühür üretilir. Yeni mali mührünüzü aynı gün teslim ediyor ve kurulumunu yapıyoruz.'],
+      ['Kamu SM mali mühür yenileme başvurusu nereden yapılır?', 'Kamu SM Online İşlemler’de “Giriş” bölümündeki yöntemlerden biriyle oturum açıp “Mali Mühür İşlemleri > Başvuru Oluşturma” adımlarıyla yapılır. Başvuruyu ve ödeme takibini sizin yerinize de yapabiliyoruz.'],
       ['Süresi dolan mali mühürle fatura kesilebilir mi?', 'Hayır. Süresi dolan mali mühürle belgeler imzalanamaz. Yenileme tamamlandığında işlemlerinize kaldığınız yerden devam edebilirsiniz.'],
     ],
   },
@@ -789,6 +800,102 @@ const articles = [
       ['E-arşiv portal kullanıcı kodumu nereden öğrenirim?', 'İnteraktif Vergi Dairesi’ne girip “Bilgilerim / Sicil Kaydım” alanından kullanıcı kodunuza ulaşabilirsiniz.'],
       ['E-arşiv faturanın gerçek olup olmadığını nasıl anlarım?', 'GİB eBelge sitesindeki “e-Arşiv Fatura Sorgulama” ekranına satıcının VKN/TCKN’sini, fatura numarasını, ödenecek tutarı ve güvenlik kodunu girerek sorgulayabilirsiniz.'],
       ['E-arşiv portal ile özel entegratör arasındaki fark nedir?', 'e-Arşiv Portal GİB’in ücretsiz web uygulamasıdır ve faturalar tek tek düzenlenir. Özel entegratör çözümleri ise muhasebe veya e-ticaret programınızla entegre çalışarak toplu ve otomatik fatura düzenlemeye imkân verir.'],
+    ],
+  },
+  {
+    cat: 'e-arsiv-fatura', slug: 'e-arsiv-fatura-iptali', svc: 'e-arsiv-fatura', updated: '2026-11-08',
+    mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 509)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 526)', '2021-02-09', 'https://www.resmigazete.gov.tr/eskiler/2021/02/20210209-5.htm', 'Hazine ve Maliye Bakanlığı']],
+    title: 'E-Arşiv Fatura İptali Nasıl Yapılır? 8 Gün Kuralı',
+    lead: 'E-arşiv fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir. İptal talebi GİB e-Arşiv Portal’dan veya özel entegratör üzerinden “İptal Raporu” ile oluşturulur; karşı tarafın onaylama zorunluluğu yoktur.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('GİB’in e-Arşiv Uygulamaları İptal, İhtar/İtiraz Bildirim Kılavuzu’na (Ocak 2025, v1.1) göre e-arşiv fatura ve e-SMM iptalinde 8 günlük süre belgenin alıcıya iletilme tarihinden itibaren başlar ve iptal her durumda bu süre içinde yapılmalıdır. GİB Portal kullananlar “Düzenlenen Belgeler” sekmesinden, özel entegratör kullananlar ise GİB’e gönderilen “İptal Raporu” ile iptal talebinde bulunur.')}</p>`,
+      p('E-arşiv fatura, e-fatura sistemine kayıtlı olmayan kişi ve kurumlara düzenlenen elektronik faturadır. Hatalı düzenlenen bir e-arşiv faturanın iptali de Gelir İdaresi Başkanlığı’nın (GİB) belirlediği usul ve sürelere tabidir. 1 Mayıs 2021’den bu yana e-belgelerin iptal ve itiraz işlemlerinin GİB sistemine bildirilmesi zorunludur.'),
+      h2('E-Arşiv Fatura İptal Süresi: 8 Gün'),
+      p('GİB kılavuzuna göre e-arşiv fatura ve e-serbest meslek makbuzu (e-SMM) iptallerinde 8 günlük süre, belgenin alıcıya iletilme tarihinden itibaren başlar. İptal işlemi her durumda bu 8 günlük süre içinde yapılmalıdır.'),
+      h2('Faturayı Düzenleyen (Satıcı) Nasıl İptal Eder?'),
+      ulBold([
+        ['GİB Portal kullananlar', 'Mali mühür veya e-imzayla GİB Portal’a girip “Düzenlenen Belgeler” sekmesini açın, belge tarihini içeren tarih aralığıyla sorgulayıp faturayı seçin ve “İptal Talebi Oluştur”a tıklayın. “İptal Gerekçesi” alanını doldurup “Uyarıyı Okudum” kutucuğunu işaretleyerek talebi gönderin.'],
+        ['e-Belge kullanıcısı olmayanlar', 'Dijital Vergi Dairesi kullanıcı kodu ve şifresiyle GİB e-Arşiv (interaktif) Portalı’na girip aynı adımlarla iptal talebi oluşturabilir.'],
+        ['Özel entegratör kullananlar', 'İptal talebi, GİB’e gönderilen “İptal Raporu” ile yapılır; satıcının portal üzerinden ayrıca işlem yapması gerekmez. Alıcı bu talebi yine GİB Portal üzerinden kabul veya reddedebilir.'],
+      ]),
+      h2('Faturayı Alan (Alıcı) Nasıl İptal Talebinde Bulunur?'),
+      p('Belgede vergi kimlik numarası veya T.C. kimlik numarası yer alan vergi mükellefi alıcılar da iptal talebi oluşturabilir. Bunun için GİB Portal’da (veya Dijital Vergi Dairesi bilgileriyle e-Arşiv interaktif portalda) “Adıma Düzenlenen Belgeler” sekmesinden faturayı seçip “İptal Talebi Oluştur” adımlarını izlemek yeterlidir.'),
+      h2('Gelen İptal Talebi Nasıl Onaylanır veya Reddedilir?'),
+      olBold([
+        ['Talepleri listeleyin', '“Gelen İptal/İtiraz Talepleri” sekmesine tıklayıp tarih aralığı seçerek sorgulama yapın.'],
+        ['Kabul etmek için', 'İlgili belgeyi seçip “Talep Kabul Et”e tıklayın, “Uyarıyı Okudum” kutucuğunu işaretleyip “Talebi Kabul Et” ile onaylayın. Fatura iptal edilmiş olur.'],
+        ['Reddetmek için', 'İlgili belgeyi seçip “Talep Reddet”e tıklayın ve “Talebi Reddet” ile onaylayın. Fatura geçerliliğini korur.'],
+      ]),
+      p('Karşı tarafın iptal talebini onaylama zorunluluğu yoktur. Talebin durumunu “Düzenlenen Belgeler” veya “Adıma Düzenlenen Belgeler” sekmesindeki “İptal/İtiraz Durumu” sütunundan takip edebilirsiniz.'),
+      h2('E-Arşiv Faturaya İtiraz'),
+      p('Türk Ticaret Kanunu’na göre fatura alan kişi, aldığı tarihten itibaren 8 gün içinde içeriğine itiraz etmezse içeriği kabul etmiş sayılır. İtiraz noter aracılığıyla, taahhütlü mektupla, telgrafla veya güvenli elektronik imza kullanılarak KEP ile yapılır. Bu yollarla yapılan itirazın sistem üzerinden bildirilmesi için portalda “İtiraz Talebi Oluştur” adımında itiraz belgesinin numarası, tarihi ve itiraz yöntemi girilir.'),
+      `<p>KEP ile itiraz edecekseniz karşı tarafın KEP adresini bulmak için <a href="/bilgi-bankasi/kep/kep-adresi-sorgulama/">KEP Adresi Sorgulama</a> rehberimize, e-faturaların iptali için ise <a href="/bilgi-bankasi/e-fatura/e-fatura-nasil-iptal-edilir/">E-Fatura Nasıl İptal Edilir?</a> rehberimize bakabilirsiniz. Portala giriş adımları <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-portal-giris-ve-fatura-sorgulama/">E-Arşiv Portal Girişi</a> rehberimizde.</p>`,
+      `<p><em>Resmî kaynak:</em> <a href="https://ebelge.gib.gov.tr/dosyalar/kilavuzlar/e-Arsiv_Uygulamalari_Iptal_Ihtar_Itiraz_Bildirim_Kilavuzu_V.1.1.pdf" target="_blank" rel="noopener">GİB – e-Arşiv Uygulamaları İptal, İhtar/İtiraz Bildirim Kılavuzu (v1.1)</a></p>`,
+      note('E-arşiv fatura iptali, iptal raporu ve entegratör ayarlarında destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['E-arşiv fatura kaç gün içinde iptal edilir?', 'GİB kılavuzuna göre e-arşiv fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir.'],
+      ['E-arşiv fatura iptali için alıcının onayı gerekir mi?', 'İptal talebi karşı tarafa iletilir ve karşı taraf talebi kabul veya reddedebilir; onaylama zorunluluğu yoktur. Talep reddedilirse fatura geçerliliğini korur.'],
+      ['Özel entegratör kullanıyorum, e-arşiv faturayı nasıl iptal ederim?', 'Özel entegratör ve entegrasyon yöntemini kullananlar iptal talebini GİB’e gönderilen “İptal Raporu” ile yapar; portal üzerinden ayrıca işlem yapmaları gerekmez.'],
+      ['Nihai tüketiciye kesilen e-arşiv fatura iptal edilebilir mi?', 'GİB kılavuzundaki iptal/itiraz süreci düzenleyen ile belgede VKN veya TCKN bilgisi yer alan vergi mükellefi alıcılar için tanımlanmıştır. Satıcı, düzenlediği belge için 8 gün içinde iptal talebi oluşturabilir.'],
+      ['E-arşiv portal iptal ekranı nerede?', 'GİB Portal’da “Düzenlenen Belgeler” veya “Adıma Düzenlenen Belgeler” sekmesinde faturayı seçip “İptal Talebi Oluştur” butonuna tıklanır; gelen talepler “Gelen İptal/İtiraz Talepleri” sekmesinde görünür.'],
+    ],
+  },
+  {
+    cat: 'e-defter', slug: 'e-defter-berat-yukleme-sureleri-2026', svc: 'e-defter', updated: '2026-11-08',
+    mevzuat: [
+      ['Elektronik Defter Genel Tebliği (Sıra No: 1)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 5)', '2024-11-08', 'https://www.resmigazete.gov.tr/eskiler/2024/11/20241108-2.htm', 'Hazine ve Maliye Bakanlığı ile Ticaret Bakanlığı'],
+      ['Elektronik Defter Genel Tebliği (Sıra No: 1)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 6)', '2024-12-31', 'https://www.resmigazete.gov.tr/eskiler/2024/12/20241231-10.htm', 'Hazine ve Maliye Bakanlığı ile Ticaret Bakanlığı'],
+    ],
+    title: 'E-Defter Gönderme ve Berat Yükleme Süreleri 2026',
+    lead: 'E-defter ve berat dosyaları, ilgili ayı takip eden dördüncü ayın 10’una (gelir vergisi mükellefleri) veya 14’üne (diğer mükellefler) kadar yüklenir. Hesap döneminin son ayı ve geçici vergi dönemi tercihi için ayrı süreler vardır.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('8 Kasım 2024 tarihli Resmî Gazete’de yayımlanan Elektronik Defter Genel Tebliği (Sıra No: 5) ile süreler değişti. Aylık e-defter ve berat dosyaları; gelir vergisi mükelleflerinde ilgili ayı takip eden dördüncü ayın 10. günü, diğer mükelleflerde (kurumlar vergisi mükellefleri gibi) 14. günü sonuna kadar oluşturulup NES veya mali mühürle imzalanarak e-Defter uygulamasına yüklenmelidir.')}</p>`,
+      h2('Aylık Yükleme Süreleri'),
+      p('Tebliğe göre aylık dönemler hâlinde oluşturulan e-defter ve berat dosyalarının yükleme süreleri şöyledir:'),
+      ulBold([
+        ['Gelir vergisi mükellefleri', 'İlgili olduğu ayı takip eden dördüncü ayın 10. günü sonuna kadar'],
+        ['Diğer mükellefler (kurumlar vergisi mükellefleri vb.)', 'İlgili olduğu ayı takip eden dördüncü ayın 14. günü sonuna kadar'],
+        ['Hesap döneminin son ayı', 'Gelir vergisi mükelleflerinde gelir vergisi beyannamesinin verileceği ayı takip eden ayın 10. günü; diğer mükelleflerde kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 14. günü sonuna kadar'],
+      ]),
+      h2('2026 Yılı İçin Örnek Takvim (Takvim Yılı Kullananlar)'),
+      p('Aşağıdaki tablo, tebliğdeki “ilgili ayı takip eden dördüncü ay” kuralının takvim yılını hesap dönemi olarak kullanan mükellefler için uygulanmış hâlidir:'),
+      `<table><thead><tr><th>Defter dönemi</th><th>Gelir vergisi mükellefi</th><th>Diğer mükellefler</th></tr></thead><tbody>
+<tr><td>Ocak 2026</td><td>10 Mayıs 2026</td><td>14 Mayıs 2026</td></tr>
+<tr><td>Şubat 2026</td><td>10 Haziran 2026</td><td>14 Haziran 2026</td></tr>
+<tr><td>Mart 2026</td><td>10 Temmuz 2026</td><td>14 Temmuz 2026</td></tr>
+<tr><td>Nisan 2026</td><td>10 Ağustos 2026</td><td>14 Ağustos 2026</td></tr>
+<tr><td>Mayıs 2026</td><td>10 Eylül 2026</td><td>14 Eylül 2026</td></tr>
+<tr><td>Haziran 2026</td><td>10 Ekim 2026</td><td>14 Ekim 2026</td></tr>
+<tr><td>Temmuz 2026</td><td>10 Kasım 2026</td><td>14 Kasım 2026</td></tr>
+<tr><td>Ağustos 2026</td><td>10 Aralık 2026</td><td>14 Aralık 2026</td></tr>
+<tr><td>Eylül 2026</td><td>10 Ocak 2027</td><td>14 Ocak 2027</td></tr>
+<tr><td>Ekim 2026</td><td>10 Şubat 2027</td><td>14 Şubat 2027</td></tr>
+<tr><td>Kasım 2026</td><td>10 Mart 2027</td><td>14 Mart 2027</td></tr>
+<tr><td>Aralık 2026 (dönem sonu)</td><td>Gelir vergisi beyannamesinin verileceği ayı takip eden ayın 10’u</td><td>Kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 14’ü</td></tr>
+</tbody></table>`,
+      p('Özel hesap dönemi kullanan mükellefler, bu süreleri kendi hesap dönemlerinin başlangıç ve bitiş aylarına göre uygular. Sürenin son gününün hafta sonu veya resmî tatile denk gelmesi gibi durumlarda GİB’in duyurularını takip etmenizi öneririz.'),
+      h2('Geçici Vergi Dönemi Bazında Yükleme Tercihi'),
+      p('Dileyen mükellefler, her hesap dönemine ilişkin ilk ayda (dönem içinde işe başlayanlarda işe başlanılan ayda) tercihlerini e-Defter uygulaması üzerinden bildirmek şartıyla, her ay için ayrı ayrı olmak üzere e-defter ve berat dosyalarını geçici vergi dönemi bazında yükleyebilir:'),
+      ulBold([
+        ['Gelir vergisi mükellefleri', 'İlgili geçici vergi dönemine ait gelir geçici vergi beyannamesinin verileceği ayı takip eden ayın 10. günü sonuna kadar'],
+        ['Diğer mükellefler', 'Kurum geçici vergi beyannamesinin verileceği ayı takip eden ayın 14. günü sonuna kadar'],
+        ['Üçüncü geçici vergi döneminden sonraki üç ay', 'Gelir vergisi mükelleflerinde gelir vergisi beyannamesinin, diğer mükelleflerde kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 10’u / 14’ü sonuna kadar'],
+      ]),
+      p('Tercihini süresinde bildirmeyen mükellefler için aylık süreler esas alınır. Yapılan tercih, sonraki hesap dönemlerinin tüm ayları için de geçerlidir. Geçici vergi dönemi bazında yükleme yapıp süresinde işlem yapmayanlara ceza uygulanırken her ay ayrı ayrı dikkate alınır.'),
+      h2('Envanter Defteri İçin Süreler'),
+      p('31 Aralık 2024 tarihli değişiklikle bilanço esasına göre defter tutanlar, envanter defterini isteğe bağlı olarak e-defter şeklinde tutabilir. Bu durumda hesap döneminin ilk gününe ait dosyalar, dönemin ilk ayını takip eden dördüncü ayın 10’u (gelir vergisi mükellefleri) veya 14’ü (diğer mükellefler); son gününe ait dosyalar ise yıllık beyannamenin verileceği ayı takip eden ayın 10’u veya 14’ü sonuna kadar yüklenir.'),
+      h2('Süresinde Yüklemezseniz'),
+      p('E-defter ve beratların süresinde oluşturulup yüklenmesi tebliğ gereği zorunludur. Süre kaçırıldığında Vergi Usul Kanunu kapsamında yaptırımlarla karşılaşılabilir. Bu nedenle yükleme takvimini düzenli takip etmek ve son günü beklememek önemlidir.'),
+      `<p>E-defterin ne olduğu ve kimlerin zorunlu olduğu için <a href="/bilgi-bankasi/e-defter/e-defter-rehberi/">E-Defter Rehberi</a>’ne, bilanço esasında zorunluluk için <a href="/bilanco-esasi-e-defter-zorunlulugu/">Bilanço Esası E-Defter Zorunluluğu</a> yazımıza bakabilirsiniz. <em>Resmî kaynaklar:</em> <a href="https://www.resmigazete.gov.tr/eskiler/2024/11/20241108-2.htm" target="_blank" rel="noopener">Resmî Gazete, 8.11.2024, Sayı 32716</a> · <a href="https://www.resmigazete.gov.tr/eskiler/2024/12/20241231-10.htm" target="_blank" rel="noopener">Resmî Gazete, 31.12.2024, Sayı 32769</a></p>`,
+      note('E-defter oluşturma, imzalama ve berat yükleme takibini sizin yerinize yapıyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['E-defter ne zaman gönderilir?', 'Aylık e-defter ve berat dosyaları, gelir vergisi mükelleflerinde ilgili ayı takip eden dördüncü ayın 10’una, diğer mükelleflerde 14’üne kadar yüklenir. Örneğin Ocak 2026 defteri için son gün 10 Mayıs 2026 (gelir vergisi mükellefi) veya 14 Mayıs 2026’dır.'],
+      ['E-defter berat yükleme süresi değişti mi?', 'Evet. 8 Kasım 2024 tarihli Elektronik Defter Genel Tebliği (Sıra No: 5) ile süreler, ilgili ayı takip eden dördüncü ayın 10’u ve 14’ü olarak yeniden düzenlendi.'],
+      ['Aralık ayı e-defteri ne zaman yüklenir?', 'Hesap döneminin son ayına ait dosyalar, gelir vergisi mükelleflerinde gelir vergisi beyannamesinin, diğer mükelleflerde kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 10’u / 14’ü sonuna kadar yüklenir.'],
+      ['E-defteri üç ayda bir yükleyebilir miyim?', 'Evet. Hesap döneminin ilk ayında e-Defter uygulamasından tercih bildirirseniz, dosyaları her ay için ayrı ayrı olmak üzere geçici vergi dönemi bazında yükleyebilirsiniz.'],
+      ['E-defter hangi imza ile yüklenir?', 'Tebliğe göre e-defter ve berat dosyaları NES (e-imza) veya mali mühürle zaman damgalı olarak imzalanıp e-Defter uygulamasına yüklenir.'],
     ],
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
