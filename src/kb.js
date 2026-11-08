@@ -874,7 +874,13 @@ const articles = [
 <tr><td>Kasım 2026</td><td>10 Mart 2027</td><td>14 Mart 2027</td></tr>
 <tr><td>Aralık 2026 (dönem sonu)</td><td>Gelir vergisi beyannamesinin verileceği ayı takip eden ayın 10’u</td><td>Kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 14’ü</td></tr>
 </tbody></table>`,
-      p('Özel hesap dönemi kullanan mükellefler, bu süreleri kendi hesap dönemlerinin başlangıç ve bitiş aylarına göre uygular. Sürenin son gününün hafta sonu veya resmî tatile denk gelmesi gibi durumlarda GİB’in duyurularını takip etmenizi öneririz.'),
+      p('Özel hesap dönemi kullanan mükellefler, bu süreleri kendi hesap dönemlerinin başlangıç ve bitiş aylarına göre uygular.'),
+      h2('Resmî Tatil ve Süre Uzatmaları'),
+      ul([
+        'Son gün resmî tatile rastlarsa süre izleyen ilk iş günü sonuna uzar. Örneğin GİB, 10 Mayıs 2026’nın tatile rastlaması nedeniyle bu süreyi 11 Mayıs 2026; 14 Haziran 2026’nın tatile rastlaması nedeniyle 15 Haziran 2026 olarak esas almıştır.',
+        'GİB, yükleme sürelerini zaman zaman Vergi Usul Kanunu sirküleriyle uzatır. Örneğin 198 Sıra No.lu VUK Sirküleri (11 Mayıs 2026) ve 202 Sıra No.lu VUK Sirküleri (8 Haziran 2026) ile ilgili aylara ait e-defter ve berat dosyalarının yükleme süreleri uzatılmıştır.',
+        'Güncel uzatma ve duyurular için edefter.gov.tr adresindeki “Duyurular” bölümünü düzenli kontrol edin.',
+      ]),
       h2('Geçici Vergi Dönemi Bazında Yükleme Tercihi'),
       p('Dileyen mükellefler, her hesap dönemine ilişkin ilk ayda (dönem içinde işe başlayanlarda işe başlanılan ayda) tercihlerini e-Defter uygulaması üzerinden bildirmek şartıyla, her ay için ayrı ayrı olmak üzere e-defter ve berat dosyalarını geçici vergi dönemi bazında yükleyebilir:'),
       ulBold([
@@ -891,11 +897,94 @@ const articles = [
       note('E-defter oluşturma, imzalama ve berat yükleme takibini sizin yerinize yapıyoruz.'),
     ].join('\n'),
     faqs: [
-      ['E-defter ne zaman gönderilir?', 'Aylık e-defter ve berat dosyaları, gelir vergisi mükelleflerinde ilgili ayı takip eden dördüncü ayın 10’una, diğer mükelleflerde 14’üne kadar yüklenir. Örneğin Ocak 2026 defteri için son gün 10 Mayıs 2026 (gelir vergisi mükellefi) veya 14 Mayıs 2026’dır.'],
+      ['E-defter ne zaman gönderilir?', 'Aylık e-defter ve berat dosyaları, gelir vergisi mükelleflerinde ilgili ayı takip eden dördüncü ayın 10’una, diğer mükelleflerde 14’üne kadar yüklenir. Örneğin Ocak ayı defteri için tebliğdeki son gün 10 Mayıs (gelir vergisi mükellefi) veya 14 Mayıs’tır; son günün tatile rastlaması ve GİB’in sirkülerle yaptığı uzatmalar ayrıca dikkate alınır.'],
       ['E-defter berat yükleme süresi değişti mi?', 'Evet. 8 Kasım 2024 tarihli Elektronik Defter Genel Tebliği (Sıra No: 5) ile süreler, ilgili ayı takip eden dördüncü ayın 10’u ve 14’ü olarak yeniden düzenlendi.'],
       ['Aralık ayı e-defteri ne zaman yüklenir?', 'Hesap döneminin son ayına ait dosyalar, gelir vergisi mükelleflerinde gelir vergisi beyannamesinin, diğer mükelleflerde kurumlar vergisi beyannamesinin verileceği ayı takip eden ayın 10’u / 14’ü sonuna kadar yüklenir.'],
       ['E-defteri üç ayda bir yükleyebilir miyim?', 'Evet. Hesap döneminin ilk ayında e-Defter uygulamasından tercih bildirirseniz, dosyaları her ay için ayrı ayrı olmak üzere geçici vergi dönemi bazında yükleyebilirsiniz.'],
       ['E-defter hangi imza ile yüklenir?', 'Tebliğe göre e-defter ve berat dosyaları NES (e-imza) veya mali mühürle zaman damgalı olarak imzalanıp e-Defter uygulamasına yüklenir.'],
+    ],
+  },
+  {
+    cat: 'e-defter', slug: 'e-defter-giris-ve-goruntuleyici', svc: 'e-defter', updated: '2026-11-08',
+    title: 'E-Defter Girişi ve E-Defter Görüntüleyici Nasıl Kullanılır?',
+    lead: 'GİB e-Defter Uygulaması’na e-imza, mali mühür veya Dijital Vergi Dairesi bilgileriyle giriş yapılır. Oluşturulan e-defterleri açıp doğrulamak için ise GİB’in ücretsiz e-Defter Görüntüleyici programı kullanılır.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('e-Defter Uygulaması edefter.gib.gov.tr adresindedir; giriş elektronik imza, mali mühür ya da Dijital Vergi Dairesi üzerinden yapılır. e-Defter Görüntüleyici ise edefter.gov.tr ana sayfasından indirilen ve e-defterleri görüntüleyip doğrulamaya yarayan GİB programıdır.')}</p>`,
+      h2('E-Defter Uygulamasına Giriş'),
+      p('Gelir İdaresi Başkanlığı’nın (GİB) e-Defter Uygulaması, berat dosyalarının yüklendiği ve onaylandığı sistemdir. Giriş ekranındaki açıklamaya göre uygulamaya elektronik imza, mali mühür ya da Dijital Vergi Dairesi üzerinden girilebilir.'),
+      olBold([
+        ['Giriş sayfasını açın', 'edefter.gib.gov.tr adresine gidin.'],
+        ['Akıllı kartla giriş için', 'E-imza veya mali mühür kartınız takılıyken GİB’in imzalama aracını çalıştırın, ekrandan akıllı kartınızı seçip şifrenizi (PIN) girerek “Giriş Yap”a tıklayın.'],
+        ['Dijital Vergi Dairesi ile giriş için', 'Giriş ekranındaki Dijital Vergi Dairesi seçeneğini kullanın.'],
+      ]),
+      p('Ekranda “İmzalama aracına bağlantı kurulamadı!” uyarısı görürseniz imzalama aracını indirip çalıştırın. GİB, girişte sorun yaşayanların imzalama aracını mali mühür uygulamasıyla birlikte kullanmasını önerir; mali mühür uygulaması da aynı sayfadaki bağlantıdan indirilebilir.'),
+      `<p>Mali mührünüz bilgisayarınızda tanıtılmadıysa önce <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a> rehberimizdeki adımları tamamlayın.</p>`,
+      h2('E-Defter Görüntüleyici Nedir?'),
+      p('e-Defter Görüntüleyici, GİB’in e-defterleri görüntülemek ve doğrulamak için sunduğu ücretsiz programdır. Programı edefter.gov.tr ana sayfasındaki “e-Defter Görüntüleyici” bölümünden indirebilirsiniz. Bilgisayarınızın özelliklerine göre dört sürüm bulunur:'),
+      `<table><thead><tr><th>Sürüm</th><th>Sistem gereksinimi (GİB’e göre)</th></tr></thead><tbody>
+<tr><td>Standart sürüm</td><td>Java 7 ve üstü</td></tr>
+<tr><td>Geliştirilmiş standart sürüm</td><td>32/64 bit Windows, 32/64 bit Java, en az 2 GB RAM</td></tr>
+<tr><td>Büyük sürüm</td><td>64 bit Windows ile Java 7 ve üstü 64 bit</td></tr>
+<tr><td>Geliştirilmiş büyük sürüm</td><td>Yalnızca 64 bit Windows ile Java 7 ve üstü 64 bit, en az 4 GB RAM</td></tr>
+</tbody></table>`,
+      p('Büyük sürümler, hacmi yüksek defterleri açmak için tasarlanmıştır. Defteriniz küçükse standart sürüm, açılmakta zorlanan büyük defterler için büyük sürümler tercih edilebilir. Programın kullanım kılavuzu da aynı sayfada yer alır.'),
+      h2('E-Defter Görüntüleyici Ne İşe Yarar?'),
+      ul([
+        'Oluşturulan e-defter dosyalarını (yevmiye defteri, büyük defter) okunabilir biçimde açar.',
+        'GİB’in ifadesiyle e-defterleri “görüntülemek ve doğrulamak” için kullanılır.',
+        'Yüklemeden önce defter içeriğini kontrol etmenize yardımcı olur.',
+      ]),
+      h2('Sık Karşılaşılan Sorunlar'),
+      ulBold([
+        ['İmzalama aracına bağlanılamıyor', 'GİB imzalama aracı çalışmıyordur; aracı indirip çalıştırın ve sayfayı yenileyin.'],
+        ['Akıllı kart listede görünmüyor', 'Kart okuyucu sürücüsünün kurulu olduğunu ve kartın doğru takıldığını kontrol edin.'],
+        ['Görüntüleyici açılmıyor', 'Bilgisayarınızda uygun Java sürümünün kurulu olduğunu ve seçtiğiniz görüntüleyici sürümünün sisteminize (32/64 bit, RAM) uygun olduğunu kontrol edin.'],
+        ['Büyük defter açılmıyor', 'Standart sürüm yerine büyük veya geliştirilmiş büyük sürümü deneyin.'],
+      ]),
+      `<p>Berat yükleme son tarihleri için <a href="/bilgi-bankasi/e-defter/e-defter-berat-yukleme-sureleri-2026/">E-Defter Gönderme ve Berat Yükleme Süreleri 2026</a> rehberimize, genel bilgi için <a href="/bilgi-bankasi/e-defter/e-defter-rehberi/">E-Defter Rehberi</a>’ne bakabilirsiniz. <em>Resmî kaynaklar:</em> <a href="https://www.edefter.gov.tr/" target="_blank" rel="noopener">GİB e-Defter Sitesi</a> · <a href="https://edefter.gib.gov.tr/" target="_blank" rel="noopener">e-Defter Uygulaması</a></p>`,
+      note('E-defter girişi, görüntüleyici kurulumu ve berat yükleme işlemlerinde destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['E-defter uygulamasına nasıl giriş yapılır?', 'edefter.gib.gov.tr adresinden elektronik imza, mali mühür ya da Dijital Vergi Dairesi üzerinden giriş yapılır. Akıllı kartla girişte GİB imzalama aracının çalışıyor olması gerekir.'],
+      ['E-defter görüntüleyici nereden indirilir?', 'GİB’in edefter.gov.tr sitesinin ana sayfasındaki “e-Defter Görüntüleyici” bölümünden ücretsiz indirilir.'],
+      ['E-defter görüntüleyici hangi sürümü indirmeliyim?', 'Küçük defterler için standart sürüm yeterlidir. Büyük defterler için 64 bit Windows ve 64 bit Java gerektiren büyük sürümler kullanılır; geliştirilmiş büyük sürüm en az 4 GB RAM ister.'],
+      ['E-defter görüntüleyici çalışmıyor, ne yapmalıyım?', 'Bilgisayarınızda uygun Java sürümünün kurulu olduğunu ve görüntüleyici sürümünün sisteminize uyduğunu kontrol edin; büyük defterlerde büyük sürümü deneyin.'],
+    ],
+  },
+  {
+    cat: 'e-fatura', slug: 'e-fatura-portal-giris', svc: 'e-fatura', updated: '2026-11-08',
+    title: 'GİB E-Fatura Portalı Girişi Nasıl Yapılır?',
+    lead: 'GİB e-Fatura Portalı’na elektronik imza veya mali mühürle giriş yapılır. Giriş için GİB’in imzalama aracı ya da 32 bit Java gerekir. Özel entegratör kullanıyorsanız giriş, entegratörünüzün kendi portalından yapılır.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('GİB e-Fatura Portalı’na portal.efatura.gov.tr adresinden elektronik imza veya mali mühürle girilir. GİB’in giriş sayfasına göre portalın çalışması için bilgisayarda Java’nın (JRE) 32 bit sürümünün kurulu olması gerekir; alternatif olarak “İmzalama aracı desteğiyle giriş” seçeneği kullanılabilir.')}</p>`,
+      h2('GİB E-Fatura Portalı Kimler İçin?'),
+      p('Gelir İdaresi Başkanlığı’nın e-Fatura Portalı, e-faturayı “GİB Portal” yöntemiyle kullanan mükelleflerin fatura düzenlemesi ve gelen faturaları görüntülemesi için sunduğu ücretsiz uygulamadır. E-faturayı bir özel entegratör (ör. muhasebe veya e-fatura programınızın altyapısı) üzerinden kullanıyorsanız, faturalarınızı GİB portalından değil entegratörünüzün portalından veya programınızdan yönetirsiniz.'),
+      h2('E-Fatura Portalına Giriş Adımları'),
+      olBold([
+        ['Kartınızı takın', 'E-imza veya mali mühür kartınızın bilgisayara bağlı kart okuyucuda takılı olduğundan emin olun.'],
+        ['Giriş sayfasını açın', 'portal.efatura.gov.tr/efatura/egiris.jsp adresindeki “Elektronik imza ile E-Fatura portaline giriş” sayfasını açın.'],
+        ['Giriş yöntemini seçin', 'Bilgisayarınızda 32 bit Java kuruluysa sayfadaki elektronik imza uygulaması yüklenir; güvenlik uyarısı çıkarsa “Çalıştır (Run)”a tıklayın. Java kullanmak istemiyorsanız “İmzalama aracı desteğiyle giriş yapmak için tıklayın” bağlantısını seçin ve GİB imzalama aracını indirip çalıştırın.'],
+        ['İmzalayın', 'Kartınızı ve sertifikanızı seçip PIN’inizi girerek girişi tamamlayın.'],
+      ]),
+      h2('Giriş Yaparken Dikkat Edilecekler'),
+      ulBold([
+        ['32 bit Java', 'GİB’in giriş sayfasına göre portalın Java ile çalışması için Java’nın (JRE) 32 bit sürümü gerekir. GİB ayrıca Java çalışma parametresi olarak -Xmx256m girilmesini tavsiye eder.'],
+        ['Tarayıcı', 'GİB, Google Chrome’un Java eklentisini engellediğini belirtir ve Java ile girişte farklı bir tarayıcı kullanılmasını önerir. İmzalama aracı desteğiyle giriş bu sorunu ortadan kaldırır.'],
+        ['Güvenlik uyarısı', 'Uygulama çalıştırılırken çıkan güvenlik uyarısında “Çalıştır (Run)” seçilmelidir.'],
+        ['Kart ve sürücü', 'Kart okuyucu sürücüsü kurulu değilse sertifikanız listelenmez.'],
+      ]),
+      `<p>E-imza kurulumu için <a href="/bilgi-bankasi/e-imza/e-imza-kurulumu-nasil-yapilir/">E-İmza Kurulumu</a>, mali mühür kurulumu için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a> rehberlerimize bakabilirsiniz. Hatalı faturaların iptali için <a href="/bilgi-bankasi/e-fatura/e-fatura-nasil-iptal-edilir/">E-Fatura Nasıl İptal Edilir?</a>, alıcının e-fatura kullanıcısı olup olmadığını öğrenmek için <a href="/bilgi-bankasi/e-fatura/e-fatura-mukellefi-sorgulama/">E-Fatura Mükellefi Sorgulama</a> rehberlerimiz hazır.</p>`,
+      h2('GİB Portalı mı, Özel Entegratör mü?'),
+      p('GİB e-Fatura Portalı ücretsizdir ancak faturalar tek tek düzenlenir ve muhasebe programınızla otomatik bağlantı kurmaz. Fatura sayısı fazla olan veya muhasebe/ERP programıyla otomatik çalışmak isteyen işletmeler genellikle özel entegratör çözümlerini tercih eder.'),
+      `<p><em>Resmî kaynak:</em> <a href="https://portal.efatura.gov.tr/efatura/egiris.jsp" target="_blank" rel="noopener">GİB – Elektronik imza ile E-Fatura portaline giriş</a></p>`,
+      note('E-fatura portal girişi, Java ve imzalama aracı kurulumunda uzaktan bağlantıyla destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['E-fatura portalına nasıl giriş yapılır?', 'portal.efatura.gov.tr adresindeki giriş sayfasından elektronik imza veya mali mühürle giriş yapılır. Giriş için 32 bit Java ya da GİB imzalama aracı gerekir.'],
+      ['E-fatura portalı Chrome’da açılmıyor, ne yapmalıyım?', 'GİB, Chrome’un Java eklentisini engellediğini belirtir. “İmzalama aracı desteğiyle giriş” seçeneğini kullanabilir veya Java ile girişte farklı bir tarayıcı deneyebilirsiniz.'],
+      ['E-fatura portalı için hangi Java gerekir?', 'GİB’in giriş sayfasına göre Java’nın (JRE) 32 bit sürümü gerekir.'],
+      ['Özel entegratör kullanıyorum, GİB portalına girmem gerekir mi?', 'Hayır. Özel entegratör kullanan mükellefler faturalarını entegratörlerinin portalından veya programlarından yönetir.'],
+      ['E-fatura portalı ücretli mi?', 'Hayır. GİB e-Fatura Portalı ücretsizdir; ücret, özel entegratör hizmeti alınırsa söz konusu olur.'],
     ],
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
