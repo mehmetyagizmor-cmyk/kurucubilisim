@@ -987,6 +987,124 @@ const articles = [
       ['E-fatura portalı ücretli mi?', 'Hayır. GİB e-Fatura Portalı ücretsizdir; ücret, özel entegratör hizmeti alınırsa söz konusu olur.'],
     ],
   },
+  {
+    cat: 'kep', slug: 'kep-adresi-hs01-hs03-ne-demek', svc: 'kep-ik', updated: '2026-11-10',
+    mevzuat: [['Kayıtlı Elektronik Posta Sistemine İlişkin Usul ve Esaslar Hakkında Yönetmelik', '2011-08-25', 'https://www.resmigazete.gov.tr/eskiler/2011/08/20110825-7.htm', 'BTK']],
+    title: 'KEP Adresindeki hs01, hs03 Ne Demek? KEP Uzantıları',
+    lead: 'KEP adresinin sonundaki hs01, hs02, hs03 gibi bölüm, adresi veren KEP hizmet sağlayıcısını gösterir: hs01 PTT’ye, hs03 TÜRKKEP’e aittir. BTK listesine göre bugün 8 sağlayıcı faaliyette.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('KEP adresinin sonundaki hsXX.kep.tr bölümü, adresi veren KEP hizmet sağlayıcısını (KEPHS) gösterir; “hs” hizmet sağlayıcı anlamına gelir. Numaralar BTK’nın her sağlayıcıya ayırdığı alan adlarıdır: hs01.kep.tr PTT’ye, hs03.kep.tr TÜRKKEP’e aittir. Uzantı, adresin daha geçerli ya da daha resmî olduğu anlamına gelmez.')}</p>`,
+      h2('KEP Adresi Nasıl Bir Yapıya Sahiptir?'),
+      p('Kayıtlı Elektronik Posta (KEP), gönderilen iletinin kim tarafından, ne zaman gönderildiğini ve alıcıya ne zaman ulaştığını kayıt altına alan elektronik posta sistemidir. Görünüş olarak sıradan bir e-posta adresine benzer: kullaniciadi@hs03.kep.tr. @ işaretinden sonraki bölüm, adresin hangi KEP hizmet sağlayıcısında açıldığını gösterir. Bilgi Teknolojileri ve İletişim Kurumu (BTK), KEP hizmeti vermeye yetkilendirdiği her şirkete hs01.kep.tr, hs02.kep.tr gibi ayrı bir alan adı tanımlar. Yani “hs03” bir hesap türü ya da paket adı değil, yalnızca sağlayıcının numarasıdır.'),
+      h2('Hangi Uzantı Hangi Sağlayıcıya Ait?'),
+      p('Aşağıdaki tablo, BTK’nın “Kayıtlı Elektronik Posta Hizmet Sağlayıcıları” sayfasına göre hazırlanmıştır (10 Kasım 2026’da kontrol edildi):'),
+      `<table><thead><tr><th>Uzantı</th><th>Hizmet sağlayıcı</th><th>Durum</th></tr></thead><tbody>
+<tr><td><strong>hs01.kep.tr</strong></td><td>Posta ve Telgraf Teşkilatı A.Ş. (PTT)</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs02.kep.tr</strong></td><td>TNB Bilişim Teknolojileri Sanayi ve Ticaret A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs03.kep.tr</strong></td><td>TÜRKKEP Kayıtlı Elektronik Posta Hizmet Sağlayıcılığı ve Ticaret A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs04.kep.tr</strong></td><td>INTERTECH Bilgi İşlem ve Pazarlama Ticaret A.Ş.</td><td>12.08.2023 itibarıyla faaliyetine son verilmiştir</td></tr>
+<tr><td><strong>hs05.kep.tr</strong></td><td>QNB eSolutions Elektronik Ticaret ve Bilişim Hizmetleri A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs06.kep.tr</strong></td><td>KEPKUR Yazılım Bilişim Kayıtlı Elektronik Posta Hizmetleri Sanayi ve Ticaret A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs07.kep.tr</strong></td><td>F.I.T. Bilgi İşlem Sistemleri Servisleri Sanayi ve Ticaret A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs08.kep.tr</strong></td><td>Mikro Yazılımevi Yazılım Hizmetleri Bilgisayar Sanayi ve Ticaret A.Ş.</td><td>28.04.2022 itibarıyla faaliyetine son verilmiştir</td></tr>
+<tr><td><strong>hs09.kep.tr</strong></td><td>EDM Bilişim Sistemleri ve Danışmanlık Hizmetleri A.Ş.</td><td>Faaliyette</td></tr>
+<tr><td><strong>hs10.kep.tr</strong></td><td>Ark Dijital Yazılım A.Ş.</td><td>Faaliyette (faaliyete başlama: 30.09.2026)</td></tr>
+</tbody></table>`,
+      p('Liste zamanla değişebilir; güncel durum için BTK’nın resmî sayfasına bakın.'),
+      h2('Uzantı Farklıysa Ne Değişir?'),
+      ulBold([
+        ['Hukuki geçerlilik', 'KEP hizmetini yalnızca BTK’nın yetkilendirdiği sağlayıcılar verebilir. Bu nedenle hs01 de, hs09 da aynı mevzuata tabi KEP adresleridir; uzantı adresin geçerliliğini değiştirmez.'],
+        ['Farklı sağlayıcılar arası yazışma', 'Yönetmeliğin 5. maddesi birlikte çalışabilirliği bir ilke olarak belirler ve bu ilkeye uymayan sağlayıcının faaliyeti durdurulabilir (md. 21). Bu nedenle farklı sağlayıcılarda açılmış KEP hesapları birbirleriyle yazışabilir; örneğin hs01 uzantılı bir adresten hs03 uzantılı bir adrese KEP iletisi gönderilebilir.'],
+        ['Kullanım farkları', 'Sağlayıcılar arayüz, entegrasyon seçenekleri ve destek hizmeti gibi konularda farklılaşabilir. KEP seçerken uzantıdan çok bu kullanım ihtiyaçlarına bakmak daha doğrudur.'],
+      ]),
+      h2('hs04 veya hs08 Uzantılı Bir Adresiniz Varsa'),
+      p('BTK listesine göre hs04 (INTERTECH) 12 Ağustos 2023’te, hs08 (Mikro Yazılımevi) 28 Nisan 2022’de faaliyetine son vermiştir. Yönetmeliğin 21. maddesine göre faaliyetine son verilen sağlayıcı, KEP hesaplarının, delillerinin ve sistem kayıtlarının devri konusunda faaliyetteki bir sağlayıcıyla anlaşabilir; anlaşma sağlanamazsa BTK devri re’sen faaliyetteki bir sağlayıcıya yapar. Eski yazışmalarda veya antetli kâğıtlarda bu uzantılarla biten bir KEP adresi görüyorsanız:'),
+      ul([
+        'Adresin hâlâ kullanılıp kullanılmadığını KEP sağlayıcınızın rehber sorgusundan veya doğrudan firmadan teyit edin.',
+        'Firmanızın güncel KEP adresinin ticaret sicilinde, internet sitenizde ve resmî yazışma şablonlarınızda doğru yazıldığından emin olun.',
+        'Karşı tarafın güncel KEP adresi için kendi sağlayıcınızın KEP rehberini kullanın.',
+      ]),
+      `<p>Rehber sorgusunun nasıl çalıştığı için <a href="/bilgi-bankasi/kep/kep-adresi-sorgulama/">KEP Adresi Sorgulama</a> rehberimize bakabilirsiniz.</p>`,
+      h2('Yeni KEP Adresi Alırken Nelere Dikkat Etmeli?'),
+      olBold([
+        ['Sağlayıcının durumunu kontrol edin', 'Sağlayıcının BTK listesinde “faaliyetine devam etmektedir” görünmesi gerekir.'],
+        ['Kullanım amacınızı belirleyin', 'Resmî yazışma, ihtar/ihbar, e-bordro gönderimi, e-tebligat takibi gibi ihtiyaçlarınızı netleştirin.'],
+        ['Entegrasyon ihtiyacına bakın', 'Muhasebe veya İK yazılımınızla bağlantı gerekip gerekmediğini sağlayıcıya sorun.'],
+        ['Gelen kutusunu sahiplenin', 'KEP gelen kutusunu düzenli kontrol edecek bir sorumlu belirleyin.'],
+        ['Adresi güncelleyin', 'Adresinizi aldıktan sonra ticaret sicili, web sitesi ve antetli belgelerde güncelleyin.'],
+      ]),
+      `<p>KEP hesabı açmak için <a href="/bilgi-bankasi/kep/kep-adresi-nasil-alinir/">KEP Adresi Nasıl Alınır?</a>, genel işleyiş için <a href="/bilgi-bankasi/kep/kep-rehberi/">KEP Rehberi</a> sayfamıza bakabilirsiniz. <em>Resmî kaynaklar:</em> <a href="https://www.btk.gov.tr/kayitli-elektronik-posta-hizmet-saglayicilar" target="_blank" rel="noopener">BTK – KEP Hizmet Sağlayıcıları</a> · <a href="https://www.resmigazete.gov.tr/eskiler/2011/08/20110825-7.htm" target="_blank" rel="noopener">Resmî Gazete, 25.8.2011, Sayı 28036 – KEP Yönetmeliği</a></p>`,
+      note('KEP adresi başvurusunu ve entegrasyonunu sizin yerinize yapıyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['KEP adresindeki “hs” ne demek?', '“Hizmet sağlayıcı” demektir. hs01, hs02 gibi numaralar, adresi veren ve BTK tarafından yetkilendirilmiş KEP hizmet sağlayıcısını gösterir.'],
+      ['hs03 KEP hangi firmaya ait?', 'BTK listesine göre hs03.kep.tr alan adı TÜRKKEP Kayıtlı Elektronik Posta Hizmet Sağlayıcılığı ve Ticaret A.Ş.’ye aittir.'],
+      ['hs01 KEP PTT KEP mi?', 'Evet. BTK listesine göre hs01.kep.tr alan adı Posta ve Telgraf Teşkilatı A.Ş.’ye (PTT) aittir.'],
+      ['Uzantısı farklı KEP adreslerine ileti gönderebilir miyim?', 'Evet. KEP Yönetmeliği birlikte çalışabilirliği ilke olarak belirler; farklı sağlayıcılarda açılmış KEP hesapları birbirleriyle yazışabilir.'],
+      ['Şu anda kaç KEP hizmet sağlayıcısı var?', 'BTK listesine göre 10 Kasım 2026 itibarıyla 8 sağlayıcı faaliyette (hs01, hs02, hs03, hs05, hs06, hs07, hs09 ve 30 Eylül 2026’da faaliyete başlayan hs10). hs04 ve hs08 faaliyetine son vermiştir.'],
+    ],
+  },
+  {
+    cat: 'e-imza', slug: 'adalet-e-imza-client-hatasi', svc: 'e-imza', updated: '2026-11-10',
+    title: '“Adalet E-İmza Client Uygulaması Bulunamadı” Hatası ve Çözümü',
+    lead: 'UYAP Avukat Portal’da bu hata çoğu zaman uygulamadan değil, tarayıcının yerel uygulamaya erişim izninden kaynaklanır. Önce Adalet E-İmza’nın çalıştığını kontrol edin, sonra Chrome’da site iznini sıfırlayın.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('UYAP Avukat Portal’a e-imzayla giriş, 1 Haziran 2026’dan itibaren e-Devlet Kapısı veya Adalet E-İmza Uygulaması üzerinden yapılıyor; eski UYAP E-İmza (ArkSigner) ile giriş sonlandırıldı. “Client uygulaması bulunamadı” hatasında önce Adalet E-İmza uygulamasının çalıştığını kontrol edin, çalışıyorsa Chrome’da avukat.uyap.gov.tr için “İzni sıfırla”ya tıklayıp sayfayı yenileyin ve “İzin ver” deyin.')}</p>`,
+      h2('Bu Hata Neden Çıkıyor?'),
+      p('UYAP Avukat Portal tarayıcıda çalışır; e-imzanız ise bilgisayara takılı kart okuyucuda veya USB token’dadır. Tarayıcının karta doğrudan erişme yetkisi yoktur. Aradaki köprüyü, Adalet Bakanlığı Bilgi İşlem Genel Müdürlüğü’nün geliştirdiği Adalet E-İmza uygulaması kurar: Bakanlığa göre bu uygulama, bilgisayarınızda arka planda çalışan ve kart okuyucunuzdaki sertifikayı tarayıcıya güvenli biçimde aktaran aracı bir servistir.'),
+      p('Türkiye Barolar Birliği’nin Adalet Bakanlığı’ndan aktardığına göre UYAP E-İmza (ArkSigner) uygulaması üzerinden giriş 1 Haziran 2026 itibarıyla sonlandırıldı; bu tarihten sonra e-imzayla giriş e-Devlet Kapısı üzerinden veya Adalet E-İmza Uygulaması aracılığıyla yapılıyor. “Client uygulaması bulunamadı” uyarısı, portalın bilgisayarınızdaki bu servise ulaşamadığı anlamına gelir. Üç yaygın nedeni vardır:'),
+      olBold([
+        ['Uygulama kurulu değil veya çalışmıyor', 'Adalet E-İmza kurulu değildir ya da o an çalışmıyordur.'],
+        ['Tarayıcı erişimi engelliyor', 'Uygulama çalışıyordur ama tarayıcı, sitenin bilgisayardaki uygulamayla konuşmasını engelliyordur.'],
+        ['Sürüm, sürücü veya güvenlik yazılımı', 'Uygulama eski sürümdür, kart okuyucu sürücüsü eksiktir veya güvenlik yazılımı bağlantıyı kesiyordur.'],
+      ]),
+      h2('Adım 1: Adalet E-İmza Uygulaması Çalışıyor mu?'),
+      ul([
+        'Saatin yanındaki sistem tepsisinde Adalet E-İmza simgesini arayın.',
+        'Simge yoksa uygulamayı Başlat menüsünden açın. Bakanlığın kurulum notuna göre uygulama kurulumdan sonra 10-15 saniye içinde kendiliğinden çalışır.',
+        'Uygulama hiç kurulu değilse yalnızca resmî adresten indirin: bedesten.adalet.gov.tr/imza.',
+      ]),
+      `<table><thead><tr><th>İşletim sistemi</th><th>Gereksinim (Adalet Bakanlığı sayfasına göre)</th></tr></thead><tbody>
+<tr><td>Windows</td><td>Windows 10 ve üzeri</td></tr>
+<tr><td>macOS (Intel)</td><td>macOS 12 ve üzeri, x86_64 / Intel</td></tr>
+<tr><td>macOS (M serisi)</td><td>macOS 12 ve üzeri, ARM64 / Apple Silicon</td></tr>
+<tr><td>Linux</td><td>Ubuntu 20.04 ve üzeri; diğer dağıtımlar için ayrı sürüm</td></tr>
+</tbody></table>`,
+      p('Resmî sayfaya göre uygulama için harici bir Java kurulumuna gerek yoktur; gerekli Java çalışma ortamı uygulamanın içinde gelir. Kurulumdan önce kart okuyucu sürücüsünün kurulu olduğundan emin olun.'),
+      h2('Adım 2: Tarayıcı İznini Sıfırlayın (En Sık Çözüm)'),
+      p('Eskişehir Barosu’nun yayımladığı çözüm kılavuzuna göre uygulama çalıştığı hâlde hata alınıyorsa sorun büyük olasılıkla Chrome’un güvenlik ayarıdır. Tarayıcılar, internet sitelerinin bilgisayardaki yerel uygulamalarla iletişim kurmasını engelleyebilir:'),
+      olBold([
+        ['Siteyi açın', 'Chrome’da avukat.uyap.gov.tr adresine girin.'],
+        ['Site ayarlarını açın', 'Adres çubuğunun en solundaki ayarlar (iki yatay çizgi veya kilit) simgesine tıklayın.'],
+        ['İzni sıfırlayın', 'Menüdeki “İzni sıfırla” butonuna tıklayın.'],
+        ['Sayfayı yenileyin', 'F5 tuşuyla sayfayı yenileyin; tarayıcı iletişim iznini yeniden soracaktır.'],
+        ['İzin verin', '“avukat.uyap.gov.tr şunu yapmak istiyor: Bu cihazdaki diğer uygulamalara ve hizmetlere erişin” uyarısında “İzin ver”e tıklayın.'],
+      ]),
+      p('Daha önce bu izne yanlışlıkla “Engelle” dediyseniz hata tam olarak bu yüzden çıkar.'),
+      h2('Adım 3: Hâlâ Çözülmediyse'),
+      p('Adalet Bakanlığı’nın resmî “sık karşılaşılan hatalar” listesindeki kontroller şöyledir:'),
+      ulBold([
+        ['Uygulama başlamıyor / bağlantı hatası', 'Uygulamayı sonlandırıp yeniden başlatın; güvenlik duvarı veya antivirüsün engellemediğinden emin olun; uygulamayı yönetici olarak çalıştırın.'],
+        ['Kart veya token algılanmıyor', 'Kart okuyucuyu farklı bir USB portuna takıp uygulamayı yeniden başlatın; uygulamadaki “Sertifikaları Göster” menüsünden durumu kontrol edin.'],
+        ['Tarayıcıda imza ekranı açılmıyor', 'Uygulamanın sistem tepsisinde çalıştığını doğrulayın; tarayıcıda localhost adresine izin verildiğinden emin olun; önbelleği temizleyin (Ctrl + Shift + Delete).'],
+        ['Güncellemeden sonra çalışmıyor', 'Eski sürümü tamamen kaldırıp bilgisayarı yeniden başlatın ve kurulumdan sonra “Sistem Bilgisi” menüsünden sürümü kontrol edin.'],
+      ]),
+      h2('Sorun E-İmzanın Kendisinde Olabilir'),
+      p('Yukarıdaki adımlar doğru yapıldığı hâlde giriş olmuyorsa e-imzanızın süresi dolmuş veya PIN’iniz kilitlenmiş olabilir. Süresi dolan e-imzayla imzalı giriş yapılamaz; art arda yanlış PIN girişinde kart kilitlenir. Bu durumlarda uygulamayı yeniden kurmak sorunu çözmez; e-imzanın yenilenmesi veya kilidinin çözülmesi gerekir.'),
+      `<p>Süresi dolan e-imza için <a href="/bilgi-bankasi/e-imza/e-imza-yenileme-nasil-yapilir/">E-İmza Yenileme</a>, kilitlenen kart için <a href="/bilgi-bankasi/e-imza/e-imza-sifresi-pin-degistirme-ve-kilit-cozme/">E-İmza PIN Değiştirme ve Kilit Çözme</a> rehberlerimize bakabilirsiniz. Kart okuyucu sürücüsü için <a href="/bilgi-bankasi/e-imza/e-imza-kurulumu-nasil-yapilir/">E-İmza Kurulumu</a>, e-Devlet ile giriş alternatifi için <a href="/bilgi-bankasi/e-imza/e-devlete-e-imza-ile-giris-nasil-yapilir/">E-Devlet’e E-İmza ile Giriş</a> rehberi hazır. Avukatlara yönelik seçenekler: <a href="/e-donusum-hizmetleri/e-imza/avukatlar-icin-e-imza/">Avukatlar İçin E-İmza</a>.</p>`,
+      h2('Destek Nereden Alınır?'),
+      p('Adalet Bakanlığı, çözülemeyen sorunlar için uygulamadaki “Hata Kaydı” menüsünden log dosyası oluşturulmasını (Başlat → hatayı tekrarlayın → Durdur → Kopyala/Kaydet) ve dosyanın, “Sistem Bilgisi” menüsündeki sürüm numarasıyla birlikte yardimmasasi@adalet.gov.tr adresine gönderilmesini önerir.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://bedesten.adalet.gov.tr/imza" target="_blank" rel="noopener">Adalet Bakanlığı – Adalet E-İmza</a> · <a href="https://www.barobirlik.org.tr/Haberler/uyap-e-imza-girisi-degisikligi-hakkinda-bilgilendirme-86491" target="_blank" rel="noopener">TBB – UYAP E-İmza Girişi Değişikliği (1.6.2026)</a> · <a href="https://eskisehirbarosu.org.tr/haber/adalet-e-imza-client-uygulamasi-bulunamadi-hatasi-cozumu" target="_blank" rel="noopener">Eskişehir Barosu – Hata Çözümü</a></p>`,
+      note('E-imza kurulumu, tarayıcı izni ve UYAP girişi konusunda uzaktan bağlanarak destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['Adalet E-İmza uygulamasını kurmadan UYAP’a e-imzayla girebilir miyim?', 'Hayır. Adalet Bakanlığı’na göre tarayıcının kart okuyucuyla iletişim kurabilmesi için uygulamanın bilgisayarda kurulu ve çalışır durumda olması gerekir. Alternatif olarak e-Devlet Kapısı üzerinden giriş de yapılabilir.'],
+      ['Eski UYAP E-İmza (ArkSigner) programını kaldırmalı mıyım?', 'UYAP E-İmza (ArkSigner) ile giriş 1 Haziran 2026’da sonlandırıldı. Resmî kaynaklar eski programın kaldırılmasını zorunlu tutmuyor; Barolar Birliği, tüm kullanıcıların Adalet E-İmza Uygulaması’nın güncel sürümünü yüklemesini istiyor.'],
+      ['Adalet E-İmza için Java kurmam gerekiyor mu?', 'Hayır. Resmî sayfaya göre gerekli Java çalışma ortamı uygulamanın içinde gelir.'],
+      ['Adalet E-İmza Mac’te çalışıyor mu?', 'Evet. Resmî sayfada macOS 12 ve üzeri için Intel ve M serisi (Apple Silicon) sürümleri ayrı ayrı yer alıyor.'],
+      ['Hata gitti ama “sertifika bulunamadı” diyor, neden?', 'Kart okuyucu sürücüsü eksik olabilir, kart doğru takılmamış olabilir ya da sertifikanın süresi dolmuş olabilir. Uygulamadaki “Sertifikaları Göster” menüsünden kontrol edin.'],
+    ],
+  },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
     cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-10-30', info: true,

@@ -822,7 +822,7 @@ const meslekler = [
     intro: [
       'Avukatlık mesleğinde e-imza artık bir tercih değil, günlük işin parçası. UYAP Avukat Portal’a giriş, dava açma, dilekçe ve beyan gönderme, icra takibi başlatma ve dosya inceleme gibi işlemlerin büyük bölümü nitelikli elektronik sertifikayla, yani e-imzayla yapılır.',
       '5070 sayılı Elektronik İmza Kanunu’na göre güvenli elektronik imza, elle atılan imzayla aynı hukuki sonucu doğurur. UYAP Doküman Editörü’nde hazırladığınız .udf belgeleri e-imzanızla imzalayıp saniyeler içinde mahkemeye ulaştırabilirsiniz.',
-      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, kimlik doğrulamasını tamamlıyor, e-imzanızı İstanbul içinde hızlı kuryeyle, 81 ile aynı gün kargoyla ulaştırıyor ve bilgisayarınıza sürücü, Java ve imzalama aracı kurulumunu uzaktan yapıyoruz. UYAP’a ilk girişinizi birlikte yapana kadar destek veriyoruz.',
+      'Kurucu Bilişim olarak e-imza başvurunuzu alıyor, kimlik doğrulamasını tamamlıyor, e-imzanızı İstanbul içinde hızlı kuryeyle, 81 ile aynı gün kargoyla ulaştırıyor ve bilgisayarınıza kart okuyucu sürücüsü ile Adalet E-İmza uygulamasının kurulumunu uzaktan yapıyoruz. UYAP’a ilk girişinizi birlikte yapana kadar destek veriyoruz.',
     ],
     systems: [
       ['UYAP Avukat Portal', 'Portala güvenli giriş, dava dosyalarını görüntüleme, evrak ve dilekçe gönderme.', 'monitor'],
@@ -832,13 +832,14 @@ const meslekler = [
       ['e-Devlet ve resmi kurumlar', 'Nitelikli sertifikayla e-Devlet’e giriş ve kamu kurumlarına imzalı başvuru.', 'shield'],
       ['Sözleşme ve vekâlet yazışmaları', 'Müvekkil sözleşmeleri ve yazışmaları dijital ortamda güvenle imzalama.', 'pen'],
     ],
-    features: ['UYAP Avukat Portal ile tam uyum', '.udf belgelerini imzalama desteği', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi hızlı kurye, 81 ile aynı gün kargo', 'Uzaktan sürücü ve Java kurulumu', 'İlk UYAP girişine kadar destek', 'Mobil imza hakkında danışmanlık', 'Süre bitmeden yenileme hatırlatması', 'Büro ve ortaklıklara toplu başvuru'],
+    features: ['UYAP Avukat Portal ile tam uyum', '.udf belgelerini imzalama desteği', '1, 2 ve 3 yıllık sertifika seçenekleri', 'İstanbul içi hızlı kurye, 81 ile aynı gün kargo', 'Uzaktan sürücü ve Adalet E-İmza kurulumu', 'İlk UYAP girişine kadar destek', 'Mobil imza hakkında danışmanlık', 'Süre bitmeden yenileme hatırlatması', 'Büro ve ortaklıklara toplu başvuru'],
     related: ['e-smm', 'kep-ik'],
     mock: { app: 'UYAP Avukat Portal', file: 'Dava dilekçesi.udf', sub: 'Asliye Hukuk Mahkemesine sunulacak', signer: 'Av. Ayşe Yılmaz' },
     faqs: [
       ['Avukatlar UYAP için e-imza mı, mobil imza mı kullanmalı?', 'İkisi de UYAP Avukat Portal’da kullanılabilir. E-imza, bilgisayara takılan bir kart okuyucu veya USB ile çalışır ve operatörden bağımsızdır; mobil imza ise SIM karta tanımlanır. Büroda yoğun evrak imzalıyorsanız e-imza genellikle daha pratiktir; ihtiyacınıza göre birlikte karar verebiliriz.'],
       ['UYAP’ta e-imza ile neler yapabilirim?', 'Avukat Portal’a giriş yapabilir, dava açabilir, dilekçe ve beyan gönderebilir, harç ve masraf ödeyebilir, icra takibi başlatabilir ve dosyalarınızı adliyeye gitmeden inceleyebilirsiniz.'],
       ['UYAP Doküman Editörü’nde .udf dosyasını nasıl imzalarım?', 'E-imzanız ve sürücüleri kurulu olduğunda, editörde hazırladığınız belgeyi imzala seçeneğiyle e-imzanızın PIN’ini girerek imzalarsınız. Kurulumu uzaktan bağlantıyla biz yapıyor, ilk imzanızı birlikte atıyoruz.'],
+      ['UYAP’ta “Adalet E-İmza Client Uygulaması Bulunamadı” hatası alıyorum, ne yapmalıyım?', 'Adalet Bakanlığı’na göre UYAP’ta e-imzayla giriş için Adalet E-İmza uygulamasının bilgisayarınızda kurulu ve çalışır durumda olması gerekir; uygulama için ayrıca Java kurmaya gerek yoktur. Uygulama çalışıyorsa sorun çoğunlukla tarayıcının uygulamaya erişim izninden kaynaklanır: Chrome’da avukat.uyap.gov.tr için site ayarlarından “İzni sıfırla”ya tıklayıp sayfayı yenileyin ve çıkan izin isteğine “İzin ver” deyin. Takılırsanız uzaktan bağlanıp çözüyoruz.'],
       ['Stajyer avukatlar e-imza alabilir mi?', 'E-imza kişiye özel nitelikli bir sertifikadır ve T.C. kimlik numarası olan herkes başvurabilir. UYAP’ta hangi işlemleri yapabileceğiniz ise baro kaydınıza ve yetkinize bağlıdır.'],
       ['E-imzam ne kadar sürede elime ulaşır?', 'İstanbul içinde e-imzanız, adresinize dakikalar içerisinde ulaştırılmak üzere hızlıca kuryeye yönlendirilir. Türkiye’nin 81 iline aynı gün kargoya veriyor, ertesi gün teslimat seçeneği sunuyoruz; süre kimlik doğrulamanın tamamlanmasına göre değişebilir.'],
     ],
