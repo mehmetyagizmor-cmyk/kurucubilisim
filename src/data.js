@@ -66,7 +66,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'belge', slug: 'e-fatura', icon: 'doc',
     name: 'E-Fatura', short: 'E-Fatura',
-    title: 'E-Fatura Başvurusu ve Fiyatı 2026: Geçiş Desteği | Kurucu Bilişim',
+    title: 'E-Fatura Başvurusu ve Fiyatı 2026: Geçiş Desteği',
     desc: 'E-fatura başvurusu nasıl yapılır, kimler geçmek zorunda? GİB başvurusu, mali mühür, muhasebe ve ERP entegrasyonu tek elden. Fiyat için teklif alın.',
     h1: 'E-Fatura Başvurusu ve Entegrasyon Çözümleri',
     lead: 'Faturalarınızı saniyeler içinde kesin, alıcılarına anında iletin. Kağıt, baskı ve kargo masraflarını azaltarak tahsilat süreçlerinizi hızlandırın.',
@@ -434,7 +434,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'kep-ik', icon: 'mail',
     name: 'KEP (Kayıtlı Elektronik Posta) ve E-Bordro', short: 'KEP & E-Bordro',
-    title: 'KEP Adresi Nasıl Alınır? Başvuru ve Fiyat 2026 | Kurucu Bilişim',
+    title: 'KEP Adresi Nasıl Alınır? Başvuru ve Fiyat 2026',
     desc: 'KEP adresi nasıl alınır? NFC kimlik doğrulama ve e-Devlet onayıyla tamamen online, dakikalar içinde KEP başvurusu. KEP İK ile e-bordro. Teklif alın.',
     h1: 'KEP Adresi (Kayıtlı Elektronik Posta) ve E-Bordro',
     lead: 'Resmi yazışmalarınızı ve bordro süreçlerinizi yasal delil niteliğinde, zaman damgalı ve güvenli şekilde dijitale taşıyın.',
@@ -480,7 +480,7 @@ const services = [
   {
     group: 'e-donusum-hizmetleri', category: 'guvenlik', slug: 'e-donusum-entegrasyonu', icon: 'sync',
     name: 'E-Dönüşüm Entegrasyonu', short: 'E-Dönüşüm Entegrasyonu',
-    title: 'E-Dönüşüm Entegrasyonu: 600+ Muhasebe ve ERP | Kurucu Bilişim',
+    title: 'E-Dönüşüm Entegrasyonu: 600+ Muhasebe ve ERP',
     desc: '600’den fazla muhasebe ve ERP programıyla e-fatura, e-arşiv ve e-irsaliye entegrasyonu: Logo, Mikro, Netsis, SAP, Nebim, Zirve, Luca. Teklif alın.',
     h1: 'E-Dönüşüm Yazılım ve API Entegrasyonu',
     lead: 'Kullandığınız ticari yazılımlar, ERP sistemleri veya e-ticaret altyapılarınız ile e-dönüşüm servisleri arasında çift yönlü, otomatik ve güvenli veri akışı kuruyoruz.',

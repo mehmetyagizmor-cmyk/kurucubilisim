@@ -3,6 +3,15 @@ const { site, services } = require('../data');
 const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, faqBlock, faqSchema, orgId, applyHref } = require('../lib');
 const { slugify, EXCLUDE } = require('../posts');
 const { cats, articles, catPath, SHOW_DRAFTS } = require('../kb');
+const KB_SEO = require('../kb-seo');
+// Google sonuç başlığı: marka ekiyle 60 karakteri aşmıyorsa eklenir
+const withBrand = (t) => (t.length + 16 <= 60 ? `${t} | Kurucu Bilişim` : t);
+// Açıklama: elle yazılmamışsa özetten, cümle sınırında (≤155) kesilir
+const snip = (s, max = 155) => {
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max), i = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
+  return i > 80 ? cut.slice(0, i + 1) : cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:]$/, '') + '…';
+};
 
 const ROOT = '/bilgi-bankasi/';
 const fmt = (d) => new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -64,8 +73,8 @@ module.exports = async (ctx) => {
 ${ctaBand('Aradığınızı bulamadınız mı?', 'Sorunuzu iletin, uzmanlarımız aynı gün içinde size dönüş yapsın.')}`;
     ctx.add(p, layout({
       path: p, crumbs, body, extraHead: noindex,
-      title: 'Bilgi Bankası | E-İmza, Mali Mühür, KEP ve E-Fatura Rehberleri',
-      desc: 'E-imza kurulumu, şifre işlemleri, mali mühür PIN, KEP adresi alma, e-fatura iptali ve entegrasyonlar hakkında adım adım rehberler.',
+      title: 'Bilgi Bankası: E-İmza, Mali Mühür, KEP, E-Fatura Rehberleri',
+      desc: 'E-imza kurulumu, mali mühür PIN, KEP adresi alma, e-fatura iptali, e-defter süreleri ve entegrasyonlar için resmî kaynaklara dayalı adım adım rehberler.',
       schema: [{ '@type': 'CollectionPage', '@id': abs(p) + '#kb', url: abs(p), name: 'Kurucu Bilişim Bilgi Bankası', inLanguage: 'tr-TR', publisher: { '@id': orgId },
         hasPart: articles.map((a) => ({ '@type': 'TechArticle', headline: a.title, url: abs(a.path) })) }],
     }), { priority: '0.8' });
@@ -83,8 +92,8 @@ ${ctaBand('Aradığınızı bulamadınız mı?', 'Sorunuzu iletin, uzmanlarımı
 ${ctaBand()}`;
     ctx.add(p, layout({
       path: p, crumbs, body, extraHead: noindex,
-      title: `${c.name} Rehberleri | ${c.name.length > 22 ? 'Bilgi Bankası' : 'Kurucu Bilişim Bilgi Bankası'}`,
-      desc: `${c.name} hakkında adım adım rehberler: ${c.desc}`.slice(0, 160),
+      title: withBrand(`${c.name} Rehberleri`),
+      desc: snip(`${c.name} hakkında adım adım rehberler: ${c.desc} Resmî kaynaklara dayalı, güncel içerik.`),
       schema: [{ '@type': 'CollectionPage', url: abs(p), name: `${c.name} Rehberleri`, inLanguage: 'tr-TR', isPartOf: { '@id': abs(ROOT) + '#kb' } }],
     }), { priority: '0.6' });
   }
@@ -133,8 +142,8 @@ ${a.info ? '' : ctaBand(svc ? `${svc.short} işlemlerinizi bize bırakın` : und
     if (a.faqs) schema.push(faqSchema(a.faqs));
     ctx.add(a.path, layout({
       path: a.path, crumbs, body, extraHead: noindex,
-      title: a.title.length > 52 ? a.title : `${a.title} | Kurucu Bilişim`,
-      desc: a.lead.slice(0, 160), ogType: 'article', ogImage: a.img, schema,
+      title: KB_SEO[a.slug] ? KB_SEO[a.slug][0] : withBrand(a.title),
+      desc: KB_SEO[a.slug] ? KB_SEO[a.slug][1] : snip(a.lead), ogType: 'article', ogImage: a.img, schema,
     }), { priority: '0.6', lastmod: a.updated });
   }
 

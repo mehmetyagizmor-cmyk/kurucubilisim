@@ -64,10 +64,11 @@ const SEO_TITLE = {
   'e-bordroda-kvkk-uyum-sureci-ve-veri-guvenligi': 'Bordro Veri Güvenliği: E-Bordroda KVKK Uyumu Nasıl Sağlanır?',
   'mersiste-e-imza-zorunlulugu': 'MERSİS’te E-İmza Zorunluluğu: Hangi İşlemlerde Gerekir?',
   'e-bordroda-sik-yapilan-hatalar-ve-dogrulari': 'E-Bordroda Sık Yapılan Hatalar ve Doğruları: Kontrol Listesi',
-  'kep-ve-iletisimde-zaman-damgasi-dijital-gonderilerin-takibi': 'KEP’te Zaman Damgası: Gönderim ve Teslim Anı Nasıl Kanıtlanır?',
+  'kep-ve-iletisimde-zaman-damgasi-dijital-gonderilerin-takibi': 'KEP’te Zaman Damgası: Teslim Anı Nasıl Kanıtlanır?',
+  'ekap-islemlerinde-e-imza-kamu-ihalelerine-dijital-katilim-rehberi': 'EKAP’ta E-İmza Kullanımı: Kamu İhalelerine Katılım Rehberi',
   'kurucu-bilisim-ile-e-defter-dijital-muhasebeye-gecisin-akilli-yolu': 'E-Defter Nedir, Kimler İçin Zorunlu? Dijital Muhasebeye Geçiş',
   'kep-ve-kamu-sektoru-devletle-dijital-yazismalar': 'KEP ile Kamu Kurumlarıyla Resmi Yazışma ve İhale Belgeleri',
-  'kep-ve-elektronik-fatura-gonderimi-dijital-faturalama-cozumleri': 'KEP ile Fatura Gönderimi ve Yazışmaların Dijital Arşivlenmesi',
+  'kep-ve-elektronik-fatura-gonderimi-dijital-faturalama-cozumleri': 'KEP ile Fatura Gönderimi ve Dijital Arşivleme',
   'kepin-sagladigi-guvenlik-kayitli-elektronik-posta-sisteminin-ozellikleri': 'KEP Ne Kadar Güvenli? Özellikleri ve Kullanım Alanları',
 };
 

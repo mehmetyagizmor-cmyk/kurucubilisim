@@ -1,6 +1,7 @@
 // Faz 6: Teknik SEO dosyaları — sitemap.xml, robots.txt, llms.txt, feed.xml, .htaccess
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { site, services, groups, meslekler } = require('./data');
 const { posts, EXCLUDE } = require('./posts');
 
@@ -13,12 +14,26 @@ module.exports = function seo(ctx, DIST) {
   // ---------- sitemap.xml (yalnızca indekslenebilir sayfalar) ----------
   const indexable = ctx.pages.filter((p) => p.sitemap !== false && p.path.endsWith('/') && !/name="robots" content="noindex/.test(p.html));
   const postByPath = Object.fromEntries(posts.map((p) => [p.path, p]));
+  // lastmod: içeriği değişmeyen sayfada sabit kalır (Google, her derlemede değişen tarihleri güvenilmez sayar).
+  // src/lastmod.json her sayfanın son içerik özetini (md5) ve tarihini tutar; özet değişince tarih bugün olur.
+  const manifestFile = path.join(__dirname, 'lastmod.json');
+  const prev = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : {};
+  const manifest = {};
+  const lastmodOf = (p) => {
+    if (p.lastmod) return String(p.lastmod).slice(0, 10); // yazı ve rehberler kendi gerçek tarihini taşır
+    const hash = crypto.createHash('md5').update(p.html.replace(/\?v=[a-z0-9]+/g, '')).digest('hex'); // ?v= derleme saatidir
+    const old = prev[p.path];
+    const date = old && old.hash === hash ? old.date : today;
+    manifest[p.path] = { hash, date };
+    return date;
+  };
   const urls = indexable.map((p) => {
     const post = postByPath[p.path];
     const img = post && post.img ? `\n    <image:image><image:loc>${site.url}${post.img}</image:loc><image:title>${xmlEsc(post.title)}</image:title></image:image>` : '';
-    return `  <url>\n    <loc>${site.url}${p.path}</loc>\n    <lastmod>${(p.lastmod || today).slice(0, 10)}</lastmod>\n    <priority>${p.priority || '0.5'}</priority>${img}\n  </url>`;
+    return `  <url>\n    <loc>${site.url}${p.path}</loc>\n    <lastmod>${lastmodOf(p)}</lastmod>\n    <priority>${p.priority || '0.5'}</priority>${img}\n  </url>`;
   });
   out('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls.join('\n')}\n</urlset>\n`);
+  fs.writeFileSync(manifestFile, JSON.stringify(manifest, null, 1));
 
   // ---------- robots.txt ----------
   out('robots.txt', `# Kurucu Bilişim
