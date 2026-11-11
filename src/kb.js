@@ -1107,7 +1107,7 @@ const articles = [
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
-    cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-10-30', info: true,
+    cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-11-11', info: true,
     kurum: ['GİB', 'Resmî Gazete'],
     mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 596)', '2026-10-11', 'https://www.resmigazete.gov.tr/eskiler/2026/10/20261011-4.htm', 'Hazine ve Maliye Bakanlığı']],
     title: 'E-Dönüşüm Son Tarihler Takvimi 2026–2027: Yaklaşan Zorunluluklar',
@@ -1118,6 +1118,7 @@ const articles = [
       h2('Yaklaşan Son Tarihler'),
       `<table><thead><tr><th>Tarih</th><th>Konu</th><th>Kimleri etkiler?</th></tr></thead><tbody>
 <tr><td><strong>30 Kasım 2026</strong></td><td><a href="/bilgi-bankasi/mevzuat/e-tebligat-zorunlulugu-vuk-596/">E-tebligat sistemine dahil olma</a> (VUK 596)</td><td>Henüz sisteme girmemiş kurumlar vergisi mükellefleri, gerçek usulde gelir vergisi mükellefleri, kollektif ve adi komandit şirketler</td></tr>
+<tr><td><strong>30 Kasım 2026</strong></td><td>e-Döviz ve Kıymetli Maden Alım Satım Belgesi paket güncellemelerinin yapılması (GİB duyurusu, 02.11.2026)</td><td>Bu belgeyi düzenleyen mükellefler ve yazılım sağlayıcıları</td></tr>
 <tr><td><strong>31 Aralık 2026</strong></td><td>3.000 TL altı satışlarda kâğıt fatura imkânının sona ermesi</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
 <tr><td><strong>1 Ocak 2027</strong></td><td><a href="/bilgi-bankasi/mevzuat/basit-usul-e-arsiv-zorunlulugu-2027-vuk-589/">Tamamen e-arşiv fatura</a> zorunluluğu (VUK 589)</td><td>Basit usul ve işletme hesabına göre defter tutanlar</td></tr>
 <tr><td><strong>30 Haziran 2027</strong></td><td><a href="/bilgi-bankasi/e-mustahsil/e-mustahsil-makbuzu-rehberi/">E-müstahsil makbuzunda ıslak imza yerine doğrulama</a> geliştirmeleri (GİB duyurusu, 28.10.2026)</td><td>E-müstahsil makbuzu düzenleyen mükellefler</td></tr>

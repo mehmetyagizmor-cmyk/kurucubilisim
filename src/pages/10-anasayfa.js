@@ -101,6 +101,7 @@ module.exports = (ctx) => {
   // Akış: ilk ekran → ayrıcalıklar → hizmetler → mesleğe özel e-imza → kampanyalar → neden biz → referanslar ve yorumlar → SSS (Bilgi Bankası menüde; ana sayfada değil, patron isteği) → tek teklif bandı
   const body = `${hero}
 <section class="section--tight" style="padding-top:0"><div class="container">${partnersMarquee()}</div></section>
+${new Date() <= new Date('2026-11-30T23:59:59+03:00') ? `<div class="container" style="margin-bottom:12px"><a class="zt-strip" href="/bilgi-bankasi/mevzuat/e-tebligat-zorunlulugu-vuk-596/">${icBox('clock')}<span><strong>Son gün 30 Kasım 2026: E-tebligat sistemine dahil oldunuz mu?</strong><small>Kurumlar vergisi mükellefleri, gerçek usulde gelir vergisi mükellefleri ve kollektif/adi komandit şirketler için zorunlu (VUK 596).</small></span><span class="zt-strip__go">Kimler, nasıl? ${icon('arrow')}</span></a></div>` : ''}
 <div class="container"><a class="zt-strip" href="/e-fatura-zorunlu-muyum/">${icBox('check')}<span><strong>İşletmeniz e-fatura geçiş zorunluluğu kapsamında mı?</strong><small>E-fatura, e-arşiv, e-defter ve e-tebligat zorunluluklarınızı 30 saniyede öğrenin.</small></span><span class="zt-strip__go">Testi çözün ${icon('arrow')}</span></a></div>
 ${perksSection}
 <section class="section"><div class="container">
