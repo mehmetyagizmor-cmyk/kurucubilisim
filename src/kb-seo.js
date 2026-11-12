@@ -44,4 +44,7 @@ module.exports = {
   'basit-usul-e-arsiv-zorunlulugu-2027-vuk-589': ['Basit Usulde E-Arşiv Zorunluluğu 2027’ye Ertelendi', 'VUK 589 ile basit usul ve işletme hesabı mükelleflerinde tutarına bakılmaksızın e-arşiv fatura zorunluluğu 1 Ocak 2027’ye ertelendi. Kimleri etkiliyor?'],
   'e-tebligat-zorunlulugu-vuk-596': ['E-Tebligat Zorunluluğu 2026: VUK 596 ve Son Tarih', 'VUK 596 Sıra No’lu Tebliğ (RG 11.10.2026) ile e-tebligat kuralları yenilendi. Kapsamdaki mükellefler Kasım 2026 sonuna kadar sisteme dahil olmalı.'],
   'yeni-nesil-okc-ile-e-belge-vuk-593': ['Yeni Nesil ÖKC ile E-Belge: VUK 593 Sıra No’lu Tebliğ', '8 Mayıs 2026 tarihli VUK 593 Sıra No’lu Tebliğ ile yeni nesil ödeme kaydedici cihazlardan (YN ÖKC) e-belge düzenlenmesinin yolu açıldı. Neler değişti?'],
+  // ---- Trend rehberleri (12.11.2026) ----
+  'e-fatura-goruntuleyici': ['E-Fatura Görüntüleyici: XML Fatura Açma ve Doğrulama', 'GİB E-Fatura Görüntüleyici ile XML e-faturayı açın, mali mühür imzasını doğrulayın ve faturanın GİB’den geçip geçmediğini sorgulayın.'],
+  'akis-kart-izleme-araci': ['AKİS Kart İzleme Aracı Nedir, Nasıl Kullanılır?', 'AKİS Kart İzleme Aracı kartı, sertifikaları ve PIN durumunu gösterir. Kamu SM’den kurulum, kart görünmüyor ve PIN kilitlendi çözümleri.'],
 };

@@ -1105,6 +1105,92 @@ const articles = [
       ['Hata gitti ama “sertifika bulunamadı” diyor, neden?', 'Kart okuyucu sürücüsü eksik olabilir, kart doğru takılmamış olabilir ya da sertifikanın süresi dolmuş olabilir. Uygulamadaki “Sertifikaları Göster” menüsünden kontrol edin.'],
     ],
   },
+  {
+    cat: 'e-fatura', slug: 'e-fatura-goruntuleyici', svc: 'e-fatura', updated: '2026-11-12',
+    title: 'E-Fatura Görüntüleyici: XML Fatura Nasıl Açılır ve Doğrulanır?',
+    lead: 'E-Fatura Görüntüleyici, GİB’in ücretsiz programıdır: e-faturanın XML dosyasını açar, mali mühür imzasını doğrular ve faturanın GİB’den geçip geçmediğini sorgular. E-fatura kullanıcısı olmayanlar da kullanabilir.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('GİB’in E-Fatura Görüntüleyici Kullanım Kılavuzu’na göre bir e-faturanın geçerli hâli, GİB’den başarıyla geçmiş XML dosyasıdır. Faturanın kâğıt çıktısı, e-postayla gönderilmesi veya “Aslı Gibidir” yazılması uygun değildir. Faturanın değiştirilmediğini ve GİB’den geçtiğini, XML dosyasını E-Fatura Görüntüleyici ile açarak kontrol edebilirsiniz.')}</p>`,
+      h2('E-Fatura Görüntüleyici Ne İşe Yarar?'),
+      ulBold([
+        ['Faturayı açar', 'XML formatındaki e-faturayı okunabilir fatura görüntüsüne çevirir (XSLT görünümü).'],
+        ['İmzayı doğrular', 'Faturadaki mali mühür imzasının geçerli olup olmadığını, yani belgenin sonradan değiştirilip değiştirilmediğini kontrol eder.'],
+        ['GİB’e sorgular', 'Faturanın GİB sisteminden geçip geçmediğini ve ticari faturaysa alıcı tarafından reddedilip reddedilmediğini gösterir.'],
+      ]),
+      p('GİB’e göre program, e-fatura sistemine kayıtlı olmayan kişi ve kurumlar tarafından da kullanılabilir. Size e-faturanın XML dosyası gönderildiyse faturanın gerçekliğini kendiniz kontrol edebilirsiniz.'),
+      h2('Program Nereden İndirilir?'),
+      `<p>${esc('Program, GİB e-Belge sitesinin ana sayfasındaki “e-Fatura Görüntüleyici” bağlantısından indirilir. Çalışması için bilgisayarda Java 1.7 veya üzeri bir sürümün kurulu olması gerekir. İndirilen EFaturaGoruntuleyici.jnlp dosyasına tıklayarak programı başlatırsınız.')} <a href="https://ebelge.gib.gov.tr/" target="_blank" rel="noopener">ebelge.gib.gov.tr</a></p>`,
+      h2('Adım Adım XML Fatura Kontrolü'),
+      olBold([
+        ['Programı açın', 'EFaturaGoruntuleyici.jnlp dosyasına tıklayın; güvenlik uyarısı çıkarsa çalıştırmaya izin verin.'],
+        ['Faturayı seçin', '“Aç” butonuyla faturanın .xml dosyasını seçin. Fatura .zip olarak geldiyse önce zip dosyasını açın; program .zip okumaz.'],
+        ['İmzayı doğrulayın', '“Doğrula” butonuna basın. “Mali Mühür Doğrulandı!” mesajı faturanın değiştirilmediğini, “Mali Mühür Geçersiz!” mesajı faturanın değiştirildiğini ve geçersiz olduğunu gösterir.'],
+        ['GİB’e sorgulayın', '“Sorgula” butonuna basarak faturanın GİB’deki durumunu görün.'],
+        ['Görünümü seçin', '“Belge” fatura görüntüsünü, “Xml” ham veriyi, “Belge/Xml” ikisini birlikte gösterir.'],
+      ]),
+      h2('Sorgula Sonuçları Ne Anlama Gelir?'),
+      `<table><thead><tr><th>Sonuç</th><th>Anlamı</th></tr></thead><tbody>
+<tr><td><strong>Geçmiş ve alıcıya ulaştırılmıştır</strong></td><td>Fatura geçerlidir. Program, sistem dışından (ör. noter veya KEP yoluyla) yapılan itirazları göstermez.</td></tr>
+<tr><td><strong>Geçmemiş</strong></td><td>Fatura GİB’den geçmemiştir; geçerli bir e-fatura değildir.</td></tr>
+<tr><td><strong>Geçmiş ve alıcı reddetmiştir</strong></td><td>Ticari fatura alıcı tarafından reddedilmiştir; geçerli değildir.</td></tr>
+</tbody></table>`,
+      h2('Sık Karşılaşılan Durumlar'),
+      ulBold([
+        ['Fatura görüntüsü yok uyarısı', 'Faturada görüntü şablonu (XSLT) yoksa program sorar; “Evet” derseniz GİB’in varsayılan şablonuyla gösterir.'],
+        ['Görüntü bozuk çıkıyor', 'Faturadaki şablon hatalıysa “Varsayılan XSLT İle Göster” seçeneğini kullanın.'],
+        ['Zarf dosyası açılmıyor', 'Dosya StandardBusinessDocument etiketiyle başlıyorsa bu bir zarf dosyasıdır. GİB kılavuzuna göre dosyanın bir kopyası Not Defteri’nde açılıp Invoice etiketinden önceki bölüm silinerek fatura kısmı ayrılabilir.'],
+        ['Java hatası', 'Java kurulu değilse veya sürüm eskiyse program açılmaz; güncel Java sürümünü kurun.'],
+      ]),
+      `<p>Karşı tarafın e-fatura kullanıcısı olup olmadığını <a href="/bilgi-bankasi/e-fatura/e-fatura-mukellefi-sorgulama/">E-Fatura Mükellefi Sorgulama</a> rehberinden, hatalı bir faturanın nasıl iptal edileceğini <a href="/bilgi-bankasi/e-fatura/e-fatura-nasil-iptal-edilir/">E-Fatura Nasıl İptal Edilir?</a> rehberinden öğrenebilirsiniz. GİB portalını kullananlar için <a href="/bilgi-bankasi/e-fatura/e-fatura-portal-giris/">GİB E-Fatura Portalı Girişi</a> rehberi hazır.</p>`,
+      `<p><em>Resmî kaynak:</em> <a href="https://ebelge.gib.gov.tr/dosyalar/kilavuzlar/E-FaturaGoruntuleyiciKullanimKilavuzuV-1.0.pdf" target="_blank" rel="noopener">GİB – E-Fatura Görüntüleyici Kullanım Kılavuzu</a></p>`,
+      note('E-fatura geçişi, Java ve program kurulumunda uzaktan bağlanarak destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['E-Fatura Görüntüleyici ücretli mi?', 'Hayır. GİB’in ücretsiz programıdır ve GİB e-Belge sitesinden indirilir.'],
+      ['E-fatura kullanıcısı değilim, programı kullanabilir miyim?', 'Evet. GİB’e göre e-fatura sistemine kayıtlı olmayanlar da faturanın GİB’den geçip geçmediğini program üzerinden kontrol edebilir.'],
+      ['E-faturanın çıktısı geçerli mi?', 'GİB kılavuzuna göre e-faturanın geçerli hâli XML dosyasıdır. Kâğıt çıktı veya “Aslı Gibidir” yazılması uygun değildir.'],
+      ['“Mali Mühür Geçersiz!” uyarısı ne demek?', 'Faturanın imzalandıktan sonra değiştirildiğini ve geçersiz olduğunu gösterir. Faturayı gönderen firmadan GİB’den geçmiş asıl XML dosyasını isteyin.'],
+      ['Program .zip dosyasını açmıyor, ne yapmalıyım?', 'Program yalnızca .xml dosyalarını açar. Zip dosyasını açıp içindeki .xml dosyasını seçin.'],
+    ],
+  },
+  {
+    cat: 'mali-muhur', slug: 'akis-kart-izleme-araci', svc: 'mali-muhur', updated: '2026-11-12',
+    title: 'AKİS Kart İzleme Aracı Nedir, Nasıl Kullanılır?',
+    lead: 'AKİS Kart İzleme Aracı, AKİS akıllı kartlar (mali mühür ve Kamu SM e-imza kartları) için AKİS sürücü paketiyle gelen programdır. Kartın görünüp görünmediğini, sertifikaları ve PIN işlemlerini gösterir.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('AKİS Kart İzleme Aracı (AKiA), AKİS sürücü paketiyle birlikte bilgisayara kurulur. TÜBİTAK’ın AKİS kılavuzuna göre program, kart okuyucudaki kartın genel durumunu görüntüler; sertifikaları gösterir, dışarı aktarır ve PIN yönetimini sağlar. Mali mühür PIN’i kilitlendiyse Kamu SM, kilidin PUK ile değil Online İşlemler’den çözülmesini ister.')}</p>`,
+      h2('AKİS Kart İzleme Aracı Ne İşe Yarar?'),
+      ulBold([
+        ['Kartın görünüp görünmediğini gösterir', 'Kart okuyucu seçildiğinde karttaki kısa bilgiler sağ pencerede görünür. Kart listede yoksa sürücü veya okuyucu sorunu vardır.'],
+        ['Sertifika yönetimi', '“Sertifika Yönetimi” sekmesinden sertifika gösterilir, bir klasöre dışarı aktarılır veya Windows sertifika deposuna yüklenir.'],
+        ['PIN yönetimi', '“PIN Yönetimi” sekmesinden PIN değiştirme işlemleri yapılır.'],
+        ['PIN ile karta giriş', 'Sağ üstteki “PIN ile karta gir” alanından PIN girilerek kartın doğru PIN ile açılıp açılmadığı test edilir. Program kapatılınca giriş düşer.'],
+      ]),
+      h2('Nereden İndirilir ve Nasıl Kurulur?'),
+      `<p>${esc('Program ayrı indirilmez; Kamu SM’nin Sürücü Yükleme Servisi’nden işletim sisteminizi ve kart türü olarak “AKİS Akıllı Kart”ı seçerek indirdiğiniz AKİS paketiyle birlikte gelir.')} <a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/" target="_blank" rel="noopener">Kamu SM Sürücü Yükleme Servisi</a></p>`,
+      olBold([
+        ['Kart okuyucu sürücüsünü kurun', 'Okuyucunuz tak-çalıştır değilse önce kart okuyucu sürücüsünü kurun ve bilgisayarı yeniden başlatın.'],
+        ['AKİS paketini kurun', '32 bit ve 64 bit Windows için ayrı paketler vardır; sisteminize uygun olanı seçin. Eski sürüm kuruluysa önce kaldırıp bilgisayarı yeniden başlatın.'],
+        ['Programı açın', 'Kurulumdan sonra masaüstüne gelen AKiA kısayoluyla programı çalıştırın.'],
+        ['Kartı kontrol edin', 'Kartı okuyucuya takın, listeden okuyucuyu seçin ve kart bilgilerinin göründüğünü kontrol edin.'],
+      ]),
+      p('AKİS kılavuzuna göre AKiA Java tabanlıdır; bilgisayarda uygun Java yoksa kısayol eski, Java’sız sürümü (Cpp-AkisKartIzlemeAraci.exe) açar. Güncellemeler Java tabanlı sürüme geldiği için Java’nın kurulu olması önerilir.'),
+      h2('PIN Kilitlendi Uyarısı Çıkarsa'),
+      `<p>${esc('Art arda yanlış PIN girişinde kart kilitlenir. Kamu SM, mali mühür kartlarında PIN oluşturma ve kilit çözme işlemlerinin Kamu SM Online İşlemler üzerinden yapılmasını ister. Programda PUK ile kilit çözme seçeneği görünse de Kamu SM PUK kullanılmamasını önerir; PUK üç kez yanlış girilirse kart tamamen kullanılamaz hâle gelir.')} Adımlar için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-pin-sifresi-nasil-olusturulur/">Mali Mühür PIN Oluşturma ve Kilit Çözme</a> rehberimize bakın.</p>`,
+      h2('Sorun Devam Ederse: AKİS Teşhis Aracı'),
+      p('AKİS paketinde ayrıca bir Teşhis Aracı bulunur. Kılavuza göre bu araçla “Rapor Oluştur” seçilerek sistemdeki eksik program veya çalışmayan servis gibi sorunlar tespit edilebilir; gerekirse “Paket Oluştur” ile logları içeren bir .zip dosyası hazırlanıp destek ekibine iletilir.'),
+      `<p>Kurulumun tamamı için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a>, e-imza kartları için <a href="/bilgi-bankasi/e-imza/e-imza-kurulumu-nasil-yapilir/">E-İmza Kurulumu</a> rehberlerimiz hazır.</p>`,
+      `<p><em>Resmî kaynaklar:</em> <a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/suruculer/AkisKart/Akis_Arayuzu_Kurulum_Kullanim_Kilavuzu.pdf" target="_blank" rel="noopener">TÜBİTAK – AKİS Arayüz Yazılımı Kurulum ve Kullanım Kılavuzu</a> · <a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/" target="_blank" rel="noopener">Kamu SM Sürücü Yükleme Servisi</a></p>`,
+      note('AKİS sürücüsü, kart okuyucu ve mali mühür kurulumunda uzaktan bağlanarak destek veriyoruz.'),
+    ].join('\n'),
+    faqs: [
+      ['AKİS Kart İzleme Aracı nereden indirilir?', 'Ayrı indirilmez. Kamu SM Sürücü Yükleme Servisi’nden işletim sisteminiz ve “AKİS Akıllı Kart” seçilerek indirilen AKİS paketiyle birlikte kurulur.'],
+      ['Kart izleme aracında kartım görünmüyor, neden?', 'Genellikle kart okuyucu sürücüsü kurulu değildir, kart ters takılmıştır veya kurulum sonrası bilgisayar yeniden başlatılmamıştır. Sürücüyü kurup bilgisayarı yeniden başlatın.'],
+      ['PIN kilitlendi, PUK ile çözebilir miyim?', 'Kamu SM PUK kullanılmamasını önerir; PUK üç kez yanlış girilirse kart kullanılamaz. Mali mühürde kilit Kamu SM Online İşlemler üzerinden çözülür.'],
+      ['AKİS Kart İzleme Aracı için Java gerekir mi?', 'Kılavuza göre güncel kart izleme aracı Java tabanlıdır. Java yoksa eski, Java’sız sürüm açılır; güncel sürüm için Java kurulması önerilir.'],
+      ['32 bit mi 64 bit mi kurmalıyım?', 'Windows sürümünüze uygun paketi seçin; Kamu SM’de 32 bit ve 64 bit için ayrı AKİS paketleri bulunur.'],
+    ],
+  },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
     cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-11-11', info: true,
