@@ -629,13 +629,13 @@ const services = [
   {
     group: 'dijital-hizmetler', slug: 'erp-yazilimlari', icon: 'grid',
     name: 'ERP Yazılımları', short: 'ERP Yazılımları',
-    title: 'ERP Yazılımı Kurulumu: RotaCloud, NetEsnaf | Kurucu Bilişim',
+    title: 'ERP Yazılımı Kurulumu: Rota Bulut ERP ve NetEsnaf',
     desc: 'Finans, stok, üretim ve insan kaynakları süreçlerinizi tek sistemde birleştirin. İşletmenize uygun ERP yazılımı seçimi, kurulumu ve desteği.',
     h1: 'ERP Yazılımları ile İş Süreçlerinizi Dönüştürün',
     lead: 'Tüm departmanlarınızı tek bir sistemde birleştirerek veri akışını hızlandırın, maliyetleri düşürün ve doğru kararları gerçek zamanlı veriyle alın.',
     intro: [
       'ERP; satıştan üretime, finanstan insan kaynaklarına kadar tüm iş süreçlerini tek bir sistemde birleştirir. Departmanlar arası veri akışı düzenlenir, bilgiye erişim kolaylaşır.',
-      'RotaCloud ve NetEsnaf ERP çözümleriyle çalışıyoruz. İhtiyaç analiziyle doğru modülleri belirliyor, kurulum, veri aktarımı, e-dönüşüm entegrasyonu ve kullanıcı eğitimiyle sistemi işletmenize uyarlıyoruz.',
+      'Rota Bulut ERP ve NetEsnaf çözümleriyle çalışıyoruz. İhtiyaç analiziyle doğru modülleri belirliyor, kurulum, veri aktarımı, e-dönüşüm entegrasyonu ve kullanıcı eğitimiyle sistemi işletmenize uyarlıyoruz.',
     ],
     highlights: [
       ['Merkezi Veri Yönetimi', 'Tüm süreçler tek sistemde, tek doğru veri.'],
@@ -644,7 +644,7 @@ const services = [
     ],
     features: ['Modüler ve entegre yapı', 'Gerçek zamanlı veri takibi', 'Stok ve üretim yönetimi', 'Finans ve muhasebe', 'E-fatura / e-defter entegrasyonu', 'İnsan kaynakları', 'Gelişmiş raporlama', 'Kullanıcı dostu arayüz', 'Kurulum, eğitim ve destek'],
     faqs: [
-      ['Hangi ERP yazılımlarıyla çalışıyorsunuz?', 'RotaCloud ve NetEsnaf ERP çözümlerinin kurulumunu, veri aktarımını ve e-dönüşüm entegrasyonunu yapıyoruz. İşletmenize hangisinin uygun olduğuna ihtiyaç analiziyle birlikte karar veriyoruz.'],
+      ['Hangi ERP yazılımlarıyla çalışıyorsunuz?', 'Rota Bulut ERP ve NetEsnaf çözümlerinin kurulumunu, veri aktarımını ve e-dönüşüm entegrasyonunu yapıyoruz. İşletmenize hangisinin uygun olduğuna ihtiyaç analiziyle birlikte karar veriyoruz.'],
       ['ERP yazılımı seçerken nelere dikkat etmeliyim?', 'Sektörünüze uygunluk, ölçeklenebilirlik, e-dönüşüm entegrasyonu, destek kalitesi ve toplam sahip olma maliyeti en önemli kriterlerdir. Detaylı rehberimizi blogda bulabilirsiniz.'],
       ['ERP kurulumu ne kadar sürer?', 'Modül sayısına ve veri hacmine göre değişmekle birlikte KOBİ ölçeğinde kurulumlar genellikle birkaç hafta içinde tamamlanır.'],
       ['ERP ile muhasebe programı arasındaki fark nedir?', 'Muhasebe programı yalnızca finansal kayıtları tutar. ERP ise muhasebeyle birlikte stok, satış, satın alma ve üretim gibi süreçleri de aynı sistemde birleştirir.'],
