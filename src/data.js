@@ -657,7 +657,7 @@ const services = [
     guide: ['ERP hakkında bilmeniz gerekenler', [
       ['ERP hangi işletmeye gerekir?', 'Stok, satış, muhasebe ve üretim bilgisi farklı programlarda ya da Excel’de tutuluyorsa, aynı veri birkaç kez giriliyorsa veya raporlar elle hazırlanıyorsa ERP’ye geçmenin zamanı gelmiş demektir.'],
       ['Hangi modüller var?', 'Yaygın modüller finans ve muhasebe, stok ve depo, satın alma, satış, üretim planlama ve insan kaynaklarıdır. Tüm modülleri aynı anda kurmak gerekmez; ihtiyaç duyduklarınızla başlayıp sonradan ekleyebilirsiniz.'],
-      ['ERP ve e-dönüşüm entegrasyonu', 'E-fatura, e-arşiv, e-irsaliye ve e-defter kullanan işletmelerde ERP’nin e-dönüşüm altyapısıyla entegre çalışması, belgelerin tekrar veri girmeden oluşturulmasını sağlar. Bu entegrasyonu kurulumla birlikte yapıyoruz.'],
+      ['ERP ve e-dönüşüm entegrasyonu', 'E-fatura, e-arşiv, e-irsaliye ve e-defter kullanan işletmelerde ERP’nin e-dönüşüm altyapısıyla entegre çalışması, belgelerin tekrar veri girmeden oluşturulmasını sağlar. Bu entegrasyonu kurulumla birlikte yapıyoruz. Mali müşavir büroları için faturaları muhasebe fişine otomatik aktaran çözümümüz: <a href="/dijital-hizmetler/istesmm-mali-veri-aktarimi/">İşteSmm</a>.'],
       ['Bulut ERP mi, kurulu ERP mi?', 'Bulut ERP sunucu yatırımı gerektirmez ve her yerden erişilir. Kurulu ERP kendi sunucunuzda çalışır ve özelleştirme imkânı genellikle daha fazladır. Seçimi işletmenizin yapısına göre birlikte yapıyoruz.'],
     ]],
     steps: ['ERP kurulum süreci nasıl işler?', [
@@ -668,6 +668,49 @@ const services = [
     ]],
     stepsLead: 'İhtiyaç analizinden canlıya geçişe kadar her adımda yanınızdayız.',
     blog: /erp/,
+  },
+  {
+    group: 'dijital-hizmetler', slug: 'istesmm-mali-veri-aktarimi', icon: 'sync',
+    name: 'İşteSmm Mali Veri Aktarımı', short: 'İşteSmm',
+    title: 'İşteSmm: Faturaları Muhasebe Fişine Otomatik Aktarın',
+    desc: 'İşteSmm, mükelleflerin e-fatura portallarındaki faturaları toplar, muhasebe fişine dönüştürür ve mali müşavir yazılımına aktarır. Kurulum ve eğitim bizden.',
+    h1: 'İşteSmm ile Mali Veri Aktarımı',
+    lead: 'Mükelleflerinizin alış ve satış faturalarını portalları tek tek dolaşmadan toplayın, muhasebe fişine dönüştürün ve muhasebe yazılımınıza planladığınız günde otomatik aktarın.',
+    intro: [
+      'İşteSmm, mali müşavirlerin talepleriyle geliştirilen yerli, bulut tabanlı bir mali veri aktarım yazılımıdır. Mükelleflerin kullandığı e-fatura entegratör portallarındaki alış ve satış faturalarını her gün kontrol eder, tek panelde toplar ve hesap kodları tanımlanmış muhasebe fişlerine dönüştürür.',
+      'Hesap eşleştirmesi bir kez yapılır; sonraki fişler aktarıma hazır gelir ve günlük, haftalık, 10 günlük veya aylık planla mali müşavir yazılımına kendiliğinden aktarılır. Excel veya CSV dosyasıyla uğraşmanız gerekmez.',
+      'Kurucu Bilişim, İşteSmm iş ortağı olarak mali müşavir bürolarına kurulum, eğitim ve kullanım desteği sunar.',
+    ],
+    highlights: [
+      ['Toplar', 'Farklı entegratör portallarındaki faturaları tek panelde toplar; portalları tek tek dolaşmanız gerekmez.'],
+      ['Fişe dönüştürür', 'Eşleştirme kurallarınıza göre hesap kodları tanımlanmış muhasebe fişlerini oluşturur.'],
+      ['Aktarır', 'Hazır fişleri belirlediğiniz periyotta mali müşavir yazılımınıza otomatik aktarır.'],
+    ],
+    features: ['Tüm mükelleflerin faturaları tek panelde', 'Bien Teknoloji, Digital Planet, EDM Bilişim, eLogo, Kolaysoft, QNB Finans, Sovos, Uyumsoft ve diğer entegratör portalları', 'Hesap planına göre akıllı eşleştirme kuralları', 'Otomatik cari hesap oluşturma', 'Tevkifatlı fiş işleme', 'Banka ve cari hesap hareketleri işleme', 'Aktarım mizanı ve indirilecek KDV raporu', 'Muhasebe fişinden e-belgeye anında erişim', 'Bulut tabanlı: telefon, tablet ve bilgisayardan erişim'],
+    faqs: [
+      ['İşteSmm nedir?', 'İşteSmm; mükelleflerin e-fatura portallarındaki alış ve satış faturalarını toplayan, muhasebe fişine dönüştüren ve mali müşavir yazılımına planlanan günde kendiliğinden aktaran bulut tabanlı mali veri aktarım sistemidir.'],
+      ['Hangi e-fatura portallarından veri çekiyor?', 'İşteSmm’e göre Bien Teknoloji, Digital Planet, EDM Bilişim, eLogo, Kolaysoft, QNB Finans, Sovos ve Uyumsoft dahil 40’tan fazla özel entegratör portalından veri aktarılabiliyor. Mükellefinizin kullandığı portalı birlikte kontrol ediyoruz.'],
+      ['Faturaları Excel ile mi aktarıyor?', 'Hayır. Faturalar Excel veya CSV dosyası kullanılmadan doğrudan portallardan alınır ve muhasebe fişine dönüştürülür.'],
+      ['Hesap eşleştirmesini her ay yeniden yapmam gerekir mi?', 'Hayır. Eşleştirme kuralları hesap planınıza göre bir kez tanımlanır; sonraki fişler bu kurallarla hazır gelir.'],
+      ['Tevkifatlı faturalar doğru işleniyor mu?', 'Evet. Tevkifat başta olmak üzere faturadaki her vergi için ayrı hesap tanımlanabilir.'],
+      ['Aktarımdan önce kontrol yapabilir miyim?', 'Evet. Aktarım mizanı ve indirilecek KDV raporuyla aktarılacak toplamları aktarımdan önce kontrol edebilirsiniz.'],
+      ['Program bilgisayara kurulur mu?', 'Hayır. İşteSmm bulut tabanlıdır; internet olan her yerden telefon, tablet veya bilgisayarla kullanılır.'],
+      ['İşteSmm fiyatı nedir?', 'Fiyat, büronuzun mükellef sayısı ve ihtiyaçlarına göre belirlenir. Bize ulaşın, size özel teklif hazırlayalım.'],
+    ],
+    steps: ['İşteSmm’e geçiş nasıl işler?', [
+      ['Tanışma ve demo', 'Büronuzun iş akışını ve mükelleflerinizin kullandığı e-fatura portallarını konuşuyor, sistemi canlı olarak gösteriyoruz.'],
+      ['Kurulum', 'Hesabınızı açıyor, mükelleflerinizi ve portal bağlantılarını tanımlıyoruz.'],
+      ['Eşleştirme kuralları', 'Hesap planınıza göre eşleştirme kurallarını birlikte oluşturuyoruz.'],
+      ['Eğitim ve destek', 'Ekibinizi eğitiyor, ilk aktarımları birlikte kontrol ediyoruz.'],
+    ]],
+    stepsLead: 'Kurulumdan ilk aktarıma kadar yanınızdayız.',
+    guide: ['İşteSmm hakkında bilmeniz gerekenler', [
+      ['Kimler için?', '<img src="/assets/img/partner/istesmm.webp" alt="İşteSmm" width="185" height="48" loading="lazy" style="display:block;margin-bottom:12px">Mükelleflerinin faturalarını farklı e-fatura portallarından toplayıp muhasebe programına işleyen serbest muhasebeci mali müşavirler ve muhasebe büroları için geliştirildi.'],
+      ['Zamanı nereden kazandırır?', 'Portallara tek tek girip fatura indirme, Excel’e aktarma ve fişleri elle hesaplara dağıtma işini otomatik hale getirir. Siz yalnızca aktarım öncesi mizan ve KDV raporunu kontrol edersiniz.'],
+      ['Banka hareketleri de işlenir mi?', 'Evet. Banka hesap hareketleri ve cari hesap hareketleri de İşteSmm üzerinden işlenebilir.'],
+      ['Ürünün resmî sitesi', 'Ürünle ilgili ayrıntılı bilgi için <a href="https://www.istesmm.com/" target="_blank" rel="noopener">istesmm.com</a> adresini inceleyebilir, kurulum ve demo için bize ulaşabilirsiniz.'],
+    ]],
+    blog: /e-defter|muhasebe/,
   },
   {
     group: 'dijital-hizmetler', slug: 'eticaret-cozumleri', icon: 'cart',
@@ -753,6 +796,7 @@ const reasons = [
 const partners = [
   ['edm', 'EDM Bilişim', 240, 96], ['e-guven', 'E-Güven', 490, 95], ['narbulut', 'Narbulut', 352, 96],
   ['oduyo', 'Oduyo', 306, 96], ['platin360', 'Platin360', 213, 96], ['rota-bulut-erp', 'Rota Bulut ERP', 275, 96],
+  ['istesmm', 'İşteSmm', 371, 96],
 ];
 
 const references = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,59,60,61,62,63,65,66,67,68];
@@ -962,6 +1006,7 @@ const meslekler = [
       ['Elektronik muhasebe fişini kim imzalar?', 'Defter kayıtları aracılık ve sorumluluk sözleşmesi kapsamında mali müşavir tarafından yürütülüyorsa elektronik fişler mali müşavirin kendi e-imzası veya mali mührüyle imzalanır.'],
       ['Müşterilerim için toplu e-imza başvurusu yapabilir misiniz?', 'Evet. E-imza kişiye özel olduğu için her kişi adına ayrı başvuru yapılır; başvuruları sizin için toplu olarak yönetiyoruz.'],
       ['Şirket müşterilerim e-imza mı, mali mühür mü kullanmalı?', 'E-defter ve e-belge işlemlerinde şirketler mali mühür kullanır; şirket yetkilileri ise MERSİS gibi işlemler için kişisel e-imza kullanır. Gerçek kişi mükellefler e-imza da kullanabilir.'],
+      ['Mükelleflerimin faturalarını muhasebe programına otomatik aktarabilir miyim?', 'Evet. İş ortağımız İşteSmm, mükelleflerin e-fatura portallarındaki alış ve satış faturalarını toplayıp muhasebe fişine dönüştürür ve mali müşavir yazılımınıza planladığınız günde aktarır. Kurulum ve eğitimini biz yapıyoruz; ayrıntılar Dijital Hizmetler altındaki İşteSmm sayfasında.'],
     ],
     blog: /e-defter|mali-muhur-ve-islemlerin/,
   },

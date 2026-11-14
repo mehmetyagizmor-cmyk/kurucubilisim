@@ -47,4 +47,5 @@ module.exports = {
   // ---- Trend rehberleri (12.11.2026) ----
   'e-fatura-goruntuleyici': ['E-Fatura Görüntüleyici: XML Fatura Açma ve Doğrulama', 'GİB E-Fatura Görüntüleyici ile XML e-faturayı açın, mali mühür imzasını doğrulayın ve faturanın GİB’den geçip geçmediğini sorgulayın.'],
   'akis-kart-izleme-araci': ['AKİS Kart İzleme Aracı Nedir, Nasıl Kullanılır?', 'AKİS Kart İzleme Aracı kartı, sertifikaları ve PIN durumunu gösterir. Kamu SM’den kurulum, kart görünmüyor ve PIN kilitlendi çözümleri.'],
+  'sgk-e-tebligat-sorgulama-ve-basvuru': ['SGK E-Tebligat Sorgulama ve Başvuru: Adım Adım', 'SGK e-tebligat e-Devlet’ten nasıl sorgulanır, kimler başvurmak zorunda? 5510 kapsamındaki işverenler için başvuru türleri, süreler ve yetki verme.'],
 };

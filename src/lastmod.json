@@ -1,250 +1,254 @@
 {
  "/": {
-  "hash": "784ad818559145d493feebf4ae353711",
-  "date": "2026-11-12"
+  "hash": "87781083d7eb102e6f09962a413e0030",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/": {
-  "hash": "30706506c3fb6c9c5edc5ddc85efa543",
-  "date": "2026-11-09"
+  "hash": "19bb1d1c356872d4884caacbf9dbc093",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/": {
-  "hash": "29d1e8bf2b39d63c12bc5aebbfd27f32",
-  "date": "2026-11-09"
+  "hash": "45c821f7c6484d6379027359ce716ba3",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-fatura/": {
-  "hash": "5cf75483e13b9c82429754bc6c50d01e",
-  "date": "2026-11-12"
+  "hash": "baa7844a8aff0f6dd18658ded440730d",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-arsiv-fatura/": {
-  "hash": "7dc140541e068cb95fa5ae3170e80a93",
-  "date": "2026-11-09"
+  "hash": "d2f158a499e008a90b1bd916e7506fb1",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-irsaliye/": {
-  "hash": "789f865f0aacbd666a36e6cfb5878c54",
-  "date": "2026-11-09"
+  "hash": "ba5403ea19adc4e3286f6ea5e31d381c",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-defter/": {
-  "hash": "f9a438909bbc4ce8916e88edca935d15",
-  "date": "2026-11-09"
+  "hash": "f365368b61cf392fafb2592ef4611efd",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-smm/": {
-  "hash": "e4975f304f303a446efe47b36e30d541",
-  "date": "2026-11-09"
+  "hash": "97fe6ba0ea5bc9b95009003900ea0a07",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-mustahsil-makbuzu/": {
-  "hash": "2184a2798b6a39b64e808bf9c711d04a",
-  "date": "2026-11-09"
+  "hash": "cf57d34229595902bc144383f13bbf2d",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-gider-pusulasi/": {
-  "hash": "b735a29408442f2915a73759fad81b80",
-  "date": "2026-11-09"
+  "hash": "5bcace54d6305a20f53ffe5609d49775",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-dekont/": {
-  "hash": "b0d8946bb150bb5fb0a03e16d525094e",
-  "date": "2026-11-09"
+  "hash": "6119dd8147d285017f36f70c4be3a953",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-adisyon/": {
-  "hash": "f9e2eee1972d67a1aa1d935e539ba380",
-  "date": "2026-11-09"
+  "hash": "e0b20763053b8af5a43e1eaa7cad1b2a",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-bilet/": {
-  "hash": "d82fc74045f3290fd34c4d75ced2ebec",
-  "date": "2026-11-09"
+  "hash": "2a5e229915492cb18a88fd11b2f5926d",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/": {
-  "hash": "16408d7d04832545edf21382524ad760",
-  "date": "2026-11-12"
+  "hash": "5c1e9a982d416d15c3013908bcbaf27e",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/mali-muhur/": {
-  "hash": "1d695b85a7a97531f94244ae2a980ad8",
-  "date": "2026-11-12"
+  "hash": "59a919633ed2028674be547b05ec8334",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/kep-ik/": {
-  "hash": "d7b5324221efec3c93dc0e6c62cc61a3",
-  "date": "2026-11-10"
+  "hash": "1b5750353ebc17e6c18bf051c1211614",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-donusum-entegrasyonu/": {
-  "hash": "adb0b8bbb15e642062824f0176d3e71d",
-  "date": "2026-11-10"
+  "hash": "23d97f04ebec1c0c35e708a5f7db6336",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-donusum-danismanligi/": {
-  "hash": "406315038acf366d22624b52990d370b",
-  "date": "2026-11-09"
+  "hash": "e347b896cb896c84c3486dd117bd6470",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/web-tasarim/": {
-  "hash": "c5a20853e5c0a830741b61dc085168c0",
-  "date": "2026-11-09"
+  "hash": "ea3e0783f05fed97d220b423d3c3735e",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/kurumsal-tasarim/": {
-  "hash": "b1542905b1b2556130204849c34125d2",
-  "date": "2026-11-09"
+  "hash": "afbd0104216ab8060e978555fa9931a4",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/crm-yazilimlari/": {
-  "hash": "ce7b9f95b33f84edbc2c107ca00b3746",
-  "date": "2026-11-09"
+  "hash": "9787fd31ae78a9aaa001e4608f943b65",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/erp-yazilimlari/": {
-  "hash": "8a32592b8e6834b9a5800b4fea2d128e",
-  "date": "2026-11-12"
+  "hash": "7486bfed5007fd4b1195510a4e289668",
+  "date": "2026-11-14"
+ },
+ "/dijital-hizmetler/istesmm-mali-veri-aktarimi/": {
+  "hash": "3be62e5f7b2cbe0ec83f025fc2c404cb",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/eticaret-cozumleri/": {
-  "hash": "7091eb7daab7a958ca2fb38325da92c5",
-  "date": "2026-11-09"
+  "hash": "0455ca9f22fda57661c4857626c26177",
+  "date": "2026-11-14"
  },
  "/dijital-hizmetler/sosyal-medya-yonetimi/": {
-  "hash": "72e4f3aee58e03785ef087a1efdf7f98",
-  "date": "2026-11-09"
+  "hash": "e0ab997bf1a143386565479f61b1c088",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/avukatlar-icin-e-imza/": {
-  "hash": "68ad955817efaf8bbaebfc75fde1a0cd",
-  "date": "2026-11-09"
+  "hash": "a499c26275452b92e7351d63426062aa",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/doktorlar-icin-e-imza/": {
-  "hash": "8990128972e4cebc71019e7e3907c677",
-  "date": "2026-11-09"
+  "hash": "63f21b7c3f42ac39da403b52ba41d477",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/muhendisler-icin-e-imza/": {
-  "hash": "45e2e1ed225bf33598876cfbe7e0a6f0",
-  "date": "2026-11-09"
+  "hash": "2c471e45967596adbed36f5db95c8628",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/muteahhitler-icin-e-imza/": {
-  "hash": "8c3b2284de79f2d2067a5c54b2458d3b",
-  "date": "2026-11-09"
+  "hash": "c6ced60c0f1d3b568177c95c63c13f80",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/mali-musavirler-icin-e-imza/": {
-  "hash": "0e82b1a2b0ae430abf8f29ef42c0cb4b",
-  "date": "2026-11-09"
+  "hash": "f6de84f7ce9be451c67fa2c9ff3f6fca",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/mimarlar-icin-e-imza/": {
-  "hash": "2ffcca53dd58eabf8a0f783479737719",
-  "date": "2026-11-09"
+  "hash": "c196208de27632278a0b9565a94949cd",
+  "date": "2026-11-14"
  },
  "/e-donusum-hizmetleri/e-imza/ihale-firmalari-icin-e-imza/": {
-  "hash": "a2990d8e49435c37a1d6ba39b5eb0dfd",
-  "date": "2026-11-09"
+  "hash": "bdb80c4bbb0dbbe077110d1920a7454d",
+  "date": "2026-11-14"
  },
  "/hakkimizda/": {
-  "hash": "c700cadc57ff14229f9fd187bc26cc81",
-  "date": "2026-11-12"
+  "hash": "b0803b5af2af7a9814dc966f84698306",
+  "date": "2026-11-14"
  },
  "/vizyon-ve-misyonumuz/": {
-  "hash": "fc819b1ceadf742ed9f3d85e464d19bd",
-  "date": "2026-11-09"
+  "hash": "5d6bd41c1bbd076cd924956b6c7ac6b5",
+  "date": "2026-11-14"
  },
  "/referanslarimiz/": {
-  "hash": "3ff7cca281c53aeb22f8be48a49bf736",
-  "date": "2026-11-12"
+  "hash": "424d5b5d3f5ef9cf45e85f25c7875959",
+  "date": "2026-11-14"
  },
  "/sikca-sorulan-sorular/": {
-  "hash": "6e489c4e655df58d77d92d8b4ba796dd",
-  "date": "2026-11-12"
+  "hash": "2b73b858e04937642b205c4bde838949",
+  "date": "2026-11-14"
  },
  "/iletisim/": {
-  "hash": "76a740231c4808651021a1c2f2c60455",
-  "date": "2026-11-09"
+  "hash": "adba5083ebe68d3cdec21e2d310a8167",
+  "date": "2026-11-14"
  },
  "/basvuru-formu/": {
-  "hash": "2cc0b7975476d993e162e6f2d3060459",
-  "date": "2026-11-09"
+  "hash": "40dafd53778cff29f276d1bbab982b69",
+  "date": "2026-11-14"
  },
  "/is-ortagi-basvurusu/": {
-  "hash": "d8b28e6c1b9b8a54c13ac4467a0f6b5e",
-  "date": "2026-11-09"
+  "hash": "a6aa45cc1b47c4bbc5e93851e7d40643",
+  "date": "2026-11-14"
  },
  "/kvkk-politikamiz/": {
-  "hash": "4506cf2b340a584b627c2677f9f8641e",
-  "date": "2026-11-09"
+  "hash": "051402942f7f569a3354ebf296cdbc70",
+  "date": "2026-11-14"
  },
  "/sozlesme-kosullari/": {
-  "hash": "5aa47391df56934ddf4e86f70b6ee3f4",
-  "date": "2026-11-09"
+  "hash": "db8b6e639285cfeed37ac915c2998c42",
+  "date": "2026-11-14"
  },
  "/cerez-politikasi/": {
-  "hash": "4d21dc14842869cdbba5c3eeac6b93c0",
-  "date": "2026-11-09"
+  "hash": "61edba1d70df7fde67d8722cff714d35",
+  "date": "2026-11-14"
  },
  "/kampanyalar/": {
-  "hash": "64b03a8a0f2af9afd18e9a14d32439fb",
-  "date": "2026-11-09"
+  "hash": "16650a46f950c90b1ba8f4cadac4d07b",
+  "date": "2026-11-14"
  },
  "/kampanyalar/e-fatura-100-kontor-hediye/": {
-  "hash": "2d5217d48b6ce7ba7447974beb9bb095",
-  "date": "2026-11-09"
+  "hash": "dc5317f49911a8114599cdef63ee62a1",
+  "date": "2026-11-14"
  },
  "/e-fatura-zorunlu-muyum/": {
-  "hash": "0c4bf35ca42e6fe511c551a29036ef79",
-  "date": "2026-11-09"
+  "hash": "324f6a92b3655b5a49bd4f5c8489e7e4",
+  "date": "2026-11-14"
  },
  "/blog/": {
-  "hash": "8f01a2cb368aca72ae7073d27ce50358",
-  "date": "2026-11-09"
+  "hash": "24f5de762716d877000b7191afb22b22",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/": {
-  "hash": "e00d5d0e6958305fe82fceefabf307d9",
-  "date": "2026-11-12"
+  "hash": "ac70f36d4510fabfdac6e3a3eeb2aea3",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-fatura/": {
-  "hash": "22784a70463da10d6539f68f9e3a62da",
-  "date": "2026-11-12"
+  "hash": "0f14190751f3303e52e11141073e204b",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-arsiv-fatura/": {
-  "hash": "28ea511d20c392045d14ac41e86b0730",
-  "date": "2026-11-10"
+  "hash": "5283060c0852bc87c5649b4fc37070e6",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-irsaliye/": {
-  "hash": "5582e83089def3127d164464f86c466a",
-  "date": "2026-11-10"
+  "hash": "704447f3c7ec4f8d6266eff78ece47b2",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-defter/": {
-  "hash": "1544e6a0f9d1cedb3ca76141b730c0f8",
-  "date": "2026-11-10"
+  "hash": "64544cbf3f32ef0287e386ebcd7857c2",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-smm/": {
-  "hash": "4e03dd185a49c8d29a9602c206247147",
-  "date": "2026-11-10"
+  "hash": "0a8cf1cb34a3a29db7526333ddea07ea",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-mustahsil/": {
-  "hash": "ba93ce6c355cefe7617b9cc8dc84e84f",
-  "date": "2026-11-10"
+  "hash": "6d1d49e369c45c44267feaf4d6c5c569",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-gider-pusulasi/": {
-  "hash": "8574c8a61fac77504ec802120075557d",
-  "date": "2026-11-10"
+  "hash": "652046398008c3a98418f6248b089d5e",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-dekont/": {
-  "hash": "6a604b1070c97bd8b607dc96b4557acf",
-  "date": "2026-11-10"
+  "hash": "7e2915d62aa69b20b2ec4e2470a2ba5c",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-adisyon/": {
-  "hash": "043d14ea3c279c53e25f8da067a80398",
-  "date": "2026-11-10"
+  "hash": "bb565c363665fd735db08e499d10a1b3",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-bilet/": {
-  "hash": "edd2ed18126fd1c12aa2eed7648e4c72",
-  "date": "2026-11-10"
+  "hash": "90f6de76498967343b0749fbe14124c7",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/e-imza/": {
-  "hash": "a6034369e73ff48eb799523e999a11f6",
-  "date": "2026-11-10"
+  "hash": "f672b53689950761a28793ff4bb1b458",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/mali-muhur/": {
-  "hash": "ea2aadeed273a14d9d553aaafdf3976f",
-  "date": "2026-11-12"
+  "hash": "9e936463657c4e3cdd8f705db9bd936b",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/kep/": {
-  "hash": "35cae15113069c10605fffaca5a9dba9",
-  "date": "2026-11-10"
+  "hash": "225597725f30e12df08c418e311756f7",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/entegrasyon/": {
-  "hash": "9bef7ef1d407487476daea5e2fb88b39",
-  "date": "2026-11-10"
+  "hash": "d3195d00afc413471e161e7a152fa107",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/danismanlik/": {
-  "hash": "b5c2127623a1d7fdfb04938ef6573441",
-  "date": "2026-11-10"
+  "hash": "7654701ed853edd5283c1a6059add0b8",
+  "date": "2026-11-14"
  },
  "/bilgi-bankasi/mevzuat/": {
-  "hash": "668991cc2271dd2f9e4879642ca48ce4",
-  "date": "2026-11-10"
+  "hash": "98b1e67973b1f4a329e67872b09309d2",
+  "date": "2026-11-14"
  }
 }
