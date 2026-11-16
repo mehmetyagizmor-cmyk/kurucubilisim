@@ -36,7 +36,35 @@ const partnerBox = () => `<aside class="partner-box" aria-label="İş ortağım�
   <div class="partner-box__links"><a href="${PARTNER.page}">Mali veri aktarımı ${icon('arrow')}</a><a href="${PARTNER.url}" target="_blank" rel="noopener">istesmm.com ${icon('arrow')}</a></div>
 </aside>`;
 
-const logoWall =(n = references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
+// "Kurulamadı mı?" uzaktan destek kutusu (Web Socket rehberi + Gerekli Yazılımlar)
+const waLink = (text) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+const supportCta = (konu = 'kurulum') => `<div class="help-cta">
+  ${icBox('phone')}
+  <div class="help-cta__text"><strong>Kurulamadı mı? 5 dakikada uzaktan bağlanıp kuralım.</strong><small>Uzmanımız bilgisayarınıza uzaktan bağlanarak ${esc(konu)} işlemini sizin yerinize tamamlasın.</small></div>
+  <div class="help-cta__btns"><a class="btn btn--primary btn--sm" href="${waLink(`Merhaba, ${konu} için uzaktan destek almak istiyorum.`)}" target="_blank" rel="noopener">${icon('whatsapp')}WhatsApp</a><a class="btn btn--ghost btn--sm" href="tel:${site.phone}">${icon('phone')}${esc(site.phoneDisplay)}</a></div>
+</div>`;
+
+// Mali müşavirler için toplu destek paketi tanıtımı (fiyat yok, iletişime yönlendirir)
+const topluDestek = () => `<div class="card toplu-destek">
+  ${icBox('briefcase')}
+  <h3>Mali müşavirlere toplu destek paketi</h3>
+  <p>Mükelleflerinizin imzalama aracı (web socket), e-imza ve mali mühür kurulumlarını tek tek uğraşmadan bize yönlendirin; kurulum ve destek taleplerini büronuz adına toplu olarak karşılayalım.</p>
+  <div class="hero__actions" style="margin:18px 0 0"><a class="btn btn--primary btn--sm" href="${waLink('Merhaba, mali müşavirler için toplu destek paketi hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${icon('whatsapp')}Bilgi alın</a><a class="btn btn--ghost btn--sm" href="/iletisim/">İletişim</a></div>
+</div>`;
+
+// Ana sayfa: Hızlı GİB Bağlantıları
+const GIB_LINKS = [
+  ['/e-fatura-web-socket/', 'e-Fatura Web Socket', 'İmzalama aracı indirme ve kurulum rehberi', 'sync', false],
+  ['https://earsivportal.efatura.gov.tr/', 'e-Arşiv Portal', 'GİB e-Arşiv Portalı girişi', 'archive', true],
+  ['https://ebelgebasvuru.gib.gov.tr/iptal-itiraz/sertifika-giris', 'İptal/İtiraz Portalı', 'GİB e-Fatura İptal/İtiraz Portalı', 'doc', true],
+  ['https://ebelge.gib.gov.tr/efaturamevzuat.html', 'GİB Kılavuzları', 'e-Belge kılavuzları ve tebliğler', 'book', true],
+];
+const gibLinksBox = () => `<section class="gib-links" aria-labelledby="gib-links-h">
+  <h2 id="gib-links-h">Hızlı GİB Bağlantıları</h2>
+  <div class="gib-links__grid">${GIB_LINKS.map(([h, t, d, ic, ext]) => `<a href="${h}"${ext ? ' target="_blank" rel="noopener"' : ''}>${icBox(ic)}<span><strong>${esc(t)}</strong><small>${esc(d)}${ext ? ' · GİB' : ''}</small></span></a>`).join('')}</div>
+</section>`;
+
+const logoWall = (n =references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
 
 const trDate = (d) => new Date(d + 'T12:00:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 const campPath = (c) => `/kampanyalar/${c.slug}/`;
@@ -75,4 +103,4 @@ const esigMock = (m) => `<figure class="esig" data-reveal>
   <figcaption>Temsilî görsel</figcaption>
 </figure>`;
 
-module.exports = { meslekPath, meslekCard, meslekGrid, esigMock, activeCampaigns, campPath, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, partnerBox, logoWall };
+module.exports = { meslekPath, meslekCard, meslekGrid, esigMock, activeCampaigns, campPath, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, partnerBox, supportCta, topluDestek, gibLinksBox, GIB_LINKS, logoWall };

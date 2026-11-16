@@ -671,10 +671,10 @@ const services = [
   },
   {
     group: 'dijital-hizmetler', slug: 'istesmm-mali-veri-aktarimi', icon: 'sync',
-    name: 'İşteSmm Mali Veri Aktarımı', short: 'İşteSmm',
-    title: 'İşteSmm: Faturaları Muhasebe Fişine Otomatik Aktarın',
+    name: 'Mali Müşavirler için Mali Veri Aktarımı', short: 'Mali Veri Aktarımı',
+    title: 'Mali Müşavirler için Mali Veri Aktarımı | İşteSmm',
     desc: 'İşteSmm, mükelleflerin e-fatura portallarındaki faturaları toplar, muhasebe fişine dönüştürür ve mali müşavir yazılımına aktarır. Kurulum ve eğitim bizden.',
-    h1: 'İşteSmm ile Mali Veri Aktarımı',
+    h1: 'Mali Müşavirler için Mali Veri Aktarımı',
     lead: 'Mükelleflerinizin alış ve satış faturalarını portalları tek tek dolaşmadan toplayın, muhasebe fişine dönüştürün ve muhasebe yazılımınıza planladığınız günde otomatik aktarın.',
     intro: [
       'İşteSmm, mali müşavirlerin talepleriyle geliştirilen yerli, bulut tabanlı bir mali veri aktarım yazılımıdır. Mükelleflerin kullandığı e-fatura entegratör portallarındaki alış ve satış faturalarını her gün kontrol eder, tek panelde toplar ve hesap kodları tanımlanmış muhasebe fişlerine dönüştürür.',
@@ -1007,7 +1007,7 @@ const meslekler = [
       ['Elektronik muhasebe fişini kim imzalar?', 'Defter kayıtları aracılık ve sorumluluk sözleşmesi kapsamında mali müşavir tarafından yürütülüyorsa elektronik fişler mali müşavirin kendi e-imzası veya mali mührüyle imzalanır.'],
       ['Müşterilerim için toplu e-imza başvurusu yapabilir misiniz?', 'Evet. E-imza kişiye özel olduğu için her kişi adına ayrı başvuru yapılır; başvuruları sizin için toplu olarak yönetiyoruz.'],
       ['Şirket müşterilerim e-imza mı, mali mühür mü kullanmalı?', 'E-defter ve e-belge işlemlerinde şirketler mali mühür kullanır; şirket yetkilileri ise MERSİS gibi işlemler için kişisel e-imza kullanır. Gerçek kişi mükellefler e-imza da kullanabilir.'],
-      ['Mükelleflerimin faturalarını muhasebe programına otomatik aktarabilir miyim?', 'Evet. İş ortağımız İşteSmm, mükelleflerin e-fatura portallarındaki alış ve satış faturalarını toplayıp muhasebe fişine dönüştürür ve mali müşavir yazılımınıza planladığınız günde aktarır. Kurulum ve eğitimini biz yapıyoruz; ayrıntılar Dijital Hizmetler altındaki İşteSmm sayfasında.'],
+      ['Mükelleflerimin faturalarını muhasebe programına otomatik aktarabilir miyim?', 'Evet. İş ortağımız İşteSmm, mükelleflerin e-fatura portallarındaki alış ve satış faturalarını toplayıp muhasebe fişine dönüştürür ve mali müşavir yazılımınıza planladığınız günde aktarır. Kurulum ve eğitimini biz yapıyoruz; ayrıntılar Dijital Hizmetler altındaki Mali Müşavirler için Mali Veri Aktarımı sayfasında.'],
     ],
     blog: /e-defter|mali-muhur-ve-islemlerin/,
   },

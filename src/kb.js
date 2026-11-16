@@ -348,6 +348,7 @@ const articles = [
         ['PIN kabul edilmiyor', 'İlk PIN’in doğru girildiğinden emin olun; üst üste hatalı girişte kart kilitlenir.'],
         ['Kurum sistemi e-imzayı tanımıyor', 'Sistemin istediği imza aracının ve gerekiyorsa Java’nın kurulu olduğunu kontrol edin.'],
       ]),
+      `<p>AnyDesk, Java, AKİS Kart İzleme Aracı ve GİB imzalama aracının resmî indirme sayfalarını <a href="/gerekli-yazilimlar/">Gerekli Yazılımlar</a> sayfamızda topladık.</p>`,
       note('Aktivasyon ve kurulum adımları sertifika sağlayıcısına göre farklılık gösterebilir. Kurucu Bilişim olarak e-imzanızın aktivasyonu ve kurulumunda uzaktan bağlantıyla yanınızdayız.'),
     ].join('\n'),
     faqs: [
@@ -655,7 +656,7 @@ const articles = [
     ],
   },
   {
-    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-11-07',
+    cat: 'e-fatura', slug: 'e-fatura-nasil-iptal-edilir', svc: 'e-fatura', updated: '2026-11-16',
     mevzuat: [['Vergi Usul Kanunu Genel Tebliği (Sıra No: 509)’nde Değişiklik Yapılmasına Dair Tebliğ (Sıra No: 526)', '2021-02-09', 'https://www.resmigazete.gov.tr/eskiler/2021/02/20210209-5.htm', 'Hazine ve Maliye Bakanlığı']],
     title: 'E-Fatura Nasıl İptal Edilir? 8 Günlük Süre ve Adımlar',
     lead: 'E-fatura, alıcıya iletildiği tarihten itibaren 8 gün içinde iptal edilebilir. Ticari faturada iptal “ret” yanıtıyla, temel faturada GİB’in e-Fatura İptal/İtiraz Portalı’ndan yapılır; 8 gün geçtikten sonra sistem iptal talebine izin vermez.',
@@ -672,7 +673,7 @@ const articles = [
       h2('E-Fatura İptal/İtiraz Portalı Nasıl Kullanılır?'),
       olBold([
         ['Gerekenleri hazırlayın', 'Mali mühür veya e-imza kartınız takılı olmalı ve GİB’in imzalama aracı programı çalışıyor olmalıdır. Portal kullanıldığı sürece imzalama aracı arka planda açık kalmalıdır.'],
-        ['Portala girin', 'e-Fatura İptal/İtiraz Portalı’na (portal.efatura.gov.tr/FaturaIptal/) mali mühür veya e-imzanızla giriş yapın.'],
+        ['Portala girin', 'e-Fatura İptal/İtiraz Portalı’na (ebelgebasvuru.gib.gov.tr/iptal-itiraz/sertifika-giris) mali mühür veya e-imzanızla giriş yapın.'],
         ['Talep oluşturun', '“Fatura İptal Talebi Oluşturmak İçin Tıklayınız” butonuna basın, işlem sahibi olarak “Alıcı” veya “Satıcı”yı seçin.'],
         ['Fatura bilgilerini girin', 'Faturanın 16 haneli fatura numarasını ve faturada yazan ödenecek tutarı girin, akıllı kart bilgilerinizi onaylayıp “Talep Oluştur”a tıklayın.'],
         ['Talebi takip edin', 'Talep, karşı tarafın portal ekranına düşer. Durumunu “Fatura İptal Taleplerinin Durumlarını Görmek…” sekmesinden takip edebilirsiniz; onaylanırsa durum “Fatura İptal Edildi” olarak güncellenir.'],
@@ -696,6 +697,7 @@ const articles = [
         'Faturanın e-fatura mı e-arşiv mi olması gerektiğini kesmeden önce kontrol etmek iptal ihtiyacını azaltır.',
       ]),
       `<p>Alıcının e-fatura kullanıcısı olup olmadığını <a href="/bilgi-bankasi/e-fatura/e-fatura-mukellefi-sorgulama/">E-Fatura Mükellefi Sorgulama</a> rehberimizden öğrenebilirsiniz. <em>Resmî kaynak:</em> <a href="https://ebelge.gib.gov.tr/dosyalar/kilavuzlar/e-Fatura_Iptal_Ihtar_Itiraz_Bildirim_Kilavuzu_V_1.2.pdf" target="_blank" rel="noopener">GİB – e-Fatura Uygulaması İptal, İhtar/İtiraz Bildirim Kılavuzu (v1.2)</a></p>`,
+      `<p>GİB imzalama aracını (e-fatura web socket) resmî sayfadan indirme, kurulum ve “İmza socket sunucusuna erişilemedi” gibi hataların çözümü için <a href="/e-fatura-web-socket/">e-Fatura Web Socket rehberimize</a> bakın.</p>`,
       note('E-fatura iptal ve itiraz işlemlerinde, portal kullanımı ve imzalama aracı kurulumunda destek veriyoruz.'),
     ].join('\n'),
     faqs: [
@@ -703,7 +705,7 @@ const articles = [
       ['Ticari e-fatura nasıl iptal edilir?', 'Ticari senaryodaki e-faturayı alıcı, 8 gün içinde e-fatura sistemi üzerinden “Ret Uygulama Yanıtı” göndererek iptal eder.'],
       ['Temel e-fatura nasıl iptal edilir?', 'Alıcı veya satıcı, 8 gün içinde e-Fatura İptal/İtiraz Portalı’ndan iptal talebi oluşturur; karşı taraf talebi onaylarsa fatura iptal edilir.'],
       ['Karşı taraf iptal talebimi onaylamazsa ne olur?', 'Karşı tarafın onaylama zorunluluğu yoktur. Talep reddedilir veya 8 gün içinde onaylanmazsa fatura geçerliliğini korur.'],
-      ['E-fatura iptal portalına nasıl girilir?', 'portal.efatura.gov.tr/FaturaIptal/ adresinden, mali mühür veya e-imzanızla ve GİB imzalama aracı açıkken giriş yapılır.'],
+      ['E-fatura iptal portalına nasıl girilir?', 'GİB’in ebelgebasvuru.gib.gov.tr/iptal-itiraz/sertifika-giris adresinden, mali mühür veya e-imzanızla ve GİB imzalama aracı açıkken giriş yapılır.'],
     ],
   },
   {
@@ -792,6 +794,7 @@ const articles = [
         ['Fatura sorgusunda sonuç çıkmıyor', 'Toplam tutar yerine ödenecek tutarı yazdığınızdan ve kuruşları doğru girdiğinizden emin olun.'],
       ]),
       `<p>E-arşiv faturanın ne olduğu ve kimlerin düzenlemesi gerektiği için <a href="/bilgi-bankasi/e-arsiv-fatura/e-arsiv-fatura-rehberi/">E-Arşiv Fatura Rehberi</a>’ne, alıcının e-fatura kullanıcısı olup olmadığını öğrenmek için <a href="/bilgi-bankasi/e-fatura/e-fatura-mukellefi-sorgulama/">E-Fatura Mükellefi Sorgulama</a> rehberine bakabilirsiniz.</p>`,
+      `<p>Mali mühürle giriş için gereken GİB imzalama aracının kurulumu ve hata çözümleri: <a href="/e-fatura-web-socket/">e-Fatura Web Socket rehberi</a>.</p>`,
       `<p><em>Resmî kaynaklar:</em> <a href="https://earsivportal.efatura.gov.tr/" target="_blank" rel="noopener">GİB e-Arşiv Portal</a> · <a href="https://earsivportal.efatura.gov.tr/intragiris.html" target="_blank" rel="noopener">e-Arşiv Portal İnteraktif Şifre ile Giriş</a> · <a href="https://ebelge.gib.gov.tr/earsivsorgula.html" target="_blank" rel="noopener">GİB e-Arşiv Fatura Sorgulama</a></p>`,
     ].join('\n'),
     faqs: [
@@ -977,6 +980,7 @@ const articles = [
       h2('GİB Portalı mı, Özel Entegratör mü?'),
       p('GİB e-Fatura Portalı ücretsizdir ancak faturalar tek tek düzenlenir ve muhasebe programınızla otomatik bağlantı kurmaz. Fatura sayısı fazla olan veya muhasebe/ERP programıyla otomatik çalışmak isteyen işletmeler genellikle özel entegratör çözümlerini tercih eder.'),
       `<p><em>Resmî kaynak:</em> <a href="https://portal.efatura.gov.tr/efatura/egiris.jsp" target="_blank" rel="noopener">GİB – Elektronik imza ile E-Fatura portaline giriş</a></p>`,
+      `<p>GİB imzalama aracını (e-fatura web socket) resmî sayfadan indirme, kurulum ve “İmza socket sunucusuna erişilemedi” gibi hataların çözümü için <a href="/e-fatura-web-socket/">e-Fatura Web Socket rehberimize</a> bakın.</p>`,
       note('E-fatura portal girişi, Java ve imzalama aracı kurulumunda uzaktan bağlantıyla destek veriyoruz.'),
     ].join('\n'),
     faqs: [
@@ -1181,6 +1185,7 @@ const articles = [
       p('AKİS paketinde ayrıca bir Teşhis Aracı bulunur. Kılavuza göre bu araçla “Rapor Oluştur” seçilerek sistemdeki eksik program veya çalışmayan servis gibi sorunlar tespit edilebilir; gerekirse “Paket Oluştur” ile logları içeren bir .zip dosyası hazırlanıp destek ekibine iletilir.'),
       `<p>Kurulumun tamamı için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a>, e-imza kartları için <a href="/bilgi-bankasi/e-imza/e-imza-kurulumu-nasil-yapilir/">E-İmza Kurulumu</a> rehberlerimiz hazır.</p>`,
       `<p><em>Resmî kaynaklar:</em> <a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/suruculer/AkisKart/Akis_Arayuzu_Kurulum_Kullanim_Kilavuzu.pdf" target="_blank" rel="noopener">TÜBİTAK – AKİS Arayüz Yazılımı Kurulum ve Kullanım Kılavuzu</a> · <a href="https://kamusm.bilgem.tubitak.gov.tr/islemler/surucu_yukleme_servisi/" target="_blank" rel="noopener">Kamu SM Sürücü Yükleme Servisi</a></p>`,
+      `<p>Java ve uzak bağlantı programlarının resmî indirme adresleri için <a href="/gerekli-yazilimlar/">Gerekli Yazılımlar</a> sayfamıza bakabilirsiniz.</p>`,
       note('AKİS sürücüsü, kart okuyucu ve mali mühür kurulumunda uzaktan bağlanarak destek veriyoruz.'),
     ].join('\n'),
     faqs: [

@@ -82,6 +82,12 @@ const applyHref = (slug) => {
   return s ? `${svcPath(s)}#basvuru` : '/basvuru-formu/' + (slug ? '?hizmet=' + slug : '');
 };
 
+// Üst menü "Destek": GİB kısayolları + Gerekli Yazılımlar (dış bağlantılar resmî GİB sayfalarıdır)
+const DESTEK_MENU = [
+  ['/e-fatura-web-socket/', 'e-Fatura Web Socket', 'GİB imzalama aracı kurulumu', 'sync', false],
+  ['https://ebelgebasvuru.gib.gov.tr/iptal-itiraz/sertifika-giris', 'İptal/İtiraz Portalı', 'GİB e-Fatura İptal/İtiraz Portalı', 'doc', true],
+  ['/gerekli-yazilimlar/', 'Gerekli Yazılımlar', 'AnyDesk, Java, AKİS ve diğerleri', 'monitor', false],
+];
 function header(path) {
   const cur = (p) => (path === p ? ' aria-current="page"' : '');
   const svcLinks = (g) => byGroup(g).map((s) => `<a href="${svcPath(s)}">${icBox(s.icon)}<span><strong>${esc(s.short)}</strong><small>${esc(s.highlights[0][1].slice(0, 58))}…</small></span></a>`).join('');
@@ -118,6 +124,8 @@ function header(path) {
       ${activeCampaigns().length ? `<div class="nav__item"><a class="nav__link" href="/kampanyalar/"${cur('/kampanyalar/')}>Kampanyalar</a></div>` : ''}
       <div class="nav__item"><a class="nav__link" href="/bilgi-bankasi/"${cur('/bilgi-bankasi/')}>Bilgi Bankası ${icon('chev')}</a>
         <div class="dropdown">${[['/bilgi-bankasi/', 'Bilgi Bankası', 'Adım adım rehberler', 'book'], ['/blog/', 'Blog', 'Haberler ve mevzuat yazıları', 'doc'], ['/sikca-sorulan-sorular/', 'Sıkça Sorulan Sorular', 'Hızlı cevaplar', 'spark']].map(([h, t, d, ic]) => `<a href="${h}">${icBox(ic)}<span><strong>${t}</strong><small>${d}</small></span></a>`).join('')}</div></div>
+      <div class="nav__item"><a class="nav__link" href="/gerekli-yazilimlar/"${cur('/gerekli-yazilimlar/')}>Destek ${icon('chev')}</a>
+        <div class="dropdown">${DESTEK_MENU.map(([h, t, d, ic, ext]) => `<a href="${h}"${ext ? ' target="_blank" rel="noopener"' : ''}>${icBox(ic)}<span><strong>${t}</strong><small>${d}</small></span></a>`).join('')}</div></div>
       <div class="nav__item"><a class="nav__link" href="/iletisim/"${cur('/iletisim/')}>İletişim</a></div>
     </nav>
     <div class="header__cta">
@@ -140,6 +148,7 @@ function header(path) {
   ${activeCampaigns().length ? '<a href="/kampanyalar/">Kampanyalar</a>' : ''}
   <a href="/blog/">Blog</a>
   <a href="/bilgi-bankasi/">Bilgi Bankası</a>
+  <details><summary>Destek ${icon('chev')}</summary><div>${DESTEK_MENU.map(([h, t, , , ext]) => `<a href="${h}"${ext ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`).join('')}</div></details>
   <a href="/iletisim/">İletişim</a>
   <div class="drawer__cta">${btn('/basvuru-formu/', 'Ücretsiz Teklif Al')}${btn('tel:' + site.phone, site.phoneDisplay, 'btn--ghost', false)}</div>
 </div>`;
