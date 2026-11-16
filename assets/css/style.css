@@ -242,6 +242,16 @@ p { margin: 0 0 1em; }
 .zt-strip__go { margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 6px; color: var(--link); font-weight: 650; white-space: nowrap; }
 .zt-strip__go svg { width: 16px; height: 16px; }
 @media (max-width: 640px) { .zt-strip { flex-wrap: wrap; } .zt-strip__go { margin-left: 0; } }
+/* İş ortağı alanı (Blog + Bilgi Bankası) */
+.partner-box { display: flex; align-items: center; gap: 20px; max-width: 980px; margin: 0 auto clamp(32px, 4vw, 48px); padding: 18px 22px; border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); }
+.partner-box__logo { flex: none; display: block; line-height: 0; padding: 10px 14px; border-radius: var(--radius-sm); background: #fff; }
+.partner-box__logo img { width: 155px; height: auto; }
+.partner-box__text strong { display: block; font-size: 1.05rem; }
+.partner-box__text small { display: block; color: var(--muted); font-size: .9rem; line-height: 1.45; margin-top: 2px; }
+.partner-box__links { margin-left: auto; flex: none; display: flex; flex-direction: column; gap: 6px; }
+.partner-box__links a { display: inline-flex; align-items: center; gap: 6px; color: var(--link); font-weight: 650; white-space: nowrap; font-size: .95rem; }
+.partner-box__links svg { width: 15px; height: 15px; }
+@media (max-width: 760px) { .partner-box { flex-wrap: wrap; } .partner-box__links { margin-left: 0; flex-direction: row; flex-wrap: wrap; gap: 8px 18px; } }
 .trust { list-style: none; margin: clamp(24px, 3vw, 36px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 24px; text-align: left; }
 .trust li { display: flex; gap: 12px; align-items: flex-start; }
 .trust .ic { width: 40px; height: 40px; border-radius: 12px; }

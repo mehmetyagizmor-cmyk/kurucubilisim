@@ -1237,6 +1237,38 @@ const articles = [
       ['Mali müşavirim SGK tebligatlarımı görebilir mi?', 'Evet. Hesap sahibi üçüncü kişilere yetki verebilir; yetki verilen kişinin e-Devlet üzerinden onay vermesi gerekir.'],
     ],
   },
+  {
+    cat: 'entegrasyon', slug: 'mali-musavir-yazilimina-fis-aktarimi', svc: 'istesmm-mali-veri-aktarimi', updated: '2026-11-16',
+    title: 'Mali Müşavir Yazılımına Muhasebe Fiş Aktarımı: Luca, Zirve, Orka, Mikrokom GMS.Net',
+    lead: 'İşteSmm; mükelleflerin e-fatura portallarındaki alış ve satış faturalarını toplayan, muhasebe fişine dönüştüren ve mali müşavir yazılımına planlanan günde kendiliğinden aktaran bulut tabanlı mali veri aktarım sistemidir.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('Faturaları toplama, fişe dönüştürme ve aktarma işini İşteSmm üstlenir. Hesap eşleştirmesi bir kez yapılır; sonraki fişler hazır gelir ve günlük, haftalık, 10 günlük veya aylık planla mali müşavir yazılımına kendiliğinden aktarılır.')}</p>`,
+      h2('Hangi Mali Müşavir Yazılımları Destekleniyor?'),
+      p('İşteSmm bilgilendirme kılavuzuna göre İşteSmm, harf sırasıyla şu 5 mali müşavir yazılımıyla entegre çalışır: Dia Yazılım, Luca Yazılım, Mikrokom GMS.Net, Orka Yazılım ve Zirve Yazılım. Bulut tabanlı mali müşavir yazılımlarına online olarak bağlanır; SQL tabanlı masaüstü mali müşavir yazılımlarına küçük boyutlu bir konnektör uygulamasıyla aktarım yapar.'),
+      h2('Yazılıma Göre Fiş Aktarımı Rehberleri'),
+      `<ul>
+<li><a href="/luca-muhasebe-fis-aktarimi/">Luca Muhasebe Fiş Aktarımı</a></li>
+<li><a href="/zirve-muhasebe-fis-aktarimi/">Zirve Muhasebe Fiş Aktarımı</a></li>
+<li><a href="/orka-muhasebe-fis-aktarimi/">Orka Muhasebe Fiş Aktarımı</a></li>
+<li><a href="/mikrokom-gms-net-muhasebe-fis-aktarimi/">Mikrokom GMS.Net Muhasebe Fiş Aktarımı</a></li>
+</ul>`,
+      h2('Aktarım Üç Adımda İşler'),
+      olBold([
+        ['Toplar', 'Farklı entegratör portallarındaki faturaları tek panelde toplar. Portalları tek tek dolaşmanız gerekmez.'],
+        ['Fişe dönüştürür', 'Eşleştirme kurallarınıza göre hesap kodları tanımlanmış muhasebe fişlerini oluşturur.'],
+        ['Aktarır', 'Hazır fişleri günlük, haftalık, 10 günlük veya aylık planla mali müşavir yazılımına aktarır.'],
+      ]),
+      h2('Hangi E-Fatura Portallarından Veri Alınır?'),
+      p('İşteSmm; Bien Teknoloji, Digital Planet, EDM Bilişim, eLogo, Kolaysoft, QNB Finans, Sovos, Uyumsoft ve daha birçok olmak üzere 40’tan fazla özel entegratör portalıyla entegre çalışır. İşteSmm’in açıklamasına göre Trendyol Faturam (trendyolfaturam.com) portalından veri sağlanamadığı için bu portaldan aktarım yapılamamaktadır.'),
+      `<p>Kurulum, eğitim ve ücretsiz deneme için <a href="/dijital-hizmetler/istesmm-mali-veri-aktarimi/">Mali Müşavirler için Mali Veri Aktarımı</a> sayfamızı inceleyebilirsiniz.</p>`,
+      `<p><em>Kaynak:</em> <a href="https://www.istesmm.com/pdf/istesmm-bilgilendirme-kilavuzu.pdf" target="_blank" rel="noopener">İşteSmm Bilgilendirme Kılavuzu</a> · <a href="https://www.istesmm.com/" target="_blank" rel="noopener">istesmm.com</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['İşteSmm hangi mali müşavir yazılımlarına aktarım yapar?', 'İşteSmm bilgilendirme kılavuzuna göre Dia Yazılım, Luca Yazılım, Mikrokom GMS.Net, Orka Yazılım ve Zirve Yazılım ile entegre çalışır.'],
+      ['Faturaları Excel ile mi aktarıyor?', 'Hayır. Veriler Excel veya CSV dosyası kullanılmadan, bir kez yapılan hesap eşleştirmesiyle aktarılır.'],
+      ['Aktarım ne sıklıkla yapılır?', 'Aktarım planı günlük, haftalık, 10 günlük veya aylık olarak seçilebilir; fişler planlanan günde otomatik aktarılır.'],
+    ],
+  },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========
   {
     cat: 'mevzuat', slug: 'e-donusum-son-tarihler-takvimi', svc: 'e-donusum-danismanligi', updated: '2026-11-11', info: true,

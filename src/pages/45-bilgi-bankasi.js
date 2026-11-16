@@ -4,6 +4,7 @@ const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHt
 const { slugify, EXCLUDE } = require('../posts');
 const { cats, articles, catPath, SHOW_DRAFTS } = require('../kb');
 const KB_SEO = require('../kb-seo');
+const { partnerBox } = require('../components');
 // Google sonuç başlığı: marka ekiyle 60 karakteri aşmıyorsa eklenir
 const withBrand = (t) => (t.length + 16 <= 60 ? `${t} | Kurucu Bilişim` : t);
 // Açıklama: elle yazılmamışsa özetten, cümle sınırında (≤155) kesilir
@@ -55,6 +56,7 @@ module.exports = async (ctx) => {
     const p = ROOT, crumbs = [['Ana Sayfa', '/'], ['Bilgi Bankası', p]];
     const body = `${pageHero({ eyebrow: 'Bilgi Bankası', h1: 'Adım adım <span class="grad">rehberler</span>', lead: 'E-imza, mali mühür, KEP, e-fatura ve entegrasyon işlemlerinde aklınıza takılanları kısa ve anlaşılır rehberlerle anlattık.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
+  ${partnerBox()}
   <div style="max-width:720px;margin:0 auto 48px">
     <label for="kb-ara" class="sr-only">Bilgi bankasında ara</label>
     <input id="kb-ara" type="search" placeholder="Ne arıyorsunuz? Örn: e-imza kurulumu, KEP adresi" autocomplete="off" style="width:100%;padding:18px 22px;font-size:1.08rem;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--text)">
@@ -86,6 +88,7 @@ ${ctaBand('Aradığınızı bulamadınız mı?', 'Sorunuzu iletin, uzmanlarımı
     const svc = svcOf(c.svc);
     const body = `${pageHero({ eyebrow: 'Bilgi Bankası', h1: esc(c.name) + ' rehberleri', lead: esc(c.desc), crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
+  ${partnerBox()}
   <div style="display:grid;gap:14px;max-width:880px;margin:0 auto">${inCat(c).map(itemRow).join('')}</div>
   ${svc ? `<div class="card svc-cta" style="max-width:880px;margin:48px auto 0">${icBox(svc.icon)}<h3>${esc(svc.short)} hizmetimizle tanışın</h3><p>${esc(svc.lead)}</p><div class="hero__actions" style="margin:18px 0 0">${btn(svcPath(svc), 'Hizmeti incele', 'btn--primary btn--sm')}${btn(applyHref(svc.slug), 'Başvur / Teklif al', 'btn--ghost btn--sm', false)}</div></div>` : ''}
 </div></section>
@@ -114,6 +117,7 @@ ${ctaBand()}`;
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="container" style="max-width:1240px">
+  ${partnerBox()}
   ${a.img ? `<figure class="post-cover" style="margin:0 0 clamp(32px,5vw,56px)"><img src="${a.img}" alt="${esc(a.title)}" width="1600" height="1000" fetchpriority="high" decoding="async"></figure>` : ''}
   <div class="article-layout">
     <article class="prose" data-article>${html}

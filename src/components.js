@@ -26,7 +26,17 @@ const partnersMarquee = () => {
   return `<p class="partners-label">Çözüm ortaklarımız</p><div class="marquee"><div class="marquee__track">${row}${row.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"')}</div></div>`;
 };
 
-const logoWall = (n = references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
+// Blog ve Bilgi Bankası sayfalarındaki iş ortağı alanı (liste + detay sayfaları)
+const PARTNER = { name: 'İşteSmm', url: 'https://www.istesmm.com/', logo: '/assets/img/partner/istesmm.webp', w: 155, h: 40,
+  text: 'Mükelleflerin e-fatura portallarındaki faturalarını muhasebe fişine dönüştürüp mali müşavir yazılımına aktaran bulut tabanlı mali veri aktarım sistemi.',
+  page: '/dijital-hizmetler/istesmm-mali-veri-aktarimi/' };
+const partnerBox = () => `<aside class="partner-box" aria-label="İş ortağımız">
+  <a class="partner-box__logo" href="${PARTNER.url}" target="_blank" rel="noopener"><img src="${PARTNER.logo}" alt="${esc(PARTNER.name)} logosu" width="${PARTNER.w}" height="${PARTNER.h}" loading="lazy" decoding="async"></a>
+  <div class="partner-box__text"><strong>${esc(PARTNER.name)} iş ortağımızdır</strong><small>${esc(PARTNER.text)}</small></div>
+  <div class="partner-box__links"><a href="${PARTNER.page}">Mali veri aktarımı ${icon('arrow')}</a><a href="${PARTNER.url}" target="_blank" rel="noopener">istesmm.com ${icon('arrow')}</a></div>
+</aside>`;
+
+const logoWall =(n = references.length) => `<div class="logo-wall">${references.slice(0, n).map((r, i) => `<figure data-reveal style="--d:${(i % 6) * 0.05}s"><img src="/assets/img/ref/referans-${r}.webp" alt="Kurucu Bilişim referans müşteri logosu ${r}" width="240" height="240" loading="lazy" decoding="async"></figure>`).join('')}</div>`;
 
 const trDate = (d) => new Date(d + 'T12:00:00').toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 const campPath = (c) => `/kampanyalar/${c.slug}/`;
@@ -65,4 +75,4 @@ const esigMock = (m) => `<figure class="esig" data-reveal>
   <figcaption>Temsilî görsel</figcaption>
 </figure>`;
 
-module.exports = { meslekPath, meslekCard, meslekGrid, esigMock, activeCampaigns, campPath, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, logoWall };
+module.exports = { meslekPath, meslekCard, meslekGrid, esigMock, activeCampaigns, campPath, campaignCard, postCard, serviceCard, statsBlock, stepsBlock, quotesBlock, quoteCard, partnersMarquee, partnerBox, logoWall };

@@ -810,6 +810,7 @@ const webProjects = [
 const blogCats = [
   ['E-İmza', /e-imza|mersis/], ['Mali Mühür', /mali-muhur/], ['KEP', /kep/],
   ['E-Bordro', /e-bordro/], ['E-Defter', /e-defter/], ['E-Fatura & E-Belge', /e-fatura|e-belge|e-arsiv/],
+  ['Mali Veri Aktarımı', /fis-aktarimi/],
   ['Dijital', /erp|sosyal|web|crm/],
 ];
 

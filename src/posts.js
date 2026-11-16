@@ -44,6 +44,11 @@ const TITLE_FIX = {
 
 // <title> için kısa başlık (sayfadaki H1 değişmez)
 const SEO_TITLE = {
+  // Mali veri aktarımı (İşteSmm) yazıları – 16 Kasım 2026, başlıklar patronun listesinden
+  'luca-muhasebe-fis-aktarimi': 'Luca Muhasebe Fiş Aktarımı: Faturaları Otomatik Aktarın',
+  'zirve-muhasebe-fis-aktarimi': 'Zirve Muhasebe Fiş Aktarımı: Faturaları Otomatik Aktarın',
+  'orka-muhasebe-fis-aktarimi': 'Orka Muhasebe Fiş Aktarımı: Faturaları Otomatik Aktarın',
+  'mikrokom-gms-net-muhasebe-fis-aktarimi': 'Mikrokom GMS.Net Muhasebe Fiş Aktarımı | İşteSmm',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modüller, Faydalar ve Seçim Rehberi 2026',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',

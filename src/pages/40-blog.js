@@ -3,11 +3,11 @@ const path = require('path');
 const sharp = require('sharp');
 const { site, services, blogCats } = require('../data');
 const { layout, icon, icBox, btn, esc, abs, svcPath, pageHero, ctaBand, crumbsHtml, aurora, SOCIAL, orgId, applyHref } = require('../lib');
-const { postCard } = require('../components');
+const { postCard, partnerBox } = require('../components');
 const { posts, fmtDate } = require('../posts');
 
 // Kategori → ilgili hizmet (yazı içi teklif kutusu ve iç linkleme için)
-const catService = { 'E-İmza': 'e-imza', 'Mali Mühür': 'mali-muhur', KEP: 'kep-ik', 'E-Bordro': 'kep-ik', 'E-Defter': 'e-defter', 'E-Fatura & E-Belge': 'e-fatura' };
+const catService = { 'E-İmza': 'e-imza', 'Mali Mühür': 'mali-muhur', KEP: 'kep-ik', 'E-Bordro': 'kep-ik', 'E-Defter': 'e-defter', 'E-Fatura & E-Belge': 'e-fatura', 'Mali Veri Aktarımı': 'istesmm-mali-veri-aktarimi' };
 function serviceFor(p) {
   let slug = catService[p.cats[0]];
   if (!slug) slug = /erp/.test(p.slug) ? 'erp-yazilimlari' : /sosyal/.test(p.slug) ? 'sosyal-medya-yonetimi' : 'web-tasarim';
@@ -30,6 +30,7 @@ module.exports = async (ctx) => {
     const usedCats = blogCats.map(([n]) => n).filter((n) => posts.some((x) => x.cats.includes(n)));
     const body = `${pageHero({ eyebrow: 'Blog', h1: 'Rehberler ve <span class="grad">güncel bilgiler</span>', lead: 'E-imza, mali mühür, KEP, e-fatura, e-defter ve dijital dönüşüm hakkında bilmeniz gereken her şey.', crumbs })}
 <section class="section" style="padding-top:0"><div class="container">
+  ${partnerBox()}
   <div class="filters" data-filters role="tablist" aria-label="Kategoriler">
     <button type="button" role="tab" data-cat="all" aria-selected="true">Tümü (${posts.length})</button>
     ${usedCats.map((c) => `<button type="button" role="tab" data-cat="${esc(c)}" aria-selected="false">${esc(c)} (${posts.filter((x) => x.cats.includes(c)).length})</button>`).join('')}
@@ -76,6 +77,7 @@ ${ctaBand()}`;
   </div>
 </section>
 <section class="section" style="padding-top:0"><div class="container" style="max-width:1240px">
+  ${partnerBox()}
   ${p.img ? `<figure class="post-cover" style="margin:0 0 clamp(32px,5vw,56px)"><img src="${p.img}" alt="${esc(p.title)}" width="${w}" height="${h}" fetchpriority="high" decoding="async"></figure>` : ''}
   <div class="article-layout">
     <article class="prose" data-article>${p.html}
