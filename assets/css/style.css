@@ -271,6 +271,9 @@ p { margin: 0 0 1em; }
 .ws-download__act small svg, .ws-download .btn svg { width: 15px; height: 15px; }
 .ws-download__act small { display: flex; justify-content: center; }
 @media (max-width: 760px) { .ws-download { flex-wrap: wrap; } .ws-download__act { margin-left: 0; flex: 1 1 100%; min-width: 0; text-align: left; } .ws-download__act small { justify-content: flex-start; } .ws-download__act .btn { white-space: normal; } }
+.ws-video { margin: 18px 0 32px; }
+.ws-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #fff; }
+.ws-video figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
 .ws-shot { margin: 18px 0 28px; }
 .ws-shot img { width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--line); }
 .ws-shot figcaption { color: var(--muted); font-size: .85rem; margin-top: 6px; }

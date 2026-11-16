@@ -27,6 +27,16 @@ const shot = (name, alt) => {
   return `<figure class="ws-shot"><img src="/${IMG_DIR}/${name}.webp" alt="${esc(alt)}" loading="lazy" decoding="async"><figcaption>${esc(alt)}</figcaption></figure>`;
 };
 
+// Kurulum anlatım videosu (Kurucu Bilişim üretimi, temsilî ekranlar; adımlar GİB kılavuzundan)
+const VIDEO = { src: '/assets/video/web-socket-kurulum.mp4', poster: '/assets/img/web-socket/kurulum-poster.webp', dur: 'PT1M14S',
+  name: 'e-Fatura Web Socket (GİB İmzalama Aracı) Kurulumu – 6 Adım',
+  desc: 'GİB’in Java gerektirmeyen yeni imzalama aracının indirilmesi, kurulması, çalıştırılması ve e-Fatura Portalı’na giriş adımlarını anlatan temsilî anlatım videosu.' };
+const hasVideo = () => fs.existsSync(path.join(ROOT, VIDEO.src.slice(1)));
+const videoBlock = () => (hasVideo() ? `<figure class="ws-video">
+  <video controls preload="none" playsinline poster="${VIDEO.poster}" width="1280" height="720"><source src="${VIDEO.src}" type="video/mp4">Tarayıcınız video oynatmayı desteklemiyor.</video>
+  <figcaption>Kurulum adımlarının temsilî anlatımı (1 dk 14 sn). Ekranlar GİB arayüzünün birebir görüntüsü değildir; adımlar GİB kılavuzuna dayanır.</figcaption>
+</figure>` : '');
+
 const downloadBox = () => `<div class="ws-download">
   <div><strong>GİB İmzalama Aracı’nı indirin</strong><small>Açılan GİB e-Belge sayfasında, sağ alttaki “İmzalama Aracı” bölümünden indirin.</small></div>
   <div class="ws-download__act"><a class="btn btn--primary" href="${GIB_HOME}" target="_blank" rel="noopener">${icon('link')}Resmî GİB sayfasından indir</a><small>${icon('shield')}Resmî GİB sayfasına gider</small></div>
@@ -87,6 +97,7 @@ ${supportCta('imzalama aracı kurulumu')}
 
 <h2 id="kurulum">Adım adım kurulum (yeni GİB E-İmza Aracı)</h2>
 <p>Aşağıdaki adımlar GİB’in İmzalama Aracı (Windows) Kullanım Kılavuzu’na göre hazırlanmıştır.</p>
+${videoBlock()}
 <h3>1. Kurulumdan önce</h3>
 <p>Bilgisayarınızda KamuSM Sürücü 6.4.1 veya daha yeni bir sürüm kurulu olmalıdır. Kurulumun sonunda bilgisayar otomatik olarak yeniden başlatılır; açık dosyalarınızı kaydedip kapatın.</p>
 ${shot('adim-1', 'Kurulum öncesi hazırlık')}
@@ -105,7 +116,6 @@ ${shot('adim-5', 'Çalışan imzalama aracı ve menüsü')}
 <h3>6. Portala giriş yapın</h3>
 <p>e-Fatura Portalı’nda (portal.efatura.gov.tr/efatura/) “İmzalama aracı desteğiyle giriş yapmak için tıklayın” bağlantısını seçin, “Başla”ya basın. “Akıllı kartınızın işlemcisi” alanında kartınızı seçip akıllı kart şifrenizi girin, “Tamam” deyin ve sertifika bilgilerini onaylayın.</p>
 ${shot('adim-6', 'e-Fatura Portalı’na imzalama aracıyla giriş')}
-${shot('video', 'Kurulum videosu')}
 <h3>Eski araçla (EFaturaWebSocket.jnlp) kurulum</h3>
 <ol>
 <li>Bilgisayarınızda en az Java 1.7’nin 32 bit sürümü kurulu olmalıdır. Gerekirse Java Kontrol Paneli’nde Java sekmesi → View → Runtime Parameters alanına <code>-Djava.security.debug=sunpkcs11</code> yazın.</li>
@@ -182,7 +192,10 @@ ${ctaBand('Kurulumla uğraşmayın', 'Uzaktan bağlanıp imzalama aracını, sü
         headline: 'e-Fatura Web Socket: GİB İmzalama Aracı İndirme, Kurulum ve Hata Çözümleri',
         dateModified: UPDATED, inLanguage: 'tr-TR',
         author: { '@type': 'Organization', '@id': orgId, name: site.name }, publisher: { '@id': orgId },
-      }, faqSchema(WS_FAQS)],
+      }, faqSchema(WS_FAQS), ...(hasVideo() ? [{
+        '@type': 'VideoObject', name: VIDEO.name, description: VIDEO.desc, thumbnailUrl: abs(VIDEO.poster),
+        contentUrl: abs(VIDEO.src), uploadDate: '2026-11-16T12:00:00+03:00', duration: VIDEO.dur, inLanguage: 'tr-TR', publisher: { '@id': orgId },
+      }] : [])],
     }), { priority: '0.8', lastmod: UPDATED });
   }
 
