@@ -1266,7 +1266,7 @@ const articles = [
       h2('Hangi E-Fatura Portallarından Veri Alınır?'),
       p('İşteSmm; Bien Teknoloji, Digital Planet, EDM Bilişim, eLogo, Kolaysoft, QNB Finans, Sovos, Uyumsoft ve daha birçok olmak üzere 40’tan fazla özel entegratör portalıyla entegre çalışır. İşteSmm’in açıklamasına göre Trendyol Faturam (trendyolfaturam.com) portalından veri sağlanamadığı için bu portaldan aktarım yapılamamaktadır.'),
       `<p>Kurulum, eğitim ve ücretsiz deneme için <a href="/dijital-hizmetler/istesmm-mali-veri-aktarimi/">Mali Müşavirler için Mali Veri Aktarımı</a> sayfamızı inceleyebilirsiniz.</p>`,
-      `<p><em>Kaynak:</em> <a href="https://www.istesmm.com/pdf/istesmm-bilgilendirme-kilavuzu.pdf" target="_blank" rel="noopener">İşteSmm Bilgilendirme Kılavuzu</a> · <a href="https://www.istesmm.com/" target="_blank" rel="noopener">istesmm.com</a></p>`,
+      `<p><em>Kaynak:</em> İşteSmm Bilgilendirme Kılavuzu</p>`,
     ].join('\n'),
     faqs: [
       ['İşteSmm hangi mali müşavir yazılımlarına aktarım yapar?', 'İşteSmm bilgilendirme kılavuzuna göre Dia Yazılım, Luca Yazılım, Mikrokom GMS.Net, Orka Yazılım ve Zirve Yazılım ile entegre çalışır.'],

@@ -27,13 +27,14 @@ const partnersMarquee = () => {
 };
 
 // Blog ve Bilgi Bankası sayfalarındaki iş ortağı alanı (liste + detay sayfaları)
-const PARTNER = { name: 'İşteSmm', url: 'https://www.istesmm.com/', logo: '/assets/img/partner/istesmm.webp', w: 155, h: 40,
+// (17.11.2026: istesmm.com dış bağlantıları kaldırıldı; yalnız kendi hizmet sayfamıza bağlantı var)
+const PARTNER = { name: 'İşteSmm', logo: '/assets/img/partner/istesmm.webp', w: 155, h: 40,
   text: 'Mükelleflerin e-fatura portallarındaki faturalarını muhasebe fişine dönüştürüp mali müşavir yazılımına aktaran bulut tabanlı mali veri aktarım sistemi.',
   page: '/dijital-hizmetler/istesmm-mali-veri-aktarimi/' };
 const partnerBox = () => `<aside class="partner-box" aria-label="İş ortağımız">
-  <a class="partner-box__logo" href="${PARTNER.url}" target="_blank" rel="noopener"><img src="${PARTNER.logo}" alt="${esc(PARTNER.name)} logosu" width="${PARTNER.w}" height="${PARTNER.h}" loading="lazy" decoding="async"></a>
+  <span class="partner-box__logo"><img src="${PARTNER.logo}" alt="${esc(PARTNER.name)} logosu" width="${PARTNER.w}" height="${PARTNER.h}" loading="lazy" decoding="async"></span>
   <div class="partner-box__text"><strong>${esc(PARTNER.name)} iş ortağımızdır</strong><small>${esc(PARTNER.text)}</small></div>
-  <div class="partner-box__links"><a href="${PARTNER.page}">Mali veri aktarımı ${icon('arrow')}</a><a href="${PARTNER.url}" target="_blank" rel="noopener">istesmm.com ${icon('arrow')}</a></div>
+  <div class="partner-box__links"><a href="${PARTNER.page}">Mali veri aktarımı ${icon('arrow')}</a></div>
 </aside>`;
 
 // "Kurulamadı mı?" uzaktan destek kutusu (Web Socket rehberi + Gerekli Yazılımlar)
