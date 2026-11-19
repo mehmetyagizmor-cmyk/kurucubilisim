@@ -49,6 +49,8 @@ const SEO_TITLE = {
   'zirve-muhasebe-fis-aktarimi': 'Zirve Muhasebe Fiş Aktarımı: Faturaları Otomatik Aktarın',
   'orka-muhasebe-fis-aktarimi': 'Orka Muhasebe Fiş Aktarımı: Faturaları Otomatik Aktarın',
   'mikrokom-gms-net-muhasebe-fis-aktarimi': 'Mikrokom GMS.Net Muhasebe Fiş Aktarımı | İşteSmm',
+  // TAREKS (19 Kasım 2026)
+  'tareks-kaydi-icin-e-imza-firma-ve-bireysel-kayit': 'TAREKS Kaydı İçin E-İmza: Firma ve Bireysel Kayıt Rehberi',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modüller, Faydalar ve Seçim Rehberi 2026',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
@@ -79,6 +81,7 @@ const SEO_TITLE = {
 
 // Arama sonucunda görünen açıklama (Search Console verisine göre yeniden yazıldı; yoksa otomatik özet)
 const SEO_DESC = {
+  'tareks-kaydi-icin-e-imza-firma-ve-bireysel-kayit': 'TAREKS kaydı için e-imza şart. Ticari işletme, esnaf ve bireysel ithalatçı kaydı ile firma yetkilisi ve gümrük müşaviri yetkilendirme adımları.',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP nedir, hangi modüllerden oluşur, muhasebe programından farkı ne? ERP yazılımı seçerken dikkat edilecekler, kurulum adımları ve e-fatura entegrasyonu.',
   'mali-muhur-ve-dijital-hukuki-belgeler-dijital-imzalarin-yasal-gecerliligi': 'Sözleşmede mali mühür mü, e-imza mı kullanılır? Hangi belgede hangi aracın geçerli olduğunu ve e-imzayla yapılamayan işlemleri anlattık.',
   'mali-muhur-ve-islemlerin-denetimi-dijital-sistemlerde-izleme-ve-kontrol': 'Mali mühür denetimde neyi kanıtlar, neyi kanıtlamaz? Şirket içi kontrol düzeni, PIN güvenliği ve denetime hazırlık listesi.',

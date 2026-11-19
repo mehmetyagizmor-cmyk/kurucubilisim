@@ -28,8 +28,8 @@
   "date": "2026-11-16"
  },
  "/e-donusum-hizmetleri/e-smm/": {
-  "hash": "4692be32fdec2f4f7c155a6f61e93cae",
-  "date": "2026-11-16"
+  "hash": "3589c57ef688e419d9c564ca44e815c5",
+  "date": "2026-11-19"
  },
  "/e-donusum-hizmetleri/e-mustahsil-makbuzu/": {
   "hash": "4211f206667fab9bd2c110150930657c",
@@ -52,12 +52,12 @@
   "date": "2026-11-16"
  },
  "/e-donusum-hizmetleri/e-imza/": {
-  "hash": "4b098ac2aba1dea9a2d47dbf8818c0d4",
-  "date": "2026-11-17"
+  "hash": "10a0213fbdc3b18b4d762a29195dcfb3",
+  "date": "2026-11-19"
  },
  "/e-donusum-hizmetleri/mali-muhur/": {
-  "hash": "7963cf0bdf72166dc76daea89d431c61",
-  "date": "2026-11-17"
+  "hash": "ee8c59e44b575a80d73a446b6fe04b01",
+  "date": "2026-11-19"
  },
  "/e-donusum-hizmetleri/kep-ik/": {
   "hash": "5fedfbe1850c53d110732f2dd769f9a1",
@@ -180,12 +180,12 @@
   "date": "2026-11-16"
  },
  "/blog/": {
-  "hash": "2c2549853ba9c165c8f2ddd4f7bc377f",
-  "date": "2026-11-17"
+  "hash": "4c116aabc1faeced5f47f8e8863a959c",
+  "date": "2026-11-19"
  },
  "/bilgi-bankasi/": {
-  "hash": "53259efc6b1d1c43cfca22b9cf21ca92",
-  "date": "2026-11-17"
+  "hash": "f2af484351e8956ef9171cfa1b98680d",
+  "date": "2026-11-19"
  },
  "/bilgi-bankasi/e-fatura/": {
   "hash": "81deeff5a6d43db960c05ab9acca8afc",
@@ -228,8 +228,8 @@
   "date": "2026-11-17"
  },
  "/bilgi-bankasi/e-imza/": {
-  "hash": "3190d48f3d8a8975b9f1f462b8ea676c",
-  "date": "2026-11-17"
+  "hash": "b3b8ce003411d82c7a7b06dff8435d8b",
+  "date": "2026-11-19"
  },
  "/bilgi-bankasi/mali-muhur/": {
   "hash": "0bccdb2a18069618f2baab333ac83411",

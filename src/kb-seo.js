@@ -49,4 +49,7 @@ module.exports = {
   'akis-kart-izleme-araci': ['AKİS Kart İzleme Aracı Nedir, Nasıl Kullanılır?', 'AKİS Kart İzleme Aracı kartı, sertifikaları ve PIN durumunu gösterir. Kamu SM’den kurulum, kart görünmüyor ve PIN kilitlendi çözümleri.'],
   'sgk-e-tebligat-sorgulama-ve-basvuru': ['SGK E-Tebligat Sorgulama ve Başvuru: Adım Adım', 'SGK e-tebligat e-Devlet’ten nasıl sorgulanır, kimler başvurmak zorunda? 5510 kapsamındaki işverenler için başvuru türleri, süreler ve yetki verme.'],
   'mali-musavir-yazilimina-fis-aktarimi': ['Muhasebe Fiş Aktarımı: Luca, Zirve, Orka, GMS.Net', 'İşteSmm ile e-fatura portallarındaki faturalar muhasebe fişine dönüşür ve Luca, Zirve, Orka, Mikrokom GMS.Net veya Dia yazılımına otomatik aktarılır.'],
+  // ---- TAREKS (19.11.2026) ----
+  'tareks-firma-kaydi-nasil-yapilir': ['TAREKS Firma Kaydı: Ticari İşletme, Esnaf ve Birey', 'TAREKS firma kaydı nasıl yapılır? Ticari işletme, esnaf ve bireysel ithalatçılar için e-imzayla TAREKS Firma Tanımlama adımları (Temmuz 2026 rehberi).'],
+  'tareks-yetkilendirme-basvurusu': ['TAREKS Yetkilendirme Başvurusu ve Kullanıcı Yetkilendirme', 'TAREKS yetkilendirme başvurusu nasıl yapılır? Firma yetkilisi ve kullanıcı (gümrük müşaviri dahil) yetkilendirme, onay ve yetki iptali adımları.'],
 };
