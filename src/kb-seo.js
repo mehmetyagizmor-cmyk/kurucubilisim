@@ -54,4 +54,7 @@ module.exports = {
   'tareks-yetkilendirme-basvurusu': ['TAREKS Yetkilendirme Başvurusu ve Kullanıcı Yetkilendirme', 'TAREKS yetkilendirme başvurusu nasıl yapılır? Firma yetkilisi ve kullanıcı (gümrük müşaviri dahil) yetkilendirme, onay ve yetki iptali adımları.'],
   // ---- Trends 20.11.2026 ----
   'mali-muhur-basvuru-sorgulama-odeme-ve-kargo-takibi': ['Mali Mühür Başvuru Sorgulama, Borç Ödeme ve Kargo Takibi', 'Mali mühür başvurusu nasıl sorgulanır, borç nereden ödenir, kargo kaç günde gelir? Kamu SM Online İşlemler ve Sanal POS adımları.'],
+  // ---- KEP İK 20.11.2026 ----
+  'is-kanunu-109-kep-ile-personel-bildirimi': ['İş Kanunu 109: Personele KEP ile Bildirim Nasıl Yapılır?', '7555 sayılı Kanunla değişen İş Kanunu 109. madde: işçinin yazılı kabulüyle KEP ile bildirim, masraflar, fesih bildirimlerinde dikkat edilecekler.'],
+  'kep-ile-ihtarname-gonderme-ttk-18': ['KEP ile İhtarname Gönderme: TTK 18/3 Rehberi', 'Tacirler arası temerrüt, fesih ve dönme ihtarları TTK 18/3’e göre e-imzayla KEP üzerinden gönderilebilir. Gerekenler ve adım adım KEP ile ihtar.'],
 };

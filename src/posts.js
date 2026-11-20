@@ -53,6 +53,8 @@ const SEO_TITLE = {
   'tareks-kaydi-icin-e-imza-firma-ve-bireysel-kayit': 'TAREKS Kaydı İçin E-İmza: Firma ve Bireysel Kayıt Rehberi',
   // Trends 20 Kasım 2026: "5070 sayılı elektronik imza kanunu" +%90
   '5070-sayili-elektronik-imza-kanunu-e-imza-ozeti': '5070 Sayılı Elektronik İmza Kanunu: Madde Madde Özet',
+  // KEP İK (20 Kasım 2026)
+  'ik-departmanlari-icin-kep-7555-sayili-kanun-personel-bildirimleri': 'İK İçin KEP: 7555 Sayılı Kanunla Personel Bildirimleri',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modüller, Faydalar ve Seçim Rehberi 2026',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
