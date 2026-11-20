@@ -52,4 +52,6 @@ module.exports = {
   // ---- TAREKS (19.11.2026) ----
   'tareks-firma-kaydi-nasil-yapilir': ['TAREKS Firma Kaydı: Ticari İşletme, Esnaf ve Birey', 'TAREKS firma kaydı nasıl yapılır? Ticari işletme, esnaf ve bireysel ithalatçılar için e-imzayla TAREKS Firma Tanımlama adımları (Temmuz 2026 rehberi).'],
   'tareks-yetkilendirme-basvurusu': ['TAREKS Yetkilendirme Başvurusu ve Kullanıcı Yetkilendirme', 'TAREKS yetkilendirme başvurusu nasıl yapılır? Firma yetkilisi ve kullanıcı (gümrük müşaviri dahil) yetkilendirme, onay ve yetki iptali adımları.'],
+  // ---- Trends 20.11.2026 ----
+  'mali-muhur-basvuru-sorgulama-odeme-ve-kargo-takibi': ['Mali Mühür Başvuru Sorgulama, Borç Ödeme ve Kargo Takibi', 'Mali mühür başvurusu nasıl sorgulanır, borç nereden ödenir, kargo kaç günde gelir? Kamu SM Online İşlemler ve Sanal POS adımları.'],
 };

@@ -574,6 +574,7 @@ const articles = [
         ['Üretim', 'Akıllı kart seçildiyse ödeme Kamu SM hesabına geçtikten sonra sertifika üretilerek kuryeye verilir.'],
         ['Teslimat takibi', 'Kurye takip bilgileri başvuruda belirtilen e-posta adresine gönderilir. Teslimat yöntemi olarak PTT Hızlı Teslimat Noktası seçildiyse kart en yakın teslimat noktasından alınabilir.'],
       ]),
+      `<p>Borç sorgulama, ödeme ve kargo takibinin ayrıntıları için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-basvuru-sorgulama-odeme-ve-kargo-takibi/">Mali Mühür Başvuru Sorgulama, Borç Ödeme ve Kargo Takibi</a> rehberimize bakın.</p>`,
       p('Gönderide kart veya kart okuyucudan biri eksik çıkarsa Kamu SM’ye 5 iş günü içinde e-posta ile bilgi verilmelidir.'),
       h2('Önemli Uyarılar'),
       ul([
@@ -1373,6 +1374,55 @@ const articles = [
       ['Kullanıcının yetkilendirme başvurusunu kim onaylar?', 'Firma yetkilisi; TAREKS’te profil sekmesindeki “Firma İşlemleri → Yetkilendirme” ekranından onaylar ve yetki tarih aralığını belirler.'],
       ['Firma yetkilisinin başvurusu neden otomatik onaylanmadı?', 'Yetkilinin bilgileri MERSİS, ESBİS veya KPS kayıtlarıyla eşleşmezse otomatik onay olmaz. Yabancı uyruklu kişilerde MERSİS’teki kimlik veya pasaport numarası ile e-imzadaki numaranın birebir aynı olması gerekir.'],
       ['Kullanıcının yetkisi nasıl iptal edilir?', 'Firma yetkilisi TAREKS’teki Yetkilendirme ekranından azil işlemi yapar. Kullanıcı yetkisinden feragat ettiği hâlde iptal yapılmazsa Genel Müdürlüğe yazılı başvuru yapabilir.'],
+    ],
+  },
+  {
+    cat: 'mali-muhur', slug: 'mali-muhur-basvuru-sorgulama-odeme-ve-kargo-takibi', svc: 'mali-muhur', updated: '2026-11-20',
+    title: 'Mali Mühür Başvuru Sorgulama, Borç Ödeme ve Kargo Takibi',
+    lead: 'Mali mühür başvurusundan sonraki süreç Kamu SM Online İşlemler’den takip edilir. Borç sorgulama ve ödeme Kamu SM Sanal POS sayfasından yapılır; kart, ödemeden sonra üretilip anlaşmalı kuryeyle 10 iş günü içinde gönderilir.',
+    html: [
+      `<p><strong>Kısaca:</strong> ${esc('Kamu SM’ye göre başvuru sonrasındaki tüm süreç Kamu SM Online İşlemler sayfasından takip edilir. Borcunuzu Kamu SM’nin “Borç Sorgulama ve Ödeme” ekranından sorgulayıp kartla ödeyebilirsiniz; ödemeler yaklaşık 5 dakika içinde sisteme yansır. Sertifika üretimi ödemeden hemen sonra başlar ve gönderi anlaşmalı kurye firmasıyla 10 iş günü içinde ulaştırılır.')}</p>`,
+      h2('Mali Mühür Başvurusu Nasıl Sorgulanır?'),
+      p('Kamu SM, başvuru sonrasındaki tüm sürecin Kamu SM Online İşlemler sayfası üzerinden takip edilebileceğini belirtir. Online İşlemler’e e-Devlet ile giriş yaparak başvurunuzun durumunu görüntüleyebilirsiniz. Başvuru yaparken verdiğiniz e-posta adresini de kontrol edin; süreçle ilgili bildirimler bu adrese gelir.'),
+      olBold([
+        ['Online İşlemler’i açın', 'onlineislemler.kamusm.gov.tr adresine gidin ve “Giriş” butonuna tıklayın.'],
+        ['E-Devlet ile giriş yapın', 'Yönlendirilen ekranda e-Devlet giriş yöntemlerinden birini seçip bilgilerinizi girin.'],
+        ['Başvurunuzu görüntüleyin', 'Mali mühür işlemleri altında başvurunuzun durumunu kontrol edin.'],
+      ]),
+      h2('Mali Mühür Borç Sorgulama ve Ödeme'),
+      p('Kamu SM’nin “Borç Sorgulama ve Ödeme” ekranına Online İşlemler sayfasındaki “Diğer İşlemler” bölümünden ulaşılır (sanalpos.kamusm.gov.tr). Bu ekranda önce sorgu tipini seçersiniz:'),
+      `<table><thead><tr><th>Sorgu tipi</th><th>İstenen bilgiler</th></tr></thead><tbody>
+<tr><td><strong>Gerçek kişi</strong></td><td>T.C. kimlik numarası, doğum yeri ve doğum tarihi</td></tr>
+<tr><td><strong>Tüzel kişi</strong></td><td>Vergi kimlik numarası</td></tr>
+</tbody></table>`,
+      p('Resimdeki doğrulama yazısını girip “Borç Sorgula”ya tıkladığınızda borcunuz listelenir ve kartla ödeme yapabilirsiniz.'),
+      ulBold([
+        ['Ödemenin yansıması', 'Kamu SM’ye göre Sanal POS ile yapılan ödemeler yaklaşık 5 dakika içinde sisteme yansır.'],
+        ['Ödemede hata alırsanız', 'Kamu SM, ödeme sırasında hata alınması durumunda tekrar işlem yapmadan önce bilgi@kamusm.gov.tr adresine e-posta atılmasını veya çağrı merkezinin aranmasını ister.'],
+        ['İptal ve iade yok', 'Sertifika üretimi ödemeden hemen sonra başlar. Ürün kişiye ve firmaya özel olduğundan sipariş iptali ve ücret iadesi yapılamaz; ödemeden önce bilgilerinizi mutlaka kontrol edin.'],
+      ]),
+      h2('Mali Mühür Kargo Takibi'),
+      p('Kamu SM’nin açıklamasına göre mali mühür ve e-imza gönderileri anlaşmalı kurye firmasıyla 10 iş günü içinde ulaştırılır. Akıllı kart seçildiyse mali mühür sertifikası, USB boyutunda kart okuyucuyla birlikte başvuruda seçtiğiniz teslimat yöntemine göre gönderilir.'),
+      p('Gönderiniz bu süre içinde ulaşmadıysa Kamu SM’nin iletişim formunu doldurabilir veya 444 5 576 / 0850 460 55 76 numaralı çağrı merkezini arayabilirsiniz.'),
+      h2('Akıllı Kart mı, HSM mi?'),
+      ulBold([
+        ['Akıllı kart', 'Sertifika karta yüklenir ve kart okuyucuyla birlikte gönderilir.'],
+        ['HSM', 'Sertifika, firmanın daha önceden temin ettiği HSM cihazında üretilir; ödeme sonrasında yerinde veya uzaktan bağlantı için randevu verilir. HSM cihazı Kamu SM tarafından temin edilmez.'],
+      ]),
+      p('Başvuru ekranındaki “Sertifika Tipi” seçimini kontrol edin; HSM seçilen başvurularda kart gönderilmez.'),
+      h2('Mali Mühür Elinize Ulaştıktan Sonra'),
+      `<p>Kartınız geldiğinde sürücü kurulumunu yapıp Online İşlemler’den PIN oluşturmanız gerekir. Adımlar için <a href="/bilgi-bankasi/mali-muhur/mali-muhur-kurulumu-ve-aktivasyonu/">Mali Mühür Kurulumu ve Aktivasyonu</a> ve <a href="/bilgi-bankasi/mali-muhur/mali-muhur-pin-sifresi-nasil-olusturulur/">Mali Mühür PIN Oluşturma ve Kilit Çözme</a> rehberlerimize bakın. Kartın bilgisayarda görünüp görünmediğini <a href="/bilgi-bankasi/mali-muhur/akis-kart-izleme-araci/">AKİS Kart İzleme Aracı</a> ile kontrol edebilirsiniz.</p>`,
+      `<p>Başvuru, ödeme ve kurulum adımlarıyla uğraşmak istemiyorsanız <a href="/e-donusum-hizmetleri/mali-muhur/">mali mühür hizmetimiz</a> ile süreci sizin yerinize yürütüyoruz.</p>`,
+      note('Mali mühür başvurusu, ödeme ve kurulum adımlarında uzaktan bağlanarak destek veriyoruz.'),
+      `<p><em>Resmî kaynaklar:</em> <a href="https://onlineislemler.kamusm.gov.tr/" target="_blank" rel="noopener">Kamu SM Online İşlemler</a> · <a href="https://sanalpos.kamusm.gov.tr/" target="_blank" rel="noopener">Kamu SM Borç Sorgulama ve Ödeme</a> · <a href="https://mm.kamusm.gov.tr/surecler/basvurusurec.jsp" target="_blank" rel="noopener">Kamu SM – Mali Mühür Başvuru Süreci</a> · <a href="https://kamusm.bilgem.tubitak.gov.tr/SSS/" target="_blank" rel="noopener">Kamu SM – Sıkça Sorulan Sorular</a></p>`,
+    ].join('\n'),
+    faqs: [
+      ['Mali mühür başvurum nereden sorgulanır?', 'Kamu SM Online İşlemler sayfasına (onlineislemler.kamusm.gov.tr) e-Devlet ile giriş yaparak başvurunuzun durumunu görebilirsiniz.'],
+      ['Mali mühür borcumu nasıl öğrenirim?', 'Kamu SM’nin Borç Sorgulama ve Ödeme ekranında (sanalpos.kamusm.gov.tr) gerçek kişiler T.C. kimlik numarası, doğum yeri ve doğum tarihiyle; tüzel kişiler vergi kimlik numarasıyla sorgulama yapar.'],
+      ['Ödeme yaptım ama görünmüyor, tekrar ödemeli miyim?', 'Hayır. Kamu SM’ye göre ödemeler yaklaşık 5 dakika içinde yansır; ödeme sırasında hata aldıysanız tekrar ödemeden önce bilgi@kamusm.gov.tr adresine yazın veya çağrı merkezini arayın.'],
+      ['Mali mühür kaç günde gelir?', 'Kamu SM’nin açıklamasına göre gönderiler anlaşmalı kurye firmasıyla 10 iş günü içinde ulaştırılır. Sertifika üretimi ödemeden hemen sonra başlar.'],
+      ['Mali mühür kargom gelmedi, kime başvurmalıyım?', 'Kamu SM’nin iletişim formunu doldurabilir veya 444 5 576 / 0850 460 55 76 numaralı çağrı merkezini arayabilirsiniz.'],
+      ['Mali mühür ödemesi iade edilir mi?', 'Hayır. Kamu SM’ye göre ödemeden sonra üretim başladığı ve ürün kişiye/firmaya özel olduğu için sipariş iptali ve ücret iadesi yapılamaz.'],
     ],
   },
   // ========== MEVZUAT: GİB taslakları ve Resmî Gazete (patron onayıyla yayımlanır) ==========

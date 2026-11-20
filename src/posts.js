@@ -51,6 +51,8 @@ const SEO_TITLE = {
   'mikrokom-gms-net-muhasebe-fis-aktarimi': 'Mikrokom GMS.Net Muhasebe Fiş Aktarımı | İşteSmm',
   // TAREKS (19 Kasım 2026)
   'tareks-kaydi-icin-e-imza-firma-ve-bireysel-kayit': 'TAREKS Kaydı İçin E-İmza: Firma ve Bireysel Kayıt Rehberi',
+  // Trends 20 Kasım 2026: "5070 sayılı elektronik imza kanunu" +%90
+  '5070-sayili-elektronik-imza-kanunu-e-imza-ozeti': '5070 Sayılı Elektronik İmza Kanunu: Madde Madde Özet',
   'erp-nedir-erp-yazilimi-secerken-dikkat-edilmesi-gerekenler': 'ERP Nedir? Modüller, Faydalar ve Seçim Rehberi 2026',
   'kagit-fatura-kalkiyor-mu-e-arsiv-2027': 'Kâğıt Fatura Kalkıyor mu? 1 Ocak 2027 E-Arşiv Rehberi',
   'bilanco-esasi-e-defter-zorunlulugu': 'Bilanço Esasında E-Defter Zorunluluğu: 2027 Hazırlığı',
